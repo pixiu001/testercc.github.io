@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="探索学习者的安全开发、渗透测试、CTF等学习笔记集合">
+  <meta name="description" content="持续探索学习者的安全开发、渗透测试、CTF等学习笔记集合">
   <meta name="author" content="TesterCC">
   <link rel="shortcut icon" href="img/favicon.ico">
   <title>About the Notes 关于笔记 - Security Development Notes</title>
@@ -25,6 +25,13 @@
   <script src="js/jquery-2.1.1.min.js" defer></script>
   <script src="js/modernizr-2.8.3.min.js" defer></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/rust.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ruby.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -53,13 +60,11 @@
     <a class="current" href=".">About the Notes 关于笔记</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#welcome-to-mkdocs">Welcome to MkDocs</a></li>
+    <li class="toctree-l2"><a href="#_1">前言</a></li>
     
         <ul>
         
-            <li><a class="toctree-l3" href="#commands">Commands</a></li>
-        
-            <li><a class="toctree-l3" href="#project-layout">Project layout</a></li>
+            <li><a class="toctree-l3" href="#mkdocs-commands">Mkdocs Commands</a></li>
         
         </ul>
     
@@ -212,9 +217,6 @@
     <li>About the Notes 关于笔记</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/TesterCC/testercc.github.io.git/edit/master/docs/index.md"
-          class="icon icon-github"> Edit on GitHub</a>
-      
     </li>
   </ul>
   <hr/>
@@ -222,21 +224,21 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
+                <h1 id="_1">前言</h1>
+<p>一个持续探索续学习者的学习笔记，因为不想用rst写，所以直接用mkdocs，readthedoc主题。
+虽然计划写不少东西，但是内容整理还是得step by step。</p>
+<p>毕竟笔记属于零碎知识整合，不用于写blog需要完整成文，所以争取坚持每天更新一下。</p>
+<p>For full infomation please visit <a href="https://github.com/TesterCC">TesterCC on Github</a>.</p>
+<p>If you are interested in my blog, please visit <a href="https://blog.fullstackpentest.com/">TesterCC's Blog</a></p>
+<h2 id="mkdocs-commands">Mkdocs Commands</h2>
+<p>使用mkdocs写笔记或者文档还是很方便的，下面是常用命令</p>
 <ul>
 <li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
 <li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
 <li><code>mkdocs build</code> - Build the documentation site.</li>
 <li><code>mkdocs help</code> - Print this help message.</li>
 </ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre>
+<p>更多自定义设置请见<a href="https://www.mkdocs.org/user-guide/configuration">官方文档</a> (友情提示：假如有英文阅读恐惧症，请合理使用google translate插件)</p>
               
             </div>
           </div>
@@ -270,8 +272,6 @@ docs/
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/TesterCC/testercc.github.io.git/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
-      
       
       
         <span style="margin-left: 15px"><a href="secdev/open_source/" style="color: #fcfcfc">Next &raquo;</a></span>
@@ -287,5 +287,5 @@ docs/
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-09-20 07:08:14
+Build Date UTC : 2019-09-20 08:20:42
 -->
