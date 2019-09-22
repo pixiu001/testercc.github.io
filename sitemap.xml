@@ -2,67 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://testercc.github.io/</loc>
-     <lastmod>2019-09-20</lastmod>
+     <lastmod>2019-09-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://testercc.github.io/secdev/secdev_interview/</loc>
+     <lastmod>2019-09-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://testercc.github.io/secdev/open_source/</loc>
-     <lastmod>2019-09-20</lastmod>
+     <lastmod>2019-09-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://testercc.github.io/incident_response/learn_guide/</loc>
-     <lastmod>2019-09-20</lastmod>
+     <lastmod>2019-09-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://testercc.github.io/pentest/pentest_interview/</loc>
-     <lastmod>2019-09-20</lastmod>
+     <lastmod>2019-09-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://testercc.github.io/ctf/learn_guide/</loc>
-     <lastmod>2019-09-20</lastmod>
+     <lastmod>2019-09-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://testercc.github.io/backend/learn_guide/</loc>
-     <lastmod>2019-09-20</lastmod>
+     <lastmod>2019-09-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://testercc.github.io/frontend/learn_guide/</loc>
-     <lastmod>2019-09-20</lastmod>
+     <lastmod>2019-09-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://testercc.github.io/testdev/learn_guide/</loc>
-     <lastmod>2019-09-20</lastmod>
+     <lastmod>2019-09-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://testercc.github.io/devops/learn_guide/</loc>
-     <lastmod>2019-09-20</lastmod>
+     <lastmod>2019-09-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://testercc.github.io/seo/introduce/</loc>
-     <lastmod>2019-09-20</lastmod>
+     <loc>https://testercc.github.io/seo/knowledge/</loc>
+     <lastmod>2019-09-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://testercc.github.io/others/introduce/</loc>
-     <lastmod>2019-09-20</lastmod>
+     <lastmod>2019-09-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://testercc.github.io/todo_list/</loc>
-     <lastmod>2019-09-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://testercc.github.io/about_me/</loc>
-     <lastmod>2019-09-20</lastmod>
+     <lastmod>2019-09-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
