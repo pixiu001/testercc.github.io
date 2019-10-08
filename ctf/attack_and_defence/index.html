@@ -8,7 +8,7 @@
   
   <meta name="author" content="TesterCC">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>白帽SEO - Security Development Notes</title>
+  <title>实战攻防演练 - Security Development Notes</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "\u767d\u5e3dSEO";
-    var mkdocs_page_input_path = "seo/white_seo.md";
-    var mkdocs_page_url = "/seo/white_seo/";
+    var mkdocs_page_name = "\u5b9e\u6218\u653b\u9632\u6f14\u7ec3";
+    var mkdocs_page_input_path = "ctf/attack_and_defence.md";
+    var mkdocs_page_url = "/ctf/attack_and_defence/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -81,11 +81,23 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../ctf/learn_guide/">基础知识</a>
+    <a class="" href="../learn_guide/">基础知识</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../ctf/attack_and_defence/">实战攻防演练</a>
+    <a class="current" href="./">实战攻防演练</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">攻防演练</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_2">常用术语</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -192,32 +204,15 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../knowledge/">基本知识</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">白帽SEO</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#seo">白帽SEO</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#commands">Commands</a></li>
-        
-            <li><a class="toctree-l4" href="#project-layout">Project layout</a></li>
-        
-        </ul>
-    
-
-    <li class="toctree-l3"><a href="#seo_1">灰帽SEO</a></li>
-    
-
-    </ul>
+    <a class="" href="../../seo/knowledge/">基本知识</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../black_seo/">黑帽SEO</a>
+    <a class="" href="../../seo/white_seo/">白帽SEO</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../seo/black_seo/">黑帽SEO</a>
                 </li>
     </ul>
 	    </li>
@@ -260,11 +255,11 @@
     
       
         
-          <li>SEO 搜索引擎优化 &raquo;</li>
+          <li>CTF &raquo;</li>
         
       
     
-    <li>白帽SEO</li>
+    <li>实战攻防演练</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -274,22 +269,9 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="seo">白帽SEO</h1>
-<p>For full documentation visit <a href="https://mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs help</code> - Print this help message.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre>
-<h1 id="seo_1">灰帽SEO</h1>
+                <h1 id="_1">攻防演练</h1>
+<p>目前已入手的最新的资料是奇信安的"实战攻防演习"三色书。</p>
+<h2 id="_2">常用术语</h2>
               
             </div>
           </div>
@@ -297,10 +279,10 @@ docs/
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../black_seo/" class="btn btn-neutral float-right" title="黑帽SEO">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../incident_response/learn_guide/" class="btn btn-neutral float-right" title="学习参考">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../knowledge/" class="btn btn-neutral" title="基本知识"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../learn_guide/" class="btn btn-neutral" title="基础知识"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -326,10 +308,10 @@ docs/
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../knowledge/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../learn_guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../black_seo/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../incident_response/learn_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
