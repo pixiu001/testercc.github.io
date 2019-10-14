@@ -290,6 +290,7 @@
                 <h1 id="_1">数据库相关</h1>
 <p>简单记录各中数据库常用crud命令。</p>
 <h2 id="mysql">Mysql</h2>
+<p>默认端口：<code>3306</code></p>
 <ul>
 <li><code>查询是否锁表</code></li>
 </ul>
@@ -356,8 +357,162 @@ SELECT * FROM mysql.`innodb_index_stats` a WHERE a.`database_name` = '数据库�
 </code></pre>
 
 <h2 id="redis">Redis</h2>
+<p>默认端口：<code>6379</code></p>
+<p>能系统安装就不要自己手动装了。</p>
+<h3 id="1-ubunturedis">1. Ubuntu安装redis</h3>
+<h4 id="apt">apt安装</h4>
+<pre><code>sudo apt-get install redis-server
+</code></pre>
+
+<h4 id="_2">手动安装 （不推荐）</h4>
+<p>(详见此文)[https://jingyan.baidu.com/article/00a07f38173cea82d028dc24.html]</p>
+<pre><code>下载：wget http://download.redis.io/releases/redis-3.0.6.tar.gz
+
+解压：tar -zxvf redis-3.0.6.tar.gz
+
+编译：cd redis-3.0.6 &amp;&amp; make MALLOC=libc
+
+安装：sudo make install
+</code></pre>
+
+<h3 id="2-redis-on-ubuntu">2. Redis常用命令 （on Ubuntu）</h3>
+<p>一般来说，会在redis安装目录下面，配置一个redis.conf的文件来定制化启动redis</p>
+<pre><code>检查Redis是否挂了
+ps -ef | grep redis
+
+test@xxx:/data/$ ps -ef | grep redis
+ubuntu    6673     1  0  8月19 ?      01:59:52 redis-server *:6379
+</code></pre>
+
+<pre><code>1.Redis server 6379挂了时，启动reids (带启动文件)
+
+进入redis安装目录
+
+执行下面命令的其中1条：
+sudo redis-server redis.conf
+sudo ./redis-server  ./redis.conf
+
+2.Redis server 没挂时，重启redis
+
+sudo service redis-server restart
+sudo /etc/init.d/redis-server restart
+
+or
+
+sudo systemctl restart redis-server   (apt或yum安装的redis)
+
+
+
+[sudo] password for ubuntu:
+Stopping redis-server: redis-server.
+Starting redis-server: redis-server.
+</code></pre>
+
+<p>如果是用apt-get或者yum install安装的redis，可以直接通过下面的命令停止/启动/重启redis.</p>
+<pre><code>/etc/init.d/redis-server stop
+/etc/init.d/redis-server start
+/etc/init.d/redis-server restart
+</code></pre>
+
+<h3 id="3redis">3.Redis问题解决</h3>
+<p><a href="http://vearne.cc/archives/158">REDIS 启动警告及处理 -- 推荐</a></p>
+<p><a href="https://cloud.tencent.com/developer/article/1044436">redis超时原因系统性排查</a></p>
+<pre><code>1. overcommit_memory
+2. THP (Transparent Huge Pages)
+3. TCP backlog
+</code></pre>
+
+<h4 id="1-overcommit_memory">1. overcommit_memory</h4>
+<p>错误日志：</p>
+<p>ResponseError: MISCONF Redis is configured to save RDB snapshots, but is currently not able to persist on disk. Commands that may modify the data set are disabled. Please check Redis logs for details about the error.</p>
+<p><a href="http://www.redicecn.com/html/Linux/20131125/468.html">参考解决方案</a></p>
+<p><a href="http://blog.chinaunix.net/uid-30401178-id-5159439.html">解决实施参考</a></p>
+<p>很多人都是建议“config set stop-writes-on-bgsave-error no”。这样做其实是不好的，这仅仅是让程序忽略了这个异常，使得程序能够继续往下运行，但实际上数据还是会存储到硬盘失败。</p>
+<p>当操作系统收到内存分配请求时，它会依据overcommit_memory 设定的条件，考虑接受或者拒绝这个请求</p>
+<pre><code>0 — 默认设置 内核使用启发式算法，来估算可用的内存量，直接拒绝不合理的请求
+1 — 内核不考虑内存是否够用，直接同意请求，在这种设置下，潜在的内存过载风险增加了，但有利于内存密集型任务
+2 — 如果程序请求的内存分配大于等于 交换分区和物理内存的总和 * overcommit_ratio / 100 则拒绝这个请求 默认是 交换分区和物理内存总和的50%
+</code></pre>
+
+<p>默认设置是0，只要内存请求超过物理内存的剩余量，请求就会被拒绝。
+设置1，不管实际物理内存使用量，直接同意请求。设置1是一种比较粗放式的对内存请求的管理方式，我认为更为优雅的方式是使用2，并且将overcommit_ratio 的值设为60 ~ 80</p>
+<p>解决方法：</p>
+<p>细致式：</p>
+<pre><code>echo &quot;vm.overcommit_memory=2&quot; &gt;&gt; /etc/sysctl.conf
+echo &quot;vm.overcommit_ratio=70&quot; &gt;&gt; /etc/sysctl.conf
+sysctl -p
+</code></pre>
+
+<p>sysctl -p 不用重启使配置生效</p>
+<p>粗旷式：</p>
+<pre><code>echo &quot;vm.overcommit_memory=1&quot; &gt;&gt; /etc/sysctl.conf
+</code></pre>
+
+<h4 id="2-thptransparent-huge-pages">2. THP（Transparent Huge Pages）透明大页</h4>
+<p>透明大页，默认是always，启用是为了可以管理更多的内存地址空间。可以使用never关闭，之后会使用系统软件的算法管理内存映射。</p>
+<pre><code>通常linux会将透明大页开启，在fork被调用后，redis产生的延迟被用来持久化到磁盘。内存大页会引起一下问题：
+ 1.fork被调用，共享内存大页的两个进程被创建
+ 2.在一个系统比较活跃的实例里，部分循环时间运行需要几千个内存页，期间引起的copy-on-write 会消耗几乎所有的内存
+ 3.这个将导致更大的延迟和使用更多的内存
+
+因此，redis官方建议需要确保禁掉内存大页：
+ echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled
+</code></pre>
+
+<p>错误日志：</p>
+<p>WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.</p>
+<p>使用的是透明大页，可能导致redis延迟和内存使用问题。</p>
+<p>查看是否使用透明大页</p>
+<pre><code>➜  cat /sys/kernel/mm/transparent_hugepage/enabled
+always madvise [never]
+
+Linux默认设置使[always]
+</code></pre>
+
+<p>解决使用的是透明大页，可能导致redis延迟和内存使用问题。</p>
+<p>解决方法：</p>
+<pre><code>临时解决方法
+
+sudo su    #  先切换到root用户
+echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled     # root用户执行此命令
+
+➜ cat /sys/kernel/mm/transparent_hugepage/enabled
+always madvise [never]     # 选择的使never说明设置成功，默认是[always]
+
+
+
+永久解决方法：
+
+将其写入/etc/rc.local文件中：
+
+iftest -f /sys/kernel/mm/redhat_transparent_hugepage/enabled; then
+
+echo never &gt; /sys/kernel/mm/redhat_transparent_hugepage/enabled
+
+fi
+</code></pre>
+
+<h4 id="3-tcp-backlog">3. TCP backlog</h4>
+<p>常见报错：</p>
+<pre><code># WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+
+# Server started, Redis version 3.2.6
+</code></pre>
+
+<p>对于linux 而言backlog 是指已经完成了3次握手，且等待 accept 的连接
+如果被没有被accept, 连接会一直在队列中排队，队列的最大长度为 backlog
+由此可知， 在client非常多且创建和关闭连接非常频繁的场景下，这个参数会非常有用。</p>
+<p>解决方法：</p>
+<pre><code>echo &quot;net.core.somaxconn = 511&quot; &gt;&gt; /etc/sysctl.conf
+sysctl -p
+</code></pre>
+
+<h3 id="redis_1">Redis主从复制</h3>
+<p><a href="https://www.iteye.com/blog/iluoxuan-1939870">redis的主从复制</a></p>
 <h2 id="mongodb">MongoDB</h2>
+<p>默认端口：<code>27017</code></p>
 <h2 id="postgresql">PostgreSQL</h2>
+<p>默认端口：<code>5432</code></p>
               
             </div>
           </div>
