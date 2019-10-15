@@ -8,7 +8,7 @@
   
   <meta name="author" content="TesterCC">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>基本知识 - Security Development Notes</title>
+  <title>Skill Tree 技能树 - Security Development Notes</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "\u57fa\u672c\u77e5\u8bc6";
-    var mkdocs_page_input_path = "seo/knowledge.md";
-    var mkdocs_page_url = "/seo/knowledge/";
+    var mkdocs_page_name = "Skill Tree \u6280\u80fd\u6811";
+    var mkdocs_page_input_path = "secdev/skill_tree.md";
+    var mkdocs_page_url = "/secdev/skill_tree/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -66,15 +66,33 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../secdev/secdev_interview/">Knowledge 知识点</a>
+    <a class="" href="../secdev_interview/">Knowledge 知识点</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../secdev/open_source/">Opensource 开源项目推荐</a>
+    <a class="" href="../open_source/">Opensource 开源项目推荐</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../secdev/skill_tree/">Skill Tree 技能树</a>
+    <a class="current" href="./">Skill Tree 技能树</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#skill-tree">Skill Tree</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_1">启发</a></li>
+        
+            <li><a class="toctree-l4" href="#_2">正三观</a></li>
+        
+            <li><a class="toctree-l4" href="#0x01">0x01 编程语言</a></li>
+        
+            <li><a class="toctree-l4" href="#0x02">0x02 数据库</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -222,35 +240,17 @@
 		
     <span class="caption-text">SEO 搜索引擎优化</span>
     <ul class="subnav">
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">基本知识</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#seo">SEO相关术语</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#seo-search-engine-optimization">SEO (Search Engine Optimization)</a></li>
-        
-            <li><a class="toctree-l4" href="#sem-search-engine-marketin">SEM (Search Engine Marketin)</a></li>
-        
-            <li><a class="toctree-l4" href="#_1">增长黑客</a></li>
-        
-            <li><a class="toctree-l4" href="#aso-app-store-optimization">ASO (App Store Optimization)</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../../seo/knowledge/">基本知识</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../white_seo/">白帽SEO</a>
+    <a class="" href="../../seo/white_seo/">白帽SEO</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../black_seo/">黑帽SEO</a>
+    <a class="" href="../../seo/black_seo/">黑帽SEO</a>
                 </li>
     </ul>
 	    </li>
@@ -297,11 +297,11 @@
     
       
         
-          <li>SEO 搜索引擎优化 &raquo;</li>
+          <li>Security Development 安全研发 &raquo;</li>
         
       
     
-    <li>基本知识</li>
+    <li>Skill Tree 技能树</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -311,21 +311,31 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="seo">SEO相关术语</h1>
-<p>一般而言，学习一门新技术时，首先要了解一些常见术语，否则，即使找到不错的学习资料，也会看得云里雾里的。</p>
-<h2 id="seo-search-engine-optimization">SEO (Search Engine Optimization)</h2>
-<pre><code>学名"搜索引擎优化"，是一种方式：利用搜索引擎的规则提高网站在有关搜索引擎内的自然排名。
-</code></pre>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-</ul>
-<h2 id="sem-search-engine-marketin">SEM (Search Engine Marketin)</h2>
-<pre><code>学名"搜索引擎营销"，就是根据用户使用搜索引擎的方式利用用户检索信息的机会尽可能将营销信息传递给目标用户。企业通过搜索引擎付费推广，让用户可以直接与公司客服进行交流、了解，实现交易，也就是俗称的“竞价推广”。其中最典型最著名的就是百度SEM（应该算百度盈利最多的业务之一了，当然也给百度带来很多负面影响），本人曾经测试过，有些热点关键词在某些时段甚至会使第一页全部展现成有“广告”标识的搜索结果。
-</code></pre>
-<p>因为此笔记以讲解SEO为主，故这里仅简单介绍SEM定义，以便区分。实际运营团队中，竞价专员（专职做SEM）和SEO专业的分工还是很明确的。</p>
-<h2 id="_1">增长黑客</h2>
-<h2 id="aso-app-store-optimization">ASO (App Store Optimization)</h2>
+                <h1 id="skill-tree">Skill Tree</h1>
+<p>简单列一列个人认为安全研发应该掌握的技能，不定时增量更新。</p>
+<h2 id="_1">启发</h2>
+<p>主要受到<a href="https://blog.knownsec.com/Knownsec_RD_Checklist/index.html">"知道创宇研发技能表"</a>的启发，虽然此表已经很长时间没有更新过了，但是也给很多安全从业者指引了学习的方向。</p>
+<h2 id="_2">正三观</h2>
+<p>常言道："习武先习德"。做安全相关工作的人一定要有正确的三观，勿以技术作恶。</p>
+<h2 id="0x01">0x01 编程语言</h2>
+<p>大家精力有限，推荐择其一二精通，其它有了解就好。</p>
+<h3 id="python">Python</h3>
+<p>写点批量脚本等必备，也有一些开源项目基于Python编写，必学之一。</p>
+<h3 id="go">Go</h3>
+<p>后端新趋势，目前不好安全类开源框架都是基于Go做开发的了，要看懂大神的开源代码，必学之二。</p>
+<h3 id="java">Java</h3>
+<p>后端常青树，也有不要经典渗透测试工具是基于Java开发的，有精力可学（科班出身的应该都有学吧）</p>
+<h3 id="php">PHP</h3>
+<p>代码审计常用，推荐学习</p>
+<h3 id="javascript">JavaScript</h3>
+<p>会这个的话挖掘前端漏洞如虎添翼，必学之三。</p>
+<h3 id="c">C</h3>
+<p>(科班必学)，非科班有精力也建议了解，二进制、逆向必学。</p>
+<h3 id="assembly-language">Assembly Language</h3>
+<p>汇编语言，二进制、逆向必学。</p>
+<h3 id="rust">Rust</h3>
+<p>虽然较冷门，但是已在国内开始受到关注。</p>
+<h2 id="0x02">0x02 数据库</h2>
               
             </div>
           </div>
@@ -333,10 +343,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../white_seo/" class="btn btn-neutral float-right" title="白帽SEO">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../pentest/learn_guide/" class="btn btn-neutral float-right" title="学习参考">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../devops/learn_guide/" class="btn btn-neutral" title="学习指南"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../open_source/" class="btn btn-neutral" title="Opensource 开源项目推荐"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -362,10 +372,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../devops/learn_guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../open_source/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../white_seo/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../pentest/learn_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

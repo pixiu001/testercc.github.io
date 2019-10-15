@@ -62,6 +62,25 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">Security Development 安全研发</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../secdev/secdev_interview/">Knowledge 知识点</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../secdev/open_source/">Opensource 开源项目推荐</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../secdev/skill_tree/">Skill Tree 技能树</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">Pentest 渗透测试</span>
     <ul class="subnav">
                 <li class="">
@@ -71,6 +90,17 @@
                 <li class="">
                     
     <a class="" href="../../pentest/pentest_interview/">Knowledge 知识点</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Incident Response 应急响应</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../incident_response/learn_guide/">学习参考</a>
                 </li>
     </ul>
 	    </li>
@@ -92,37 +122,15 @@
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">Incident Response 应急响应</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../incident_response/learn_guide/">学习参考</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Security Development 安全研发</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../secdev/secdev_interview/">Knowledge 知识点</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../secdev/open_source/">Opensource 开源项目推荐</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
     <span class="caption-text">Architecture 架构</span>
     <ul class="subnav">
                 <li class="">
                     
     <a class="" href="../../architecture/learn_guide/">学习指南</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../architecture/ddd/">DDD 领域驱动设计</a>
                 </li>
     </ul>
 	    </li>
@@ -138,6 +146,18 @@
                 <li class="">
                     
     <a class="" href="../../backend/database/">Database 数据库</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../backend/python/">Python</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../backend/go/">Golang</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../backend/rust/">Rust</a>
                 </li>
                 <li class="">
                     
@@ -201,6 +221,10 @@
         <ul>
         
             <li><a class="toctree-l4" href="#_1">阅读推荐</a></li>
+        
+            <li><a class="toctree-l4" href="#_2">系统日志删除</a></li>
+        
+            <li><a class="toctree-l4" href="#ip">轻量级搞事IP应对策略</a></li>
         
         </ul>
     
@@ -298,6 +322,90 @@
 <li><code>凤凰计划</code> - 作者是Gene Kim,Kevin Behr,George Spafford，小说体，其中提出的许多内容构成了DevOps的基础概念.</li>
 <li><code>DevOps实践指南</code> - 上面那本的姐妹篇，侧重讲解DevOps要解决的问题和解决问题的的基本步骤。</li>
 </ul>
+<h2 id="_2">系统日志删除</h2>
+<h3 id="docker">docker日志清理脚本</h3>
+<p>1.shell script, script name "clear_all_docker_log.sh"</p>
+<pre><code class="shell">#!/bin/sh
+echo &quot;======== start clean docker containers logs ========&quot;
+logs=$(find /var/lib/docker/containers/ -name *-json.log)
+for log in $logs
+        do
+                echo &quot;clean logs : $log&quot;
+                cat /dev/null &gt; $log
+        done
+echo &quot;======== end clean docker containers logs ========&quot;
+</code></pre>
+
+<p>2.deploy</p>
+<pre><code>crontab -e
+
+# auto clear docker json log
+0 9  * * * /data/tools/clear_all_docker_log.sh &gt; /data/tools/clear_all_docker.log 2&gt;&amp;1
+
+wq!
+</code></pre>
+
+<h3 id="linux">Linux下清除系统日志方法</h3>
+<h4 id="_3">错误方法(不能用)</h4>
+<pre><code>rm -f xxx.log
+</code></pre>
+
+<p>原因</p>
+<pre><code>因为应用已经打开文件句柄，直接删除会造成：
+
+1.应用无法正确释放日志文件和写入
+
+2.显示磁盘空间未释放
+</code></pre>
+
+<p>补救措施</p>
+<pre><code>ps -ef | grep deleted
+
+查看并释放相关资源
+</code></pre>
+
+<h4 id="_4">正确方法</h4>
+<pre><code>echo &quot;&quot; &gt; /var/log/xxx.log  # 第一种方法
+
+cat  /dev/null &gt;  /var/log/xxx.log  #第二种方法   本人习惯用这个
+</code></pre>
+
+<h3 id="ubuntu-1604">ubuntu 16.04 系统日志清理</h3>
+<p>1.shell script  auto_clear_sys_log.sh</p>
+<pre><code>#!/bin/sh
+
+t=$(date)
+echo $t
+
+echo &quot;======== start clean linux sys logs ========&quot;
+
+sudo apt-get clean
+
+logs=$(find /var/log -name &quot;btmp*&quot;)
+for log in $logs
+        do
+                echo &quot;clean logs 1: $log&quot;
+                cat /dev/null &gt; $log
+        done
+
+logs=$(find /var/log -name &quot;auth*&quot;)
+for log in $logs
+        do
+                echo &quot;clean logs 2: $log&quot;
+                cat /dev/null &gt; $log
+        done
+
+echo &quot;======== end clean linux sys logs ========&quot;
+</code></pre>
+
+<p>2.deploy</p>
+<pre><code># clear root dir sys log
+0 0 0 */3 * echo &quot;rootpassword&quot;|sudo -S /data/tools/auto_clear_sys_log.sh &gt;&gt; /data/tools/auto_clear_sys_log.log 2&gt;&amp;1
+</code></pre>
+
+<h2 id="ip">轻量级搞事IP应对策略</h2>
+<pre><code>未待完续
+</code></pre>
               
             </div>
           </div>
