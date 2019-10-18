@@ -79,10 +79,6 @@
                     
     <a class="" href="../learn_guide/">学习指南</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../ddd/">DDD 领域驱动设计</a>
-                </li>
                 <li class=" current">
                     
     <a class="current" href="./">Design Pattern 设计模式</a>
@@ -92,14 +88,28 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#_1">阅读推荐</a></li>
+            <li><a class="toctree-l4" href="#_1">阅读学习推荐</a></li>
         
-            <li><a class="toctree-l4" href="#_2">监听模式（观察者模式）</a></li>
+            <li><a class="toctree-l4" href="#_2">观察者模式（监听模式）</a></li>
+        
+            <li><a class="toctree-l4" href="#_6">状态模式</a></li>
+        
+            <li><a class="toctree-l4" href="#_10">中介模式（调停模式）</a></li>
+        
+            <li><a class="toctree-l4" href="#_14">装饰模式</a></li>
+        
+            <li><a class="toctree-l4" href="#_18">单例模式</a></li>
+        
+            <li><a class="toctree-l4" href="#_22">原型模式（克隆模式）</a></li>
         
         </ul>
     
 
     </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ddd/">DDD 领域驱动设计</a>
                 </li>
     </ul>
 	    </li>
@@ -157,10 +167,6 @@
                     
     <a class="" href="../../pentest/learn_guide/">学习参考</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../../pentest/pentest_interview/">Knowledge 知识点</a>
-                </li>
     </ul>
 	    </li>
           
@@ -198,6 +204,10 @@
                 <li class="">
                     
     <a class="" href="../../backend/go/">Golang</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../backend/java/">Java</a>
                 </li>
                 <li class="">
                     
@@ -259,6 +269,10 @@
                     
     <a class="" href="../../devops/learn_guide/">学习指南</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../../devops/sre/">SRE</a>
+                </li>
     </ul>
 	    </li>
           
@@ -283,6 +297,25 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">Interview 面试</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../interview/navigation/">Navigation</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../interview/security/">Security Interview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../interview/backend/">Backend Interview</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">Others</span>
     <ul class="subnav">
                 <li class="">
@@ -291,7 +324,11 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../others/learning_view/">学习观 Learning View</a>
+    <a class="" href="../../others/learning_view/">Learning View 学习观</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../others/academic/">Academic 学术相关</a>
                 </li>
     </ul>
 	    </li>
@@ -339,7 +376,7 @@
               
                 <h1 id="design-pattern">Design Pattern 设计模式</h1>
 <p>初学者其实不推荐一开始就是学习设计模式，建议至少等基本语法和开发框架都比较熟悉后再来学习这部分知识，并学以致用，强化理解和记忆。</p>
-<h2 id="_1">阅读推荐</h2>
+<h2 id="_1">阅读学习推荐</h2>
 <ul>
 <li>
 <p><code>大话设计模式</code> -- 入门经典读物</p>
@@ -354,7 +391,142 @@
 <p><code>Java设计模式：23种设计模式全面解析（超级详细）</code>  -- 小伙伴推荐的，<a href="http://c.biancheng.net/design_pattern/">点击直达</a></p>
 </li>
 </ul>
-<h2 id="_2">监听模式（观察者模式）</h2>
+<h2 id="_2">观察者模式（监听模式）</h2>
+<h3 id="_3">定义</h3>
+<p><code>对象间定义一种一对多的依赖关系，当这个对象状态发生改变时，所有依赖它（观察它或监听它）的对象都会被通知并自动更新。</code></p>
+<p>观察者模式是对象的行为模式，又叫 <code>发布/订阅(Publish/Subscribe)模式</code>、<code>模型/视图(Model/View)模式</code>、<code>源/监听器(Source/Listener)模式</code>、<code>从属者(Dependents)模式</code>。</p>
+<p>观察者模式的核心：<strong>在被观察者和观察者之间建立一种自动触发的关系。</strong></p>
+<h3 id="_4">设计要点</h3>
+<p>1.设计要点</p>
+<p>(1) 明确<code>谁是观察者</code>和<code>谁是被观察者</code>。 （一般一个被观察者有多个观察者）
+(2) 被观察者在发送广播通知时， 无须指定具体的观察者， 观察者可以自己决定是否订阅Subject的通知
+(3) 被观察者至少要有3个方法：<code>添加观察者（监听者）、移除观察者（监听者）、通知观察者（监听者）</code>。
+(4) 添加观察者（监听者）和移除观察者（监听者）在不同的模型称谓中可能会有不同命名。注意不要被名称迷惑了。</p>
+<p>2.推模型和拉模型</p>
+<p>根据监听模式侧重的功能划分。</p>
+<ul>
+<li>(1)推模型</li>
+</ul>
+<p>被观察对象向观察者<code>推送主题的详细信息</code>，<strong>不管观察者是否需要</strong>，推送的信息通常是主题对象的全部或部分数据。</p>
+<ul>
+<li>(2)拉模型</li>
+</ul>
+<p>被观察者在通知观察者的时候，只<code>传递少量信息</code>。如果观察者需要更具体的信息，由观察者主动到被观察者对象中获取，相当于 观察者从被观察对象中拉数据。</p>
+<h3 id="_5">应用场景</h3>
+<p>[1] 对一个对象状态或者数据的更新需要其它对象同步更新，或者一个对象的更新需要依赖另一个对象的更新。</p>
+<p>[2] 对象仅需要将自己的更新通知给其它对象，而不需要知道其它对象的细节。如：消息推送。</p>
+<p>业务举例：手机中各种App的消息推送，Server是被观察者，各个手机App Client是观察者。</p>
+<h2 id="_6">状态模式</h2>
+<h3 id="_7">定义</h3>
+<p><code>允许一个对象在其内部状态发生改变时改变其行为，使这个对象看上去就像改变了它的类型一样。</code></p>
+<p>状态模式又称为<code>对象的行为模式</code>。</p>
+<p>状态模式的核心：<strong>一个事物（对象）有多种状态，在不同的状态下所表现出来的行为和属性不一样。</strong></p>
+<h3 id="_8">设计要点</h3>
+<p>1.设计要点
+(1)在实现时，实现的场景状态有时候会非常复杂，决定状态变化的因素也非常多，故可把决定状态变化的属性单独抽象成一个类StateInfo，这样当判断状态属性是否符合当前的状态时就可以传入更多的信息。
+(2)每一种状态应当只有唯一的实例。</p>
+<p>2.状态模式的优缺点</p>
+<pre><code>优点：
+
+[1] 封装了状态的转换规则， 在状态模式中可以将状态的转换代码封装在环境类中， 对状态转换代码进行集中管理，而不是分散在单个业务逻辑中。
+[2] 将所有与某个状态有关的行为放到一个类中（成为状态类），使开发人员只专注于该状态下的逻辑开发。
+[3] 允许状态转换逻辑与状态对象合为一体，使用时只需要注入一个不同的状态对象，即可使环境对象拥有不同的行为。
+</code></pre>
+
+<pre><code>缺点：
+
+[1] 会增加系统类和对象的个数。
+[2] 状态模式的结构和实现都较为复杂，若使用不当，易导致程序结构和代码的混乱。
+
+</code></pre>
+
+<h3 id="_9">应用场景</h3>
+<p>[1] 一个对象的行为取决于它的状态，并且它在运行时可能经常改变它的状态，从而改变它的行为。 </p>
+<p>[2] 一个操作中含有庞大的多分支的条件语句，这些分支依赖于该对象的状态，且每一个分支的业务逻辑都非常复杂时，则可以使用状态模式来拆分不同的分支逻辑，使程序有更好的可读性和可维护性。</p>
+<h2 id="_10">中介模式（调停模式）</h2>
+<h3 id="_11">定义</h3>
+<p><code>用一个中介对象来封装一系列的对象交互，中介者使各对象不需要显式地相互引用，从而使其耦合松散，且可以独立地改变它们之间的交互。</code></p>
+<h3 id="_12">设计要点</h3>
+<p>1.设计要点</p>
+<p>设计时要找到并区分这3个角色：</p>
+<p>(1) 交互对象(InteractiveObject): 要进行交互的一系列对象。
+(2) 中介者(Mediator): 负责协调各个对象之间的交互。
+(3) 具体中介者(Mediator):中介的具体实现。</p>
+<p>2.中介模式的优缺点</p>
+<pre><code>优点：
+[1] 中介者(Mediator)将原本分布于多个对象间的行为集中在一起，作为一个独立的概念并将其封装在一个对象中，简化了对象之间的交互。
+[2] 将多个调用者与多个实现者之间多对多的交互关系，转换为一对多的交互关系，一对多的交互关系更易于理解、维护和扩展，大幅度减少了多个对象之间相互交叉引用的情况。
+</code></pre>
+
+<pre><code>缺点：
+[1] 中介者(Mediator)承接了所有的交互逻辑，交互的复杂度转变成了中介者的复杂度，中介者类会变得越来越庞大和复杂，直至难以维护。
+[2] 中介者出问题会导致多个使用者同时出问题。
+</code></pre>
+
+<h3 id="_13">应用场景</h3>
+<p>[1] 一组对象以定义良好但复杂的方式进行通信，但产生的相互依赖关系结构混乱且难以理解。</p>
+<p>[2] 一个对象引用其它很多对象，并且直接与这些对象通信，导致难以复用该对象。</p>
+<p>[3] 想通过一个中间类来封装多个类中的行为，同时又不想生成太多的子类。</p>
+<h2 id="_14">装饰模式</h2>
+<h3 id="_15">定义</h3>
+<p>动态地给一个对象增加一些额外的职责。就拓展对象来说，装饰模式 比 成为子类的方式 更为灵活。</p>
+<p>Python中的装饰器，请见Python相关章节笔记。</p>
+<h3 id="_16">设计要点</h3>
+<p>1.设计要点</p>
+<p>2.装饰模式的优缺点</p>
+<pre><code>优点：
+[1] 使用装饰模式来实现扩展比使用继承更加灵活，它可以在不创造更多子类的情况下，将对象的功能加以扩展。
+[2] 可以动态的给一个对象附加更多的功能。
+[3] 可以用不同的装饰器进行多重装饰，装饰的顺序不同，可能产生不同的效果。
+[4] 装饰类和被装饰类可以独立发展，不会相互耦合 （装饰模式相当于继承的一个替代模式）。
+</code></pre>
+
+<pre><code>缺点：
+[1] 与继承相比，用装饰的方式拓展功能容易出错，排错也更困难。对于多次装饰的对象，调试寻找错误时可能需要逐级排查，较为烦琐。
+</code></pre>
+
+<h3 id="python">Python装饰器 与 装饰模式 的区别</h3>
+<table>
+<thead>
+<tr>
+<th>区别点</th>
+<th>Python装饰器</th>
+<th>装饰模式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>设计思想</td>
+<td>函数式编程思想，面向过程的思想</td>
+<td>面向对象的编程思想</td>
+</tr>
+<tr>
+<td>装饰的对象</td>
+<td>可以装饰一个函数，也可以装饰一个类</td>
+<td>装饰的是某个类中的指定方法</td>
+</tr>
+<tr>
+<td>影响的范围</td>
+<td>装饰一个函数时，对这个函数的所有调用都起效；装饰一个类时，对这个类的所有实例都起效</td>
+<td>只对装饰的这一个对象起效</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_17">应用场景</h3>
+<p>[1] 有大量独立的扩展，为支持每一种组合将产生大量的子类，使得子类数目呈爆炸性增长时。</p>
+<p>[2] 需要动态地增加或撤销功能时。</p>
+<p>[3] 不能采用生成子类的方法进行扩充时，类的定义不能用于生成子类（如：Java中的Final类）</p>
+<h2 id="_18">单例模式</h2>
+<h3 id="_19">定义</h3>
+<p><code>确保一个类只有一个实例，并且提供一个访问它的全局方法。</code></p>
+<h3 id="_20">单例模式的实现方式</h3>
+<p>python 4种 （带补充）</p>
+<h3 id="_21">应用场景</h3>
+<p>[1] 希望这个类只有一个且只能有一个实例。</p>
+<p>[2] 项目中的一些全局管理类(Manager)可以用单例模式来实现。</p>
+<h2 id="_22">原型模式（克隆模式）</h2>
+<h3 id="_23">定义</h3>
+<h3 id="_24">应用场景</h3>
               
             </div>
           </div>
@@ -362,10 +534,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../sec_research/research_list/" class="btn btn-neutral float-right" title="导航列表">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ddd/" class="btn btn-neutral float-right" title="DDD 领域驱动设计">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../ddd/" class="btn btn-neutral" title="DDD 领域驱动设计"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../learn_guide/" class="btn btn-neutral" title="学习指南"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -391,10 +563,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../ddd/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../learn_guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../sec_research/research_list/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../ddd/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

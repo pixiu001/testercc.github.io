@@ -81,11 +81,11 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../architecture/ddd/">DDD 领域驱动设计</a>
+    <a class="" href="../../architecture/design_pattern/">Design Pattern 设计模式</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../architecture/design_pattern/">Design Pattern 设计模式</a>
+    <a class="" href="../../architecture/ddd/">DDD 领域驱动设计</a>
                 </li>
     </ul>
 	    </li>
@@ -143,10 +143,6 @@
                     
     <a class="" href="../../pentest/learn_guide/">学习参考</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../../pentest/pentest_interview/">Knowledge 知识点</a>
-                </li>
     </ul>
 	    </li>
           
@@ -184,6 +180,10 @@
                 <li class="">
                     
     <a class="" href="../../backend/go/">Golang</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../backend/java/">Java</a>
                 </li>
                 <li class="">
                     
@@ -267,6 +267,10 @@
                     
     <a class="" href="../../devops/learn_guide/">学习指南</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../../devops/sre/">SRE</a>
+                </li>
     </ul>
 	    </li>
           
@@ -291,6 +295,25 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">Interview 面试</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../interview/navigation/">Navigation</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../interview/security/">Security Interview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../interview/backend/">Backend Interview</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">Others</span>
     <ul class="subnav">
                 <li class="">
@@ -299,7 +322,11 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../../others/learning_view/">学习观 Learning View</a>
+    <a class="" href="../../others/learning_view/">Learning View 学习观</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../others/academic/">Academic 学术相关</a>
                 </li>
     </ul>
 	    </li>
@@ -380,14 +407,24 @@
 <h3 id="_6">写作格式</h3>
 <h3 id="_7">如何写好正文</h3>
 <ul>
-<li>1.以"我"为中心 （我们）
+<li>1.以"我"为中心 （我们，是一个项目组在做开发，不是你自己一个人）
 ...</li>
 </ul>
 <h3 id="_8">论文评分标准注意</h3>
-<p>正文少于1200字（实际全文少于2000字，一般都会不合格。2800字左右合适。）</p>
-<p>如果论文已经写完，后面可以加图或展望。（最好安排好，不要这么操作）</p>
-<p>一定要收尾，切记。（没收尾基本不可能合格）
-文章还没写完，铃响。至少写一句：XX项目于XX时候圆满成功，得到各方认可。</p>
+<p>正文少于1200字（实际全文少于2000字，一般都会不合格。全文2700字左右合适。6页答题卡总共也就2750字啊，2500字后下一行最好就开始收尾。 一行22个字）</p>
+<pre><code>摘要  300 - 320字
+
+项目概要   400 - 600字
+
+正文   1300 - 1800字
+
+总结  100 - 200字
+</code></pre>
+
+<p>如果论文已经写完，但是实在还缺字数，后面可以加图或展望。（最好安排好，不要这么操作）</p>
+<p>一定要收尾，切记。（没收尾基本不可能合格，大概是答题卡7行的样子。注意2500字后面至少留7行）
+一定要写摘要，切记。（特别是对于喜欢最后写摘要的人，个人不推荐最后写摘要）</p>
+<p>文章还没写完，铃响。至少写一句：XX项目于XX时候圆满成功，得到各方认可。</p>
 <h3 id="_9">性能评价方法</h3>
 <pre><code>时钟频率法
 指令执行速度法
@@ -412,8 +449,18 @@
 <p>PV操作与信号量的处理相关，P表示通过的意思，V表示释放的意思。</p>
 <p>PV操作是典型的同步机制之一。用一个信号量与一个消息联系起来，当信号量的值为0时，表示期望的消息尚未产生；当信号量的值非0时，表示期望的消息已经存在。用PV操作实现进程同步时，调用P操作测试消息是否到达，调用V操作发送消息。</p>
 <p>临界资源：诸进程间需要互斥方式对其进行共享的资源（如果：打印机、磁带机）</p>
-<p>临界区：每个进程中访问临界资源的那段代码</p>
+<p>临界区：每个进程中访问临界资源的<code>那段代码</code></p>
 <p>信号量：一种特殊变量</p>
+<pre><code>P(S)    V(S)     S就是信号量, P是进程
+
+P入V出，P减V增
+
+P操作   S自减1    当S&lt;0时，进入 进程队列
+V操作   S自增1    当S&lt;=0时，从系统的 进程队列中取出一个进程，唤醒这个进程并执行
+</code></pre>
+
+<p>运行时没有PV操作，会出现哪种问题？
+PV操作解决的问题是：并发进程之间某些约束关系的问题</p>
               
             </div>
           </div>
