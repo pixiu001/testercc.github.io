@@ -592,6 +592,14 @@ sysctl -p
 <p><a href="https://www.iteye.com/blog/iluoxuan-1939870">redis的主从复制</a></p>
 <h2 id="mongodb">MongoDB</h2>
 <p>默认端口：<code>27017</code></p>
+<p>常用命令：</p>
+<pre><code>1.检查mongod启动没有
+pgrep mongo -l
+
+2.mongodb的后台启动，配置文件(mongodb.conf)自己写（能不用root就别用root），日志注意不要写到/var下
+mongod --config /etc/mongodb.conf   
+</code></pre>
+
 <h2 id="postgresql">PostgreSQL</h2>
 <p>默认端口：<code>5432</code></p>
               
