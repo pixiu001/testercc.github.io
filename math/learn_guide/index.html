@@ -8,7 +8,7 @@
   
   <meta name="author" content="TesterCC">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>DDD 领域驱动设计 - Security Development Notes</title>
+  <title>学习参考 - Security Development Notes</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "DDD \u9886\u57df\u9a71\u52a8\u8bbe\u8ba1";
-    var mkdocs_page_input_path = "architecture/ddd.md";
-    var mkdocs_page_url = "/architecture/ddd/";
+    var mkdocs_page_name = "\u5b66\u4e60\u53c2\u8003";
+    var mkdocs_page_input_path = "math/learn_guide.md";
+    var mkdocs_page_url = "/math/learn_guide/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -77,39 +77,19 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../learn_guide/">学习指南</a>
+    <a class="" href="../../architecture/learn_guide/">学习指南</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../design_pattern/">Design Pattern 设计模式</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">DDD 领域驱动设计</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#ddddomain-driven-design">DDD(Domain-Driven Design)</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#_1">阅读推荐</a></li>
-        
-            <li><a class="toctree-l4" href="#ddd">DDD常见术语</a></li>
-        
-            <li><a class="toctree-l4" href="#ddd_1">应用DDD</a></li>
-        
-            <li><a class="toctree-l4" href="#ddd_2">DDD与中台、微服务的关系</a></li>
-        
-            <li><a class="toctree-l4" href="#ddd_3">微服务设计为什么要选择DDD?</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../../architecture/design_pattern/">Design Pattern 设计模式</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../scrum/">Scrum</a>
+    <a class="" href="../../architecture/ddd/">DDD 领域驱动设计</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../architecture/scrum/">Scrum</a>
                 </li>
     </ul>
 	    </li>
@@ -333,9 +313,21 @@
 		
     <span class="caption-text">Math 数学</span>
     <ul class="subnav">
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../math/learn_guide/">学习参考</a>
+    <a class="current" href="./">学习参考</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">程序员的数学</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_2">什么是数学</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_3">什么是离散数学</a></li>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -382,11 +374,11 @@
     
       
         
-          <li>Architecture 架构 &raquo;</li>
+          <li>Math 数学 &raquo;</li>
         
       
     
-    <li>DDD 领域驱动设计</li>
+    <li>学习参考</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -396,44 +388,13 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="ddddomain-driven-design">DDD(Domain-Driven Design)</h1>
-<p>DDD（Domain-Driven Design）即"领域驱动设计"，是由Eric Evans最先提出，目的是对软件所涉及到的领域进行建模，以应对系统规模过大时引起的软件复杂性的问题。</p>
-<p>由小伙伴Endlex传教，好的微服务架构设计，离不开DDD的指导。</p>
-<p>整个过程大概是这样的:</p>
-<pre><code>1.开发团队和领域专家一起通过 通用语言(Ubiquitous Language)去理解和消化领域知识，
-2.从领域知识中提取和划分为一个一个的子领域（核心子域，通用子域，支撑子域），
-3.并在子领域上建立模型，
-4.再重复以上步骤，这样周而复始，构建出一套符合当前领域的模型。
-</code></pre>
-
-<h2 id="_1">阅读推荐</h2>
-<ul>
-<li><code>领域驱动设计精粹</code>    入门必读，也是DDD领域较新的书籍</li>
-<li><code>实现领域驱动设计</code>    进阶必读，建议看完上面的再看这本（和上面那本是一个作者，这本值得反复学习）</li>
-<li><code>领域驱动设计</code>       软件核心复杂性应对之道    这本也不错，可以做扩展阅读</li>
-<li><a href="https://time.geekbang.org/column/article/149941">DDD实战课</a></li>
-</ul>
-<h2 id="ddd">DDD常见术语</h2>
-<p><center>
-<img alt="quiz" src="/img/ddd/DDD.jpg" />
-</center></p>
-<h4 id="_2">子域</h4>
-<h4 id="_3">限界上下文</h4>
-<h4 id="_4">聚合</h4>
-<h4 id="_5">领域事件</h4>
-<h2 id="ddd_1">应用DDD</h2>
-<p>吃透DDD的核心设计思想。</p>
-<pre><code>DDD强调领域模型和微服务设计的一体性。先有领域模型，才有微服务。（不是脱离领域模型谈微服务的设计）
-通过战略设计 建立领域模型 和 划分微服务的边界。 (关键)
-通过战术设计从领域模型转向 微服务设计和落地。
-</code></pre>
-
-<p>目标：边界清晰，可持续演进的微服务架构</p>
-<h2 id="ddd_2">DDD与中台、微服务的关系</h2>
-<p>中台，本质是业务模型。</p>
-<p>微服务，是业务模型的系统落地。</p>
-<p>DDD是一种设计思想，可以同时指导中台业务建模和微服务设计。</p>
-<h2 id="ddd_3">微服务设计为什么要选择DDD?</h2>
+                <h2 id="_1">程序员的数学</h2>
+<p>想深入学习CS知识的人都知道数学的重要性，所以单独分类一个数学笔记。</p>
+<h2 id="_2">什么是数学</h2>
+<p>数学（mathematics或maths，其英文来自希腊语，“máthēma”；经常被缩写为“math”），是研究数量、结构、变化、空间以及信息等概念的一门学科，从某种角度看属于形式科学的一种。</p>
+<h2 id="_3">什么是离散数学</h2>
+<p>离散数学（Discrete mathematics）是研究离散量的结构及其相互关系的数学学科，是现代数学的一个重要分支。离散的含义是指不同的连接在一起的元素，主要是研究基于离散量的结构和相互间的关系，其对象一般是有限个或可数个元素。离散数学在各学科领域，特别在计算机科学与技术领域有着广泛的应用，同时离散数学也是计算机专业的许多专业课程，如程序设计语言、数据结构、操作系统、编译技术、人工智能、数据库、算法设计与分析、理论计算机科学基础等必不可少的先行课程。通过离散数学的学习，不但可以掌握处理离散结构的描述工具和方法，为后续课程的学习创造条件，而且可以提高抽象思维和严格的逻辑推理能力，为将来参与创新性的研究和开发工作打下坚实的基础。</p>
+<p>看介绍应该也能知道离散数学对学CS的人来说有多重要。</p>
               
             </div>
           </div>
@@ -441,10 +402,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../scrum/" class="btn btn-neutral float-right" title="Scrum">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../others/introduce/" class="btn btn-neutral float-right" title="简介">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../design_pattern/" class="btn btn-neutral" title="Design Pattern 设计模式"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../academic/academic/" class="btn btn-neutral" title="Information 相关信息"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -470,10 +431,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../design_pattern/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../academic/academic/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../scrum/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../others/introduce/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

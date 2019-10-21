@@ -8,7 +8,7 @@
   
   <meta name="author" content="TesterCC">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>DDD 领域驱动设计 - Security Development Notes</title>
+  <title>测试环境搭建 - Security Development Notes</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "DDD \u9886\u57df\u9a71\u52a8\u8bbe\u8ba1";
-    var mkdocs_page_input_path = "architecture/ddd.md";
-    var mkdocs_page_url = "/architecture/ddd/";
+    var mkdocs_page_name = "\u6d4b\u8bd5\u73af\u5883\u642d\u5efa";
+    var mkdocs_page_input_path = "ctf/env_config.md";
+    var mkdocs_page_url = "/ctf/env_config/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -77,39 +77,19 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../learn_guide/">学习指南</a>
+    <a class="" href="../../architecture/learn_guide/">学习指南</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../design_pattern/">Design Pattern 设计模式</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">DDD 领域驱动设计</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#ddddomain-driven-design">DDD(Domain-Driven Design)</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#_1">阅读推荐</a></li>
-        
-            <li><a class="toctree-l4" href="#ddd">DDD常见术语</a></li>
-        
-            <li><a class="toctree-l4" href="#ddd_1">应用DDD</a></li>
-        
-            <li><a class="toctree-l4" href="#ddd_2">DDD与中台、微服务的关系</a></li>
-        
-            <li><a class="toctree-l4" href="#ddd_3">微服务设计为什么要选择DDD?</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../../architecture/design_pattern/">Design Pattern 设计模式</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../scrum/">Scrum</a>
+    <a class="" href="../../architecture/ddd/">DDD 领域驱动设计</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../architecture/scrum/">Scrum</a>
                 </li>
     </ul>
 	    </li>
@@ -176,15 +156,29 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../ctf/learn_guide/">基础知识</a>
+    <a class="" href="../learn_guide/">基础知识</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../ctf/attack_and_defence/">实战攻防演练</a>
+    <a class="" href="../attack_and_defence/">实战攻防演练</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../ctf/env_config/">测试环境搭建</a>
+    <a class="current" href="./">测试环境搭建</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#pwndbg">pwndbg</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#linux">Linux安装</a></li>
+        
+            <li><a class="toctree-l4" href="#mac">Mac安装</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -382,11 +376,11 @@
     
       
         
-          <li>Architecture 架构 &raquo;</li>
+          <li>CTF &raquo;</li>
         
       
     
-    <li>DDD 领域驱动设计</li>
+    <li>测试环境搭建</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -396,44 +390,46 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="ddddomain-driven-design">DDD(Domain-Driven Design)</h1>
-<p>DDD（Domain-Driven Design）即"领域驱动设计"，是由Eric Evans最先提出，目的是对软件所涉及到的领域进行建模，以应对系统规模过大时引起的软件复杂性的问题。</p>
-<p>由小伙伴Endlex传教，好的微服务架构设计，离不开DDD的指导。</p>
-<p>整个过程大概是这样的:</p>
-<pre><code>1.开发团队和领域专家一起通过 通用语言(Ubiquitous Language)去理解和消化领域知识，
-2.从领域知识中提取和划分为一个一个的子领域（核心子域，通用子域，支撑子域），
-3.并在子领域上建立模型，
-4.再重复以上步骤，这样周而复始，构建出一套符合当前领域的模型。
+                <h2 id="pwndbg">pwndbg</h2>
+<h3 id="linux">Linux安装</h3>
+<p>参考这里：
+<a href="https://github.com/pwndbg/pwndbg">https://github.com/pwndbg/pwndbg</a></p>
+<pre><code>git clone https://github.com/pwndbg/pwndbg
+cd pwndbg
+./setup.sh
 </code></pre>
 
-<h2 id="_1">阅读推荐</h2>
-<ul>
-<li><code>领域驱动设计精粹</code>    入门必读，也是DDD领域较新的书籍</li>
-<li><code>实现领域驱动设计</code>    进阶必读，建议看完上面的再看这本（和上面那本是一个作者，这本值得反复学习）</li>
-<li><code>领域驱动设计</code>       软件核心复杂性应对之道    这本也不错，可以做扩展阅读</li>
-<li><a href="https://time.geekbang.org/column/article/149941">DDD实战课</a></li>
-</ul>
-<h2 id="ddd">DDD常见术语</h2>
-<p><center>
-<img alt="quiz" src="/img/ddd/DDD.jpg" />
-</center></p>
-<h4 id="_2">子域</h4>
-<h4 id="_3">限界上下文</h4>
-<h4 id="_4">聚合</h4>
-<h4 id="_5">领域事件</h4>
-<h2 id="ddd_1">应用DDD</h2>
-<p>吃透DDD的核心设计思想。</p>
-<pre><code>DDD强调领域模型和微服务设计的一体性。先有领域模型，才有微服务。（不是脱离领域模型谈微服务的设计）
-通过战略设计 建立领域模型 和 划分微服务的边界。 (关键)
-通过战术设计从领域模型转向 微服务设计和落地。
+<h3 id="mac">Mac安装</h3>
+<p>因为Mac系统基于Unix内核，这样安装会有问题，不能成功，所以在Mac OS上安装pwndbg的推荐方式是Docker安装（对于搭建渗透测试环境来说，Docker是个神器）</p>
+<pre><code>➜  [/Users/TesterCC] docker search pwndbg
+NAME                              DESCRIPTION                  STARS               OFFICIAL            AUTOMATED
+jthorpe6/pwndbg                                                0
+disconnect3d/pwndbg                                            0
+shangkuei/pwndbg                                               0
+lxzmads/pwndbgenv                                              0
+equation314/pwndbg_qemu_emulate                                0
+johnee/pwndbg                                                  0
+beswing/ubuntu-17.10-for-pwn      CTF Pwn , Pwntools, pwndbg   0
 </code></pre>
 
-<p>目标：边界清晰，可持续演进的微服务架构</p>
-<h2 id="ddd_2">DDD与中台、微服务的关系</h2>
-<p>中台，本质是业务模型。</p>
-<p>微服务，是业务模型的系统落地。</p>
-<p>DDD是一种设计思想，可以同时指导中台业务建模和微服务设计。</p>
-<h2 id="ddd_3">微服务设计为什么要选择DDD?</h2>
+<p>一般来说Docker image选用STARS数最多的。</p>
+<p>试试<code>docker search vulhub</code>，有不少好用的镜像。</p>
+<p>具体步骤：</p>
+<pre><code>1.拉取镜像
+docker pull jthorpe6/pwndbg
+
+2.用pwndbg调试程序
+举例：目标程序 crackme 文件放在 /Users/TesterCC/Desktop 下，要将这个目录和Docker中的/tmp/目录映射。 实际/tmp/crackme 访问的是 /Users/TesterCC/Desktop/crackme
+
+docker run -it --privileged -v /Users/TesterCC/Desktop:/tmp/ jthorpe6/pwndbg /tmp/crackme
+
+
+3.Docker交互式启动container 
+
+给Docker中的代码调试时经常使用。
+
+docker run -it container_id /bin/bash
+</code></pre>
               
             </div>
           </div>
@@ -441,10 +437,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../scrum/" class="btn btn-neutral float-right" title="Scrum">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../backend/learn_guide/" class="btn btn-neutral float-right" title="学习指南">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../design_pattern/" class="btn btn-neutral" title="Design Pattern 设计模式"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../attack_and_defence/" class="btn btn-neutral" title="实战攻防演练"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -470,10 +466,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../design_pattern/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../attack_and_defence/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../scrum/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../backend/learn_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
