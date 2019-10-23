@@ -8,7 +8,7 @@
   
   <meta name="author" content="TesterCC">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Backend Interview - Security Development Notes</title>
+  <title>Zero Trust 零信任网络 - Security Development Notes</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Backend Interview";
-    var mkdocs_page_input_path = "interview/backend.md";
-    var mkdocs_page_url = "/interview/backend/";
+    var mkdocs_page_name = "Zero Trust \u96f6\u4fe1\u4efb\u7f51\u7edc";
+    var mkdocs_page_input_path = "secdev/zero_trust.md";
+    var mkdocs_page_url = "/secdev/zero_trust/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -115,19 +115,34 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../secdev/secdev_interview/">Knowledge 知识点</a>
+    <a class="" href="../secdev_interview/">Knowledge 知识点</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../secdev/open_source/">Opensource 开源项目推荐</a>
+    <a class="" href="../open_source/">Opensource 开源项目推荐</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../secdev/skill_tree/">Skill Tree 技能树</a>
+    <a class="" href="../skill_tree/">Skill Tree 技能树</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../secdev/zero_trust/">Zero Trust 零信任网络</a>
+    <a class="current" href="./">Zero Trust 零信任网络</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">概念</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_2">思想核心</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_3">推荐阅读</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_4">与传统网络安全架构的区别</a></li>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -289,21 +304,15 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../navigation/">Navigation</a>
+    <a class="" href="../../interview/navigation/">Navigation</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../security/">Security Interview</a>
+    <a class="" href="../../interview/security/">Security Interview</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Backend Interview</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#_1">后端开发面试知识整理</a></li>
-    
-
-    </ul>
+    <a class="" href="../../interview/backend/">Backend Interview</a>
                 </li>
     </ul>
 	    </li>
@@ -376,11 +385,11 @@
     
       
         
-          <li>Interview 面试 &raquo;</li>
+          <li>Security Development 安全研发 &raquo;</li>
         
       
     
-    <li>Backend Interview</li>
+    <li>Zero Trust 零信任网络</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -390,7 +399,20 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_1">后端开发面试知识整理</h1>
+                <h2 id="_1">概念</h2>
+<p>Zero Trust, 零信任（零信任网络、零信任模型），由当时Forrester的工程师John Kindervag于2010年提出。</p>
+<h2 id="_2">思想核心</h2>
+<p><code>Never Trust, Always verify. (从来不信任，始终在校验)</code></p>
+<h2 id="_3">推荐阅读</h2>
+<p><a href="http://product.dangdang.com/27903172.html">《零信任网络》</a> -- 原版书名：Zero Trust, 目前市面上有中文翻译的就这本了，强烈推荐阅读学习</p>
+<h2 id="_4">与传统网络安全架构的区别</h2>
+<p>传统网络安全架构基于<code>网络边界防护</code>。</p>
+<p>企业建设网络安全体系时，大体步骤如下：</p>
+<ul>
+<li>1.把网络划分为<code>外网</code>、<code>内网</code>、<code>DMZ区</code>等不同的安全区域</li>
+<li>2.在网络边界上通过部署防火墙、WAF和IPS等网络安全技术手段进行重重防护</li>
+</ul>
+<p>缺陷：传统网络安全架构假设或默认了<code>内网比外网更安全</code>，在某种程度上预设了对内网中的人、设备、系统和应用的信任，从而容易忽视对内网安全措施的加强。</p>
               
             </div>
           </div>
@@ -398,10 +420,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../academic/academic/" class="btn btn-neutral float-right" title="Information 相关信息">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../incident_response/learn_guide/" class="btn btn-neutral float-right" title="学习参考">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../security/" class="btn btn-neutral" title="Security Interview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../skill_tree/" class="btn btn-neutral" title="Skill Tree 技能树"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -427,10 +449,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../security/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../skill_tree/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../academic/academic/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../incident_response/learn_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -64,7 +64,7 @@
     
         <ul>
         
-            <li><a class="toctree-l3" href="#mkdocs-commands">Mkdocs Commands</a></li>
+            <li><a class="toctree-l3" href="#mkdocs">Mkdocs常用命令</a></li>
         
             <li><a class="toctree-l3" href="#about-me">About Me</a></li>
         
@@ -138,6 +138,10 @@
                 <li class="">
                     
     <a class="" href="secdev/skill_tree/">Skill Tree 技能树</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="secdev/zero_trust/">Zero Trust 零信任网络</a>
                 </li>
     </ul>
 	    </li>
@@ -396,7 +400,7 @@
 <p>毕竟，笔记属于零碎知识整合，不同于写blog需要完整成文，可以增量更新。</p>
 <p>For full infomation please visit <a href="https://github.com/TesterCC">TesterCC on Github</a>.</p>
 <p>If you are interested in my blog, please visit <a href="https://blog.fullstackpentest.com/">TesterCC's Blog</a></p>
-<h2 id="mkdocs-commands">Mkdocs Commands</h2>
+<h2 id="mkdocs">Mkdocs常用命令</h2>
 <p>使用mkdocs写笔记或者文档还是很方便的，下面是常用命令</p>
 <ul>
 <li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
@@ -405,10 +409,22 @@
 <li><code>mkdocs help</code> - Print this help message.</li>
 </ul>
 <p>mkdocs build后，静态文件都会生产于site/目录下, 若想发布到github上，只需把此目录下的文件都push到github page要求的对应仓库。</p>
+<h4 id="_2">本地调试</h4>
+<p><code>mkdocs serve</code></p>
+<h4 id="github">发布到Github</h4>
+<p>默认就放在master分支上。</p>
+<pre><code>mkdocs build --clean
+cd site
+git add .
+git commit -m &quot;update notes&quot;
+git push origin master
+cd ..
+</code></pre>
+
 <p>更多自定义设置请见<a href="https://www.mkdocs.org/user-guide/configuration">官方文档</a> (友情提示：若有英文阅读恐惧症，请合理使用google translate插件)</p>
 <h2 id="about-me">About Me</h2>
-<p>跨界IT从业人员，入行N年，已体验过运营、测试、管理、开发、<s>运维</s>、<s>架构</s>等岗位。</p>
-<p>持续学习者，并不断在学习力上向学霸们看齐。</p>
+<p>跨界IT从业人员，入行N年，已体验过运营、测试、管理、开发、<s>运维</s>、<s>架构</s>等岗位，目前正在梳理知识和技能，向安全研发的目标进发。</p>
+<p>持续学习者，且不断在学习力上向学霸们看齐。</p>
 <pre><code>    日常爱好：阅读（应该坚持一生的习惯）、搏击操（强身健体）。
     最近兴趣：CTF、安全开发。
 </code></pre>
@@ -461,5 +477,5 @@
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-10-22 10:02:02
+Build Date UTC : 2019-10-23 02:44:31
 -->
