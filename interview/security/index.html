@@ -310,9 +310,11 @@
         
             <li><a class="toctree-l4" href="#_2">常见问题</a></li>
         
-            <li><a class="toctree-l4" href="#_9">术语解释</a></li>
+            <li><a class="toctree-l4" href="#_9">自己想到的问题</a></li>
         
-            <li><a class="toctree-l4" href="#_10">参考链接</a></li>
+            <li><a class="toctree-l4" href="#_10">术语解释</a></li>
+        
+            <li><a class="toctree-l4" href="#_11">参考链接</a></li>
         
         </ul>
     
@@ -478,11 +480,26 @@
 <li>python代码正则</li>
 <li>用python实现https请求中的一些坑</li>
 </ul>
-<h2 id="_9">术语解释</h2>
+<h2 id="_9">自己想到的问题</h2>
+<ul>
+<li>CC和DDoS的区别</li>
+</ul>
+<pre><code>CC攻击可以算是一种应用层的DDoS，比较明显的区别是：DDoS针对IP地址发起的攻击，CC针对服务器端口发起攻击的攻击。
+
+应用层DDoS与正常业务访问的界限比较模糊。
+
+比较常规的方法查看下你web站点的访问日志：
+如果固定几个url有大量不同IP高频访问，就有比较大可能是CC攻击。
+如果web接口访问压力不大，但是机器带宽长时间保持异常高数值，你抓包也能看到固定一批IP向你的服务器发送了大量请求，那就有可能是非应用层的DDoS了。
+
+溯源的话，CC攻击如果有用代理服务器，可以追一波看下是否能挖到有用的信息。一般来说有DDoS攻击样本才比较好溯源。
+</code></pre>
+
+<h2 id="_10">术语解释</h2>
 <ul>
 <li><code>DDoS</code>  (Distributed Denial of Server), 利用合理的请求造成资源过载，导致服务不可用。分布式拒绝服务攻击，将正常请求放大了若干倍，通过若干个网络节点同时发起攻击，以达成规模效应。</li>
 </ul>
-<h2 id="_10">参考链接</h2>
+<h2 id="_11">参考链接</h2>
 <ul>
 <li>
 <p><a href="https://github.com/Leezj9671/Pentest_Interview">Pentest_Interview</a></p>
