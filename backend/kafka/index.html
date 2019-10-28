@@ -8,7 +8,7 @@
   
   <meta name="author" content="TesterCC">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>基础知识 - Security Development Notes</title>
+  <title>Kafka - Security Development Notes</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "\u57fa\u7840\u77e5\u8bc6";
-    var mkdocs_page_input_path = "ctf/learn_guide.md";
-    var mkdocs_page_url = "/ctf/learn_guide/";
+    var mkdocs_page_name = "Kafka";
+    var mkdocs_page_input_path = "backend/kafka.md";
+    var mkdocs_page_url = "/backend/kafka/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -166,37 +166,17 @@
 		
     <span class="caption-text">CTF</span>
     <ul class="subnav">
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">基础知识</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#_1">基础知识</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#ctf">CTF术语</a></li>
-        
-            <li><a class="toctree-l4" href="#ctf_1">CTF比赛题型</a></li>
-        
-            <li><a class="toctree-l4" href="#ctf_2">为什么要打CTF</a></li>
-        
-            <li><a class="toctree-l4" href="#ctf_3">如何入门CTF</a></li>
-        
-            <li><a class="toctree-l4" href="#attacking-and-defensive">企业级攻防演练attacking and defensive</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../../ctf/learn_guide/">基础知识</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../attack_and_defence/">实战攻防演练</a>
+    <a class="" href="../../ctf/attack_and_defence/">实战攻防演练</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../env_config/">测试环境搭建</a>
+    <a class="" href="../../ctf/env_config/">测试环境搭建</a>
                 </li>
     </ul>
 	    </li>
@@ -207,39 +187,51 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../backend/learn_guide/">学习指南</a>
+    <a class="" href="../learn_guide/">学习指南</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../backend/database/">Database 数据库</a>
+    <a class="" href="../database/">Database 数据库</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../backend/python/">Python</a>
+    <a class="" href="../python/">Python</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../backend/go/">Golang</a>
+    <a class="" href="../go/">Golang</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../backend/java/">Java</a>
+    <a class="" href="../java/">Java</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../backend/rust/">Rust</a>
+    <a class="" href="../rust/">Rust</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../backend/proxy/">Proxy 代理</a>
+    <a class="" href="../proxy/">Proxy 代理</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../backend/rabbitmq/">RabbitMQ</a>
+    <a class="" href="../rabbitmq/">RabbitMQ</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../backend/kafka/">Kafka</a>
+    <a class="current" href="./">Kafka</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">定义</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_2">推荐阅读</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_3">官方下载</a></li>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -402,11 +394,11 @@
     
       
         
-          <li>CTF &raquo;</li>
+          <li>Back-end Development 后端开发 &raquo;</li>
         
       
     
-    <li>基础知识</li>
+    <li>Kafka</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -416,38 +408,15 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_1">基础知识</h1>
-<p>这里仅做CTF术语和常识的记录，更多CTF相关知识见<a href="https://blog.fullstackpentest.com/categories/CTF/">Blog CTF Tag</a>。</p>
-<p>不要觉得CTF很神秘，通俗的说法，你可以把CTF当作网络安全专业的奥赛。</p>
-<h2 id="ctf">CTF术语</h2>
+                <h2 id="_1">定义</h2>
+<p>Kafka是由Apache软件基金会开发的一个开源流处理平台，由Scala和Java编写。Apache Kafka是一种高吞吐量的分布式发布订阅消息系统，它可以处理消费者在网站中的所有动作流数据。</p>
+<h2 id="_2">推荐阅读</h2>
 <ul>
-<li>
-<p><code>CTF</code> -- Capture the Flag, 中文译为“夺旗赛”，指的是网络安全技术人员之间进行技术竞技的一种比赛形式。CTF起源于1996年DEFCON全球黑客大会，以代替之前黑客们通过互相发起真实攻击进行技术比拼的方式。</p>
-</li>
-<li>
-<p><code>Writeup</code> -- CTF比赛中题目的解答。</p>
-</li>
-<li>
-<p><code>AWD</code> -- Attack With Defence，一种CTF比赛模式，常见于CTF线下赛，比赛中每个队伍维护多台服务器，服务器中存在多个漏洞，利用漏洞攻击其他队伍可以进行得分，修复漏洞可以避免被其他队伍攻击失分。</p>
-</li>
-<li>
-<p><code>first blood</code> -- 一血，在CTF比赛中第一个解开某道题的人可称为拿到first blood，一般来说拿到first blood的积分加成会比后面解开此题的人得分更多。</p>
-</li>
+<li><a href="http://kafka.apache.org/quickstart">Apache Kafka Quickstart</a></li>
+<li>Kafka权威指南</li>
 </ul>
-<h2 id="ctf_1">CTF比赛题型</h2>
-<ul>
-<li><code>Web</code> -- 常见的Web安全类题，但是题目不一定很简单。</li>
-<li><code>Crypto</code> -- 密码学相关知识，一般题目都具备一定难度。</li>
-<li><code>PWN</code> -- 对程序的逻辑分析，漏洞利用（常见windows, linux平台下）</li>
-<li><code>Misc</code> -- 俗称“杂项”，范围很广涉及计算机取证、数据恢复、社会工程学、大数据等，个别题目相当烧脑。</li>
-<li><code>Rerverse</code> -- 二进制，逆向分析、破解等相关，涵盖win、linux、Android等平台。</li>
-<li><code>PPC</code> -- 编程类，一般难度适中。</li>
-</ul>
-<h2 id="ctf_2">为什么要打CTF</h2>
-<p>练习常用基本技术、拓展渗透测试逻辑思维</p>
-<h2 id="ctf_3">如何入门CTF</h2>
-<p>作为一个CTF萌新，其实前言万语千言我只想说一句：兴趣是最好的老师！</p>
-<h2 id="attacking-and-defensive">企业级攻防演练attacking and defensive</h2>
+<h2 id="_3">官方下载</h2>
+<p><a href="http://kafka.apache.org/downloads">Kafka安装包官方下载地址</a></p>
               
             </div>
           </div>
@@ -455,10 +424,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../attack_and_defence/" class="btn btn-neutral float-right" title="实战攻防演练">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../frontend/learn_guide/" class="btn btn-neutral float-right" title="学习指南">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../pentest/term/" class="btn btn-neutral" title="术语"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../rabbitmq/" class="btn btn-neutral" title="RabbitMQ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -484,10 +453,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../pentest/term/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../rabbitmq/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../attack_and_defence/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../frontend/learn_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

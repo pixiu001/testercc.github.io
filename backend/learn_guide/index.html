@@ -200,11 +200,13 @@
         
             <li><a class="toctree-l4" href="#_4">关于数据结构和算法</a></li>
         
-            <li><a class="toctree-l4" href="#_5">面试准备</a></li>
+            <li><a class="toctree-l4" href="#_5">消息订阅系统</a></li>
         
-            <li><a class="toctree-l4" href="#_6">阅读摘录</a></li>
+            <li><a class="toctree-l4" href="#_8">面试准备</a></li>
         
-            <li><a class="toctree-l4" href="#_7">其它</a></li>
+            <li><a class="toctree-l4" href="#_9">阅读摘录</a></li>
+        
+            <li><a class="toctree-l4" href="#_10">其它</a></li>
         
         </ul>
     
@@ -238,6 +240,10 @@
                 <li class="">
                     
     <a class="" href="../rabbitmq/">RabbitMQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../kafka/">Kafka</a>
                 </li>
     </ul>
 	    </li>
@@ -431,17 +437,34 @@
 <p>也有其它平台可以刷题，不过正常情况下，能把这两个平台上的题刷好已经需要相当时间了。</p>
 <h2 id="_4">关于数据结构和算法</h2>
 <p>详细内容见 <a href="../../algorithm/learn_guide/">笔记</a>。</p>
-<h2 id="_5">面试准备</h2>
+<h2 id="_5">消息订阅系统</h2>
+<h3 id="_6">发布与订阅消息系统的概念</h3>
+<p>数据（消息）的发送者（发布者）不会直接把消息发送给接收者，这是发布与订阅消息系统的一个特点。</p>
+<p>发布者以某种方式对消息进行分类，接收者（订阅者）订阅它们，比便接收特定类型的消息。</p>
+<p>发布与订阅系统一般会有一个broker，即发布消息的中心点。</p>
+<h3 id="message">消息(Message)</h3>
+<p>定义：在应用间传送的数据。(简单的如文本字符串、json等，复杂的如内嵌对象。)</p>
+<h3 id="message-queue-middleware">消息队列中间件(Message Queue Middleware)</h3>
+<p>简称MQ，是指 利用高效可靠的消息传递机制 进行与平台无关的数据交流，并基于数据通信来进行分布式系统的集成。</p>
+<p>通过提供消息传递和消息排队模型，它可以在分布式环境下扩展进程间的通信。</p>
+<h4 id="2">2种传递模式</h4>
+<p>消息队列中间件，也称为<code>消息队列</code>或<code>消息中间件</code>。一般有2种传递模式<code>点对点(P2P, Point-to-Point)模式</code>和<code>发布/订阅(Pub/Sub)模式</code>。</p>
+<h3 id="_7">常用开源消息中间件</h3>
+<ul>
+<li><a href="../rabbitmq/">RabbitMQ</a></li>
+<li><a href="../kafka/">Kafka</a></li>
+</ul>
+<h2 id="_8">面试准备</h2>
 <p>一般公司面试时对知识点的广度和深度都有一定要求，虽然完全要掌握会花费大量时间，但是面试毕竟也是在有限时间内，且面试中高频被问到的知识点也是在有限范围内，故可以参考二八法则，集中利用20%的知识点去掌握好80%的知识。</p>
 <ul>
 <li><a href="https://github.com/CyC2018/Backend-Interview-Guide/blob/master/doc/%E4%B8%80%E6%96%87%E5%B8%AE%E4%BD%A0%E7%90%86%E6%B8%85%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9.md">一文帮你理清面试知识点</a></li>
 <li><a href="https://github.com/jwasham/coding-interview-university">coding-interview-university</a> -- A complete computer science study plan to become a software engineer.</li>
 </ul>
-<h2 id="_6">阅读摘录</h2>
+<h2 id="_9">阅读摘录</h2>
 <ul>
 <li>成为优秀程序员的必要条件之一：可以根据应用场景选择最合适的算法。</li>
 </ul>
-<h2 id="_7">其它</h2>
+<h2 id="_10">其它</h2>
 <h3 id="web">web后端组合</h3>
 <p>php + laravel/thinkphp</p>
 <p>java + spring boot</p>
