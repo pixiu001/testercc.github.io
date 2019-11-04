@@ -8,7 +8,7 @@
   
   <meta name="author" content="TesterCC">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Java - Security Development Notes</title>
+  <title>Git - Security Development Notes</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Java";
-    var mkdocs_page_input_path = "backend/java.md";
-    var mkdocs_page_url = "/backend/java/";
+    var mkdocs_page_name = "Git";
+    var mkdocs_page_input_path = "backend/git.md";
+    var mkdocs_page_url = "/backend/git/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -201,18 +201,9 @@
                     
     <a class="" href="../go/">Golang</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Java</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#java">Java</a></li>
-    
-
-    <li class="toctree-l3"><a href="#_1">学习推荐</a></li>
-    
-
-    </ul>
+    <a class="" href="../java/">Java</a>
                 </li>
                 <li class="">
                     
@@ -230,9 +221,23 @@
                     
     <a class="" href="../kafka/">Kafka</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../git/">Git</a>
+    <a class="current" href="./">Git</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#git">Git常用高频命令实例</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#1git-merge">1.git merge</a></li>
+        
+            <li><a class="toctree-l4" href="#2git-commit-squash-branch_name">2.git commit --squash branch_name</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -399,7 +404,7 @@
         
       
     
-    <li>Java</li>
+    <li>Git</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -409,10 +414,27 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="java">Java</h1>
-<p>后端老大哥地位不可动摇。</p>
-<h1 id="_1">学习推荐</h1>
-<p><a href="https://hyperskill.org/knowledge-map">Java秘籍一本</a> -- 每天半小时到一小时， 一年精通Java。</p>
+                <h1 id="git">Git常用高频命令实例</h1>
+<p>(branch_name统一指代分支名称，个人根据自己的分支名称需要做替换，不能直接写"branch_name"这个字符串)</p>
+<h2 id="1git-merge">1.git merge</h2>
+<p>合并分支</p>
+<p>先切换的到你的主分支上,然后合并其它分支的代码。</p>
+<pre><code class="shell">git checkout master
+git merge -m &quot;merge branch_name&quot; branch_name
+</code></pre>
+
+<p>这样就把branch_name分支的代码合并到master分支上了，且这一步的git commit 为 "merge branch_name"</p>
+<p>自己的项目这样也无妨，但是如果多人协作开发，这样提交会把你自己开发分支时的那些commit也都提交上去，看git log的时候很不友好。
+所以推荐使用git commit --squash</p>
+<h2 id="2git-commit-squash-branch_name">2.git commit --squash branch_name</h2>
+<p>在branch_name分支上的，合并多个提交为一条。</p>
+<p>在某些情况下，我们应该优先选择使用--squash选项（比如在开源项目中提交PR一般都会要求这样操作。）</p>
+<p>举例：将fix_ftp_upload分支上的多个commit合并为一条，然后merge fix_ftp_upload分支到develop分支。</p>
+<pre><code class="shell">git checkout develop
+git merge --squash fix_ftp_upload
+git commit -m &quot;merge branch fix_ftp_upload&quot;
+git push origin develop
+</code></pre>
               
             </div>
           </div>
@@ -420,10 +442,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../rust/" class="btn btn-neutral float-right" title="Rust">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../frontend/learn_guide/" class="btn btn-neutral float-right" title="学习指南">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../go/" class="btn btn-neutral" title="Golang"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../kafka/" class="btn btn-neutral" title="Kafka"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -449,10 +471,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../go/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../kafka/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../rust/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../frontend/learn_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
