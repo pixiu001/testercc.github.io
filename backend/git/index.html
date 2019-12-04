@@ -248,6 +248,8 @@
         
             <li><a class="toctree-l4" href="#3git-commit-amend">3.git commit --amend</a></li>
         
+            <li><a class="toctree-l4" href="#4git-stash">4.git stash</a></li>
+        
         </ul>
     
 
@@ -469,6 +471,43 @@ git push origin develop
 <pre><code class="shell">git commit --amend
 
 进入编辑窗口，可以修改刚才写作的注释，然后wq!保存并退出
+</code></pre>
+
+<h2 id="4git-stash">4.git stash</h2>
+<h4 id="git-stash">git stash</h4>
+<p>保存当前分支上所做的修改, 用于处理已改动而未提交的工作目录状态。</p>
+<pre><code class="shell">&gt; git stash
+
+&gt; git status
+# On branch master
+nothing to commit, working directory clean
+</code></pre>
+
+<h4 id="git-stash-pop">git stash pop</h4>
+<p>将stash栈的第一个stash应用并移除，经常配合git stash使用</p>
+<h4 id="git-stash-list">git stash list</h4>
+<p>查看暂存栈会看到此次暂存的记录</p>
+<pre><code class="shell">git stash list
+stash@{0}: WIP on develop: 1e20335 update:PublisherInfo  （改动描述）
+stash@{1}: WIP on master: 286d74f before add debug tools
+stash@{2}: WIP on dev: 115f7c1 django transaction
+stash@{3}: WIP on master: 230437d modify js
+</code></pre>
+
+<h4 id="git-stash-apply">git stash apply</h4>
+<p>应用某个存储,但不会把存储从存储列表中删除，默认使用第一个存储,即stash@{0}</p>
+<h4 id="git-stash-show">git stash show</h4>
+<p>显示做了哪些改动，默认show第一个存储(stash@{0}),如果要显示其他存贮，后面加stash@{$num}，比如第二个 git stash show stash@{1}</p>
+<pre><code class="shell">git stash show stash@{3} -p  查看stash3所做的改动
+</code></pre>
+
+<h4 id="git-stash_1">git stash清理</h4>
+<p><strong>git stash clear</strong>    删除所有缓存的stash</p>
+<p>git stash drop stash@{$num}  移除指定的stash</p>
+<pre><code class="shell">git stash drop stash@{3} 
+
+&gt;git stash drop stash@{3}
+Dropped stash@{3} (9aa8aed27765104e44110e012238e2ed345a6d2f)
 </code></pre>
               
             </div>
