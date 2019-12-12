@@ -250,23 +250,20 @@
         
             <li><a class="toctree-l4" href="#4git-stash">4.git stash</a></li>
         
-        </ul>
-    
-
-    <li class="toctree-l3"><a href="#git-flow">Git Flow</a></li>
-    
-        <ul>
+            <li><a class="toctree-l4" href="#5git-branch">5.git branch</a></li>
         
-            <li><a class="toctree-l4" href="#what-is-gitflow">What is GitFlow?</a></li>
+            <li><a class="toctree-l4" href="#6git-remote">6.git remote</a></li>
         
-            <li><a class="toctree-l4" href="#gitflow">GitFlow学习推荐</a></li>
-        
-            <li><a class="toctree-l4" href="#git-flow_1">git-flow的安装和使用</a></li>
+            <li><a class="toctree-l4" href="#7git-checkout">7.git checkout</a></li>
         
         </ul>
     
 
     </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../git_flow/">Git Flow</a>
                 </li>
                 <li class="">
                     
@@ -531,17 +528,30 @@ stash@{3}: WIP on master: 230437d modify js
 Dropped stash@{3} (9aa8aed27765104e44110e012238e2ed345a6d2f)
 </code></pre>
 
-<h1 id="git-flow">Git Flow</h1>
-<h2 id="what-is-gitflow">What is GitFlow?</h2>
-<p>GitFlow是基于Git的强大分支能力所构建的一套软件开发工作流，最早由Vincent Driessen在2010年提出。</p>
-<h2 id="gitflow">GitFlow学习推荐</h2>
-<p>虽然TW对与使用Gitflow有不同意见，但是本人工作中还是很喜欢使用git-flow来辅助完成GitFlow的。</p>
-<ul>
-<li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">Gitflow Workflow</a></li>
-<li><a href="http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html">git-flow 备忘清单</a></li>
-<li><a href="http://insights.thoughtworkers.org/gitflow-consider-harmful/">Gitflow有害论</a></li>
-</ul>
-<h2 id="git-flow_1">git-flow的安装和使用</h2>
+<h2 id="5git-branch">5.git branch</h2>
+<h4 id="git-branch">git branch</h4>
+<p>查看当前git仓库在本地的所有分支</p>
+<h4 id="git-branch-d-branch_name">git branch -D BRANCH_NAME</h4>
+<p>删除本地制定的git分支，注意不能删除当前所在分支，故删除当前分支使用的分支之前需要先切换分支。</p>
+<h2 id="6git-remote">6.git remote</h2>
+<h4 id="git-remote-v">git remote -v</h4>
+<p>查看远程地址</p>
+<h2 id="7git-checkout">7.git checkout</h2>
+<h4 id="git-checkout-track">git checkout --track</h4>
+<p>首先记住这两个git命令：</p>
+<pre><code>git checkout -b branch origin/branch
+
+git checkout --track origin/branch
+</code></pre>
+
+<p>其实，这两个命令具有相同的效果，使用不同名称的本地分支时会出现实际差异。具体如下：</p>
+<pre><code>git checkout -b mybranch origin/abranch    # 将创建本地mybranch和跟踪origin/abranch
+
+git checkout --track origin/abranch       # 将只创建本地'abranch'，而非具有不同名称的分支
+</code></pre>
+
+<p>e.g.<code>git checkout --track origin/feature/insert_event_v2</code></p>
+<p>更多讨论，参见<a href="http://www.imooc.com/wenda/detail/585203">此问题</a></p>
               
             </div>
           </div>
@@ -549,7 +559,7 @@ Dropped stash@{3} (9aa8aed27765104e44110e012238e2ed345a6d2f)
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../os/" class="btn btn-neutral float-right" title="OS">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../git_flow/" class="btn btn-neutral float-right" title="Git Flow">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../kafka/" class="btn btn-neutral" title="Kafka"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -581,7 +591,7 @@ Dropped stash@{3} (9aa8aed27765104e44110e012238e2ed345a6d2f)
         <span><a href="../kafka/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../os/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../git_flow/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

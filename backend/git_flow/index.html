@@ -8,7 +8,7 @@
   
   <meta name="author" content="TesterCC">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Information 相关信息 - Security Development Notes</title>
+  <title>Git Flow - Security Development Notes</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Information \u76f8\u5173\u4fe1\u606f";
-    var mkdocs_page_input_path = "academic/academic.md";
-    var mkdocs_page_url = "/academic/academic/";
+    var mkdocs_page_name = "Git Flow";
+    var mkdocs_page_input_path = "backend/git_flow.md";
+    var mkdocs_page_url = "/backend/git_flow/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -199,51 +199,69 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../backend/learn_guide/">学习指南</a>
+    <a class="" href="../learn_guide/">学习指南</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../backend/database/">Database 数据库</a>
+    <a class="" href="../database/">Database 数据库</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../backend/python/">Python</a>
+    <a class="" href="../python/">Python</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../backend/go/">Golang</a>
+    <a class="" href="../go/">Golang</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../backend/java/">Java</a>
+    <a class="" href="../java/">Java</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../backend/rust/">Rust</a>
+    <a class="" href="../rust/">Rust</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../backend/proxy/">Proxy 代理</a>
+    <a class="" href="../proxy/">Proxy 代理</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../backend/rabbitmq/">RabbitMQ</a>
+    <a class="" href="../rabbitmq/">RabbitMQ</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../backend/kafka/">Kafka</a>
+    <a class="" href="../kafka/">Kafka</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../backend/git/">Git</a>
+    <a class="" href="../git/">Git</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Git Flow</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#git-flow">Git Flow</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#what-is-gitflow">What is GitFlow?</a></li>
+        
+            <li><a class="toctree-l4" href="#gitflow">GitFlow学习推荐</a></li>
+        
+            <li><a class="toctree-l4" href="#git-flow_1">git-flow的安装</a></li>
+        
+            <li><a class="toctree-l4" href="#git-flow_2">git-flow的使用</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../backend/git_flow/">Git Flow</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../backend/os/">OS</a>
+    <a class="" href="../os/">OS</a>
                 </li>
     </ul>
 	    </li>
@@ -346,25 +364,9 @@
 		
     <span class="caption-text">Academic 学术</span>
     <ul class="subnav">
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Information 相关信息</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#_1">学术相关</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#vs">研究 VS 研发</a></li>
-        
-            <li><a class="toctree-l4" href="#_2">论文写作</a></li>
-        
-            <li><a class="toctree-l4" href="#_3">论文阅读</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../../academic/academic/">Information 相关信息</a>
                 </li>
     </ul>
 	    </li>
@@ -438,11 +440,11 @@
     
       
         
-          <li>Academic 学术 &raquo;</li>
+          <li>Back-end Development 后端开发 &raquo;</li>
         
       
     
-    <li>Information 相关信息</li>
+    <li>Git Flow</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -452,15 +454,61 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_1">学术相关</h1>
-<p>虽然不是学术圈的研究者，但看到关于Cyber Security的优秀学术相关资料会忍不住收藏整理一下。</p>
-<h2 id="vs">研究 VS 研发</h2>
-<h2 id="_2">论文写作</h2>
-<p><a href="https://zhuanlan.zhihu.com/p/85342265">周志华教授：如何做研究与写论文</a></p>
-<h2 id="_3">论文阅读</h2>
+                <h1 id="git-flow">Git Flow</h1>
+<h2 id="what-is-gitflow">What is GitFlow?</h2>
+<p>GitFlow是基于Git的强大分支能力所构建的一套软件开发工作流，最早由Vincent Driessen在2010年提出。</p>
+<h2 id="gitflow">GitFlow学习推荐</h2>
+<p>虽然TW对与使用Gitflow有不同意见，但是本人工作中还是很喜欢使用git-flow来辅助完成GitFlow的。</p>
 <ul>
-<li><code>微信号：安全学术圈</code>  定期分享安全科研项目信息和论文阅读笔记。</li>
+<li><a href="http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html">git-flow 备忘清单(推荐阅读)</a></li>
+<li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">Gitflow Workflow</a></li>
+<li><a href="http://insights.thoughtworkers.org/gitflow-consider-harmful/">Gitflow有害论</a></li>
 </ul>
+<h2 id="git-flow_1">git-flow的安装</h2>
+<pre><code>MacOS
+
+1.Use Homebrew
+
+$ brew install git-flow-avh
+
+2.Use Macports
+$ port install git-flow-avh
+</code></pre>
+
+<pre><code>Linux
+
+$ apt-get install git-flow
+</code></pre>
+
+<p>更多安装信息，请见<a href="https://github.com/petervanderdoes/gitflow-avh/wiki/Installation">git flow官方安装指引</a>。</p>
+<h2 id="git-flow_2">git-flow的使用</h2>
+<h3 id="1">1.初始化</h3>
+<p>使用 git-flow，从初始化一个现有的 git 库内开始</p>
+<pre><code>git flow init
+</code></pre>
+
+<h3 id="2">2.增加新特性</h3>
+<p>新特性的开发是基于 'develop' 分支的。通过下面的命令开始开发新特性：</p>
+<pre><code>git flow feature start NEW_FEATURE_NAME
+</code></pre>
+
+<p>NEW_FEATURE_NAME为你要新建的分支的名称。</p>
+<p>e.g.: <code>git flow feature start filter_invalid_price_event</code></p>
+<h3 id="3">3.完成新特性</h3>
+<p>完成开发新特性。这个动作执行的是下面几步操作：</p>
+<pre><code>合并 NEW_FEATURE_NAME 分支到 develop 分支
+删除这个新特性分支 (feature/NEW_FEATURE_NAME)
+切换回 develop 分支
+</code></pre>
+
+<pre><code>git flow feature finish NEW_FEATURE_NAME
+</code></pre>
+
+<p>e.g.: <code>git flow feature finish filter_invalid_price_event</code></p>
+<h3 id="4">4.发布新特性</h3>
+<p>发布新特性分支到远程服务器，让其它用户也可以使用这分支。</p>
+<pre><code>git flow feature publish NEW_FEATURE_NAME
+</code></pre>
               
             </div>
           </div>
@@ -468,10 +516,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../math/learn_guide/" class="btn btn-neutral float-right" title="学习参考">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../os/" class="btn btn-neutral float-right" title="OS">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../interview/backend/" class="btn btn-neutral" title="Backend Interview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../git/" class="btn btn-neutral" title="Git"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -497,10 +545,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../interview/backend/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../git/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../math/learn_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../os/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
