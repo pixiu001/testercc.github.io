@@ -8,7 +8,7 @@
   
   <meta name="author" content="TesterCC">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Information 相关信息 - Security Development Notes</title>
+  <title>Hexo - Security Development Notes</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Information \u76f8\u5173\u4fe1\u606f";
-    var mkdocs_page_input_path = "academic/academic.md";
-    var mkdocs_page_url = "/academic/academic/";
+    var mkdocs_page_name = "Hexo";
+    var mkdocs_page_input_path = "others/hexo.md";
+    var mkdocs_page_url = "/others/hexo/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -342,25 +342,9 @@
 		
     <span class="caption-text">Academic 学术</span>
     <ul class="subnav">
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Information 相关信息</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#_1">学术相关</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#vs">研究 VS 研发</a></li>
-        
-            <li><a class="toctree-l4" href="#_2">论文写作</a></li>
-        
-            <li><a class="toctree-l4" href="#_3">论文阅读</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../../academic/academic/">Information 相关信息</a>
                 </li>
     </ul>
 	    </li>
@@ -386,23 +370,37 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../others/introduce/">简介</a>
+    <a class="" href="../introduce/">简介</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../others/learning_view/">Learning View 学习观</a>
+    <a class="" href="../learning_view/">Learning View 学习观</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../others/reading_radar/">Reading Radar 读书雷达</a>
+    <a class="" href="../reading_radar/">Reading Radar 读书雷达</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../others/law/">Law 法律</a>
+    <a class="" href="../law/">Law 法律</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../others/hexo/">Hexo</a>
+    <a class="current" href="./">Hexo</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#hexo">Hexo操作笔记</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#hexo_1">Hexo常用命令</a></li>
+        
+            <li><a class="toctree-l4" href="#hexo_2">Hexo本地调试方案</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -434,11 +432,11 @@
     
       
         
-          <li>Academic 学术 &raquo;</li>
+          <li>Others &raquo;</li>
         
       
     
-    <li>Information 相关信息</li>
+    <li>Hexo</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -448,15 +446,38 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_1">学术相关</h1>
-<p>虽然不是学术圈的研究者，但看到关于Cyber Security的优秀学术相关资料会忍不住收藏整理一下。</p>
-<h2 id="vs">研究 VS 研发</h2>
-<h2 id="_2">论文写作</h2>
-<p><a href="https://zhuanlan.zhihu.com/p/85342265">周志华教授：如何做研究与写论文</a></p>
-<h2 id="_3">论文阅读</h2>
+                <h2 id="hexo">Hexo操作笔记</h2>
+<h3 id="hexo_1">Hexo常用命令</h3>
+<h4 id="_1">常用工作流程命令</h4>
+<pre><code>hexo new &quot;blog name&quot;          # 新建title为&quot;blog name&quot;的文章，使用默认文章的布局（layout），功能和下面hexo new post一样
+hexo new post &lt;file_name&gt;     #  创建新的 post ，默认layout就是post
+hexo new draft &lt;file_name&gt;    # 创建新的 draft
+hexo new page &quot;sec_wiki&quot;     # 新增sec_wiki页面
+hexo publish &lt;file name&gt;    # 从draft 发布新的 post，也就是把draft（草稿）正式发布, 但是老版本貌似不能用
+</code></pre>
+
+<h4 id="_2">常用发布命令</h4>
 <ul>
-<li><code>微信号：安全学术圈</code>  定期分享安全科研项目信息和论文阅读笔记。</li>
+<li>直接发布</li>
 </ul>
+<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; gulp &amp;&amp; hexo d          # 一句解决, 无调试直接发布
+</code></pre>
+
+<ul>
+<li>常用推荐发布流程</li>
+</ul>
+<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; gulp   # hexo clean清理以前编译的文件，执行 hexo g &amp;&amp; gulp 就会根据 gulpfile.js 中的配置，对 public 目录中的静态资源文件进行压缩。
+hexo s      # 本地启动server运行，确认更新的文章内容没问题后，再deploy到git仓库上
+hexo d      # 上传（部署）到git仓库
+</code></pre>
+
+<h3 id="hexo_2">Hexo本地调试方案</h3>
+<p>建于PHPStorm 2018在导入整个hexo blog项目时迷之卡顿（写markdown时一字一卡），再加上PHPStorm开启式空间占用挺大，故果断换成Sublime Text3来写blog了。</p>
+<p>具体安装和配置见此文：</p>
+<p><a href="https://www.jianshu.com/p/b38b1e8abd12">Sublime Text3 + Markdown + OmniMarkupPreviewer+实时预览</a></p>
+<p>使用方法：</p>
+<p>使用Sublime新建一个文件，右下角选择编辑方式为“Markdown”，将其保存为.md文件，选择保存位置并单击确定，输入快捷键：<code>Ctrl/Command+Alt+O</code>，打开浏览器界面预览即可。</p>
+<p>（MacOS Command -&gt; Win/Linux Ctrl）</p>
               
             </div>
           </div>
@@ -464,10 +485,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../math/learn_guide/" class="btn btn-neutral float-right" title="学习参考">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../todo_list/" class="btn btn-neutral float-right" title="Todo List">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../interview/backend/" class="btn btn-neutral" title="Backend Interview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../law/" class="btn btn-neutral" title="Law 法律"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -493,10 +514,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../interview/backend/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../law/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../math/learn_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../todo_list/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
