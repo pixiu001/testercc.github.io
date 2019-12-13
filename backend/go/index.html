@@ -230,6 +230,8 @@
         
             <li><a class="toctree-l4" href="#blog">Blog推荐</a></li>
         
+            <li><a class="toctree-l4" href="#gvm">多版本管理工具GVM</a></li>
+        
         </ul>
     
 
@@ -469,8 +471,10 @@
 </ul>
 <h2 id="_2">代码规范</h2>
 <ul>
-<li><a href="https://github.com/uber-go/guide/blob/master/style.md">Uber Go Style Guide</a></li>
+<li><a href="https://github.com/uber-go/guide">Uber Go Style Guide</a></li>
+<li><a href="https://github.com/xxjwxc/uber_go_guide_cn">Uber Go 语言编码规范中文版</a></li>
 </ul>
+<p>https://github.com/xxjwxc/uber_go_guide_cn</p>
 <h2 id="_3">实体书推荐</h2>
 <p>最简单的入门方法，找一本好教程，对着例子敲一遍练手。</p>
 <ul>
@@ -483,6 +487,49 @@
 <li><a href="http://xiaorui.cc/">峰云就是她了</a></li>
 <li><a href="https://python-web-guide.readthedocs.io/zh/latest/go-note/index.html">Golang 快速入门 Go For Pythonisa</a></li>
 </ul>
+<h2 id="gvm">多版本管理工具GVM</h2>
+<p>什么是 gvm</p>
+<p>gvm，即 Go Version Manager，Go 版本管理器，它可以非常轻量的切换 Go 版本。对比其他语言，通常也有类似的工具，如 NodeJS 的 NVM，Python 的 virtualenv 等。</p>
+<p>用GVM最好是安装go 1.5+的版本，1.5以下版本看官方解释。</p>
+<p><a href="https://github.com/moovweb/gvm">GVM官方仓库</a>
+<a href="https://zhuanlan.zhihu.com/p/83375992">如何灵活地进行 Go 版本管理</a></p>
+<pre><code class="shell">Installing
+To install:
+
+bash &lt; &lt;(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+
+Or if you are using zsh just change bash with zsh:
+
+zsh &lt; &lt;(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+
+Installed GVM v1.0.22
+
+Please restart your terminal session or to get started right away run
+ `source /Users/xxxx/.gvm/scripts/gvm`
+</code></pre>
+
+<pre><code class="shell">Uninstalling
+To completely remove gvm and all installed Go versions and packages:
+
+gvm implode
+</code></pre>
+
+<h3 id="_4">常用命令</h3>
+<pre><code>gvm list                       查看本地系统已go版本
+gvm listall                    查看可安装的go版本
+gvm install go1.13.5           安装指定go版本，这里是1.13.5
+gvm use go1.13.5 [--default]   选择启用指定版本，果想默认一个版本，加上 --default 设置即可
+</code></pre>
+
+<h3 id="gvm_1">gvm 目录结构</h3>
+<p>gvm 是 shell 编写，默认是安装在 $HOME/.gvm/ 目录下。查看下它的目录结构会有助我们了解它的实现。</p>
+<pre><code>archive             # go 源码
+bin                 # gvm 可执行文件
+environments        # 不同环境的环境变量配置
+scripts             # gvm 的子命令脚本
+logs                # 日志信息
+pkgsets             # 每个独立环境 gopath 所在路径
+</code></pre>
               
             </div>
           </div>
