@@ -236,6 +236,8 @@
         
             <li><a class="toctree-l4" href="#rust_1">Rust新功能历程</a></li>
         
+            <li><a class="toctree-l4" href="#cargo">Cargo</a></li>
+        
         </ul>
     
 
@@ -458,8 +460,9 @@
               
                 <h1 id="rust">Rust</h1>
 <p>Rust是一门系统编程语言，专注于安全，尤其是并发安全，支持函数式和命令式以及泛型等编程范式的多范式语言。</p>
+<p>(P.S:虽然Rust的好大家都知道，但是在国内大概还需要另外学一门语言来谋生orz)</p>
 <h2 id="_1">书籍推荐</h2>
-<h4 id="1the-rust-programming-language">1.推荐官方的<a href="https://doc.rust-lang.org/book/">The Rust Programming Language</a></h4>
+<h4 id="1the-rust-programming-language">1.首推荐官方的<a href="https://doc.rust-lang.org/book/">The Rust Programming Language</a></h4>
 <p>如果本地已安装好rust,可以使用这个命令在本地查看官方文档：</p>
 <pre><code class="shell">rustup docs --book
 </code></pre>
@@ -475,6 +478,29 @@
 <h2 id="rust_1">Rust新功能历程</h2>
 <pre><code>RFC(Request For Comments) -&gt; Nightly -&gt; Beta -&gt; Stable
 </code></pre>
+
+<h2 id="cargo">Cargo</h2>
+<p>Cargo 是 Rust 的构建系统和包管理工具。</p>
+<p>主要负责三个工作：</p>
+<pre><code>构建build代码。
+下载你代码 依赖dependencies 的 包装箱crate。
+编译 你的源码 和 包装箱crate。
+</code></pre>
+<p>检查Cargo是否正常安装可以用这句'cargo --version'</p>
+<h3 id="_3">推荐阅读</h3>
+<ul>
+<li><a href="https://blog.csdn.net/mint_ying/article/details/79112042">rust cargo使用</a></li>
+</ul>
+<h3 id="cargorust">使用Cargo的Rust项目结构</h3>
+<pre><code>project_name
+|-  src                     // 放置源文件的目录
+    |- main.rs / lib.rs     // 源文件
+|-  Cargo.toml              // Cargo的配置文件
+</code></pre>
+
+<p>要使用cargo工具，必须在项目的根目录下建有其配置文件。(注意: Cargo.toml的C是大写)</p>
+<h3 id="cargotoml">Cargo.toml</h3>
+<p>TOML（Tom’s Obvious Minimal Language）格式。简单理解就是ini的进化版。</p>
               
             </div>
           </div>
