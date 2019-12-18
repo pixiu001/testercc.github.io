@@ -217,6 +217,22 @@
     <li class="toctree-l3"><a href="#python">Python</a></li>
     
 
+    <li class="toctree-l3"><a href="#django">Django</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#django-nulltrue-blanktrue">Django数据模型中 null=True 和 blank=True的区别</a></li>
+        
+            <li><a class="toctree-l4" href="#django-ormmigrate">利用Django ORM生成数据库表但不使用migrate来管理数据表</a></li>
+        
+            <li><a class="toctree-l4" href="#mysqlmysql">MySQL在已有的mysql上加字段和外键关联</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#flask">Flask</a></li>
+    
+
     </ul>
                 </li>
                 <li class="">
@@ -449,7 +465,44 @@
                 <h1 id="python">Python</h1>
 <p>现在已经2019年了，不要在问学Python2还是python3了，问就是Python3，毕竟"Python核心团队计划2020年停止支持Python2"，而且很多第三方库已经开始停止对python2的兼容了。</p>
 <p>当然，如果是要维护旧代码或者是使用一些古董脚本，还是偶尔需要用到python2的（比如本人偶尔还需要维护一套Django 1.6的代码😂）</p>
-<h1 id="_1"></h1>
+<h1 id="django">Django</h1>
+<h2 id="django-nulltrue-blanktrue">Django数据模型中 null=True 和 blank=True的区别</h2>
+<pre><code>null 是针对数据库而言，如果null=True, 表示数据库的该字段可以为空，即在Null字段显示为YES。(即是数据库创建时该字段可不填,用NULL填充)
+blank 是针对表单的，如果blank=True，表示前端表单填写该字段的时候可以不填，但是对数据库来说，没有影响（因为数据库是看根据是否是null=True来决定创建数据库记录时该字段可传空白）
+</code></pre>
+
+<h2 id="django-ormmigrate">利用Django ORM生成数据库表但不使用migrate来管理数据表</h2>
+<pre><code>python manage.py makemigrations business_gifts    # 这里的business_gifts是app name
+
+当makemigrations之后产生了0001_initial.py 文件，你可以查看下该migrations会对应于什么样子的SQL命令
+
+python manage.py sqlmigrate business_gifts 0001
+
+看到如下内容，这就是存储过程的语句：
+BEGIN;
+
+CREATE TABLE `sys_business_gifts` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(50) NULL, `tel` varchar(20) NULL, `industry` smallint NULL, `scene` smallint NULL, `gift_feature` smallint NULL, `budget` smallint NULL, `amount` smallint NULL, `status` smallint NOT NULL, `create_time` datetime NULL, `last_edit_time` datetime NULL, `remarks` longtext NULL);
+
+COMMIT;
+
+然后python manage.py dbshell，进入数据库，执行存储过程。
+</code></pre>
+
+<h2 id="mysqlmysql">MySQL在已有的mysql上加字段和外键关联</h2>
+<p>比如：让sys_business_gifts中的last_edit_user_id列引用auth_user表中的id。</p>
+<pre><code>BEGIN;
+
+/* 新增字段 */
+ALTER TABLE `sys_business_gifts` ADD COLUMN `last_edit_user_id` integer NULL;
+
+/* 加外键 alter table 表名 add constraint 约束名称 约束类型 (列名) references 被引用的表名称（列名） */
+ALTER TABLE `sys_business_gifts` ADD CONSTRAINT `sys_business__last_edit_user_id_fk` FOREIGN KEY (`last_edit_user_id`) REFERENCES `auth_user` (`id`);
+
+COMMIT;
+</code></pre>
+
+<p>如果两张表的ENGINE要一致，否则无法创建外键关联。</p>
+<h1 id="flask">Flask</h1>
               
             </div>
           </div>
