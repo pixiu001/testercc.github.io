@@ -93,6 +93,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../../architecture/micro_services/">Micro Services 微服务</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../../architecture/scrum/">Scrum</a>
                 </li>
     </ul>
@@ -236,6 +240,10 @@
                 <li class="">
                     
     <a class="" href="../../backend/kafka/">Kafka</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../backend/big_data/">Big Data 大数据</a>
                 </li>
                 <li class="">
                     
@@ -465,11 +473,28 @@
 <li><a href="https://www.iteye.com/blog/hotstrong-999215">JavaScript 第一章 基本语法 1~3节</a></li>
 <li><a href="https://www.iteye.com/blog/hotstrong-1007472">HTML 第六章 CSS + DIV实现整体布局</a></li>
 </ul>
-<h4 id="_4">知识点</h4>
+<h3 id="_4">知识点</h3>
+<h4 id="_5">元素宽度和高度计算</h4>
 <pre><code>问题：页面元素的宽度width、高度height如何计算？
 答案：元素的实际占位尺寸 = 元素自身尺寸 + padding + border边框宽度
 比如：元素实际占位高度 = height属性 + 上下padding + 上下边框宽
 </code></pre>
+
+<h4 id="_6">绝对路径和相对路径</h4>
+<pre><code>绝对地址：相对于磁盘的位置去定位文件的地址
+相对地址：相对于引用文件本身去定位被引用的文件地址
+</code></pre>
+
+<p>绝对地址在整体文件迁移时会因为磁盘和顶层目录的改变而找不到文件，相对路径就没有这个问题，所以一般更推荐使用相对路径。</p>
+<h4 id="_7">相对路径的定义技巧</h4>
+<ul>
+<li>
+<p>“ ./ ” 表示当前文件所在目录下，比如：“./pic.jpg” 表示当前目录下的pic.jpg的图片，这个使用时可以省略。</p>
+</li>
+<li>
+<p>“ ../ ” 表示当前文件所在目录下的上一级目录，比如：“../images/pic.jpg” 表示当前目录下的上一级目录下的images文件夹中的pic.jpg的图片。</p>
+</li>
+</ul>
               
             </div>
           </div>

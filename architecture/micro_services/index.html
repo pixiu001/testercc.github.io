@@ -8,7 +8,7 @@
   
   <meta name="author" content="TesterCC">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Rust - Security Development Notes</title>
+  <title>Micro Services 微服务 - Security Development Notes</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Rust";
-    var mkdocs_page_input_path = "backend/rust.md";
-    var mkdocs_page_url = "/backend/rust/";
+    var mkdocs_page_name = "Micro Services \u5fae\u670d\u52a1";
+    var mkdocs_page_input_path = "architecture/micro_services.md";
+    var mkdocs_page_url = "/architecture/micro_services/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -81,23 +81,35 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../architecture/learn_guide/">学习指南</a>
+    <a class="" href="../learn_guide/">学习指南</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../architecture/design_pattern/">Design Pattern 设计模式</a>
+    <a class="" href="../design_pattern/">Design Pattern 设计模式</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../architecture/ddd/">DDD 领域驱动设计</a>
+    <a class="" href="../ddd/">DDD 领域驱动设计</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Micro Services 微服务</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#micro-services">Micro Services</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_1">什么是微服务？</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../architecture/micro_services/">Micro Services 微服务</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../architecture/scrum/">Scrum</a>
+    <a class="" href="../scrum/">Scrum</a>
                 </li>
     </ul>
 	    </li>
@@ -207,73 +219,55 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../learn_guide/">学习指南</a>
+    <a class="" href="../../backend/learn_guide/">学习指南</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../database/">Database 数据库</a>
+    <a class="" href="../../backend/database/">Database 数据库</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../python/">Python</a>
+    <a class="" href="../../backend/python/">Python</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../go/">Golang</a>
+    <a class="" href="../../backend/go/">Golang</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../java/">Java</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">Rust</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#rust">Rust</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#_1">书籍推荐</a></li>
-        
-            <li><a class="toctree-l4" href="#_2">关于编译</a></li>
-        
-            <li><a class="toctree-l4" href="#rust_1">Rust新功能历程</a></li>
-        
-            <li><a class="toctree-l4" href="#cargo">Cargo</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../../backend/java/">Java</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../proxy/">Proxy 代理</a>
+    <a class="" href="../../backend/rust/">Rust</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../rabbitmq/">RabbitMQ</a>
+    <a class="" href="../../backend/proxy/">Proxy 代理</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../kafka/">Kafka</a>
+    <a class="" href="../../backend/rabbitmq/">RabbitMQ</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../big_data/">Big Data 大数据</a>
+    <a class="" href="../../backend/kafka/">Kafka</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../git/">Git</a>
+    <a class="" href="../../backend/big_data/">Big Data 大数据</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../git_flow/">Git Flow</a>
+    <a class="" href="../../backend/git/">Git</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../os/">OS</a>
+    <a class="" href="../../backend/git_flow/">Git Flow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../backend/os/">OS</a>
                 </li>
     </ul>
 	    </li>
@@ -452,11 +446,11 @@
     
       
         
-          <li>Back-end Development 后端开发 &raquo;</li>
+          <li>Architecture 架构 &raquo;</li>
         
       
     
-    <li>Rust</li>
+    <li>Micro Services 微服务</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -466,49 +460,25 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="rust">Rust</h1>
-<p>Rust是一门系统编程语言，专注于安全，尤其是并发安全，支持函数式和命令式以及泛型等编程范式的多范式语言。</p>
-<p>(P.S:虽然Rust的好大家都知道，但是在国内大概还需要另外学一门语言来谋生orz)</p>
-<h2 id="_1">书籍推荐</h2>
-<h4 id="1the-rust-programming-language">1.首推荐官方的<a href="https://doc.rust-lang.org/book/">The Rust Programming Language</a></h4>
-<p>如果本地已安装好rust,可以使用这个命令在本地查看官方文档：</p>
-<pre><code class="shell">rustup docs --book
+                <h2 id="micro-services">Micro Services</h2>
+<h3 id="_1">什么是微服务？</h3>
+<p>广义：微服务是一种分布式系统解决方案，推动细粒度服务的使用，使这些服务系统工作。</p>
+<p><a href="https://martinfowler.com/articles/microservices.html">微服务由来</a></p>
+<h4 id="_2">微服务架构风格</h4>
+<pre><code>1.将单个应用程序作为一组小型服务开发的方法
+2.每个服务程序都在自己的进程中运行，并与轻量级机制（通常是HTTP资源API）进行通信
+3.这些服务围绕业务功能构建
+4.可以通过全自动部署机器独立部署
+5.这些服务可以用不同的编程语言编写，使用不同的数据存储技术，并尽量不用集中式方式进行管理
 </code></pre>
 
-<h4 id="2">2.推荐国人写的，毕竟有母语学习优势，后面熟悉了可以直接啃英文原著。</h4>
+<p>精髓：<code>分而治之，合而用之</code></p>
+<h4 id="_3">区分微服务、微服务框架、微服务架构</h4>
 <ul>
-<li><code>深入浅出Rust</code> -- 据说适合初学者。</li>
-<li><code>Rust编程之道</code> -- 原理讲解清晰。</li>
+<li><code>微服务架构</code>: 将复杂的系统使用组件化的方式进行拆分，并使用轻量级通讯方式进行整合的一种设计方法。</li>
+<li><code>微服务</code>: 通过这种架构设计方法拆分出来的一个独立的组件化的小应用。</li>
+<li><code>微服务框架</code>: 实现微服务开发的第三方工具 </li>
 </ul>
-<h4 id="3rust">3.<a href="https://doc.rust-lang.org/std/">Rust标准库文档</a></h4>
-<h2 id="_2">关于编译</h2>
-<p>hello world程序可以使用rustc，但是工程级rust项目官方建议使用<code>cargo</code>。</p>
-<h2 id="rust_1">Rust新功能历程</h2>
-<pre><code>RFC(Request For Comments) -&gt; Nightly -&gt; Beta -&gt; Stable
-</code></pre>
-
-<h2 id="cargo">Cargo</h2>
-<p>Cargo 是 Rust 的构建系统和包管理工具。</p>
-<p>主要负责三个工作：</p>
-<pre><code>构建build代码。
-下载你代码 依赖dependencies 的 包装箱crate。
-编译 你的源码 和 包装箱crate。
-</code></pre>
-<p>检查Cargo是否正常安装可以用这句'cargo --version'</p>
-<h3 id="_3">推荐阅读</h3>
-<ul>
-<li><a href="https://blog.csdn.net/mint_ying/article/details/79112042">rust cargo使用</a></li>
-</ul>
-<h3 id="cargorust">使用Cargo的Rust项目结构</h3>
-<pre><code>project_name
-|-  src                     // 放置源文件的目录
-    |- main.rs / lib.rs     // 源文件
-|-  Cargo.toml              // Cargo的配置文件
-</code></pre>
-
-<p>要使用cargo工具，必须在项目的根目录下建有其配置文件。(注意: Cargo.toml的C是大写)</p>
-<h3 id="cargotoml">Cargo.toml</h3>
-<p>TOML（Tom’s Obvious Minimal Language）格式。简单理解就是ini的进化版。</p>
               
             </div>
           </div>
@@ -516,10 +486,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../proxy/" class="btn btn-neutral float-right" title="Proxy 代理">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../scrum/" class="btn btn-neutral float-right" title="Scrum">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../java/" class="btn btn-neutral" title="Java"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ddd/" class="btn btn-neutral" title="DDD 领域驱动设计"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -545,10 +515,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../java/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../ddd/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../proxy/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../scrum/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
