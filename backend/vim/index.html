@@ -269,9 +269,20 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#u">按u键为撤销上一步操作</a></li>
+            <li><a class="toctree-l4" href="#u">按小写u键为撤销上一步操作</a></li>
         
             <li><a class="toctree-l4" href="#ctrlr">按ctrl+r则为反撤销操作</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#vim_1">Vim 批量注释</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#1">方法1（常用）</a></li>
+        
+            <li><a class="toctree-l4" href="#2">方法2 (利用全局替换)</a></li>
         
         </ul>
     
@@ -483,8 +494,29 @@
                 <h2 id="vim">Vim 快捷操作</h2>
 <p>一般来说，线上开发环境大家都习惯用命令行修改，故基本的Vim快捷操作还是要熟悉的。</p>
 <h2 id="_1">一般模式</h2>
-<h3 id="u">按u键为撤销上一步操作</h3>
+<h3 id="u">按小写u键为撤销上一步操作</h3>
 <h3 id="ctrlr">按ctrl+r则为反撤销操作</h3>
+<h2 id="vim_1">Vim 批量注释</h2>
+<h3 id="1">方法1（常用）</h3>
+<pre><code>1.ctrl+v 进入列编辑模式，向下或向上移动光标，把需要注释的行的开头标记起来。
+2.按大写的I(shift+i),再插入注释符,比如&quot;//&quot;。
+3.再按Esc,就会在选中的行前面都插入&quot;//&quot;，即全部注释了。
+</code></pre>
+
+<h3 id="2">方法2 (利用全局替换)</h3>
+<h4 id="_2">行首添加注释</h4>
+<p>使用下面命令在指定的行首添加注释：</p>
+<p><code>:起始行号,结束行号s/^/注释符/g</code></p>
+<h4 id="_3">取消注释</h4>
+<p><code>:起始行号,结束行号s/^注释符//g</code></p>
+<pre><code>1.在10 - 20行添加 // 注释
+
+:10,50s#^#//#g
+
+2.在10 - 20行删除 // 注释
+
+:10,20s#^//##g
+</code></pre>
               
             </div>
           </div>
