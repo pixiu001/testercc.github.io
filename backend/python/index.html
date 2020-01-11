@@ -143,6 +143,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../../secdev/dev_sec_ops/">DevSecOps</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../../secdev/enterprise_security/">Enterprise Security 企业安全</a>
                 </li>
                 <li class="">
@@ -237,6 +241,15 @@
     
 
     <li class="toctree-l3"><a href="#flask">Flask</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_1">程序分析</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#cprofile">cProfile</a></li>
+        
+        </ul>
     
 
     </ul>
@@ -531,6 +544,33 @@ COMMIT;
 <p>raw_id_fields属性的作用<code>显示外键的详细信息</code>，如果没有注释掉，支持外键字段搜索。<a href="https://www.cnblogs.com/figofeng/p/8689064.html">参考这里</a></p>
 <h1 id="flask">Flask</h1>
 <p><a href="https://read.helloflask.com/">速成推荐--Flask入门教程</a></p>
+<h1 id="_1">程序分析</h1>
+<h2 id="cprofile">cProfile</h2>
+<pre><code>cProfile用法：
+cd ~/pw_python/imooc
+
+# 分析结果在test_thread.out
+python -m cProfile -o test_thread.out thread_safe.py   
+
+# 展示分析结果
+python -c &quot;import pstats; p=pstats.Stats('test_thread.out'); p.print_stats()&quot;   
+
+# 查看排序后的运行结果
+python -c &quot;import pstats; p=pstats.Stats('test_thread.out'); p.sort_stats('time').print_stats()&quot;  
+</code></pre>
+
+<p>相关分析参数的意义：</p>
+<pre><code>ncalls ： 函数的被调用次数
+tottime ：函数总计运行时间，除去函数中调用的函数运行时间
+percall ：函数运行一次的平均时间，等于tottime/ncalls
+cumtime ：函数总计运行时间，含调用的函数运行时间
+percall ：函数运行一次的平均时间，等于cumtime/ncalls
+filename:lineno(function) 函数所在的文件名，函数的行号，函数名
+</code></pre>
+
+<p>ref：
+这个例子是python2的，但是基本python3可以参考
+<a href="https://www.cnblogs.com/MikeZhang/p/pythonProfile20170907.html">python程序之profile分析</a></p>
               
             </div>
           </div>

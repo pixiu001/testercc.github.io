@@ -143,6 +143,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../../secdev/dev_sec_ops/">DevSecOps</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../../secdev/enterprise_security/">Enterprise Security 企业安全</a>
                 </li>
                 <li class="">
@@ -377,6 +381,14 @@
         
             <li><a class="toctree-l4" href="#_2">面试题</a></li>
         
+            <li><a class="toctree-l4" href="#_3">进程间的通信方式</a></li>
+        
+            <li><a class="toctree-l4" href="#_4">为什么使用消息队列？</a></li>
+        
+            <li><a class="toctree-l4" href="#_5">消息队列有什么优点和缺点？</a></li>
+        
+            <li><a class="toctree-l4" href="#kafkaactivemqrabbitmqrocketmq">Kafka、ActiveMQ、RabbitMQ、RocketMQ 都有什么区别，以及适合哪些场景？</a></li>
+        
             <li><a class="toctree-l4" href="#python2python3">Python2和Python3的区别</a></li>
         
         </ul>
@@ -479,12 +491,34 @@
               
                 <h1 id="_1">后端开发面试知识整理</h1>
 <p>后端面试大部分内容其实是相通的，一般除了<code>编程语言和算法</code>外，还会涉及<code>高并发、分布式、高可用、微服务</code>等领域知识。</p>
-<p><a href="https://www.bilibili.com/video/av47912359/">中华石杉-互联网Java工程师面试突击训练</a></p>
-<p><a href="https://doocs.github.io/advanced-java/">互联网 Java 工程师进阶知识完全扫盲</a></p>
+<ul>
+<li><a href="https://www.bilibili.com/video/av47912359/">中华石杉-互联网Java工程师面试突击训练</a></li>
+<li><a href="https://doocs.github.io/advanced-java/">互联网 Java 工程师进阶知识完全扫盲</a></li>
+<li><a href="https://cyc2018.github.io/CS-Notes/">CS-Notes 技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计、Java、Python、C++</a></li>
+<li><a href="https://github.com/CyC2018/Backend-Interview-Guide/blob/master/doc/%E4%B8%80%E6%96%87%E5%B8%AE%E4%BD%A0%E7%90%86%E6%B8%85%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9.md">一文帮你理清面试知识点</a></li>
+<li><a href="https://github.com/jwasham/coding-interview-university">coding-interview-university</a> -- A complete computer science study plan to become a software engineer.</li>
+</ul>
 <h2 id="_2">面试题</h2>
-<p>为什么使用消息队列？
-消息队列有什么优点和缺点？
-Kafka、ActiveMQ、RabbitMQ、RocketMQ 都有什么区别，以及适合哪些场景？</p>
+<h2 id="_3">进程间的通信方式</h2>
+<p>一般有5种：</p>
+<h4 id="1">1.管道</h4>
+<p>举例：ls | grep 1  # 将ls拿到的结果作为grep 1进程的输入，实现了进程间的通信，| 就是管道符。</p>
+<h4 id="2">2.消息队列</h4>
+<p>内核创建的一个消息队列，操作系统中的多个进程都可以操作这个消息队列，可以往里面发送消息，也可以从里面接收消息。</p>
+<h4 id="3">3.共享内存</h4>
+<p>每个进程在访问内存的时候都有一个虚拟内存地址和物理内存地址的映射，一般2个进程的虚拟内存地址可以一样，但物理内存地址不一样。
+共享地址是将2个进程映射的物理内存地址也变成一样的，此时，2个进程可以访问同一块物理内存，于是借助这块物理内存就可以实现通信了。</p>
+<h4 id="4">4.套接字</h4>
+<p>很常见，比如通过3306端口访问mysql数据库。访问数据库的进程和数据库进程之间的通信就是通过3306这个端口建立的TCP套接字。
+但如果是本机访问mysql，不会走TCP套接字，而是走Linux底层的套接字。</p>
+<h4 id="5">5.信号量</h4>
+<p>类似计数器，控制多个进程对同一个共享资源的访问，最多这个资源能被多少个进程访问，起到控制数量锁的机制。</p>
+<h4 id="6">6.信号</h4>
+<p>一个进程可以向另一个进程发送一个信号，这个进程可以去处理这个信号。
+Linux系统中可以通过<code>kill -l</code>指令列出所有信号。（64种）<a href="https://www.bilibili.com/video/av83003758">具体看这里</a></p>
+<h2 id="_4">为什么使用消息队列？</h2>
+<h2 id="_5">消息队列有什么优点和缺点？</h2>
+<h2 id="kafkaactivemqrabbitmqrocketmq">Kafka、ActiveMQ、RabbitMQ、RocketMQ 都有什么区别，以及适合哪些场景？</h2>
 <h2 id="python2python3">Python2和Python3的区别</h2>
 <p>（目前算是Python开发必问，以后大概不会了，毕竟官方也准备2020后不再维护Python2了）</p>
 <pre><code>python2中有long类型
