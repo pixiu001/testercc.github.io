@@ -516,6 +516,11 @@
 <h4 id="6">6.信号</h4>
 <p>一个进程可以向另一个进程发送一个信号，这个进程可以去处理这个信号。
 Linux系统中可以通过<code>kill -l</code>指令列出所有信号。（64种）<a href="https://www.bilibili.com/video/av83003758">具体看这里</a></p>
+<pre><code>SIGNINT   Ctrl+C
+SIGNTERM  kill pid_number
+SIGNKILL  kill -9 pid_number, 强制杀死程序
+</code></pre>
+
 <h2 id="_4">为什么使用消息队列？</h2>
 <h2 id="_5">消息队列有什么优点和缺点？</h2>
 <h2 id="kafkaactivemqrabbitmqrocketmq">Kafka、ActiveMQ、RabbitMQ、RocketMQ 都有什么区别，以及适合哪些场景？</h2>

@@ -236,6 +236,15 @@
     <li class="toctree-l3"><a href="#_1">学习推荐</a></li>
     
 
+    <li class="toctree-l3"><a href="#java_1">java打包</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#pctest">命令行打包名为pctest的项目</a></li>
+        
+        </ul>
+    
+
     </ul>
                 </li>
                 <li class="">
@@ -480,6 +489,12 @@
 <p>后端老大哥地位不可动摇。</p>
 <h1 id="_1">学习推荐</h1>
 <p><a href="https://hyperskill.org/knowledge-map">Java秘籍一本</a> -- 每天半小时到一小时， 一年精通Java。</p>
+<h1 id="java_1">java打包</h1>
+<h2 id="pctest">命令行打包名为pctest的项目</h2>
+<pre><code>jar -cvf 1.jar .
+
+java -jar 1.jar    # 如果提示没有主属性，可以用解压软件打开1.jar文件，修改META-INF/MANIFEST.MF内容，指定主类。比如加上: Main-Class: com.company.Main
+</code></pre>
               
             </div>
           </div>

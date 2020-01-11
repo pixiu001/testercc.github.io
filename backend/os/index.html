@@ -500,11 +500,16 @@
 
 <p>第二个命令能在最后显示一个Total大小，即当前目录的总大小</p>
 <h3 id="linux">Linux</h3>
-<h4 id="_2">杀死进程</h4>
+<h4 id="_2">常用命令</h4>
+<pre><code>jps    
+</code></pre>
+
+<h4 id="_3">杀死进程</h4>
 <pre><code>Linux:
-kill -9 pid_number
+kill -9 pid_number   # 这个kill信号无法被程序处理，会执行强制杀死
 
 Mac OS:
+kill -9 pid_number  
 kill pid_number
 
 Windows:
