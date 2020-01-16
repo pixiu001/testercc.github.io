@@ -68,10 +68,6 @@
                     
     <a class="" href="../../algorithm/learn_guide/">学习指南</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../../algorithm/mooc_notes/">MOOC笔记</a>
-                </li>
     </ul>
 	    </li>
           
@@ -249,6 +245,8 @@
         
             <li><a class="toctree-l4" href="#cprofile">cProfile</a></li>
         
+            <li><a class="toctree-l4" href="#pyenv">pyenv常用命令</a></li>
+        
         </ul>
     
 
@@ -323,6 +321,21 @@
                 <li class="">
                     
     <a class="" href="../../frontend/learn_guide/">学习指南</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">MOOC Notes 幕课笔记</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../mooc_notes/pku_datastructure/">数据结构与算法Python版</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../mooc_notes/CS_basic/">编程必备基础知识</a>
                 </li>
     </ul>
 	    </li>
@@ -571,6 +584,35 @@ filename:lineno(function) 函数所在的文件名，函数的行号，函数名
 <p>ref：
 这个例子是python2的，但是基本python3可以参考
 <a href="https://www.cnblogs.com/MikeZhang/p/pythonProfile20170907.html">python程序之profile分析</a></p>
+<h2 id="pyenv">pyenv常用命令</h2>
+<h4 id="0pyenvpython">0.显示pyenv已安装的python版本</h4>
+<pre><code>ubuntu@xxx:/data/web/auto_post_event_v2$ pyenv versions
+* system (set by /home/ubuntu/.pyenv/version)
+  3.6.5
+  3.6.5/envs/academic_spider_admin_env   # 这个是指定创建的，不用管
+  academic_spider_admin_env    # 这个是指定创建的，不用管
+</code></pre>
+
+<h4 id="1">1.创建虚拟环境</h4>
+<pre><code>ubuntu@xxx:/data/web/auto_post_event_v2$ pyenv virtualenv 3.6.5 auto_post_event_v2
+Requirement already satisfied: setuptools in /home/ubuntu/.pyenv/versions/3.6.5/envs/auto_post_event_v2/lib/python3.6/site-packages
+Requirement already satisfied: pip in /home/ubuntu/.pyenv/versions/3.6.5/envs/auto_post_event_v2/lib/python3.6/site-packages
+
+ubuntu@xxx:/data/web/auto_post_event_v2$ pyenv versions
+* system (set by /home/ubuntu/.pyenv/version)
+  3.6.5
+  3.6.5/envs/academic_spider_admin_env
+  3.6.5/envs/auto_post_event_v2
+  academic_spider_admin_env
+  auto_post_event_v2
+</code></pre>
+
+<h4 id="2">2.激活虚拟环境</h4>
+<pre><code>ubuntu@xxx:/data/web/auto_post_event_v2$ pyenv activate auto_post_event_v2
+
+pyenv-virtualenv: prompt changing will be removed from future release. configure `export PYENV_VIRTUALENV_DISABLE_PROMPT=1' to simulate the behavior.
+(auto_post_event_v2) ubuntu@xxx:/data/web/auto_post_event_v2$
+</code></pre>
               
             </div>
           </div>

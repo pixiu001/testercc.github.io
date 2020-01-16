@@ -68,10 +68,6 @@
                     
     <a class="" href="../../algorithm/learn_guide/">学习指南</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../../algorithm/mooc_notes/">MOOC笔记</a>
-                </li>
     </ul>
 	    </li>
           
@@ -88,86 +84,25 @@
     <a class="current" href="./">Design Pattern 设计模式</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#23">23种经验设计模式索引对照表</a></li>
-    
-
-    <li class="toctree-l3"><a href="#_1">阅读学习推荐</a></li>
-    
-
-    <li class="toctree-l3"><a href="#_2">观察者模式（监听模式）</a></li>
+    <li class="toctree-l3"><a href="#_1">设计模式自学笔记</a></li>
     
         <ul>
         
-            <li><a class="toctree-l4" href="#_3">定义</a></li>
+            <li><a class="toctree-l4" href="#23">23种经验设计模式索引对照表</a></li>
         
-            <li><a class="toctree-l4" href="#_4">设计要点</a></li>
+            <li><a class="toctree-l4" href="#_3">阅读学习推荐</a></li>
         
-            <li><a class="toctree-l4" href="#_5">应用场景</a></li>
+            <li><a class="toctree-l4" href="#_4">观察者模式（监听模式）</a></li>
         
-        </ul>
-    
-
-    <li class="toctree-l3"><a href="#_6">状态模式</a></li>
-    
-        <ul>
+            <li><a class="toctree-l4" href="#_8">状态模式</a></li>
         
-            <li><a class="toctree-l4" href="#_7">定义</a></li>
+            <li><a class="toctree-l4" href="#_12">中介模式（调停模式）</a></li>
         
-            <li><a class="toctree-l4" href="#_8">设计要点</a></li>
+            <li><a class="toctree-l4" href="#_16">装饰模式</a></li>
         
-            <li><a class="toctree-l4" href="#_9">应用场景</a></li>
+            <li><a class="toctree-l4" href="#_20">单例模式</a></li>
         
-        </ul>
-    
-
-    <li class="toctree-l3"><a href="#_10">中介模式（调停模式）</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#_11">定义</a></li>
-        
-            <li><a class="toctree-l4" href="#_12">设计要点</a></li>
-        
-            <li><a class="toctree-l4" href="#_13">应用场景</a></li>
-        
-        </ul>
-    
-
-    <li class="toctree-l3"><a href="#_14">装饰模式</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#_15">定义</a></li>
-        
-            <li><a class="toctree-l4" href="#_16">设计要点</a></li>
-        
-            <li><a class="toctree-l4" href="#python">Python装饰器 与 装饰模式 的区别</a></li>
-        
-            <li><a class="toctree-l4" href="#_17">应用场景</a></li>
-        
-        </ul>
-    
-
-    <li class="toctree-l3"><a href="#_18">单例模式</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#_19">定义</a></li>
-        
-            <li><a class="toctree-l4" href="#_20">单例模式的实现方式</a></li>
-        
-            <li><a class="toctree-l4" href="#_21">应用场景</a></li>
-        
-        </ul>
-    
-
-    <li class="toctree-l3"><a href="#_22">原型模式（克隆模式）</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#_23">定义</a></li>
-        
-            <li><a class="toctree-l4" href="#_24">应用场景</a></li>
+            <li><a class="toctree-l4" href="#_24">原型模式（克隆模式）</a></li>
         
         </ul>
     
@@ -383,6 +318,21 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">MOOC Notes 幕课笔记</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../mooc_notes/pku_datastructure/">数据结构与算法Python版</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../mooc_notes/CS_basic/">编程必备基础知识</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">Test Development 测试开发</span>
     <ul class="subnav">
                 <li class="">
@@ -554,9 +504,50 @@
           <div role="main">
             <div class="section">
               
-                <p>初学者其实不推荐一开始就是学习设计模式，建议至少等基本语法和开发框架都比较熟悉后再来学习这部分知识，并学以致用，强化理解和记忆。</p>
+                <h1 id="_1">设计模式自学笔记</h1>
+<p>初学者其实不推荐一开始就是学习设计模式，建议至少等基本语法和开发框架都比较熟悉后再来学习这部分知识，并学以致用，强化理解和记忆。</p>
 <h2 id="23">23种经验设计模式索引对照表</h2>
-<h2 id="_1">阅读学习推荐</h2>
+<pre><code>创建型模式用来处理对象的创建过程，主要包含以下5种设计模式：
+工厂方法模式（Factory Method Pattern）
+抽象工厂模式（Abstract Factory Pattern）
+建造者模式（Builder Pattern）
+原型模式（Prototype Pattern）
+单例模式（Singleton Pattern）
+
+结构型模式用来处理类或者对象的组合，主要包含以下7种设计模式：
+适配器模式（Adapter Pattern）
+桥接模式（Bridge Pattern）
+组合模式（Composite Pattern）
+装饰者模式（Decorator Pattern）
+外观模式（Facade Pattern）
+享元模式（Flyweight Pattern）
+代理模式（Proxy Pattern）
+
+行为型模式用来对类或对象怎样交互和怎样分配职责进行描述，主要包含以下11种设计模式：
+责任链模式（Chain of Responsibility Pattern）
+命令模式（Command Pattern）
+解释器模式（Interpreter Pattern）
+迭代器模式（Iterator Pattern）
+中介者模式（Mediator Pattern）
+备忘录模式（Memento Pattern）
+观察者模式（Observer Pattern）
+状态模式（State Pattern）
+策略模式（Strategy Pattern）
+模板方法模式（Template Method Pattern）
+访问者模式（Visitor Pattern）
+</code></pre>
+
+<h4 id="_2">其中比较常用的设计模式</h4>
+<p>简单工厂模式（Simple Factory Pattern）
+建造者模式（Builder Pattern）
+策略（Strategy）模式
+工厂方法模式（Factory Method Pattern）
+抽象工厂模式（Abstract Factory）
+命令模式（Command Pattern）
+模版方法（Template Method）
+单件模式（Single Pattern）
+原型模式（Prototype Pattern）</p>
+<h2 id="_3">阅读学习推荐</h2>
 <ul>
 <li>
 <p><code>大话设计模式</code> -- 入门经典读物</p>
@@ -571,12 +562,12 @@
 <p><code>Java设计模式：23种设计模式全面解析（超级详细）</code>  -- 小伙伴推荐的，<a href="http://c.biancheng.net/design_pattern/">点击直达</a></p>
 </li>
 </ul>
-<h2 id="_2">观察者模式（监听模式）</h2>
-<h3 id="_3">定义</h3>
+<h2 id="_4">观察者模式（监听模式）</h2>
+<h3 id="_5">定义</h3>
 <p><code>对象间定义一种一对多的依赖关系，当这个对象状态发生改变时，所有依赖它（观察它或监听它）的对象都会被通知并自动更新。</code></p>
 <p>观察者模式是对象的行为模式，又叫 <code>发布/订阅(Publish/Subscribe)模式</code>、<code>模型/视图(Model/View)模式</code>、<code>源/监听器(Source/Listener)模式</code>、<code>从属者(Dependents)模式</code>。</p>
 <p>观察者模式的核心：<strong>在被观察者和观察者之间建立一种自动触发的关系。</strong></p>
-<h3 id="_4">设计要点</h3>
+<h3 id="_6">设计要点</h3>
 <p>1.设计要点</p>
 <p>(1) 明确<code>谁是观察者</code>和<code>谁是被观察者</code>。 （一般一个被观察者有多个观察者）
 (2) 被观察者在发送广播通知时， 无须指定具体的观察者， 观察者可以自己决定是否订阅Subject的通知
@@ -592,16 +583,16 @@
 <li>(2)拉模型</li>
 </ul>
 <p>被观察者在通知观察者的时候，只<code>传递少量信息</code>。如果观察者需要更具体的信息，由观察者主动到被观察者对象中获取，相当于 观察者从被观察对象中拉数据。</p>
-<h3 id="_5">应用场景</h3>
+<h3 id="_7">应用场景</h3>
 <p>[1] 对一个对象状态或者数据的更新需要其它对象同步更新，或者一个对象的更新需要依赖另一个对象的更新。</p>
 <p>[2] 对象仅需要将自己的更新通知给其它对象，而不需要知道其它对象的细节。如：消息推送。</p>
 <p>业务举例：手机中各种App的消息推送，Server是被观察者，各个手机App Client是观察者。</p>
-<h2 id="_6">状态模式</h2>
-<h3 id="_7">定义</h3>
+<h2 id="_8">状态模式</h2>
+<h3 id="_9">定义</h3>
 <p><code>允许一个对象在其内部状态发生改变时改变其行为，使这个对象看上去就像改变了它的类型一样。</code></p>
 <p>状态模式又称为<code>对象的行为模式</code>。</p>
 <p>状态模式的核心：<strong>一个事物（对象）有多种状态，在不同的状态下所表现出来的行为和属性不一样。</strong></p>
-<h3 id="_8">设计要点</h3>
+<h3 id="_10">设计要点</h3>
 <p>1.设计要点
 (1)在实现时，实现的场景状态有时候会非常复杂，决定状态变化的因素也非常多，故可把决定状态变化的属性单独抽象成一个类StateInfo，这样当判断状态属性是否符合当前的状态时就可以传入更多的信息。
 (2)每一种状态应当只有唯一的实例。</p>
@@ -620,13 +611,13 @@
 
 </code></pre>
 
-<h3 id="_9">应用场景</h3>
+<h3 id="_11">应用场景</h3>
 <p>[1] 一个对象的行为取决于它的状态，并且它在运行时可能经常改变它的状态，从而改变它的行为。 </p>
 <p>[2] 一个操作中含有庞大的多分支的条件语句，这些分支依赖于该对象的状态，且每一个分支的业务逻辑都非常复杂时，则可以使用状态模式来拆分不同的分支逻辑，使程序有更好的可读性和可维护性。</p>
-<h2 id="_10">中介模式（调停模式）</h2>
-<h3 id="_11">定义</h3>
+<h2 id="_12">中介模式（调停模式）</h2>
+<h3 id="_13">定义</h3>
 <p><code>用一个中介对象来封装一系列的对象交互，中介者使各对象不需要显式地相互引用，从而使其耦合松散，且可以独立地改变它们之间的交互。</code></p>
-<h3 id="_12">设计要点</h3>
+<h3 id="_14">设计要点</h3>
 <p>1.设计要点</p>
 <p>设计时要找到并区分这3个角色：</p>
 <p>(1) 交互对象(InteractiveObject): 要进行交互的一系列对象。
@@ -643,15 +634,15 @@
 [2] 中介者出问题会导致多个使用者同时出问题。
 </code></pre>
 
-<h3 id="_13">应用场景</h3>
+<h3 id="_15">应用场景</h3>
 <p>[1] 一组对象以定义良好但复杂的方式进行通信，但产生的相互依赖关系结构混乱且难以理解。</p>
 <p>[2] 一个对象引用其它很多对象，并且直接与这些对象通信，导致难以复用该对象。</p>
 <p>[3] 想通过一个中间类来封装多个类中的行为，同时又不想生成太多的子类。</p>
-<h2 id="_14">装饰模式</h2>
-<h3 id="_15">定义</h3>
+<h2 id="_16">装饰模式</h2>
+<h3 id="_17">定义</h3>
 <p>动态地给一个对象增加一些额外的职责。就拓展对象来说，装饰模式 比 成为子类的方式 更为灵活。</p>
 <p>Python中的装饰器，请见Python相关章节笔记。</p>
-<h3 id="_16">设计要点</h3>
+<h3 id="_18">设计要点</h3>
 <p>1.设计要点</p>
 <p>2.装饰模式的优缺点</p>
 <pre><code>优点：
@@ -692,21 +683,21 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_17">应用场景</h3>
+<h3 id="_19">应用场景</h3>
 <p>[1] 有大量独立的扩展，为支持每一种组合将产生大量的子类，使得子类数目呈爆炸性增长时。</p>
 <p>[2] 需要动态地增加或撤销功能时。</p>
 <p>[3] 不能采用生成子类的方法进行扩充时，类的定义不能用于生成子类（如：Java中的Final类）</p>
-<h2 id="_18">单例模式</h2>
-<h3 id="_19">定义</h3>
+<h2 id="_20">单例模式</h2>
+<h3 id="_21">定义</h3>
 <p><code>确保一个类只有一个实例，并且提供一个访问它的全局方法。</code></p>
-<h3 id="_20">单例模式的实现方式</h3>
+<h3 id="_22">单例模式的实现方式</h3>
 <p>python 4种 （带补充）</p>
-<h3 id="_21">应用场景</h3>
+<h3 id="_23">应用场景</h3>
 <p>[1] 希望这个类只有一个且只能有一个实例。</p>
 <p>[2] 项目中的一些全局管理类(Manager)可以用单例模式来实现。</p>
-<h2 id="_22">原型模式（克隆模式）</h2>
-<h3 id="_23">定义</h3>
-<h3 id="_24">应用场景</h3>
+<h2 id="_24">原型模式（克隆模式）</h2>
+<h3 id="_25">定义</h3>
+<h3 id="_26">应用场景</h3>
               
             </div>
           </div>
