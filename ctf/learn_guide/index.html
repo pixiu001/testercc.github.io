@@ -179,6 +179,10 @@
                     
     <a class="" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../../pentest/xss/">XSS 跨站脚本攻击</a>
+                </li>
     </ul>
 	    </li>
           
@@ -203,9 +207,15 @@
         
             <li><a class="toctree-l4" href="#ctf_3">如何入门CTF</a></li>
         
+            <li><a class="toctree-l4" href="#ctf_4">CTF学习</a></li>
+        
+            <li><a class="toctree-l4" href="#ctf_5">CTF团队建设</a></li>
+        
+            <li><a class="toctree-l4" href="#ctf_6">在线CTF练习</a></li>
+        
             <li><a class="toctree-l4" href="#attacking-and-defensive">企业级攻防演练attacking and defensive</a></li>
         
-            <li><a class="toctree-l4" href="#_2">开源推荐</a></li>
+            <li><a class="toctree-l4" href="#_5">开源推荐</a></li>
         
         </ul>
     
@@ -525,14 +535,119 @@
 <li><code>PWN</code> -- 对程序的逻辑分析，漏洞利用（常见windows, linux平台下）</li>
 <li><code>Misc</code> -- 俗称“杂项”，范围很广涉及计算机取证、数据恢复、社会工程学、大数据等，个别题目相当烧脑。</li>
 <li><code>Rerverse</code> -- 二进制，逆向分析、破解等相关，涵盖win、linux、Android等平台。</li>
-<li><code>PPC</code> -- 编程类，一般难度适中。</li>
+<li><code>Mobile</code> -- 移动端，涉及移动端apk解题等。</li>
 </ul>
 <h2 id="ctf_2">为什么要打CTF</h2>
 <p>练习常用基本技术、拓展渗透测试逻辑思维</p>
 <h2 id="ctf_3">如何入门CTF</h2>
 <p>作为一个CTF萌新，其实前言万语千言我只想说一句：兴趣是最好的老师！</p>
+<h2 id="ctf_4">CTF学习</h2>
+<p>根据分类概略介绍需要学习的知识，有了这些基础，以后深入学习便是水到渠成。</p>
+<ul>
+<li><code>PWN/RE</code> -- 汇编、指令集、C、C++、算法、IDA、OD、栈/堆溢出......</li>
+<li><code>WEB</code> -- 入门阶段：各类简单漏洞、burpsuite、php、python，深入阶段：Pwnweb、各类代码审计、系统提权，大型工具开发......</li>
+</ul>
+<p>据某战队队长评价：</p>
+<pre><code>WEB入门最简单
+学二进制觉得WEB很简单
+学RE的一定能学好二进制
+</code></pre>
+
+<h4 id="0">如何从0学习</h4>
+<p>1.题必须要坚持刷，并学会总结，从量变到质变。</p>
+<p>2.掌握基本准备思路。</p>
+<pre><code>出题人角度：
+1.以最新漏洞出题
+2.以最新发表的paper出题（特别是Crypto类的）
+3.上次碰到一个实际案例，正好拿来复现下（趋势明显）
+
+PS:一切以脑洞为原则的出题人都不是好出题人。
+</code></pre>
+
+<pre><code>做题人角度：
+1.功夫在平时，记得追踪最新漏洞
+2.不要期望出题人的点你都遇到过
+3.要有充足耐心，仔细观察每一个点
+
+PS:本地各种CTF工具记得提前准备好，以防线下赛断网（局域网）环境操作。
+</code></pre>
+
+<p>3.多参加CTF比赛，特别是高质量赛事</p>
+<p>国际赛事: <code>defcon、HITCON、0CTF、RWCTF等</code></p>
+<p>国内赛事: <code>护网杯，各类赛事(参与度好，题目不太难，但是质量参差不齐)</code></p>
+<p>4.保持良好的参赛心态</p>
+<ul>
+<li>一颗永不放弃的心</li>
+<li>平常积累一些trick（看大佬的blog和writeup,特别是CTFtime的wp，要善于学习他人的思路）</li>
+<li>不要期望出题人的出题点你都见过</li>
+<li>仔细观察每一个点</li>
+<li>学到东西才是关键</li>
+<li>日常不要仅限于看过，要尽量去复现</li>
+<li>有时候不是你不会，而是没有坚持研究下去</li>
+<li>多研究，以赛代练</li>
+<li>扩大知识面(理解常见漏洞原理，学习开发，复现题目代码等)</li>
+</ul>
+<h4 id="web">如何学习Web</h4>
+<pre><code>1.前期书籍+刷题
+2.巩固所学的各类基础漏洞知识
+3.尝试利用PHP、Python等语言去编写exp、工具、平台等
+4.真实漏洞的复现（各类CVE、CMS漏洞等）
+5.从做题人尝试转变为出题人
+</code></pre>
+
+<h4 id="webawdattack-with-defence">Web选手如何去打AWD(Attack With Defence)</h4>
+<ul>
+<li>AWD考察的是什么？</li>
+</ul>
+<pre><code>1.漏洞的审查能力
+2.快速编写脚本的能力
+3.权限维持的能力
+</code></pre>
+
+<ul>
+<li>WEB选手需要什么？</li>
+</ul>
+<pre><code>1.丰富的代码审计技巧
+2.熟练运用python
+3.一整套自己的权限维持流程
+</code></pre>
+
+<h2 id="ctf_5">CTF团队建设</h2>
+<p>虽然自娱自乐打CTF的老赛棍不乏一枝独秀，但若能组建一个相对稳定的CTF团队，无论是从学习还是参赛角度来说，那都是极好的。</p>
+<h4 id="_2">需要什么？</h4>
+<pre><code>1.一个灵魂人物（队长，技术最好别太差）
+2.团结一致
+3.学校、老师的支持
+4.定期的训练
+5.不气馁，相信自己以及队友
+6.定期总结分享
+7.可以使用看板工具辅助管理好任务
+</code></pre>
+
+<h4 id="_3">团队人员太多如何处理？</h4>
+<pre><code>0.确定好入团流程，严进
+1.定期筛选
+2.老选手的传承
+</code></pre>
+
+<h4 id="_4">如何选人？</h4>
+<pre><code>1.前期的定期培训
+2.内部选拔赛，选择有特长和技术全面的人
+3.面试注意：乐于分享；积极学习；可以傲但人品要好；不是一个利益选手
+
+PS:其实最重要的还是社长。社长肩负压力和责任，不一定技术能力最强，但是一定要有一颗为大家着想的心。
+</code></pre>
+
+<h2 id="ctf_6">在线CTF练习</h2>
+<ul>
+<li><a href="https://adworld.xctf.org.cn/task">攻防世界</a> -- 目前发现的最适合CTF新人入门且免费的平台，强烈推荐，优先把这上面的题刷完。</li>
+<li><a href="https://www.ichunqiu.com/battalion">i春秋CTF</a> -- 虽然最近没怎么更新题库，但有不少比赛真题可以刷。</li>
+<li><a href="https://ctftime.org/task/">CTFtime</a> -- 要参与国际赛事建议习惯在这个平台刷题，熟悉英文出题模式，平台上也有很多国际比赛可以参与，需科学访问。</li>
+<li><a href="https://ctf.bugku.com/challenges">Bugku旧题库</a> -- 现在的新题库需要付费，旧题库还是有不少题可以刷刷的。</li>
+</ul>
 <h2 id="attacking-and-defensive">企业级攻防演练attacking and defensive</h2>
-<h2 id="_2">开源推荐</h2>
+<p>涉及企业内部红蓝攻防演练，网上可收集资料较少，后续补充。详见 <a href="../attack_and_defence/">攻防演练</a></p>
+<h2 id="_5">开源推荐</h2>
 <ul>
 <li><a href="https://ctf-wiki.github.io/ctf-wiki/">CTF Wiki</a></li>
 <li><a href="https://github.com/ctf-wiki/ctf-challenges">ctf-challenges</a></li>
@@ -548,7 +663,7 @@
         <a href="../attack_and_defence/" class="btn btn-neutral float-right" title="实战攻防演练">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../pentest/brute_force/" class="btn btn-neutral" title="Brute Force 暴力破解"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../pentest/xss/" class="btn btn-neutral" title="XSS 跨站脚本攻击"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -574,7 +689,7 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../pentest/brute_force/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../pentest/xss/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../attack_and_defence/" style="color: #fcfcfc">Next &raquo;</a></span>
