@@ -8,7 +8,7 @@
   
   <meta name="author" content="TesterCC">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>学习指南 - Security Development Notes</title>
+  <title>Cookie池设计 - Security Development Notes</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "\u5b66\u4e60\u6307\u5357";
-    var mkdocs_page_input_path = "secdev/learn_guide.md";
-    var mkdocs_page_url = "/secdev/learn_guide/";
+    var mkdocs_page_name = "Cookie\u6c60\u8bbe\u8ba1";
+    var mkdocs_page_input_path = "crawler/cookie_pool.md";
+    var mkdocs_page_url = "/crawler/cookie_pool/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -117,59 +117,37 @@
 		
     <span class="caption-text">Security Development 安全研发</span>
     <ul class="subnav">
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">学习指南</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#_1">安全研发相关笔记</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#_2">日常安全业务开发注意点</a></li>
-        
-            <li><a class="toctree-l4" href="#_4">安全开发流程</a></li>
-        
-            <li><a class="toctree-l4" href="#_5">推荐阅读</a></li>
-        
-            <li><a class="toctree-l4" href="#_6">安全岗位面试</a></li>
-        
-            <li><a class="toctree-l4" href="#devsecops">DevSecOps</a></li>
-        
-            <li><a class="toctree-l4" href="#linux">常规Linux安全设置</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../../secdev/learn_guide/">学习指南</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../sec_dev_lifecycle/">SDL 安全开发流程</a>
+    <a class="" href="../../secdev/sec_dev_lifecycle/">SDL 安全开发流程</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../open_source/">Opensource 开源项目推荐</a>
+    <a class="" href="../../secdev/open_source/">Opensource 开源项目推荐</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../skill_tree/">Skill Tree 技能树</a>
+    <a class="" href="../../secdev/skill_tree/">Skill Tree 技能树</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../zero_trust/">Zero Trust 零信任网络</a>
+    <a class="" href="../../secdev/zero_trust/">Zero Trust 零信任网络</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../dev_sec_ops/">DevSecOps</a>
+    <a class="" href="../../secdev/dev_sec_ops/">DevSecOps</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../enterprise_security/">Enterprise Security 企业安全</a>
+    <a class="" href="../../secdev/enterprise_security/">Enterprise Security 企业安全</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../ai_sec/">AI Sec 人工智能安全</a>
+    <a class="" href="../../secdev/ai_sec/">AI Sec 人工智能安全</a>
                 </li>
     </ul>
 	    </li>
@@ -377,9 +355,29 @@
 		
     <span class="caption-text">爬虫开发</span>
     <ul class="subnav">
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../crawler/cookie_pool/">Cookie池设计</a>
+    <a class="current" href="./">Cookie池设计</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#cookies">爬虫开发笔记之cookies池系统设计</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#cookies_1">什么是cookies池</a></li>
+        
+            <li><a class="toctree-l4" href="#cookie">为什么需要设计cookie池</a></li>
+        
+            <li><a class="toctree-l4" href="#cookie_1">cookie池的优点</a></li>
+        
+            <li><a class="toctree-l4" href="#cookie_2">cookie池系统设计架构</a></li>
+        
+            <li><a class="toctree-l4" href="#cookie_3">实现cookie池系统面临的挑战</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -521,11 +519,11 @@
     
       
         
-          <li>Security Development 安全研发 &raquo;</li>
+          <li>爬虫开发 &raquo;</li>
         
       
     
-    <li>学习指南</li>
+    <li>Cookie池设计</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -535,45 +533,39 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_1">安全研发相关笔记</h1>
-<p><a href="https://blog.knownsec.com/Knownsec_RD_Checklist/index.html">知道创宇研发技能表v3.1</a></p>
-<h2 id="_2">日常安全业务开发注意点</h2>
-<h3 id="_3">开发环境</h3>
-<ul>
-<li>代码使用git或git-flow进行管理，要有规范的代码提交流程</li>
-<li>定期做code review</li>
-<li>关键服务端口尽可能不要暴露到公网上</li>
-</ul>
-<h2 id="_4">安全开发流程</h2>
-<p>SDL，英文全称为Security Development Lifecycle, 即安全开发生命周期。最早由微软提出，在软件工程中实施，是帮助解决软件安全问题的办法。</p>
-<p>详见 <a href="../sec_dev_lifecycle/">安全开发流程(SDL)</a></p>
-<h2 id="_5">推荐阅读</h2>
-<ul>
-<li>《企业安全建设指南：金融行业安全架构与技术实践》 -- 甲方企业安全建设必读书目，经典书籍</li>
-<li>《零信任网络》-- 原版书名：Zero Trust, 目前市面上有中文翻译的就这本了，强烈推荐阅读学习</li>
-<li>《企业安全建设入门：基于开源软件打造企业网络安全》 -- 刘焱（兜哥）一本非AI向的安全书籍，个人觉得对于中小企业基于开源软件打造安全环境还是值得参考阅读的。</li>
-<li>《数据安全架构设计与实战》 --  着重讲解数据安全设计的书籍</li>
-</ul>
-<h2 id="_6">安全岗位面试</h2>
-<p>请见 <a href="../../interview/security/">安全岗位面试知识整理</a></p>
-<h2 id="devsecops">DevSecOps</h2>
-<p>请见 <a href="../dev_sec_ops/">DevSecOps</a></p>
-<h2 id="linux">常规Linux安全设置</h2>
-<h4 id="ping">禁止ping</h4>
-<p>这个方法永久生效，所以就不考虑临时生效、重启失效的方法了。</p>
-<pre><code class="shell">ubuntu 18.04有效（早期版本可能配置文件不同）
-
-1.修改系统配置
-vim /etc/sysctl.conf
-
-文件尾部追加:
-net.ipv4.icmp_echo_ignore_all = 1
-
-然后wq!保存退出
-
-2.使用这个命令使配置修改立刻生效（不用重启）
-sysctl -p
-</code></pre>
+                <h2 id="cookies">爬虫开发笔记之cookies池系统设计</h2>
+<p>开发爬虫时，我们总希望目标网站反爬策略不足，一气呵成写好爬虫代码并部署运行，然而“理想很丰满，现实很骨感”，在爬虫大行其道的今日，稍微优质一点的信息类网站一般都会采取一定程度的反爬措施。不然小公司的服务器哪里扛得住各路爬虫orz.....不过，对于爬虫开发者来说，自然是“道高一尺，魔高一丈”，今日就简单聊聊<strong>反反爬方案——cookies池系统</strong>。</p>
+<h3 id="cookies_1">什么是cookies池</h3>
+<p>用于维护多条目标站点的有效cookie以便爬虫获取使用的服务（类似IP池）。</p>
+<h3 id="cookie">为什么需要设计cookie池</h3>
+<ol>
+<li>目标站点要求登录才能访问（如：知乎、淘宝、facebook, etc.）</li>
+<li>单账号会受到访问频率限制（多账号管理）</li>
+<li>模拟登录逻辑复杂 （将模拟登录单独做成服务）</li>
+<li>登录脚本采用不同编程语言开发（如：node.js的puppeteer, javascript的cypress）</li>
+<li>一些第三方库不支持同一种语言的不同版本（如：zheye对python3.6和python3.7）</li>
+</ol>
+<h3 id="cookie_1">cookie池的优点</h3>
+<ol>
+<li>服务分离：多语言开发，类似微服务的理念。</li>
+<li>组件分离：比如redis可以换成mysql、Kafka等。</li>
+<li>各个服务分别部署：防止网站变化导致爬虫宕机。</li>
+</ol>
+<h3 id="cookie_2">cookie池系统设计架构</h3>
+<p>一个简易的cookie池系统架构如下图所示：</p>
+<p><img alt="cookie_pool_arch" src="/img/crawler/cookie_pool_arch.png" /></p>
+<p>首先，最基本的功能是通过模拟登录服务获取cookie。</p>
+<p>其次，因为cookie正常情况下都有过期时间，为保证cookie池系统独立稳定运行，需要实现Cookie检测服务。</p>
+<p>然后，通过检测的有效cookie存入Redis中，以备爬虫运行时获取。</p>
+<h3 id="cookie_3">实现cookie池系统面临的挑战</h3>
+<ol>
+<li>如何发现cookie池不够用。</li>
+<li>各个网站的cookie如何分开管理，代码如何更好的分离。</li>
+<li>如何及时发现某个cookie失效了。</li>
+<li>如何保证新加入的网站快速接入cookie池系统。</li>
+<li>如何统一管理配置。</li>
+</ol>
+<p>只抛出问题不解决问题不是一个好习惯，今日限于篇幅只是做简要介绍，后续实现改日再写。</p>
               
             </div>
           </div>
@@ -581,10 +573,10 @@ sysctl -p
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../sec_dev_lifecycle/" class="btn btn-neutral float-right" title="SDL 安全开发流程">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../devops/learn_guide/" class="btn btn-neutral float-right" title="学习指南">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../sec_research/black_market/" class="btn btn-neutral" title="黑产研究"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../ruankao/system_architect/" class="btn btn-neutral" title="高级系统架构设计师复习笔记"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -610,10 +602,10 @@ sysctl -p
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../sec_research/black_market/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../ruankao/system_architect/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../sec_dev_lifecycle/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../devops/learn_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
