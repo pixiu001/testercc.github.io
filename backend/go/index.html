@@ -240,9 +240,11 @@
         
             <li><a class="toctree-l4" href="#_1">入门推荐</a></li>
         
-            <li><a class="toctree-l4" href="#_2">代码规范</a></li>
+            <li><a class="toctree-l4" href="#_2">进阶推荐</a></li>
         
-            <li><a class="toctree-l4" href="#_3">实体书推荐</a></li>
+            <li><a class="toctree-l4" href="#_3">代码规范</a></li>
+        
+            <li><a class="toctree-l4" href="#_4">实体书推荐</a></li>
         
             <li><a class="toctree-l4" href="#blog">Blog推荐</a></li>
         
@@ -307,6 +309,10 @@
                 <li class="">
                     
     <a class="" href="../../machine_learning/nlp/">自然语言处理</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../machine_learning/statistical_learning/">统计学习方法笔记</a>
                 </li>
     </ul>
 	    </li>
@@ -545,17 +551,24 @@
 <li><a href="https://github.com/astaxie/build-web-application-with-golang">Build Web Application with Golang</a>  这本书就不错，Beego的作者写的</li>
 <li><a href="https://github.com/Alikhll/golang-developer-roadmap">golang developer roadmap</a>   RoadMap系列，可参考</li>
 <li><a href="https://github.com/avelino/awesome-go">awesome go</a></li>
+<li><a href="https://gfw.go101.org/article/101.html">Go语言101</a></li>
 </ul>
-<h2 id="_2">代码规范</h2>
+<h2 id="_2">进阶推荐</h2>
+<ul>
+<li><a href="https://golang.org/doc/">Go官方文档--必读</a></li>
+<li><a href="https://space.bilibili.com/326749661">Go夜读视频</a></li>
+<li><a href="https://github.com/developer-learning/night-reading-go">Go夜读Github</a></li>
+</ul>
+<h2 id="_3">代码规范</h2>
 <ul>
 <li><a href="https://github.com/uber-go/guide">Uber Go Style Guide</a></li>
 <li><a href="https://github.com/xxjwxc/uber_go_guide_cn">Uber Go 语言编码规范中文版</a></li>
 </ul>
 <p>https://github.com/xxjwxc/uber_go_guide_cn</p>
-<h2 id="_3">实体书推荐</h2>
+<h2 id="_4">实体书推荐</h2>
 <p>最简单的入门方法，找一本好教程，对着例子敲一遍练手。</p>
 <ul>
-<li><code>Go语言实战</code> -- 快速过一下基础。</li>
+<li><code>Go语言实战</code> -- Go in Action, 快速过一下基础。</li>
 <li><code>Go程序设计语言 The Go Programming Language</code> -- 没错，就是那本Go语言圣经。（如果是有经验的开发者，其实建议学这个的同时开始做实际项目）</li>
 <li><code>Golang高级编程</code> -- 如果看完上面的，可以看这本扩充下。</li>
 </ul>
@@ -568,6 +581,7 @@
 <p>什么是 gvm</p>
 <p>gvm，即 Go Version Manager，Go 版本管理器，它可以非常轻量的切换 Go 版本。对比其他语言，通常也有类似的工具，如 NodeJS 的 NVM，Python 的 virtualenv 等。</p>
 <p>用GVM最好是安装go 1.5+的版本，1.5以下版本看官方解释。</p>
+<p>PS：注意设置gvm后可能引发系统GOPATH自定义配置失效的问题。</p>
 <p><a href="https://github.com/moovweb/gvm">GVM官方仓库</a>
 <a href="https://zhuanlan.zhihu.com/p/83375992">如何灵活地进行 Go 版本管理</a></p>
 <pre><code class="shell">Installing
@@ -591,7 +605,7 @@ To completely remove gvm and all installed Go versions and packages:
 gvm implode
 </code></pre>
 
-<h3 id="_4">常用命令</h3>
+<h3 id="_5">常用命令</h3>
 <pre><code>gvm list                       查看本地系统已go版本
 gvm listall                    查看可安装的go版本
 gvm install go1.13.5           安装指定go版本，这里是1.13.5
@@ -610,7 +624,7 @@ pkgsets             # 每个独立环境 gopath 所在路径
 
 <h4 id="a-tour-of-gogopath">A tour of go的踩坑，和GOPATH设置相关</h4>
 <p><a href="https://learnku.com/golang/wikis/38166">本地安装 Go Tour（包含中文版本）</a></p>
-<h3 id="_5">好用的插件</h3>
+<h3 id="_6">好用的插件</h3>
 <p>pip install when-changed</p>
 <pre><code>when-changed -r -v -1 . go run hello.go
 </code></pre>
