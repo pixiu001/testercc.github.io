@@ -383,6 +383,8 @@
         
             <li><a class="toctree-l4" href="#_2">系统日志删除</a></li>
         
+            <li><a class="toctree-l4" href="#killpid">命令行一次kill多个pid</a></li>
+        
             <li><a class="toctree-l4" href="#ip">轻量级搞事IP应对策略</a></li>
         
             <li><a class="toctree-l4" href="#cicd">CI/CD框架选型</a></li>
@@ -631,6 +633,17 @@ echo &quot;======== end clean linux sys logs ========&quot;
 <p>2.deploy</p>
 <pre><code># clear root dir sys log
 0 0 0 */3 * echo &quot;rootpassword&quot;|sudo -S /data/tools/auto_clear_sys_log.sh &gt;&gt; /data/tools/auto_clear_sys_log.log 2&gt;&amp;1
+</code></pre>
+
+<h2 id="killpid">命令行一次kill多个pid</h2>
+<pre><code class="shell">
+打印包含'sign_v1'，且不含有关键字&quot;grep&quot;的进程的pid
+ps aux | grep sign_v1 | grep -v grep | awk '{print $2}'
+ps -ef | grep sign_v1 | grep -v grep | awk '{print $2}'
+
+批量删除包含'sign_v1'的进程，不含有关键字&quot;grep&quot;的进程
+ps aux | grep sign_v1 | grep -v grep | awk '{print $2}' | xargs kill -9
+ps -ef | grep sign_v1 | grep -v grep | awk '{print $2}' | xargs kill -9
 </code></pre>
 
 <h2 id="ip">轻量级搞事IP应对策略</h2>
