@@ -232,6 +232,12 @@
             
     <li class="toctree-l3"><a href="#python">Python</a></li>
     
+        <ul>
+        
+            <li><a class="toctree-l4" href="#python_1">Python进阶建议</a></li>
+        
+        </ul>
+    
 
     <li class="toctree-l3"><a href="#django">Django</a></li>
     
@@ -558,7 +564,21 @@
               
                 <h1 id="python">Python</h1>
 <p>现在已经2019年了，不要在问学Python2还是python3了，问就是Python3，毕竟"Python核心团队计划2020年停止支持Python2"，而且很多第三方库已经开始停止对python2的兼容了。</p>
-<p>当然，如果是要维护旧代码或者是使用一些古董脚本，还是偶尔需要用到python2的（比如本人偶尔还需要维护一套Django 1.6的代码😂）</p>
+<p>当然，如果是要维护旧代码或者是使用一些古董脚本，还是偶尔需要用到python2的（比如本人偶尔还需要维护几个Django 1.6和Django 1.8的项目代码😂）</p>
+<h2 id="python_1">Python进阶建议</h2>
+<p>某乎这个问题中的回答<a href="https://www.zhihu.com/question/361165485/answer/951184485">Python进阶之路</a>写得很不错，因为作者禁止转载，我就简单概括下核心内容。</p>
+<h3 id="python4">Python进阶可分为4个阶段</h3>
+<p><code>入门阶段、进阶阶段、细化阶段、悟道阶段</code></p>
+<h4 id="01">0）第1阶段入门阶段不用书</h4>
+<p>（个人推荐 A Byte of Python或廖雪峰blog中Python3的部分，大约1个月，不建议学习周期拖太长）</p>
+<h4 id="1googlebrett-slatkineffective-pythonpython59">1）进阶阶段：Google高级软件工程师Brett Slatkin的<strong>Effective Python：编写高质量Python代码的59个有效方法</strong></h4>
+<p>(时间紧张的话优先学习这本，个人另外安利一本<strong>Python Cookbook</strong>)</p>
+<p>建议学习时间：1-2个月（看书+代码实践）</p>
+<h4 id="2python91">2）细化阶段：<strong>编写高质量代码：改善Python程序的91个建议</strong></h4>
+<p>建议学习时间：2-4个月（看书+代码实践）</p>
+<h4 id="3psfluciano-ramalhopython">3）悟道阶段：PSF研究员Luciano Ramalho的<strong>流畅的Python</strong></h4>
+<p>（我的前辈也是全力推荐这本书的，想要在Python开发中深耕的朋友推荐认真学习）</p>
+<p>建议学习时间：4个月及以上（看书+代码实践+工程实践）</p>
 <h1 id="django">Django</h1>
 <h2 id="django-nulltrue-blanktrue">Django数据模型中 null=True 和 blank=True的区别</h2>
 <pre><code>null 是针对数据库而言，如果null=True, 表示数据库的该字段可以为空，即在Null字段显示为YES。(即是数据库创建时该字段可不填,用NULL填充)
