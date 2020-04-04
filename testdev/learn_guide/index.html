@@ -334,13 +334,19 @@
     <a class="current" href="./">学习指南</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#welcome-to-mkdocs">Welcome to MkDocs</a></li>
+    <li class="toctree-l3"><a href="#_1">测试开发工程师笔记</a></li>
     
         <ul>
         
-            <li><a class="toctree-l4" href="#commands">Commands</a></li>
+            <li><a class="toctree-l4" href="#_2">关于岗位认知</a></li>
         
-            <li><a class="toctree-l4" href="#project-layout">Project layout</a></li>
+            <li><a class="toctree-l4" href="#_3">关于培训班和自学</a></li>
+        
+            <li><a class="toctree-l4" href="#_4">职业建议</a></li>
+        
+            <li><a class="toctree-l4" href="#_5">面试题集</a></li>
+        
+            <li><a class="toctree-l4" href="#_6">测试必备技能</a></li>
         
         </ul>
     
@@ -433,6 +439,10 @@
                 <li class="">
                     
     <a class="" href="../../interview/ai/">AI Interview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../interview/qa/">QA Interview</a>
                 </li>
     </ul>
 	    </li>
@@ -535,21 +545,38 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
+                <h1 id="_1">测试开发工程师笔记</h1>
+<p>其实当年我做测试的时候，测试开发工程师这个title还不算出名，各路培训班还在着力推销"自动化测试"和"性能测试"的课程，但随着行业平均水平的提高，普通软件测试工程师也已经具备一定的自动化技能后，培训班们终于也开始增加"测试开发"的课程了。</p>
+<p>不过说实话，看了下测试业界水平算比较高的专项培训班的大纲后，还是觉得只是编程入门（连开发入门严格来说都算不上），侧重自动化框架开发，说是自动化测试进阶班还更贴切，完全达不到真正意义上对"测试开发工程师"的要求。</p>
+<h2 id="_2">关于岗位认知</h2>
+<p>既然是叫做"测试开发工程师"，自然对"测试"和"开发"技能都有要求。</p>
+<p>一般来说测试开发的准入的标准应该达到<strong>初级开发 + 中级测试</strong>，部分要求的高的公司是<strong>中级开发 + 高级测试</strong>。</p>
+<p>有人可能会疑惑测试的岗位要求怎么这么高？</p>
+<p>我只能说：测试开发岗虽然多属于测试团队的职位，但这个岗位其实是开发岗，要求应该对表开发。而且，真正重视测试的公司对测试的要求一点都不低（可参考BATM的JD），如果还是不能理解的话建议好好阅读<strong>《Google软件测试之道》</strong>。</p>
+<h2 id="_3">关于培训班和自学</h2>
+<ol>
+<li>请不断锻炼自己的自学能力，信息收集能力，这是你在IT行业长期发展的立身之本。</li>
+<li>现在网上各种培训班测试资源很多，选一个比较全面的视频课程坚持认真学完，已足够达到入行最低门槛。（能达到多高水平看你自己造化。想想当年我入行时网上基本找不到什么好的教学资源，只能默默看《软件测试的艺术》。）</li>
+<li>除非你家不缺钱，或者你非要入行但自制力和自学能力奇差，不然不推荐报培训班。（看过某大型机构全套测试课程，基本教得都是过时的内容，而且也没教得多深入，对自学能力强的人来说真的没什么价值）</li>
+</ol>
+<p>其实我也不是对培训班持完全否定意见，毕竟存在即合理，有个别专项的测试培训班内容也还不错（但其实找专业书籍或文章自学更有效率）。毕竟培训班最大的价值是可以帮一部分人节约入行时间，但是以后的修行还是要靠个人的。</p>
+<h2 id="_4">职业建议</h2>
+<ol>
+<li>如果能坚定地将测试之路走下去，就不要太在意技术和管理岗的划分，两方面都要抓起来。因为<em>只懂技术不懂管理不好代团队，只懂管理不懂技术容易被忽悠</em>。</li>
+<li>要平衡好工作、生活和学习，因为只有你自己的测试综合能力提高，才能有更好的出路。（985/211/国外名校学历的朋友们随意）</li>
+<li>觉得软件测试轻松的请趁早准备转行，也许N年前软件测试的要求不高，个别公司存在测试咸鱼。但是负责任的测试从来都是很忙的，不乏加班&gt;=开发的，而且经常成为被甩锅的对象。没有点压力耐受力的还是别来做软件测试了。</li>
+</ol>
+<h2 id="_5">面试题集</h2>
+<p><a href="../../interview/qa/">详细内容见这里</a> </p>
+<h2 id="_6">测试必备技能</h2>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs help</code> - Print this help message.</li>
+<li><code>Linux命令</code> - 基础中的基础，熟练在服务器上部署项目无论对开发还是测试都是必备技能。</li>
+<li><code>SQL</code> - 对金融类业务的测试要求尤其高，建议平时多准备。</li>
+<li><code>熟练一门编程语言</code> - 不要在意别人的语言之争，根据你的项目选一门编程语言（多是：Java、Python）学好，而且需要具备工程能力。</li>
+<li><code>架构的思维</code> - 不能只关注你测试的产品的bug，要把视野看得更高，了解产品的整个架构，这样更容易发现问题。</li>
+<li><code>PPT能力</code> - 更贴切的说是汇报和报告能力，特别是对于QA Leader来说。</li>
+<li><code>工程能力</code> - 这条特别对测试开发，因为测试开发经常需要为团队开发提高测试效率的工具和平台，没有一定的工程能力是无法胜任的。（这就是为什么说测试开发其实是开发岗）</li>
 </ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre>
               
             </div>
           </div>
