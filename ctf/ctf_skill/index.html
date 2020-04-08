@@ -8,7 +8,7 @@
   
   <meta name="author" content="TesterCC">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Zero Trust 零信任网络 - Security Development Notes</title>
+  <title>CTF竞赛常用基本解题技巧 - Security Development Notes</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Zero Trust \u96f6\u4fe1\u4efb\u7f51\u7edc";
-    var mkdocs_page_input_path = "secdev/zero_trust.md";
-    var mkdocs_page_url = "/secdev/zero_trust/";
+    var mkdocs_page_name = "CTF\u7ade\u8d5b\u5e38\u7528\u57fa\u672c\u89e3\u9898\u6280\u5de7";
+    var mkdocs_page_input_path = "ctf/ctf_skill.md";
+    var mkdocs_page_url = "/ctf/ctf_skill/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -119,47 +119,35 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../learn_guide/">学习指南</a>
+    <a class="" href="../../secdev/learn_guide/">学习指南</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../sec_dev_lifecycle/">SDL 安全开发流程</a>
+    <a class="" href="../../secdev/sec_dev_lifecycle/">SDL 安全开发流程</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../open_source/">Opensource 开源项目推荐</a>
+    <a class="" href="../../secdev/open_source/">Opensource 开源项目推荐</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../skill_tree/">Skill Tree 技能树</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">Zero Trust 零信任网络</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#_1">概念</a></li>
-    
-
-    <li class="toctree-l3"><a href="#_2">思想核心</a></li>
-    
-
-    <li class="toctree-l3"><a href="#_3">与传统网络安全架构的区别</a></li>
-    
-
-    </ul>
+    <a class="" href="../../secdev/skill_tree/">Skill Tree 技能树</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../dev_sec_ops/">DevSecOps</a>
+    <a class="" href="../../secdev/zero_trust/">Zero Trust 零信任网络</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../enterprise_security/">Enterprise Security 企业安全</a>
+    <a class="" href="../../secdev/dev_sec_ops/">DevSecOps</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../ai_sec/">AI Sec 人工智能安全</a>
+    <a class="" href="../../secdev/enterprise_security/">Enterprise Security 企业安全</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../secdev/ai_sec/">AI Sec 人工智能安全</a>
                 </li>
     </ul>
 	    </li>
@@ -208,19 +196,31 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../ctf/learn_guide/">基础知识</a>
+    <a class="" href="../learn_guide/">基础知识</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../ctf/attack_and_defence/">实战攻防演练</a>
+    <a class="" href="../attack_and_defence/">实战攻防演练</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../ctf/env_config/">测试环境搭建</a>
+    <a class="" href="../env_config/">测试环境搭建</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../ctf/ctf_skill/">CTF竞赛常用基本解题技巧</a>
+    <a class="current" href="./">CTF竞赛常用基本解题技巧</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#ctf">CTF竞赛常用基本解题技巧</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#1ip">1.伪造IP的几种方法</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -527,11 +527,11 @@
     
       
         
-          <li>Security Development 安全研发 &raquo;</li>
+          <li>CTF &raquo;</li>
         
       
     
-    <li>Zero Trust 零信任网络</li>
+    <li>CTF竞赛常用基本解题技巧</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -541,31 +541,23 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="_1">概念</h2>
-<p>Zero Trust, 零信任（零信任网络、零信任模型），由当时Forrester的工程师John Kindervag于2010年提出。</p>
-<h2 id="_2">思想核心</h2>
-<p><code>Never Trust, Always verify. (从来不信任，始终在校验)</code></p>
-<p>零信任网络的5个基本假定:</p>
-<pre><code>1.网络无时无刻不处于危险的环境中。
-2.网络中自始自终存在外部或内部威胁。
-3.网络的位置不足以决定网络的可信程度。
-4.所有的设备、用户和网络流量都应当经过认证和授权。
-5.安全策略必须是动态的，并基于尽可能多的数据源计算而来。
+                <h2 id="ctf">CTF竞赛常用基本解题技巧</h2>
+<h3 id="1ip">1.伪造IP的几种方法</h3>
+<p>例子中的<code>127.0.0.1</code>为你想要伪造的IP，酌情需要替换。</p>
+<pre><code>Client-Ip: 127.0.0.1        # 改IP常用
+X-Forwarded-For: 127.0.0.1  # 改IP常用
+Host: 127.0.0.1             # 突破内网访问限制时有用
+Referer: www.google.com     # 改来源常用
 </code></pre>
 
-<h2 id="_3">与传统网络安全架构的区别</h2>
-<p>传统网络安全架构基于<code>网络边界防护</code>。</p>
-<p>企业建设网络安全体系时，大体步骤如下：</p>
-<ul>
-<li>1.把网络划分为<code>外网</code>、<code>内网</code>、<code>DMZ区</code>等不同的安全区域</li>
-<li>2.在网络边界上通过部署防火墙、WAF和IPS等网络安全技术手段进行重重防护</li>
-</ul>
-<p>缺陷：传统网络安全架构假设或默认了<code>内网比外网更安全</code>，在某种程度上预设了对内网中的人、设备、系统和应用的信任，从而容易忽视对内网安全措施的加强。</p>
-<p>传统安全模型的主要缺点：</p>
-<pre><code>1.缺乏网络内部的流量检查。
-2.主机部署缺乏物理及逻辑上的灵活性。
-3.存在单点故障。
-</code></pre>
+<h4 id="_1">操作步骤</h4>
+<ol>
+<li>打开firefox，如果是get请求，可以直接用firefox抓包。</li>
+<li>打开"网络"面板，右键单击需要重发的请求包，选择"编辑和重发"</li>
+<li>修改指定包中的header，有时是改IP等信息，有时是加字段（如：X-Forwarded-For: 1.1.1.1）
+<img alt="firefox改包重发操作" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed/img/20200409005614.png" /></li>
+<li>修改完成后点击发送，查看这个请求响应的内容。</li>
+</ol>
               
             </div>
           </div>
@@ -573,10 +565,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../dev_sec_ops/" class="btn btn-neutral float-right" title="DevSecOps">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../backend/learn_guide/" class="btn btn-neutral float-right" title="学习指南">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../skill_tree/" class="btn btn-neutral" title="Skill Tree 技能树"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../env_config/" class="btn btn-neutral" title="测试环境搭建"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -602,10 +594,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../skill_tree/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../env_config/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../dev_sec_ops/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../backend/learn_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
