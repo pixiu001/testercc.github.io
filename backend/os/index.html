@@ -285,6 +285,9 @@
         </ul>
     
 
+    <li class="toctree-l3"><a href="#core-dump">什么是core dump</a></li>
+    
+
     </ul>
                 </li>
                 <li class="">
@@ -391,6 +394,10 @@
                 <li class="">
                     
     <a class="" href="../../devops/learn_guide/">学习指南</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../devops/docker/">Docker</a>
                 </li>
                 <li class="">
                     
@@ -588,6 +595,11 @@ kill pid_number
 Windows:
 taskkill.exe /F /PID pid_number
 </code></pre>
+
+<h2 id="core-dump">什么是core dump</h2>
+<p>Core的意思是内存, Dump的意思是扔出来, 堆出来.</p>
+<p>开发和使用 Unix程序时, 有时程序莫名其妙的down了, 却没有任何的提示(有时候会提示core dumped). 这时候可以查看一下有没有形如core.进程号的文件生成, 这个文件便是操作系统把程序down掉时的内存内容扔出来生成的, 它可以做为调试程序的参考.
+core dump又叫核心转储, 当程序运行过程中发生异常, 程序异常退出时, 由操作系统把程序当前的内存状况存储在一个core文件中, 叫core dump.</p>
               
             </div>
           </div>

@@ -8,7 +8,7 @@
   
   <meta name="author" content="TesterCC">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>CTF竞赛常用基本解题技巧 - Security Development Notes</title>
+  <title>Docker - Security Development Notes</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "CTF\u7ade\u8d5b\u5e38\u7528\u57fa\u672c\u89e3\u9898\u6280\u5de7";
-    var mkdocs_page_input_path = "ctf/ctf_skill.md";
-    var mkdocs_page_url = "/ctf/ctf_skill/";
+    var mkdocs_page_name = "Docker";
+    var mkdocs_page_input_path = "devops/docker.md";
+    var mkdocs_page_url = "/devops/docker/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -196,31 +196,19 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../learn_guide/">基础知识</a>
+    <a class="" href="../../ctf/learn_guide/">基础知识</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../attack_and_defence/">实战攻防演练</a>
+    <a class="" href="../../ctf/attack_and_defence/">实战攻防演练</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../env_config/">测试环境搭建</a>
+    <a class="" href="../../ctf/env_config/">测试环境搭建</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">CTF竞赛常用基本解题技巧</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#ctf">CTF竞赛常用基本解题技巧</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#1ip">1.伪造IP的几种方法</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../../ctf/ctf_skill/">CTF竞赛常用基本解题技巧</a>
                 </li>
     </ul>
 	    </li>
@@ -388,15 +376,29 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../devops/learn_guide/">学习指南</a>
+    <a class="" href="../learn_guide/">学习指南</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Docker</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#docker">Docker相关知识</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_1">相关概念</a></li>
+        
+            <li><a class="toctree-l4" href="#docker_1">使用Docker构建环境</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../devops/docker/">Docker</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../devops/sre/">SRE</a>
+    <a class="" href="../sre/">SRE</a>
                 </li>
     </ul>
 	    </li>
@@ -531,11 +533,11 @@
     
       
         
-          <li>CTF &raquo;</li>
+          <li>DevOps &raquo;</li>
         
       
     
-    <li>CTF竞赛常用基本解题技巧</li>
+    <li>Docker</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -545,23 +547,60 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="ctf">CTF竞赛常用基本解题技巧</h2>
-<h3 id="1ip">1.伪造IP的几种方法</h3>
-<p>例子中的<code>127.0.0.1</code>为你想要伪造的IP，酌情需要替换。</p>
-<pre><code>Client-Ip: 127.0.0.1        # 改IP常用
-X-Forwarded-For: 127.0.0.1  # 改IP常用
-Host: 127.0.0.1             # 突破内网访问限制时有用
-Referer: www.google.com     # 改来源常用
+                <h1 id="docker">Docker相关知识</h1>
+<h2 id="_1">相关概念</h2>
+<h3 id="dockerfile">Dockerfile</h3>
+<p>Dockerfile 是一个用来构建镜像的文本文件，文本内容包含了一条条构建镜像所需的指令和说明。</p>
+<h3 id="docker-compose">Docker Compose</h3>
+<p>Docker Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。
+然后，使用一个命令，就可以从 YML 文件配置中创建并启动所有服务。</p>
+<h4 id="docker-compose_1">Docker Compose 使用的三个步骤</h4>
+<pre><code class="markdown">1.使用 Dockerfile 定义应用程序的环境。
+
+2.使用 docker-compose.yml 定义构成应用程序的服务，这样它们可以在隔离环境中一起运行。
+
+3.最后，执行 docker-compose up 命令来启动并运行整个应用程序。
 </code></pre>
 
-<h4 id="_1">操作步骤</h4>
-<ol>
-<li>打开firefox，如果是get请求，可以直接用firefox抓包。</li>
-<li>打开"网络"面板，右键单击需要重发的请求包，选择"编辑和重发"</li>
-<li>修改指定包中的header，有时是改IP等信息，有时是加字段（如：X-Forwarded-For: 1.1.1.1）
-<img alt="firefox改包重发操作" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed/img/20200409005614.png" /></li>
-<li>修改完成后点击发送，查看这个请求响应的内容。</li>
-</ol>
+<h4 id="dockerfile-and-docker-compose-install-flask">Dockerfile and docker-compose install Flask</h4>
+<p>代码示例: https://github.com/TesterCC/docker_compose_demo.git
+看Docker官网的应用例子，这个是参考官网的
+<a href="https://www.runoob.com/docker/docker-compose.html">参考</a></p>
+<p>项目结构：</p>
+<pre><code class="markdown">➜  composetest git:(master) tree
+.
+├── Dockerfile
+├── README.md
+├── app.py
+├── docker-compose.yml
+├── requirements.txt
+├── static
+└── templates
+</code></pre>
+
+<p>Dockerfile内容</p>
+<pre><code class="markdown">FROM python:3.7-alpine
+MAINTAINER MFC
+WORKDIR /code
+ENV FLASK_APP app.py
+ENV FLASK_RUN_HOST 0.0.0.0
+RUN apk add --no-cache gcc musl-dev linux-headers
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+COPY . .
+CMD [&quot;flask&quot;, &quot;run&quot;]
+</code></pre>
+
+<p>构建项目</p>
+<pre><code class="shell">docker-compose up
+</code></pre>
+
+<h2 id="docker_1">使用Docker构建环境</h2>
+<p><a href="https://www.runoob.com/docker/docker-dockerfile.html">Dockerfile -- runoob.com</a>
+<a href="https://blog.csdn.net/sunt2018/article/details/85263432">ref</a></p>
+<h3 id="docker-install-mysql">Docker install MySQL</h3>
+<h3 id="docker-install-redis">Docker install Redis</h3>
+<h3 id="docker-install-postgre">Docker install Postgre</h3>
               
             </div>
           </div>
@@ -569,10 +608,10 @@ Referer: www.google.com     # 改来源常用
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../backend/learn_guide/" class="btn btn-neutral float-right" title="学习指南">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../sre/" class="btn btn-neutral float-right" title="SRE">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../env_config/" class="btn btn-neutral" title="测试环境搭建"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../learn_guide/" class="btn btn-neutral" title="学习指南"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -598,10 +637,10 @@ Referer: www.google.com     # 改来源常用
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../env_config/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../learn_guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../backend/learn_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../sre/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

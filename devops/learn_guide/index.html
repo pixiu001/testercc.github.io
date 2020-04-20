@@ -387,6 +387,8 @@
         
             <li><a class="toctree-l4" href="#_2">系统日志删除</a></li>
         
+            <li><a class="toctree-l4" href="#linux_1">Linux常用命令</a></li>
+        
             <li><a class="toctree-l4" href="#killpid">命令行一次kill多个pid</a></li>
         
             <li><a class="toctree-l4" href="#ip">轻量级搞事IP应对策略</a></li>
@@ -397,6 +399,10 @@
     
 
     </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../docker/">Docker</a>
                 </li>
                 <li class="">
                     
@@ -643,6 +649,42 @@ echo &quot;======== end clean linux sys logs ========&quot;
 0 0 0 */3 * echo &quot;rootpassword&quot;|sudo -S /data/tools/auto_clear_sys_log.sh &gt;&gt; /data/tools/auto_clear_sys_log.log 2&gt;&amp;1
 </code></pre>
 
+<h2 id="linux_1">Linux常用命令</h2>
+<h3 id="_5">常用命令</h3>
+<pre><code class="shell">wc -l #统计行数
+
+uniq -c #在输出行前面加上每行在输入文件里出现的次数
+
+uniq -u #仅显示不反复的行
+
+sort -nr
+-n：按照数值的大小排序
+-r：以相反的顺序来排序
+-k：按照哪一列进行排序
+
+head -3 #取前三名
+</code></pre>
+
+<h3 id="awk">awk</h3>
+<p><a href="https://www.cnblogs.com/bugingcode/p/8287914.html">awk使用和详解</a></p>
+<h3 id="agawk">ag:比awk更好用的搜索工具</h3>
+<p>搜索工具：the_silver_searcher，安装好后用命令 ag 使用
+https://github.com/ggreer/the_silver_searcher</p>
+<p>使用方法：</p>
+<pre><code class="shell">ag pattern    # 这里是正则匹配
+
+ag -Q .proto     # -Q 搜索字面值
+
+ag -G py$ import   # 搜索以py结尾的文件中包含import字符的内容
+
+ag -w proto     # -w 全词匹配，不然可能匹配protobuf这类结果
+
+ag --python import  # 搜索以py结尾的文件中包含import字符的内容
+
+ag --python import | grep time   # ag 配合 grep 使用
+</code></pre>
+
+<p>注意只要待搜索字符串包含大写字母，ag就会大小写敏感。</p>
 <h2 id="killpid">命令行一次kill多个pid</h2>
 <pre><code class="shell">
 打印包含'sign_v1'，且不含有关键字&quot;grep&quot;的进程的pid
@@ -667,7 +709,7 @@ ps -ef | grep sign_v1 | grep -v grep | awk '{print $2}' | xargs kill -9
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../sre/" class="btn btn-neutral float-right" title="SRE">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../docker/" class="btn btn-neutral float-right" title="Docker">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../../crawler/cookie_pool/" class="btn btn-neutral" title="Cookie池设计"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -699,7 +741,7 @@ ps -ef | grep sign_v1 | grep -v grep | awk '{print $2}' | xargs kill -9
         <span><a href="../../crawler/cookie_pool/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../sre/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../docker/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
