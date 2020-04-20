@@ -286,6 +286,16 @@
         
             <li><a class="toctree-l4" href="#7git-checkout">7.git checkout</a></li>
         
+            <li><a class="toctree-l4" href="#8git-tag">8.git tag</a></li>
+        
+            <li><a class="toctree-l4" href="#9git-revert">9.git revert</a></li>
+        
+            <li><a class="toctree-l4" href="#10git-reset">10.git reset</a></li>
+        
+            <li><a class="toctree-l4" href="#11git-rm">11.git rm</a></li>
+        
+            <li><a class="toctree-l4" href="#_5">撤销当前分支的变化</a></li>
+        
         </ul>
     
 
@@ -562,7 +572,8 @@
                 <h1 id="git">Git常用高频命令实例</h1>
 <p>(branch_name统一指代分支名称，个人根据自己的分支名称需要做替换，不能直接写"branch_name"这个字符串)</p>
 <h2 id="_1">在线练习</h2>
-<p><a href="https://learngitbranching.js.org">在线练习使用Git</a></p>
+<p><a href="https://learngitbranching.js.org">在线练习使用Git</a>
+<a href="http://www.ruanyifeng.com/blog/2019/12/git-undo.html">如何撤销Git操作</a></p>
 <h2 id="1git-merge">1.git merge</h2>
 <p>合并分支</p>
 <p>先切换的到你的主分支上,然后合并其它分支的代码。</p>
@@ -653,6 +664,57 @@ git checkout --track origin/abranch       # 将只创建本地'abranch'，而非
 
 <p>e.g.<code>git checkout --track origin/feature/insert_event_v2</code></p>
 <p>更多讨论，参见<a href="http://www.imooc.com/wenda/detail/585203">此问题</a></p>
+<h2 id="8git-tag">8.git tag</h2>
+<p>当某一个大版本完成之后,需要打一个标签</p>
+<p>作用：
+- 记录大版本
+- 备份大版本代码</p>
+<h3 id="tag">在本地打标签tag</h3>
+<p>git tag -a 标签名 -m '标签描述'</p>
+<p>例：git tag -a v1.0 -m 'version 1.0'</p>
+<h3 id="tag_1">推送标签tag到远程仓库</h3>
+<p>git push origin 标签名</p>
+<p>例：git push origin v1.0</p>
+<h3 id="_2">删除本地和远程标签</h3>
+<h4 id="_3">删除本地标签</h4>
+<p>git tag -d 标签名</p>
+<h4 id="_4">删除远程仓库标签</h4>
+<p>git push origin --delete tag 标签名</p>
+<h2 id="9git-revert">9.git revert</h2>
+<p>提交代码以后，你突然意识到这个提交有问题，应该撤销掉，执行如下命令：</p>
+<p>git revert HEAD</p>
+<p>上面命令的原理是，在当前提交后面，新增一次提交，抵消掉上一次提交导致的所有变化。它不会改变过去的历史，所以是首选方式，没有任何丢失代码的风险。</p>
+<p>git revert 命令只能抵消上一个提交，如果想抵消多个提交，必须在命令行依次指定这些提交。比如，抵消前两个提交，要像下面这样写。</p>
+<pre><code class="shell">$ git revert [倒数第一个提交] [倒数第二个提交]
+</code></pre>
+
+<p>git revert命令还有两个参数:</p>
+<pre><code class="shell">--no-edit：执行时不打开默认编辑器，直接使用 Git 自动生成的提交信息。
+--no-commit：只抵消暂存区和工作区的文件变化，不产生新的提交。
+</code></pre>
+
+<h2 id="10git-reset">10.git reset</h2>
+<p>如果希望<strong>以前的提交在历史中彻底消失</strong>，而不是被抵消掉，可以使用git reset命令，丢弃掉某个提交之后的所有提交。</p>
+<p>git reset的原理: <strong>让最新提交的指针回到以前某个时点，该时点之后的提交都从历史中消失</strong>。</p>
+<h2 id="11git-rm">11.git rm</h2>
+<p>如果不小心把一个文件添加到暂存区，可以用下面的命令撤销。</p>
+<pre><code class="shell">git rm --cached [filename]
+</code></pre>
+
+<p>上面的命令不影响已经提交的内容。</p>
+<h2 id="_5">撤销当前分支的变化</h2>
+<pre><code class="shell"># 新建一个 feature 分支，指向当前最新的提交
+# 注意，这时依然停留在当前分支
+$ git branch feature
+
+# 切换到这几次提交之前的状态
+$ git reset --hard [当前分支此前的最后一次提交]
+
+# 切换到 feature 分支
+$ git checkout feature
+</code></pre>
+
+<p>上面的操作等于是撤销当前分支的变化，将这些变化放到一个新建的分支。（然后切换到另一个分支，merge feature分支上的后面几次提交的内容。）</p>
               
             </div>
           </div>
