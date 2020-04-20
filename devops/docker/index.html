@@ -554,6 +554,9 @@
 <h3 id="docker-compose">Docker Compose</h3>
 <p>Docker Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。
 然后，使用一个命令，就可以从 YML 文件配置中创建并启动所有服务。</p>
+<p>docker-compose.yml包含 <strong>version、services、networks</strong> 3大部分</p>
+<p>REF:
+<a href="https://www.cnblogs.com/ray-mmss/p/10868754.html">docker-compose.yml的使用</a></p>
 <h4 id="docker-compose_1">Docker Compose 使用的三个步骤</h4>
 <pre><code class="markdown">1.使用 Dockerfile 定义应用程序的环境。
 
@@ -578,7 +581,7 @@
 └── templates
 </code></pre>
 
-<p>Dockerfile内容</p>
+<p>Dockerfile内容:</p>
 <pre><code class="markdown">FROM python:3.7-alpine
 MAINTAINER MFC
 WORKDIR /code
@@ -591,6 +594,23 @@ COPY . .
 CMD [&quot;flask&quot;, &quot;run&quot;]
 </code></pre>
 
+<p>docker-compose.yml内容：</p>
+<pre><code class="markdown">version: '3'
+services:
+  web:
+    build: .
+    ports:
+     - &quot;5555:5000&quot;
+  redis:
+    image: &quot;redis:alpine&quot;
+</code></pre>
+
+<p>该 Compose 文件定义了两个服务：web 和 redis。</p>
+<ul>
+<li>web：该 web 服务使用从 Dockerfile 当前目录中构建的镜像。然后，它将容器和主机绑定到暴露的端口 5000。此示例服务使用 Flask Web 服务器的默认端口 5000 。</li>
+<li>redis：该 redis 服务使用 Docker Hub 的公共 Redis 映像。</li>
+<li>"5555:5000"  映射端口(HOST:CONTAINER)，即是将 宿主机的5555端口 和 容器的5000端口 绑定。</li>
+</ul>
 <p>构建项目</p>
 <pre><code class="shell">docker-compose up
 </code></pre>
