@@ -269,6 +269,8 @@
         
             <li><a class="toctree-l4" href="#pyenv">pyenv常用命令</a></li>
         
+            <li><a class="toctree-l4" href="#python_2">Python基础</a></li>
+        
         </ul>
     
 
@@ -688,6 +690,12 @@ ubuntu@xxx:/data/web/auto_post_event_v2$ pyenv versions
 pyenv-virtualenv: prompt changing will be removed from future release. configure `export PYENV_VIRTUALENV_DISABLE_PROMPT=1' to simulate the behavior.
 (auto_post_event_v2) ubuntu@xxx:/data/web/auto_post_event_v2$
 </code></pre>
+
+<h2 id="python_2">Python基础</h2>
+<h3 id="22pythonasyncio">22.说说python的asyncio</h3>
+<p>ref: <a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017970488768640">asyncio</a></p>
+<p><code>asyncio</code>是Python 3.4版本引入的标准库，直接内置了对异步IO的支持。</p>
+<p><code>asyncio</code>的编程模型就是一个消息循环。我们从<code>asyncio</code>模块中直接获取一个<code>EventLoop</code>的引用，然后把需要执行的协程扔到<code>EventLoop</code>中执行，就实现了异步IO。</p>
               
             </div>
           </div>
