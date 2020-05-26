@@ -229,7 +229,11 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#11git-rm">11.git rm</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_5">撤销当前分支的变化</a>
+    <li class="toctree-l2"><a class="reference internal" href="#12">12.撤销当前分支的变化</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#13git-cherry-pick">13.git cherry-pick</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#14git-rebase-i">14.git rebase -i</a>
     </li>
     </ul>
                     </li>
@@ -513,7 +517,7 @@ git checkout --track origin/abranch       # 将只创建本地'abranch'，而非
 </code></pre>
 
 <p>上面的命令不影响已经提交的内容。</p>
-<h2 id="_5">撤销当前分支的变化</h2>
+<h2 id="12">12.撤销当前分支的变化</h2>
 <pre><code class="shell"># 新建一个 feature 分支，指向当前最新的提交
 # 注意，这时依然停留在当前分支
 $ git branch feature
@@ -526,6 +530,39 @@ $ git checkout feature
 </code></pre>
 
 <p>上面的操作等于是撤销当前分支的变化，将这些变化放到一个新建的分支。（然后切换到另一个分支，merge feature分支上的后面几次提交的内容。）</p>
+<h2 id="13git-cherry-pick">13.git cherry-pick</h2>
+<p><code>git cherry-pick</code>命令的作用，就是将指定的提交（commit）应用于其他分支。</p>
+<pre><code># 现在将 feature分支的提交f 应用到 master分支。
+# 先切换到 master 分支
+$ git checkout master
+
+# git cherry-pick 操作
+$ git cherry-pick f
+</code></pre>
+
+<p>上面的操作完成以后，代码库就变成了下面的样子。</p>
+<pre><code>a - b - c - d - f   Master
+     \
+       e - f - g    Feature
+</code></pre>
+<p>ref:
+<a href="http://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html">git cherry-pick 教程</a></p>
+<h2 id="14git-rebase-i">14.git rebase -i</h2>
+<p>代码变更比较频繁，有时候想让前几次提交的合并为一次提交，这里可以使用git rebase -i 命令来完成</p>
+<pre><code>rebase为变基
+git rebase -i 命令可以压缩合并多次提交
+格式：git rebase -i [startpoint] [endpoint]
+
+其中-i的意思是–interactive，即弹出交互式的界面让用户编辑完成合并操作，
+
+// 合并从当前head到15f745b(commit id)
+$ git rebase -i 15f745b
+
+// 合并最近的两次提交
+$ git rebase -i HEAD~2
+</code></pre>
+
+<p>ref:<a href="https://blog.csdn.net/w57685321/article/details/86597808">git rebase -i合并多次提交</a></p>
               
             </div>
           </div>
