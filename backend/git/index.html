@@ -84,6 +84,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Security Development 安全研发</span></p>
                 <ul>
@@ -100,6 +102,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/dev_sec_ops/">DevSecOps</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/enterprise_security/">Enterprise Security 企业安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/intelligent_risk_control/">Intelligent Risk Control 智能风控</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/ai_sec/">AI Sec 人工智能安全</a>
                     </li>
@@ -234,6 +238,10 @@
     <li class="toctree-l2"><a class="reference internal" href="#13git-cherry-pick">13.git cherry-pick</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#14git-rebase-i">14.git rebase -i</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#15git-blame">15.git blame</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">其他</a>
     </li>
     </ul>
                     </li>
@@ -563,6 +571,18 @@ $ git rebase -i HEAD~2
 </code></pre>
 
 <p>ref:<a href="https://blog.csdn.net/w57685321/article/details/86597808">git rebase -i合并多次提交</a></p>
+<h2 id="15git-blame">15.git blame</h2>
+<p>git blame 显示文件的每一行最后修改的版本和作者</p>
+<pre><code>//显示aaa/file.txt文件第11行和12行的修改记录
+git blame -L 11,12 aaa/file.txt
+
+-L 11,12 含义是该文件的第11行和12行的修改记录
+</code></pre>
+
+<h2 id="_5">其他</h2>
+<pre><code>之前大佬教我用-i来做squash。 中间态的若干次提交均写上 WIP: *****
+然后做完一个功能， 把 WIP: *** squash掉。  用 git rebase -i
+</code></pre>
               
             </div>
           </div>

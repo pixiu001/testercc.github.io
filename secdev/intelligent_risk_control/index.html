@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="TesterCC">
-  <link rel="canonical" href="https://testercc.github.io/ruankao/ruankao/">
+  <link rel="canonical" href="https://testercc.github.io/secdev/intelligent_risk_control/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>考试相关信息 - Security Development Notes</title>
+  <title>Intelligent Risk Control 智能风控 - Security Development Notes</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "\u8003\u8bd5\u76f8\u5173\u4fe1\u606f";
-    var mkdocs_page_input_path = "ruankao/ruankao.md";
-    var mkdocs_page_url = "/ruankao/ruankao/";
+    var mkdocs_page_name = "Intelligent Risk Control \u667a\u80fd\u98ce\u63a7";
+    var mkdocs_page_input_path = "secdev/intelligent_risk_control.md";
+    var mkdocs_page_url = "/secdev/intelligent_risk_control/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -88,24 +88,38 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Security Development 安全研发</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/learn_guide/">学习指南</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../learn_guide/">学习指南</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/sec_dev_lifecycle/">SDL 安全开发流程</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../sec_dev_lifecycle/">SDL 安全开发流程</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/open_source/">Opensource 开源项目推荐</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../open_source/">Opensource 开源项目推荐</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/skill_tree/">Skill Tree 技能树</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../skill_tree/">Skill Tree 技能树</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/zero_trust/">Zero Trust 零信任网络</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../zero_trust/">Zero Trust 零信任网络</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/dev_sec_ops/">DevSecOps</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../dev_sec_ops/">DevSecOps</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/enterprise_security/">Enterprise Security 企业安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../enterprise_security/">Enterprise Security 企业安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/intelligent_risk_control/">Intelligent Risk Control 智能风控</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Intelligent Risk Control 智能风控</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#python">智能风控：Python金融风险管理与评分卡</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_1">信用管理基础知识</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">智能风控：原理、算法与工程实践</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">信贷业务基础知识</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/ai_sec/">AI Sec 人工智能安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../ai_sec/">AI Sec 人工智能安全</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -203,30 +217,12 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">软考</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">考试相关信息</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_2">等级</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">考试时间</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_4">证书作用</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_5">考试难度评价</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_6">科目选择策略</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_7">常规教材</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_8">考试笔记</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_9">计算机软考证书英文名称全翻译</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ruankao/ruankao/">考试相关信息</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../system_analyst/">高级系统分析师复习笔记</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ruankao/system_analyst/">高级系统分析师复习笔记</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../system_architect/">高级系统架构设计师复习笔记</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ruankao/system_architect/">高级系统架构设计师复习笔记</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">爬虫开发</span></p>
@@ -317,11 +313,11 @@
     
       
         
-          <li>软考 &raquo;</li>
+          <li>Security Development 安全研发 &raquo;</li>
         
       
     
-    <li>考试相关信息</li>
+    <li>Intelligent Risk Control 智能风控</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -332,71 +328,13 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_1">软考</h1>
-<p>全国计算机技术与软件专业技术资格（水平）考试，简称软考。</p>
-<p>正式英文名称为：Qualification Certificate of Computer and Software Technology Proficiency</p>
-<p><a href="http://www.ruankao.org.cn/">软考官网</a></p>
-<h2 id="_2">等级</h2>
-<p>分为：初级、中级、高级3个level，可直接跨级报考 （摸摸隔壁备考NCRE的孩子）</p>
-<h2 id="_3">考试时间</h2>
-<p>一年2次：上半年5月，下半年11月
-<img alt='registration time' src='/img/ruankao/registration_time.png'></img></p>
-<p>软考高级科目的最佳报名方案：<code>上半年报系统分析师，下半年报系统架构设计师</code>。</p>
-<p>这样复习知识点有不少重合，能有效节省一些复习时间。</p>
-<p>因为高级<code>信息系统项目管理师</code>上下半年都能报名，所以报名时间随意。（客观上说，PMP的内容比这个要实用）</p>
-<h2 id="_4">证书作用</h2>
-<pre><code>1.部分证书和日本韩国认证挂钩 （e.g. 程序员、网络工程师、系统分析师）
-2.国企事业单位评职称
-3.部分一线城市落户有加分
-4.以考代评的职称，副高，但是要单位聘任了你这个职务职称才能这样操作
-5.个别公司申请政府招标项目的，这证书也算资质
-</code></pre>
-
-<h2 id="_5">考试难度评价</h2>
-<p>由于软考各级别报考并无特别限制，国内报考人员大多从中级难度的科目开始报考。</p>
-<ul>
-<li><code>初级</code> -- 难度简单，一般只是需要提高拿证概率的人会报考 （比如非科班去日本从事IT行业，国企单位有特别要求的）</li>
-<li><code>中级</code> -- 可以突击，真题为主，如果熟练也有可能一周复习就过，总体不难，建议还是至少认真复习1个月</li>
-<li><code>高级</code> -- 要考三科，突击只是梦，踏踏实实复习为上，建议至少认真复习2-3个月</li>
-</ul>
-<h2 id="_6">科目选择策略</h2>
-<p>除非你是软考证书收集控，不然中高级各选一个和你工作对口的科目报考就好了。甚至可以主攻一个高项。如果觉得高项短期突破不了，可以先争取过一个中级项目。
-如果是兴趣驱动或者为了梳理知识以考带学，那就随意了。</p>
-<h2 id="_7">常规教材</h2>
-<ul>
-<li><code>系统架构设计师教程</code> - 针对软考，考高级系统架构设计师的人员必读。</li>
-<li><code>系统分析师教程</code> - 针对软考，考高级系统分析师的人员必读。</li>
-</ul>
-<h2 id="_8">考试笔记</h2>
-<ul>
-<li><a href="../system_analyst/">系统分析师notes</a></li>
-<li><a href="../system_architect/">系统架构设计师notes</a></li>
-</ul>
-<h2 id="_9">计算机软考证书英文名称全翻译</h2>
-<p>来自网络，供需要填写英文资料的朋友备用.</p>
-<pre><code>计算机技术与软件专业技术资格（水平）考试:Qualification Certificate of Computer and Software Technology Proficiency
-信息系统项目管理师：Information System Project Manager
-系统分析师：System Analyst
-系统架构设计师：System Architect
-软件设计师：Software Design Engineer
-软件评测师：Software Testing Engineer
-信息安全工程师：Information Security Engineer
-程序员：Programmer
-网络工程师：Network Engineer
-网络管理员：Network Administrator
-多媒体应用设计师：Multimedia Application Engineer
-嵌入式系统设计师：Embedded System Development Engineer
-计算机辅助设计师：Computer Aided Design Engineer
-电子商务设计师：Electronic Commerce Engineer
-多媒体应用制作技术员：Multimedia Application Technician
-电子商务技术员：Electronic Commerce Technician
-信息系统监理师：System Auditor
-数据库系统工程师：Database System Engineer
-信息系统管理工程师：System Management Engineer
-信息系统运行管理员：System Operation Administrator
-信息技术支持工程师：IT Support Engineer
-信息处理技术员：Information Processing Technician
-</code></pre>
+                <h1 id="intelligent-risk-control">Intelligent Risk Control 智能风险控制</h1>
+<p>主要笔记基于梅子行的《智能风控：原理、算法与工程实践》和《智能风控：Python金融风险管理与评分卡》两本书。</p>
+<h2 id="python"><a href="http://e.dangdang.com/pc/reader/index.html?id=1901216728">智能风控：Python金融风险管理与评分卡</a></h2>
+<p>风控是金融的核心。</p>
+<h3 id="_1">信用管理基础知识</h3>
+<h2 id="_2"><a href="http://e.dangdang.com/pc/reader/index.html?id=1901194870">智能风控：原理、算法与工程实践</a></h2>
+<h3 id="_3">信贷业务基础知识</h3>
               
             </div>
           </div>
@@ -404,10 +342,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../system_analyst/" class="btn btn-neutral float-right" title="高级系统分析师复习笔记">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ai_sec/" class="btn btn-neutral float-right" title="AI Sec 人工智能安全">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../testdev/learn_guide/" class="btn btn-neutral" title="学习指南"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../enterprise_security/" class="btn btn-neutral" title="Enterprise Security 企业安全"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -433,10 +371,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../testdev/learn_guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../enterprise_security/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../system_analyst/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../ai_sec/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
