@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="TesterCC">
-  <link rel="canonical" href="https://testercc.github.io/devops/learn_guide/">
+  <link rel="canonical" href="https://testercc.github.io/secdev/term/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>学习指南 - Security Development Notes</title>
+  <title>相关术语 - Security Development Notes</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "\u5b66\u4e60\u6307\u5357";
-    var mkdocs_page_input_path = "devops/learn_guide.md";
-    var mkdocs_page_url = "/devops/learn_guide/";
+    var mkdocs_page_name = "\u76f8\u5173\u672f\u8bed";
+    var mkdocs_page_input_path = "secdev/term.md";
+    var mkdocs_page_url = "/secdev/term/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -88,26 +88,30 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Security Development 安全研发</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/learn_guide/">学习指南</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../learn_guide/">学习指南</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/term/">相关术语</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">相关术语</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">溯源</a>
+    </li>
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/sec_dev_lifecycle/">SDL 安全开发流程</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../sec_dev_lifecycle/">SDL 安全开发流程</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/open_source/">Opensource 开源项目推荐</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../open_source/">Opensource 开源项目推荐</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/skill_tree/">Skill Tree 技能树</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../skill_tree/">Skill Tree 技能树</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/zero_trust/">Zero Trust 零信任网络</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../zero_trust/">Zero Trust 零信任网络</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/dev_sec_ops/">DevSecOps</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../dev_sec_ops/">DevSecOps</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/enterprise_security/">Enterprise Security 企业安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../enterprise_security/">Enterprise Security 企业安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/intelligent_risk_control/">Intelligent Risk Control 智能风控</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../intelligent_risk_control/">Intelligent Risk Control 智能风控</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/ai_sec/">AI Sec 人工智能安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../ai_sec/">AI Sec 人工智能安全</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -219,48 +223,12 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">DevOps</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">学习指南</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_1">阅读推荐</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_2">系统日志删除</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#docker">docker日志清理脚本</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#linux">Linux下清除系统日志方法</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#_3">错误方法(不能用)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_4">正确方法</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ubuntu-1604">ubuntu 16.04 系统日志清理</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#linux_1">Linux常用命令</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_5">常用命令</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#awk">awk</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#agawk">ag:比awk更好用的搜索工具</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#killpid">命令行一次kill多个pid</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#ip">轻量级搞事IP应对策略</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#cicd">CI/CD框架选型</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/learn_guide/">学习指南</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../docker/">Docker</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/docker/">Docker</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../sre/">SRE</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/sre/">SRE</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">SEO 搜索引擎优化</span></p>
@@ -337,11 +305,11 @@
     
       
         
-          <li>DevOps &raquo;</li>
+          <li>Security Development 安全研发 &raquo;</li>
         
       
     
-    <li>学习指南</li>
+    <li>相关术语</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -352,153 +320,9 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="devops">DevOps</h1>
-<p>这个词其实行业内并没有公认度很高的中文翻译，故行业内都是用的DevOps这个英文组合词。</p>
-<ul>
-<li>DevOps（Development和Operations的组合词）是一组过程、方法与系统的统称，用于促进开发（应用程序/软件工程）、技术运营和质量保障（QA）部门之间的沟通、协作与整合。</li>
-</ul>
-<p><center>
-<img alt="quiz" src="/img/devops/devops.png" />
-</center></p>
-<h2 id="_1">阅读推荐</h2>
-<ul>
-<li><code>凤凰计划</code> - 作者是Gene Kim,Kevin Behr,George Spafford，小说体，其中提出的许多内容构成了DevOps的基础概念.</li>
-<li><code>DevOps实践指南</code> - 上面那本的姐妹篇，侧重讲解DevOps要解决的问题和解决问题的的基本步骤。</li>
-</ul>
-<h2 id="_2">系统日志删除</h2>
-<h3 id="docker">docker日志清理脚本</h3>
-<p>1.shell script, script name "clear_all_docker_log.sh"</p>
-<pre><code class="shell">#!/bin/sh
-echo &quot;======== start clean docker containers logs ========&quot;
-logs=$(find /var/lib/docker/containers/ -name *-json.log)
-for log in $logs
-        do
-                echo &quot;clean logs : $log&quot;
-                cat /dev/null &gt; $log
-        done
-echo &quot;======== end clean docker containers logs ========&quot;
-</code></pre>
-
-<p>2.deploy</p>
-<pre><code>crontab -e
-
-# auto clear docker json log
-0 9  * * * /data/tools/clear_all_docker_log.sh &gt; /data/tools/clear_all_docker.log 2&gt;&amp;1
-
-wq!
-</code></pre>
-
-<h3 id="linux">Linux下清除系统日志方法</h3>
-<h4 id="_3">错误方法(不能用)</h4>
-<pre><code>rm -f xxx.log
-</code></pre>
-
-<p>原因</p>
-<pre><code>因为应用已经打开文件句柄，直接删除会造成：
-
-1.应用无法正确释放日志文件和写入
-
-2.显示磁盘空间未释放
-</code></pre>
-
-<p>补救措施</p>
-<pre><code>ps -ef | grep deleted
-
-查看并释放相关资源
-</code></pre>
-
-<h4 id="_4">正确方法</h4>
-<pre><code>echo &quot;&quot; &gt; /var/log/xxx.log  # 第一种方法
-
-cat  /dev/null &gt;  /var/log/xxx.log  #第二种方法   本人习惯用这个
-</code></pre>
-
-<h3 id="ubuntu-1604">ubuntu 16.04 系统日志清理</h3>
-<p>1.shell script  auto_clear_sys_log.sh</p>
-<pre><code>#!/bin/sh
-
-t=$(date)
-echo $t
-
-echo &quot;======== start clean linux sys logs ========&quot;
-
-sudo apt-get clean
-
-logs=$(find /var/log -name &quot;btmp*&quot;)
-for log in $logs
-        do
-                echo &quot;clean logs 1: $log&quot;
-                cat /dev/null &gt; $log
-        done
-
-logs=$(find /var/log -name &quot;auth*&quot;)
-for log in $logs
-        do
-                echo &quot;clean logs 2: $log&quot;
-                cat /dev/null &gt; $log
-        done
-
-echo &quot;======== end clean linux sys logs ========&quot;
-</code></pre>
-
-<p>2.deploy</p>
-<pre><code># clear root dir sys log
-0 0 0 */3 * echo &quot;rootpassword&quot;|sudo -S /data/tools/auto_clear_sys_log.sh &gt;&gt; /data/tools/auto_clear_sys_log.log 2&gt;&amp;1
-</code></pre>
-
-<h2 id="linux_1">Linux常用命令</h2>
-<h3 id="_5">常用命令</h3>
-<pre><code class="shell">wc -l #统计行数
-
-uniq -c #在输出行前面加上每行在输入文件里出现的次数
-
-uniq -u #仅显示不反复的行
-
-sort -nr
--n：按照数值的大小排序
--r：以相反的顺序来排序
--k：按照哪一列进行排序
-
-head -3 #取前三名
-</code></pre>
-
-<h3 id="awk">awk</h3>
-<p><a href="https://www.cnblogs.com/bugingcode/p/8287914.html">awk使用和详解</a></p>
-<h3 id="agawk">ag:比awk更好用的搜索工具</h3>
-<p>搜索工具：the_silver_searcher，安装好后用命令 ag 使用
-https://github.com/ggreer/the_silver_searcher</p>
-<p>使用方法：</p>
-<pre><code class="shell">ag pattern    # 这里是正则匹配
-
-ag -Q .proto     # -Q 搜索字面值
-
-ag -G py$ import   # 搜索以py结尾的文件中包含import字符的内容
-
-ag -w proto     # -w 全词匹配，不然可能匹配protobuf这类结果
-
-ag --python import  # 搜索以py结尾的文件中包含import字符的内容
-
-ag --python import | grep time   # ag 配合 grep 使用
-</code></pre>
-
-<p>注意只要待搜索字符串包含大写字母，ag就会大小写敏感。</p>
-<h2 id="killpid">命令行一次kill多个pid</h2>
-<pre><code class="shell">
-打印包含'sign_v1'，且不含有关键字&quot;grep&quot;的进程的pid
-ps aux | grep sign_v1 | grep -v grep | awk '{print $2}'
-ps -ef | grep sign_v1 | grep -v grep | awk '{print $2}'
-
-批量删除包含'sign_v1'的进程，不含有关键字&quot;grep&quot;的进程
-ps aux | grep sign_v1 | grep -v grep | awk '{print $2}' | xargs kill -9
-ps -ef | grep sign_v1 | grep -v grep | awk '{print $2}' | xargs kill -9
-</code></pre>
-
-<h2 id="ip">轻量级搞事IP应对策略</h2>
-<pre><code>未待完续
-</code></pre>
-
-<h2 id="cicd">CI/CD框架选型</h2>
-<p>jenkins+sonarqube+docker+artifactory</p>
+                <h1 id="_1">安全相关术语</h1>
+<h2 id="_2">溯源</h2>
+<p>指在法律允许的范围内精准采集攻击者的设备指纹、社交信息、位置信息，分析并形成攻击者的画像，在攻击者使用浏览器访问仿真溯源蜜罐时，对攻击者进行追踪溯源，打击网络犯罪，保护资产安全。</p>
               
             </div>
           </div>
@@ -506,10 +330,10 @@ ps -ef | grep sign_v1 | grep -v grep | awk '{print $2}' | xargs kill -9
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../docker/" class="btn btn-neutral float-right" title="Docker">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../sec_dev_lifecycle/" class="btn btn-neutral float-right" title="SDL 安全开发流程">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../crawler/cookie_pool/" class="btn btn-neutral" title="Cookie池设计"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../learn_guide/" class="btn btn-neutral" title="学习指南"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -535,10 +359,10 @@ ps -ef | grep sign_v1 | grep -v grep | awk '{print $2}' | xargs kill -9
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../crawler/cookie_pool/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../learn_guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../docker/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../sec_dev_lifecycle/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
