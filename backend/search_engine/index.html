@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="TesterCC">
-  <link rel="canonical" href="https://testercc.github.io/secdev/sec_dev_lifecycle/">
+  <link rel="canonical" href="https://testercc.github.io/backend/search_engine/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>SDL 安全开发流程 - Security Development Notes</title>
+  <title>搜索引擎 - Security Development Notes</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "SDL \u5b89\u5168\u5f00\u53d1\u6d41\u7a0b";
-    var mkdocs_page_input_path = "secdev/sec_dev_lifecycle.md";
-    var mkdocs_page_url = "/secdev/sec_dev_lifecycle/";
+    var mkdocs_page_name = "\u641c\u7d22\u5f15\u64ce";
+    var mkdocs_page_input_path = "backend/search_engine.md";
+    var mkdocs_page_url = "/backend/search_engine/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -88,28 +88,26 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Security Development 安全研发</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../learn_guide/">学习指南</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/learn_guide/">学习指南</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../term/">相关术语</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/term/">相关术语</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">SDL 安全开发流程</a>
-    <ul class="current">
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/sec_dev_lifecycle/">SDL 安全开发流程</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../open_source/">Opensource 开源项目推荐</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/open_source/">Opensource 开源项目推荐</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../skill_tree/">Skill Tree 技能树</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/skill_tree/">Skill Tree 技能树</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../zero_trust/">Zero Trust 零信任网络</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/zero_trust/">Zero Trust 零信任网络</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../dev_sec_ops/">DevSecOps</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/dev_sec_ops/">DevSecOps</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../enterprise_security/">Enterprise Security 企业安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/enterprise_security/">Enterprise Security 企业安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../intelligent_risk_control/">Intelligent Risk Control 智能风控</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/intelligent_risk_control/">Intelligent Risk Control 智能风控</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../ai_sec/">AI Sec 人工智能安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/ai_sec/">AI Sec 人工智能安全</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -146,38 +144,74 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Back-end Development 后端开发</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../backend/learn_guide/">学习指南</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../learn_guide/">学习指南</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../backend/database/">Database 数据库</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database 数据库</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../backend/rpc/">RPC</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../rpc/">RPC</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../backend/search_engine/">搜索引擎</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">搜索引擎</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#sphinx-coreseek">Sphinx 和 CoreSeek</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#sphinx-coreseek_1">Sphinx 和 CoreSeek简介</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#sphinx">Sphinx</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#coreseek">CoreSeek</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sphinx_1">Sphinx的工作流程</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#elasticsearch">ElasticSearch</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#elasticsearch_1">ElasticSearch的基本概念</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#elasticsearchmysql">ElasticSearch和Mysql对比理解概念</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#http">HTTP方法</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">倒排索引</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">倒排索引待解决的问题</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#whoosh">Whoosh</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#haystack">haystack</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#elasticsearch-dsl">ElasticSearch DSL</a>
+    </li>
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../backend/python/">Python</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../python/">Python</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../backend/go/">Golang</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../go/">Golang</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../backend/java/">Java</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../java/">Java</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../backend/rust/">Rust</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../rust/">Rust</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../backend/proxy/">Proxy 代理</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../proxy/">Proxy 代理</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../backend/rabbitmq/">RabbitMQ</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../rabbitmq/">RabbitMQ</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../backend/kafka/">Kafka</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../kafka/">Kafka</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../backend/big_data/">Big Data 大数据</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../big_data/">Big Data 大数据</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../backend/git/">Git</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../git/">Git</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../backend/git_flow/">Git Flow</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../git_flow/">Git Flow</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../backend/os/">OS</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../os/">OS</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../backend/vim/">Vim</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../vim/">Vim</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Machine Learning 机器学习</span></p>
@@ -311,11 +345,11 @@
     
       
         
-          <li>Security Development 安全研发 &raquo;</li>
+          <li>Back-end Development 后端开发 &raquo;</li>
         
       
     
-    <li>SDL 安全开发流程</li>
+    <li>搜索引擎</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -326,14 +360,68 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="sdl">安全开发流程(SDL)</h2>
-<p>安全开发流程，能够帮助企业以最小的成本提高产品的安全性。</p>
-<p>SDL，英文全称为Security Development Lifecycle, 即安全开发生命周期。最早由微软提出，在软件工程中实施，是帮助解决软件安全问题的办法。</p>
-<p>SDL是一个安全保证的过程，其重点是软件开发，它在开发的所有阶段都引入了安全和隐私的原则</p>
-<p>大致步骤见下图：
-<center>
-<img alt="ms_sdl" src="/img/secdev/ms_sdl.png" />
-</center></p>
+                <h1 id="_1">搜索引擎相关</h1>
+<h2 id="sphinx-coreseek">Sphinx 和 CoreSeek</h2>
+<h3 id="sphinx-coreseek_1">Sphinx 和 CoreSeek简介</h3>
+<h4 id="sphinx">Sphinx</h4>
+<p>Sphinx是一个基于SQL的全文检索引擎，可以结合MySQL、PostgreSQL做全文搜索，它可以提供比数据库本身更专业的搜索功能，使得应用程序更容易实现专业化的全文检索。Sphinx特别为一些脚本语言设计搜索API接口，如PHP,Python,Perl,Ruby等，同时为MySQL也设计了一个存储引擎插件。</p>
+<p>Sphinx单一索引最大可包含1亿条记录，在1千万条记录情况下的查询速度为0.x秒（毫秒级）。Sphinx创建索引的速度为：创建100万条记录的索引只需3～4分钟，创建1000万条记录的索引可以在50分钟内完成，而只包含最新10万条记录的增量索引，重建一次只需几十秒。</p>
+<h4 id="coreseek">CoreSeek</h4>
+<p>CoreSeek为应用提供全文检索功能，目前的版本(2.x 3.x)基于Sphinx，支持使用Python定义数据源，支持中文分词。CoreSeek集合了Sphinx的功能，支持更多的数据源，在字典，建立索引，分词更好的支持中文。可以这样理解，CoreSeek就是支持中文的Sphinx全文检索。</p>
+<p>ref:
+https://www.jianshu.com/p/b4d0dcedfc1d</p>
+<h3 id="sphinx_1">Sphinx的工作流程</h3>
+<p><img alt="Sphinx工作流程图" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed/img/20200608143512.png" /></p>
+<p>Sphinx的整个工作流程就是Indexer程序到数据库里面提取数据，对数据进行分词，然后根据生成的分词生成单个或多个索引，并将它们传递给searchd程序。然后客户端可以通过API调用进行搜索。</p>
+<p><strong>流程图解释</strong></p>
+<ul>
+<li>
+<p>Database：数据源，是Sphinx做索引的数据来源。因为Sphinx是无关存储引擎、数据库的，所以数据源可以是MySQL、PostgreSQL、XML等数据。</p>
+</li>
+<li>
+<p>Indexer：索引程序，从数据源中获取数据，并将数据生成全文索引。可以根据需求，定期运行Indexer达到定时更新索引的需求。</p>
+</li>
+<li>
+<p>Searchd：Searchd直接与客户端程序进行对话，并使用Indexer程序构建好的索引来快速地处理搜索查询。</p>
+</li>
+<li>
+<p>APP：客户端程序。接收来自用户输入的搜索字符串，发送查询给Searchd程序并显示返回结果。</p>
+</li>
+</ul>
+<h2 id="elasticsearch">ElasticSearch</h2>
+<p>ElasticSearch可以当MongoDB用但不能完全取代，ElasticSearch是全文搜索引擎。</p>
+<h3 id="elasticsearch_1">ElasticSearch的基本概念</h3>
+<p>1.<strong>集群</strong>：一个或者多个节点组织在一起</p>
+<p>2.<strong>节点</strong>：一个节点是集群中的一个服务器，由一个名字来标识，默认是一个随机的漫威角色的名字。</p>
+<p>3.<strong>分片</strong>：将索引划分为多份的能力，<strong>允许水平分割和扩展容量</strong>，多个分片响应请求，提高性能和吞吐量。（和数据库的索引不一样）</p>
+<p>4.<strong>副本</strong>：创建分片的一份或多份的能力，在一个节点失败其余节点可以顶上。</p>
+<h3 id="elasticsearchmysql">ElasticSearch和Mysql对比理解概念</h3>
+<p><img alt="es_vs_mysql" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed/img/20200518230546.png" /></p>
+<p>documents (一段json)</p>
+<h3 id="http">HTTP方法</h3>
+<p><img alt="http_method" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed/img/20200518230917.png" /></p>
+<h3 id="_2">倒排索引</h3>
+<blockquote>
+<p>倒排索引源于实际应用中需要根据属性的值来查找记录。这种索引表中的每一项都包括一个属性值和具有该属性值的各记录的地址。由于不是由记录来确定属性值，而是由属性值来确定记录的位置，因为称为倒排索引（inverted index）。</p>
+<p>带有倒排索引的文件我们称为倒排索引文件，简称倒排文件（inverted file）。</p>
+</blockquote>
+<p>目前的搜索引擎中，一般底层的索引存储都使用的是倒排索引。</p>
+<p>TF-IDF, elasticsearch的打分原理相关概念</p>
+<p>TF-IDF（term frequency–inverse document frequency）是一种用于信息检索与数据挖掘的常用加权技术。TF是词频(Term Frequency)，IDF是逆文本频率指数(Inverse Document Frequency)。</p>
+<h3 id="_3">倒排索引待解决的问题</h3>
+<p>1.大小写转换问题（如：python和PYTHON是否视为同一个词）</p>
+<p>2.词干抽取（如：looking和look是否应该处理为一个词）</p>
+<p>3.分词（如：操作系统 应该分词为 “操作”和“系统”，还是“操作系统”）</p>
+<p>4.倒排索引文件过大时，需要进行压缩编码</p>
+<h2 id="whoosh">Whoosh</h2>
+<p>一个由纯Python实现的全文搜索引擎，没有二进制文件等，比较小巧，配置比较简单，当然性能自然略低。但小站点基本够用。
+由于Whoosh自带的是英文分词，对中文的分词支持不是太好，故用一般工程上会使用jieba替换whoosh的分词组件。</p>
+<h2 id="haystack">haystack</h2>
+<p>haystack是django的开源搜索框架，该框架支持Solr, ElasticSearch, Whoosh, Xapian搜索引擎，不用更改代码，直接切换引擎，减少代码量。</p>
+<h2 id="elasticsearch-dsl">ElasticSearch DSL</h2>
+<p>一个辅助ElasticSearch写请求和运行请求的高级python库。</p>
+<p>官网地址:
+https://elasticsearch-dsl.readthedocs.io/en/latest/</p>
               
             </div>
           </div>
@@ -341,10 +429,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../open_source/" class="btn btn-neutral float-right" title="Opensource 开源项目推荐">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../python/" class="btn btn-neutral float-right" title="Python">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../term/" class="btn btn-neutral" title="相关术语"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../rpc/" class="btn btn-neutral" title="RPC"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -370,10 +458,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../term/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../rpc/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../open_source/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../python/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

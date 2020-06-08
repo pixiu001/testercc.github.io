@@ -181,9 +181,19 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#postgresql">PostgreSQL</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">其他问题</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">关系型数据库数据搜索缺点</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">如何对数据库进行优化</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../rpc/">RPC</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../search_engine/">搜索引擎</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../python/">Python</a>
                     </li>
@@ -590,6 +600,14 @@ mongod --config /etc/mongodb.conf
 
 <h2 id="postgresql">PostgreSQL</h2>
 <p>默认端口：<code>5432</code></p>
+<h2 id="_3">其他问题</h2>
+<h3 id="_4">关系型数据库数据搜索缺点</h3>
+<p>1.无法打分（无法对搜索出来的结果进行排序）</p>
+<p>2.无分布式</p>
+<p>3.无法解析搜索请求</p>
+<p>4.效率低（上亿）</p>
+<p>5.分词</p>
+<h3 id="_5">如何对数据库进行优化</h3>
               
             </div>
           </div>
