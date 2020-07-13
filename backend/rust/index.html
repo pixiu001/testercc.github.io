@@ -155,6 +155,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../search_engine/">搜索引擎</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../high_concurrency/">高并发</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../python/">Python</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../go/">Golang</a>
@@ -167,7 +169,7 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#1the-rust-programming-language">1.首推荐官方的The Rust Programming Language</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#2">2.推荐国人写的，毕竟有母语学习优势，后面熟悉了可以直接啃英文原著。</a>
+    <li class="toctree-l3"><a class="reference internal" href="#2">2.推荐国人写的，毕竟有母语学习优势，后面熟悉了可以直接啃英文文档。</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#3rust">3.Rust标准库文档</a>
     </li>
@@ -363,11 +365,13 @@
 <pre><code class="shell">rustup docs --book
 </code></pre>
 
-<h4 id="2">2.推荐国人写的，毕竟有母语学习优势，后面熟悉了可以直接啃英文原著。</h4>
+<p>备注：虽然实体书目前已经出了中文版《Rust权威指南》，但是该实体书是基于18年的rust版本编写的，所以建议还是直接查看官方最新文档。</p>
+<h4 id="2">2.推荐国人写的，毕竟有母语学习优势，后面熟悉了可以直接啃英文文档。</h4>
 <ul>
 <li><code>深入浅出Rust</code> -- 据说适合初学者。</li>
-<li><code>Rust编程之道</code> -- 原理讲解清晰。</li>
+<li><code>Rust编程之道</code> -- 据说原理讲解清晰。</li>
 </ul>
+<p>为什么是<strong>据说</strong>？因为我现在正忙着学Go，目前的确没精力同时学习Rust了，后面再来填这个坑，阅读简评以后会发到我的<a href="https://blog.fullstackpentest.com/reading-radar/">读书雷达</a></p>
 <h4 id="3rust">3.<a href="https://doc.rust-lang.org/std/">Rust标准库文档</a></h4>
 <h2 id="_2">关于编译</h2>
 <p>hello world程序可以使用rustc，但是工程级rust项目官方建议使用<code>cargo</code>。</p>
