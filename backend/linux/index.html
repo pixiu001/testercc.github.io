@@ -179,6 +179,8 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Linux</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#tcp">查看并发请求数和TCP状态</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#_2">显示目录下所有一级目录和文件</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_3">批量查找某个目下文件的包含的内容</a>
@@ -186,6 +188,10 @@
     <li class="toctree-l2"><a class="reference internal" href="#linux">Linux批量查找并替换文件夹下所有文件的（文字）内容</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_4">批量查找并替换任意文件夹下的文件内容</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#linuxnginx">Linux查看Nginx进程数</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#linuxhttpd">Linux查看httpd进程数</a>
     </li>
     </ul>
                     </li>
@@ -341,6 +347,10 @@
             <div class="section">
               
                 <h1 id="_1">常用命令</h1>
+<h2 id="tcp">查看并发请求数和TCP状态</h2>
+<pre><code class="bash">netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
+</code></pre>
+
 <h2 id="_2">显示目录下所有一级目录和文件</h2>
 <pre><code class="bash">tree -L l -FC -I &quot;*.pyc&quot;
 </code></pre>
@@ -359,6 +369,14 @@
 
 <h2 id="_4">批量查找并替换任意文件夹下的文件内容</h2>
 <pre><code class="bash">sed -i &quot;s/要找查找的文本/替换后的文本/g&quot; `grep -rl &quot;要找查找的文本&quot; /任意文件夹`
+</code></pre>
+
+<h2 id="linuxnginx">Linux查看Nginx进程数</h2>
+<pre><code class="bash">ps -ef | grep nginx | wc -l
+</code></pre>
+
+<h2 id="linuxhttpd">Linux查看httpd进程数</h2>
+<pre><code class="bash">ps -ef | grep httpd | wc -l
 </code></pre>
               
             </div>

@@ -77,9 +77,15 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_2">战略设计</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">战术设计</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ddd_1">DDD战略模式</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">总结</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#ddd_1">DDD常见术语</a>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">战术设计</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ddd_2">DDD常见术语</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#subdomain">子域 (Subdomain)</a>
     </li>
@@ -95,13 +101,15 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#ddd_2">应用DDD</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ddd_3">应用DDD</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#ddd_3">DDD与中台、微服务的关系</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ddd_4">DDD与中台、微服务的关系</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#ddd_4">微服务设计为什么要选择DDD?</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ddd_5">微服务设计为什么要选择DDD?</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#ddd_5">DDD加速和管理工具</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ddd_6">DDD加速和管理工具</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ddd_7">DDD是否是银弹？</a>
     </li>
     </ul>
                     </li>
@@ -402,14 +410,31 @@
 4.了解如何通过名为 上下文映射(Context Maping) 的技术来集成多个限界上下文。 上下文映射图(Context Map)同时定义了2个进行集成的限界上下文之间的团队间关系及技术实现方式。
 </code></pre>
 
-<h2 id="_3">战术设计</h2>
+<h2 id="ddd_1">DDD战略模式</h2>
+<ol>
+<li>领域和子域</li>
+</ol>
+<p>领域（Domain），即一个业务范围以及这个业务范围内的软件活动。领域层是具体的业务领域层，是发生业务变化最为频繁的地方，是业务系统最核心的一层，是 DDD 关注的焦点和难点。</p>
+<p>一个组织有一个大的业务范围，然后划分为组织部门，也会划分为子业务，这就是子域的概念。相应地，对于软件设计，就是把一个大的系统划分为多个模块，即多个子域。</p>
+<p>一个业务系统有且只有一个核心域，并且核心域的提炼往往影响着整个系统的设计成败。</p>
+<ol>
+<li>限界上下文和通用语言</li>
+</ol>
+<p>限界上下文的含义就是用一个清晰可见的边界将这个上下文勾勒出来，如此就能在自己的边界内维持领域模型的一致性与完整性。</p>
+<p>通用语言是一个各种概念的集合，将一个限界上下文中的名词、动词和形容词全部集中在一起，且具有简洁、清晰的特性，这套通用语言与限界上下文对应，开发、产品和测试都基于通用语言进行沟通。</p>
+<p>理想情况下，限界上下文与微服务可以一一对应，但在实际项目中，还会有一些调整，比如根据业务的相关度和变化频率，有时候就需要将多个限界上下文进行合并。</p>
+<h3 id="_3">总结</h3>
+<p>DDD 可以有效地根据业务对复杂软件系统进行拆解，微服务架构与 DDD 相得益彰。</p>
+<p>DDD 为微服务的边界拆分提供了方法论，可以解决微服务的粒度问题。</p>
+<p>理解如何运用 DDD 进行领域场景分析的战略模式。DDD 不是银弹，实证软件工程强调了经验的重要性，然而 DDD 对于复杂软件系统的整体架构的搭建，有着重要的指导作用。</p>
+<h2 id="_4">战术设计</h2>
 <pre><code>1) 运用 聚合 进行战术设计
 2) 运用 领域事件 进行战术设计
 </code></pre>
 
 <p>DDD最为突出，战术层面的设计工具。</p>
 <p><strong>聚合(Aggregate)模式</strong> ： 一个比较重要的工具，被用来将若干 实体 和 值对象 以恰当的大小聚集在一起。</p>
-<h2 id="ddd_1">DDD常见术语</h2>
+<h2 id="ddd_2">DDD常见术语</h2>
 <p><center>
 <img alt="quiz" src="/img/ddd/DDD.jpg" />
 </center></p>
@@ -421,7 +446,7 @@
 <h4 id="domain-events">领域事件(Domain Events)</h4>
 <h4 id="event-storming">事件风暴（Event Storming）</h4>
 <p>一种快速的设计技术，让领域专家和开发人员都可以参与到这个快节奏的学习过程中。它聚焦于业务和业务流程，而非名次概念和数据。</p>
-<h2 id="ddd_2">应用DDD</h2>
+<h2 id="ddd_3">应用DDD</h2>
 <p>吃透DDD的核心设计思想。</p>
 <pre><code>DDD强调领域模型和微服务设计的一体性。先有领域模型，才有微服务。（不是脱离领域模型谈微服务的设计）
 通过战略设计 建立领域模型 和 划分微服务的边界。 (关键)
@@ -429,13 +454,18 @@
 </code></pre>
 
 <p>目标：边界清晰，可持续演进的微服务架构</p>
-<h2 id="ddd_3">DDD与中台、微服务的关系</h2>
+<h2 id="ddd_4">DDD与中台、微服务的关系</h2>
 <p>中台，本质是业务模型。</p>
 <p>微服务，是业务模型的系统落地。</p>
 <p>DDD是一种设计思想，可以同时指导中台业务建模和微服务设计。</p>
-<h2 id="ddd_4">微服务设计为什么要选择DDD?</h2>
-<h2 id="ddd_5">DDD加速和管理工具</h2>
+<h2 id="ddd_5">微服务设计为什么要选择DDD?</h2>
+<h2 id="ddd_6">DDD加速和管理工具</h2>
 <p>当DDD时，我们的任务是：深入学习业务如何运作，然后基于学习的范围建立软件模型</p>
+<h2 id="ddd_7">DDD是否是银弹？</h2>
+<p>当然不是。</p>
+<p>使用DDD指导开发复杂软件系统，从<strong>本质上并不会降低应用系统本身的复杂度</strong>。</p>
+<p>DDD的核心价值在于<strong>它能帮你从战略设计到战术设计的过程进行规范</strong>。</p>
+<p>在设计系统时就能思路清晰，从而使设计过程更加规范。</p>
               
             </div>
           </div>
