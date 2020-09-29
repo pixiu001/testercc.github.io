@@ -19,7 +19,7 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Enterprise Security \u4f01\u4e1a\u5b89\u5168";
-    var mkdocs_page_input_path = "secdev/enterprise_security.md";
+    var mkdocs_page_input_path = "secdev\\enterprise_security.md";
     var mkdocs_page_url = "/secdev/enterprise_security/";
   </script>
   
@@ -82,6 +82,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
@@ -126,6 +128,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/sql_injection/">SQL Injection SQL注入</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/ddos/">DDoS 分布式拒绝服务</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/xss/">XSS 跨站脚本攻击</a>
                     </li>
@@ -344,6 +348,14 @@
 <ul>
 <li><a href="https://github.com/FallibleInc/security-guide-for-developers/blob/master/security-checklist.md">Security Checklist</a></li>
 </ul>
+<h2 id="_4">常用安全配置命令</h2>
+<p>非root用户带sudo权限时</p>
+<pre><code>sudo bash -c &quot;echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all&quot;
+</code></pre>
+
+<p>如果当前用户权限足够，直接执行</p>
+<pre><code>echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all
+</code></pre>
               
             </div>
           </div>

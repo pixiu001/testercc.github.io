@@ -19,7 +19,7 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Hexo";
-    var mkdocs_page_input_path = "others/hexo.md";
+    var mkdocs_page_input_path = "others\\hexo.md";
     var mkdocs_page_url = "/others/hexo/";
   </script>
   
@@ -82,6 +82,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
@@ -124,6 +126,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/sql_injection/">SQL Injection SQL注入</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/ddos/">DDoS 分布式拒绝服务</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/xss/">XSS 跨站脚本攻击</a>
                     </li>
@@ -301,6 +305,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#hexo_2">Hexo本地调试方案</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#hexo_3">关于Hexo的性能</a>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../english_grammar/">英语语法框架</a>
@@ -372,12 +378,15 @@ hexo d      # 上传（部署）到git仓库
 </code></pre>
 
 <h3 id="hexo_2">Hexo本地调试方案</h3>
-<p>建于PHPStorm 2018在导入整个hexo blog项目时迷之卡顿（写markdown时一字一卡），再加上PHPStorm开启式空间占用挺大，故果断换成Sublime Text3来写blog了。</p>
+<p>建于PHPStorm 2018在导入整个hexo blog项目时迷之卡顿（写markdown时一字一卡），再加上PHPStorm开启式空间占用挺大，故果断换成Sublime Text3来写blog了（VSC也很好）。</p>
 <p>具体安装和配置见此文：</p>
 <p><a href="https://www.jianshu.com/p/b38b1e8abd12">Sublime Text3 + Markdown + OmniMarkupPreviewer+实时预览</a></p>
 <p>使用方法：</p>
 <p>使用Sublime新建一个文件，右下角选择编辑方式为“Markdown”，将其保存为.md文件，选择保存位置并单击确定，输入快捷键：<code>Ctrl/Command+Alt+O</code>，打开浏览器界面预览即可。</p>
 <p>（MacOS Command -&gt; Win/Linux Ctrl）</p>
+<h3 id="hexo_3">关于Hexo的性能</h3>
+<p>之前曾经动过念头要将我的blog由hexo换成hugo，不过因为工作原因时间的确不够用，计划搁置。</p>
+<p>与hugo相比，hexo的编译速度的确很慢，环境配置也相对更重，但是hexo胜在插件齐全，所以个人根据自己的情况选择就好。</p>
               
             </div>
           </div>

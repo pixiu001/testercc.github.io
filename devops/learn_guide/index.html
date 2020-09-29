@@ -19,7 +19,7 @@
   <script>
     // Current page data
     var mkdocs_page_name = "\u5b66\u4e60\u6307\u5357";
-    var mkdocs_page_input_path = "devops/learn_guide.md";
+    var mkdocs_page_input_path = "devops\\learn_guide.md";
     var mkdocs_page_url = "/devops/learn_guide/";
   </script>
   
@@ -82,6 +82,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
@@ -124,6 +126,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/sql_injection/">SQL Injection SQL注入</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/ddos/">DDoS 分布式拒绝服务</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/xss/">XSS 跨站脚本攻击</a>
                     </li>
@@ -260,7 +264,9 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#linux_1">Linux常用命令</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_5">常用命令</a>
+    <li class="toctree-l3"><a class="reference internal" href="#shell">shell</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#linux_2">Linux修改文件所有者和文件所在组</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#awk">awk</a>
     </li>
@@ -465,7 +471,7 @@ echo &quot;======== end clean linux sys logs ========&quot;
 </code></pre>
 
 <h2 id="linux_1">Linux常用命令</h2>
-<h3 id="_5">常用命令</h3>
+<h3 id="shell">shell</h3>
 <pre><code class="shell">wc -l #统计行数
 
 uniq -c #在输出行前面加上每行在输入文件里出现的次数
@@ -478,6 +484,17 @@ sort -nr
 -k：按照哪一列进行排序
 
 head -3 #取前三名
+</code></pre>
+
+<h3 id="linux_2">Linux修改文件所有者和文件所在组</h3>
+<pre><code>chgrp   用户名  文件名  -R
+
+chown   用户名  文件名  -R
+
+-R表示递归目录下所有文件
+
+chown [-R] 账号名称      文件/目录
+chown [-R] 账号名称:组群  文件/目录
 </code></pre>
 
 <h3 id="awk">awk</h3>
