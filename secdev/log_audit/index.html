@@ -66,6 +66,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../sec_dev_lifecycle/">SDL 安全开发流程</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../code_sec/">Code Security 代码安全</a>
+                    </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Log Audit 日志审计</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#_2">日志审计流程</a>
@@ -77,6 +79,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#2">【2】数理统计方法</a>
     </li>
         </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">日志审计面临的挑战</a>
     </li>
     </ul>
                     </li>
@@ -150,6 +154,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/ctf_skill/">CTF竞赛常用基本解题技巧</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ctf/pwn/">PWN</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Algorithm 算法</span></p>
                 <ul>
@@ -173,7 +179,13 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/learn_guide/">学习指南</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/computer_networking/">计算机网络</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/os/">OS 操作系统</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/database/">Database 数据库</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/performance_optimization/">性能优化</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/rpc/">RPC</a>
                     </li>
@@ -202,8 +214,6 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/git_flow/">Git Flow</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/linux/">Linux</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../backend/os/">OS</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/vim/">Vim</a>
                     </li>
@@ -364,6 +374,14 @@
 <p>对已知攻击的特征进行分析，并从中提取规则，进而由各种规则组合成为规则库，系统在运行过程中匹配规则库中的规则信息，从而生成告警。</p>
 <h3 id="2">【2】数理统计方法</h3>
 <p>给网络流量、中央处理器（CPU）占用率等相关数据设置一个阈值，当超过这个阈值就发出告警。</p>
+<h2 id="_4">日志审计面临的挑战</h2>
+<ul>
+<li>数据量大</li>
+<li>日志输出方式多种多样</li>
+<li>日志格式复杂，可读性差</li>
+<li>分析备份工作繁杂</li>
+<li>日志数据易被篡改或删除</li>
+</ul>
               
             </div>
           </div>
@@ -374,7 +392,7 @@
         <a href="../open_source/" class="btn btn-neutral float-right" title="Opensource 开源项目推荐">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../sec_dev_lifecycle/" class="btn btn-neutral" title="SDL 安全开发流程"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../code_sec/" class="btn btn-neutral" title="Code Security 代码安全"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -400,7 +418,7 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../sec_dev_lifecycle/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../code_sec/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../open_source/" style="color: #fcfcfc">Next &raquo;</a></span>

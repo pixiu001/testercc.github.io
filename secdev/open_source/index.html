@@ -66,6 +66,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../sec_dev_lifecycle/">SDL 安全开发流程</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../code_sec/">Code Security 代码安全</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../log_audit/">Log Audit 日志审计</a>
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Opensource 开源项目推荐</a>
@@ -80,9 +82,9 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_4">渗透经验</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_5">企业应用(排名部分先后)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">安全工具(排名不分先后)</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_6">安全工具</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">其它工具</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#blog">安全研发Blog</a>
     </li>
@@ -156,6 +158,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/ctf_skill/">CTF竞赛常用基本解题技巧</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ctf/pwn/">PWN</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Algorithm 算法</span></p>
                 <ul>
@@ -179,7 +183,13 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/learn_guide/">学习指南</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/computer_networking/">计算机网络</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/os/">OS 操作系统</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/database/">Database 数据库</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/performance_optimization/">性能优化</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/rpc/">RPC</a>
                     </li>
@@ -208,8 +218,6 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/git_flow/">Git Flow</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/linux/">Linux</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../backend/os/">OS</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/vim/">Vim</a>
                     </li>
@@ -377,7 +385,8 @@
 <p><a href="https://github.com/Bypass007/Emergency-Response-Notes">应急响应实战笔记</a></p>
 <h2 id="_4">渗透经验</h2>
 <p><a href="https://github.com/Micropoor/Micro8">Micro8_专注APT攻击与防御(可在线阅读)</a></p>
-<h2 id="_5">企业应用(排名部分先后)</h2>
+<h2 id="_5">安全工具(排名不分先后)</h2>
+<p>个别提到的工具不开源，只提供编译后版本。</p>
 <table>
 <thead>
 <tr>
@@ -388,9 +397,44 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="https://github.com/RustScan/RustScan">RustScan</a></td>
+<td>一个据说比Nmap扫描高效很多倍的扫描器</td>
+<td>Rust</td>
+</tr>
+<tr>
+<td><a href="https://github.com/joinsec/BadDNS">BadDNS</a></td>
+<td>使用公共 DNS 服务器进行多层子域名探测的极速工具</td>
+<td>Rust</td>
+</tr>
+<tr>
+<td><a href="https://github.com/LoRexxar/Kunlun-M">Kunlun-M</a></td>
+<td>原名Cobra-W，源代码安全审计工具</td>
+<td>Python</td>
+</tr>
+<tr>
 <td><a href="http://www.github.com/ztosec/hunter">Hunter</a></td>
 <td>中通DevSecOps闭环方案中的一环。</td>
 <td>Python</td>
+</tr>
+<tr>
+<td><a href="https://github.com/netxfly/x-crack">x-crack</a></td>
+<td>一款弱口令扫描器</td>
+<td>Go</td>
+</tr>
+<tr>
+<td><a href="https://github.com/MiSecurity/x-patrol">x-patrol</a></td>
+<td>github泄露扫描系统</td>
+<td>Go</td>
+</tr>
+<tr>
+<td><a href="https://github.com/0Kee-Team/crawlergo">crawlergo</a></td>
+<td>动态爬虫漏扫</td>
+<td>crawlergo是360天相的子模块，不开源</td>
+</tr>
+<tr>
+<td><a href="https://github.com/chaitin/xray">xray</a></td>
+<td>安全评估工具</td>
+<td>Go，不开源</td>
 </tr>
 <tr>
 <td><a href="https://github.com/ysrc/yulong-hids">驭龙 yulong-hids</a></td>
@@ -445,8 +489,8 @@
 </tbody>
 </table>
 <p>备注：安全开发人员推荐认真阅读代码学习。</p>
-<h2 id="_6">安全工具</h2>
-<p>部分工具不开源，只提供编译后版本。</p>
+<h2 id="_6">其它工具</h2>
+<p>非安全向但有意思的开源项目记录于此</p>
 <table>
 <thead>
 <tr>
@@ -457,29 +501,9 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/joinsec/BadDNS">BadDNS</a></td>
-<td>使用公共 DNS 服务器进行多层子域名探测的极速工具</td>
-<td>Rust</td>
-</tr>
-<tr>
-<td><a href="https://github.com/netxfly/x-crack">x-crack</a></td>
-<td>一款弱口令扫描器</td>
-<td>Go</td>
-</tr>
-<tr>
-<td><a href="https://github.com/MiSecurity/x-patrol">x-patrol</a></td>
-<td>github泄露扫描系统</td>
-<td>Go</td>
-</tr>
-<tr>
-<td><a href="https://github.com/0Kee-Team/crawlergo">crawlergo</a></td>
-<td>动态爬虫漏扫</td>
-<td>crawlergo是360天相的子模块，不开源</td>
-</tr>
-<tr>
-<td><a href="https://github.com/chaitin/xray">xray</a></td>
-<td>安全评估工具</td>
-<td>Go，不开源</td>
+<td><a href="https://github.com/openitsystem/anonymousmail">anonymousmail</a></td>
+<td>一个临时邮箱解决方案，它基于 postfix 和 django实现</td>
+<td>Python</td>
 </tr>
 </tbody>
 </table>
@@ -487,6 +511,7 @@
 <ul>
 <li><a href="http://sec.lu/">netxfly的随笔</a></li>
 <li><a href="https://www.leavesongs.com/">Phith0n</a></li>
+<li><a href="https://lorexxar.cn/">lorexxar</a></li>
 </ul>
               
             </div>

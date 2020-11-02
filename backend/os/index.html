@@ -9,7 +9,7 @@
   <meta name="author" content="TesterCC">
   <link rel="canonical" href="https://testercc.github.io/backend/os/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>OS - Security Development Notes</title>
+  <title>OS 操作系统 - Security Development Notes</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "OS";
+    var mkdocs_page_name = "OS \u64cd\u4f5c\u7cfb\u7edf";
     var mkdocs_page_input_path = "backend\\os.md";
     var mkdocs_page_url = "/backend/os/";
   </script>
@@ -65,6 +65,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/term/">相关术语</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/sec_dev_lifecycle/">SDL 安全开发流程</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/code_sec/">Code Security 代码安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/log_audit/">Log Audit 日志审计</a>
                     </li>
@@ -138,6 +140,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/ctf_skill/">CTF竞赛常用基本解题技巧</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ctf/pwn/">PWN</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Algorithm 算法</span></p>
                 <ul>
@@ -161,7 +165,31 @@
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../learn_guide/">学习指南</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../computer_networking/">计算机网络</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">OS 操作系统</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#mac-os">Mac OS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#osascript">osascript命令</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mac">Mac命令显示文件夹的大小</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#linux">Linux</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">常用命令</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">杀死进程</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../database/">Database 数据库</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../performance_optimization/">性能优化</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../rpc/">RPC</a>
                     </li>
@@ -190,26 +218,6 @@
                     <li class="toctree-l1"><a class="reference internal" href="../git_flow/">Git Flow</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../linux/">Linux</a>
-                    </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">OS</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#mac-os">Mac OS</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#osascript">osascript命令</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#mac">Mac命令显示文件夹的大小</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#linux">Linux</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_2">常用命令</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_3">杀死进程</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../vim/">Vim</a>
                     </li>
@@ -349,7 +357,7 @@
         
       
     
-    <li>OS</li>
+    <li>OS 操作系统</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -417,10 +425,10 @@ core dump又叫核心转储, 当程序运行过程中发生异常, 程序异常�
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../vim/" class="btn btn-neutral float-right" title="Vim">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../database/" class="btn btn-neutral float-right" title="Database 数据库">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../linux/" class="btn btn-neutral" title="Linux"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../computer_networking/" class="btn btn-neutral" title="计算机网络"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -446,10 +454,10 @@ core dump又叫核心转储, 当程序运行过程中发生异常, 程序异常�
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../linux/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../computer_networking/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../vim/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../database/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
