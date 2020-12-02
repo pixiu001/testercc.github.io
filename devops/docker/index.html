@@ -391,7 +391,11 @@
 
 2.使用 docker-compose.yml 定义构成应用程序的服务，这样它们可以在隔离环境中一起运行。
 
-3.最后，执行 docker-compose up 命令来启动并运行整个应用程序。
+3.最后，执行 docker-compose up 命令来启动并运行整个应用程序。(up前会执行 docker-compose build)
+</code></pre>
+
+<pre><code>Dockerfile 用于构建自定义镜像，并未直接生成容器。仅可在运行镜像时运行容器而已。
+docker-compose.yml 用于容器编排以部署环境，可能会需要用到 Dockerfile 。
 </code></pre>
 
 <h4 id="dockerfile-and-docker-compose-install-flask">Dockerfile and docker-compose install Flask</h4>

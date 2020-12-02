@@ -356,8 +356,64 @@
 <p>本质上是安全开发生命周期(SDL)安全关口左移理念和DevOps的结合。</p>
 <h2 id="_1">开源方案</h2>
 <ul>
-<li><a href="http://www.github.com/ztosec/hunter">Hunter</a> -- Hunter作为中通DevSecOps闭环方案中的一环，扮演着很重要的角色.</li>
+<li><a href="http://www.github.com/ztosec/hunter">Hunter</a> -- Hunter作为中通DevSecOps闭环方案中的一环，扮演着很重要的角色。</li>
 </ul>
+<h2 id="_2">数据备份</h2>
+<p>产品数据异常的4个方面：<code>磁盘错误、分区错误、系统错误、应用层错误</code>。</p>
+<h3 id="_3">对应解决方案</h3>
+<table>
+<thead>
+<tr>
+<th>数据异常</th>
+<th>常见解决方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>磁盘错误</td>
+<td>组件磁盘整列/raid</td>
+</tr>
+<tr>
+<td>分区错误</td>
+<td>备份分区表或不适用逻辑分区</td>
+</tr>
+<tr>
+<td>系统错误</td>
+<td>独立系统分区和独立系统盘</td>
+</tr>
+<tr>
+<td>应用层错误</td>
+<td>多种情况，针对数据库备份一般是：定期备份+主从同步备份</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">定期备份和主从同步备份的区别</h3>
+<table>
+<thead>
+<tr>
+<th>定期备份</th>
+<th>主从同步备份</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>资源消耗小</td>
+<td>资源消耗大</td>
+</tr>
+<tr>
+<td>定期备份</td>
+<td>（几乎）实时同步数据（可调整为延后同步）</td>
+</tr>
+<tr>
+<td>数据存在空档期</td>
+<td>数据完整</td>
+</tr>
+<tr>
+<td>单节点服务器首选</td>
+<td>至少需要2台服务器，主流大数据平台首选</td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>
