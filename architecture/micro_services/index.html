@@ -166,6 +166,12 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#_4">区分微服务、微服务框架、微服务架构</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">组件服务化</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">去中心化</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">基础设施自动化</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -232,6 +238,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../frontend/html5/">HTML5</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../frontend/css/">CSS</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../frontend/js/">JavaScript</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../frontend/vue/">Vue.js</a>
                     </li>
@@ -386,6 +394,22 @@
 <li><code>微服务</code>: 通过这种架构设计方法拆分出来的一个独立的组件化的小应用。</li>
 <li><code>微服务框架</code>: 实现微服务开发的第三方工具 </li>
 </ul>
+<h4 id="_5">组件服务化</h4>
+<p>Go实现一个微服务的组成：
+- kit： 一个微服务的基础库（框架）
+- service：<code>业务代码 + kit依赖 + 第三方依赖</code>组成的业务微服务
+- rpc + message queue: 轻量级通讯</p>
+<p>本质上等同于：多个微服务组合（compose）完成要给完整的用户场景（usercase）</p>
+<h4 id="_6">去中心化</h4>
+<ul>
+<li>数据去中心化</li>
+<li>治理去中心化</li>
+<li>技术去中心化</li>
+</ul>
+<p>每个服务独享自身的数据存储设置（缓存、数据库等）</p>
+<p>好处：保持服务独立性，隔离相关干扰</p>
+<h4 id="_7">基础设施自动化</h4>
+<p>todo</p>
               
             </div>
           </div>
