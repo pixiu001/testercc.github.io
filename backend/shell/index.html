@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="TesterCC">
-  <link rel="canonical" href="https://testercc.github.io/backend/linux/">
+  <link rel="canonical" href="https://testercc.github.io/backend/shell/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Linux - Security Development Notes</title>
+  <title>Shell - Security Development Notes</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Linux";
-    var mkdocs_page_input_path = "backend\\linux.md";
-    var mkdocs_page_url = "/backend/linux/";
+    var mkdocs_page_name = "Shell";
+    var mkdocs_page_input_path = "backend\\shell.md";
+    var mkdocs_page_url = "/backend/shell/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -199,7 +199,7 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../git_flow/">Git Flow</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Linux</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Shell</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#tcp">查看并发请求数和TCP状态</a>
     </li>
@@ -214,6 +214,8 @@
     <li class="toctree-l2"><a class="reference internal" href="#linuxnginx">Linux查看Nginx进程数</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#linuxhttpd">Linux查看httpd进程数</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dirname-0">dirname $0 的用法</a>
     </li>
     </ul>
                     </li>
@@ -357,7 +359,7 @@
         
       
     
-    <li>Linux</li>
+    <li>Shell</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -399,6 +401,14 @@
 
 <h2 id="linuxhttpd">Linux查看httpd进程数</h2>
 <pre><code class="bash">ps -ef | grep httpd | wc -l
+</code></pre>
+
+<h2 id="dirname-0">dirname $0 的用法</h2>
+<pre><code class="bash">$0                # 当前Shell程序的文件名
+
+dirname $0        # 获取当前Shell程序的路径
+
+cd `dirname $0`   # 进入当前Shell程序的目录
 </code></pre>
               
             </div>
