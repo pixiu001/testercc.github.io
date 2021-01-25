@@ -89,6 +89,8 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/research_list/">导航列表</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/sample_analysis/">样本分析</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
@@ -270,6 +272,16 @@
     <li class="toctree-l2"><a class="reference internal" href="#14git-rebase-i">14.git rebase -i</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#15git-blame">15.git blame</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#16git-remote">16.git remote操作</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#remote-repo">本地仓库新增 remote repo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#git-repogit-repo">从旧git repo迁移到新git repo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#github">github同步源仓库代码</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_5">其他</a>
     </li>
@@ -617,9 +629,34 @@ git blame -L 11,12 aaa/file.txt
 -L 11,12 含义是该文件的第11行和12行的修改记录
 </code></pre>
 
+<h2 id="16git-remote">16.git remote操作</h2>
+<p>一般参考新建的git仓库可以看到提示。</p>
+<h4 id="remote-repo">本地仓库新增 remote repo</h4>
+<pre><code class="bash">git remote add origin http://10.0.0.110/xxx/yyy.git
+git push -u origin master
+</code></pre>
+
+<h4 id="git-repogit-repo">从旧git repo迁移到新git repo</h4>
+<pre><code class="bash">git remote rename origin old-origin
+git remote add origin http://10.0.0.110/xxx/yyy.git
+git push -u origin --all
+git push -u origin --tags
+</code></pre>
+
+<h4 id="github">github同步源仓库代码</h4>
+<p>在github上fork了一个仓库后，自己的master分支为fork后的分支。
+如果要同步原作者的仓库，可以在远端增加 upstream 分支，分支源设置为 源代码作者的仓库，然后定期操作pull 和 merge，或者提交PR。</p>
+<pre><code class="bash">git remote add origin https://github.com/TesterCC/sec-dev-in-action-src.git
+git remote add upstream https://github.com/netxfly/sec-dev-in-action-src.git
+</code></pre>
+
 <h2 id="_5">其他</h2>
-<pre><code>之前大佬教我用-i来做squash。 中间态的若干次提交均写上 WIP: *****
-然后做完一个功能， 把 WIP: *** squash掉。  用 git rebase -i
+<pre><code>之前大佬教我用-i来做squash。 
+中间态的若干次提交均写上 WIP: *****
+然后做完一个功能， 把 WIP: *** squash掉。  
+用 git rebase -i
+
+P.S.: WIP（work in progress）
 </code></pre>
               
             </div>
