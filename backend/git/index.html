@@ -111,6 +111,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/term/">Term 术语</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/kali_linux/">Kali Linux</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/sql_injection/">SQL Injection SQL注入</a>
@@ -276,6 +278,8 @@
     <li class="toctree-l2"><a class="reference internal" href="#16git-remote">16.git remote操作</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#remote-repo">本地仓库新增 remote repo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#origin">删除远端origin仓库绑定</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#git-repogit-repo">从旧git repo迁移到新git repo</a>
     </li>
@@ -634,6 +638,10 @@ git blame -L 11,12 aaa/file.txt
 <h4 id="remote-repo">本地仓库新增 remote repo</h4>
 <pre><code class="bash">git remote add origin http://10.0.0.110/xxx/yyy.git
 git push -u origin master
+</code></pre>
+
+<h4 id="origin">删除远端origin仓库绑定</h4>
+<pre><code class="bash">git remote remove origin
 </code></pre>
 
 <h4 id="git-repogit-repo">从旧git repo迁移到新git repo</h4>

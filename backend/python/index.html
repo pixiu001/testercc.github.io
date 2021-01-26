@@ -111,6 +111,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/term/">Term 术语</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/kali_linux/">Kali Linux</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/sql_injection/">SQL Injection SQL注入</a>
@@ -183,7 +185,9 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Python</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#python_1">Python进阶建议</a>
+    <li class="toctree-l2"><a class="reference internal" href="#python_1">Python源码目录结构</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#python_2">Python进阶建议</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#python4">Python进阶可分为4个阶段</a>
         <ul>
@@ -375,7 +379,24 @@
                 <h1 id="python">Python</h1>
 <p>现在已经2019年了，不要在问学Python2还是python3了，问就是Python3，毕竟"Python核心团队计划2020年停止支持Python2"，而且很多第三方库已经开始停止对python2的兼容了。</p>
 <p>当然，如果是要维护旧代码或者是使用一些古董脚本，还是偶尔需要用到python2的（比如本人偶尔还需要维护几个Django 1.6和Django 1.8的项目代码😂）</p>
-<h2 id="python_1">Python进阶建议</h2>
+<h2 id="python_1">Python源码目录结构</h2>
+<p>CPython其实功能已经很强大，如非需要自定义扩展模块或者学习等原因，并无太多场景需要编译Python源码。</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4NDk5NTYwNw==&amp;mid=2651426104&amp;idx=1&amp;sn=e583dbd7f60abb69113918684e648063&amp;scene=19#wechat_redirect">Python-2.5.1源码编译举例</a></p>
+<p>重要的几个python2源码目录（Python3可能会有变化）</p>
+<pre><code>Include：包含了Python提供的所有头文件，若用户想自定义扩展模块，就要放到这个目录下
+
+Lib：包含了Python自带的所有标准库
+
+Modules：包含了所有用C语言编写的模块，如：random，cStringIO等，对速度要求非常严格的模块
+
+Parser：包含了Python解释器中的Scanner和Parser部分以及其他工具
+
+Objects：包含了Python所有的内建对象，如：整数、list、dict等
+
+Python：包含了Python解释器中的compiler和执行引擎部分，是Python运行的核心
+</code></pre>
+
+<h2 id="python_2">Python进阶建议</h2>
 <p>某乎这个问题中的回答<a href="https://www.zhihu.com/question/361165485/answer/951184485">Python进阶之路</a>写得很不错，因为作者禁止转载，我就简单概括下核心内容。</p>
 <h3 id="python4">Python进阶可分为4个阶段</h3>
 <p><code>入门阶段、进阶阶段、细化阶段、悟道阶段</code></p>
@@ -491,7 +512,7 @@ pyenv-virtualenv: prompt changing will be removed from future release. configure
 (auto_post_event_v2) ubuntu@xxx:/data/web/auto_post_event_v2$
 </code></pre>
 
-<h2 id="python_2">Python基础</h2>
+<h2 id="python_3">Python基础</h2>
 <h3 id="22pythonasyncio">22.说说python的asyncio</h3>
 <p>ref: <a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017970488768640">asyncio</a></p>
 <p><code>asyncio</code>是Python 3.4版本引入的标准库，直接内置了对异步IO的支持。</p>
