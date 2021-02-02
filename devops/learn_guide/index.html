@@ -294,13 +294,23 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#killpid">命令行一次kill多个pid</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#find">find命令查找包含指定内容的文件</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#ip">轻量级搞事IP应对策略</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#cicd">CI/CD框架选型</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#linux_3">Linux的命令常见问题</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1lessmore">1.less和more命令的区别</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../docker/">Docker</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../k8s/">Kubernetes</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../sre/">SRE</a>
                     </li>
@@ -546,12 +556,28 @@ ps aux | grep sign_v1 | grep -v grep | awk '{print $2}' | xargs kill -9
 ps -ef | grep sign_v1 | grep -v grep | awk '{print $2}' | xargs kill -9
 </code></pre>
 
+<h2 id="find">find命令查找包含指定内容的文件</h2>
+<p>查找系统当前目录下面的所有文件的内容中包含有<code>csv</code>字符串的文件列表。</p>
+<pre><code class="bash"># find ./ | xargs grep csv
+
+grep: ./: Is a directory
+grep: ./api: Is a directory
+./api/api_ca.py:        if format == 'csv':
+./api/api_ca.py:        if format == 'csv':
+</code></pre>
+
 <h2 id="ip">轻量级搞事IP应对策略</h2>
 <pre><code>未待完续
 </code></pre>
 
 <h2 id="cicd">CI/CD框架选型</h2>
 <p>jenkins+sonarqube+docker+artifactory</p>
+<h2 id="linux_3">Linux的命令常见问题</h2>
+<h3 id="1lessmore">1.less和more命令的区别</h3>
+<pre><code>1.操作 more不可以回去,就是不可以向前,只能向后,况且只能使用Enter和Space向后翻动。 less使用vim中的j,k键盘可以上下翻动,还可以使用上下箭头。
+2.速度 less不必读整个文件,加载速度会比more更快。
+3.内容 less退出后shell不会留下刚显示的内容,而more退出后会在shell上留下刚显示的内容
+</code></pre>
               
             </div>
           </div>
