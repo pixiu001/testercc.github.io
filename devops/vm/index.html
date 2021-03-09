@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="TesterCC">
-  <link rel="canonical" href="https://testercc.github.io/pentest/attack_lifecycle/">
+  <link rel="canonical" href="https://testercc.github.io/devops/vm/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>网络攻击生命周期 - Security Development Notes</title>
+  <title>VM 虚拟机 - Security Development Notes</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "\u7f51\u7edc\u653b\u51fb\u751f\u547d\u5468\u671f";
-    var mkdocs_page_input_path = "pentest\\attack_lifecycle.md";
-    var mkdocs_page_url = "/pentest/attack_lifecycle/";
+    var mkdocs_page_name = "VM \u865a\u62df\u673a";
+    var mkdocs_page_input_path = "devops\\vm.md";
+    var mkdocs_page_url = "/devops/vm/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -108,34 +108,32 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Pentest 渗透测试</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../learn_guide/">学习参考</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/learn_guide/">学习参考</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../term/">Term 术语</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/term/">Term 术语</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../kali_linux/">Kali Linux</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/kali_linux/">Kali Linux</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../brute_force/">Brute Force 暴力破解</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../sql_injection/">SQL Injection SQL注入</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/sql_injection/">SQL Injection SQL注入</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../ddos/">DDoS 分布式拒绝服务</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/ddos/">DDoS 分布式拒绝服务</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../xss/">XSS 跨站脚本攻击</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/xss/">XSS 跨站脚本攻击</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF 跨站请求伪造</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/csrf/">CSRF 跨站请求伪造</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../privilge_escalation/">Privilge Escalation 提权</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/privilge_escalation/">Privilge Escalation 提权</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../re/">Reverse Engineering 逆向工程</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/re/">Reverse Engineering 逆向工程</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">网络攻击生命周期</a>
-    <ul class="current">
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/attack_lifecycle/">网络攻击生命周期</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../cve/">CVE</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/cve/">CVE</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../report/">报告和笔记</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/report/">报告和笔记</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">CTF</span></p>
@@ -263,18 +261,38 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">DevOps</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/learn_guide/">学习指南</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../learn_guide/">学习指南</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/docker/">Docker</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../docker/">Docker</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/vm/">VM 虚拟机</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">VM 虚拟机</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">常见问题？</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#vmware-workstation-ovfova">VMware Workstation导出文件 ovf和ova的区别？</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#qemu">QEMU是什么？</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#kvm">KVM是什么？</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#qemu-kvm">QEMU-KVM是什么？</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">常用虚拟机操作指令</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#kvm-virsh">KVM virsh命令</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/linux/">Linux</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../linux/">Linux</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../k8s/">Kubernetes</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/sre/">SRE</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../sre/">SRE</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">SEO 搜索引擎优化</span></p>
@@ -351,11 +369,11 @@
     
       
         
-          <li>Pentest 渗透测试 &raquo;</li>
+          <li>DevOps &raquo;</li>
         
       
     
-    <li>网络攻击生命周期</li>
+    <li>VM 虚拟机</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -366,11 +384,233 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="cyber-attack-lifecycle">网络攻击生命周期 Cyber Attack Lifecycle</h1>
-<p>网络攻击生命周期是<code>描述网络攻击的各个阶段的模型</code>。</p>
-<h1 id="_1">常见网络攻击生命周期模型/框架</h1>
-<h2 id="lockheed-martin-cyber-kill-chain">洛克希德·马丁网络杀链 Lockheed Martin Cyber Kill Chain</h2>
-<h2 id="_2"></h2>
+                <h1 id="_1">虚拟机相关</h1>
+<h2 id="_2">常见问题？</h2>
+<h3 id="vmware-workstation-ovfova">VMware Workstation导出文件 ovf和ova的区别？</h3>
+<p>后缀是ovf，则会导出多个相关文件（.ovf .mf .vmdk .iso）；
+后缀是ova，则只会导出一个ova的压缩包。</p>
+<h3 id="qemu">QEMU是什么？</h3>
+<p>QEMU是一个主机上的VMM（virtual machine monitor）,通过动态二进制转换来模拟CPU，并提供一系列的硬件模型，使guest os认为自己和硬件直接打交道，其实是同QEMU模拟出来的硬件打交道，QEMU再将这些指令翻译给真正硬件进行操作。
+通过这种模式，guest os可以和主机上的硬盘，网卡，CPU，CD-ROM，音频设备和USB设备进行交互。但由于所有指令都需要经过QEMU来翻译，因而性能会比较差。</p>
+<h3 id="kvm">KVM是什么？</h3>
+<p>KVM实际是linux内核提供的虚拟化架构，可将内核直接充当hypervisor来使用。KVM需要处理器硬件本身支持虚拟化扩展，如intel VT 和AMD AMD-V技术。</p>
+<h3 id="qemu-kvm">QEMU-KVM是什么？</h3>
+<p>KVM负责cpu虚拟化+内存虚拟化，实现了cpu和内存的虚拟化，但kvm并不能模拟其他设备，还必须有个运行在用户空间的工具才行。
+KVM的开发者选择了比较成熟的开源虚拟化软件QEMU来作为这个工具，QEMU模拟IO设备（网卡，磁盘等），对其进行了修改，最后形成了QEMU-KVM。</p>
+<p>QEMU-KVM，是QEMU的一个特定于KVM加速模块的分支，里面包含了很多关于KVM的特定代码，与KVM模块一起配合使用。
+目前QEMU-KVM已经与QEMU合二为一，所有特定于KVM的代码也都合入了QEMU，当需要与KVM模块配合使用的时候，只需要在QEMU命令行加上 --enable-kvm就可以。</p>
+<p>ref: <a href="https://www.cnblogs.com/echo1937/p/7138294.html">QEMU,KVM及QEMU-KVM介绍</a></p>
+<h2 id="_3">常用虚拟机操作指令</h2>
+<h3 id="kvm-virsh">KVM virsh命令</h3>
+<pre><code># 用这条命令来判断qemu的依赖是否完全，如果缺失会报错
+/usr/libexec/qemu-kvm --version 
+
+---- 安装虚拟机 ---------------------------------------------------------------------
+
+# CentOS7 - 无桌面安装部署kvm虚拟机
+# https://baijiahao.baidu.com/s?id=1612142653122584145&amp;wfr=spider&amp;for=pc
+
+
+
+# 查询cpu是否支持虚拟化，硬件虚拟化为vmx(Inter)、svm（AMD），软件虚拟的效率非常低
+cat /proc/cpuinfo |grep -E 'vmx|svm'
+
+# 查询bios是否开启虚拟化，不支持的话会显示kvm:disabled by bios，正常无回显
+dmesg |grep kvm
+
+# 安装qemu和vir
+yum -y install epel-release
+yum -y install qemu-kvm libvirt virt-install
+
+# 启动服务
+systemctl start libvirtd &amp;&amp; systemctl enable libvirtd
+
+# --virt-type：默认先kvm再qemu，强制指定kvm
+# -name：虚拟机的名字
+# -ram：内存大小MB
+# -vcpus：CPU个数
+# -cdrom：ISO镜像位置
+# -network：网络
+# -graphics：Guest显示设置
+# --noautoconsole：不连接到控制台，默认会直接从ssh连接vnc
+# -disk path：磁盘位置，size磁盘大小G
+
+# virt-install指令可以直接写到.sh文件来执行，以免命令行粘贴出错
+virt-install \
+    --virt-type kvm \
+    --name centos7 \
+    --ram 4096  \
+    --vcpus=4 \
+    --cdrom=/mnt/dvd/CentOS-7-x86_64-Minimal-1810.iso \
+    --disk path=/opt/vm/centos7.disk,size=512 \
+    --network bridge=br0 \
+    --graphics vnc,listen=0.0.0.0 --noautoconsole
+
+virt-install \
+    --virt-type kvm \
+    --name dtd \
+    --ram 4096  \
+    --vcpus=4 \
+    --cdrom=/mnt/dvd/dtd.iso \
+    --disk path=/opt/vm/dtd.disk,size=2048 \
+    --network network=default \
+    --graphics vnc,listen=0.0.0.0 --noautoconsole
+
+# 虚拟机桥接
+/etc/qemu-kvm/bridge.conf
+
+# 虚拟机配置，所有的命令实际上都是修改这个文件
+/etc/libvirt/qemu/*.xml
+
+# 修改配置后，重启服务
+systemctl restart libvirtd
+
+# 关闭指定虚拟机
+virsh shutdown centos7
+
+# 运行指定的虚拟机
+virsh start centos7
+
+
+---- 桥接 -------------------------------------------------
+
+# 实体机，桥接网卡配置，新建配置文件ifcfg-br0
+/etc/sysconfig/network-scripts/ifcfg-br0
+TYPE=Bridge
+BOOTPROTO=static
+DEFROUTE=yes
+NAME=br0
+DEVICE=br0
+ONBOOT=yes
+IPADDR=10.0.0.100
+NETMASK=255.255.255.0
+GATEWAY=10.0.0.1
+DNS1=114.114.114.114
+ZONE=public
+
+# 实体网卡配置，NM_CONTROLLED=no
+/etc/sysconfig/network-scripts/ifcfg-enp4s0
+TYPE=Ethernet
+BOOTPROTO=none
+NAME=enp4s0
+DEVICE=enp4s0
+ONBOOT=yes
+BRIDGE=br0
+NM_CONTROLLED=no
+
+# 实体机，重启服务
+systemctl restart network
+
+# 虚拟机网卡桥接到br0
+# 把虚拟机网卡vnet0从virbr0组删除
+brctl delif virbr0 vnet0
+
+# 把虚拟网卡vnet0添加到br0组
+brctl addif br0 vnet0
+
+brctl delif virbr0 virbr0-nic
+brctl addif br0 virbr0-nic
+
+brctl delif br0 vnet0
+brctl addif br1 vnet0
+brctl show
+
+# 查看
+brctl show 
+    bridge name bridge id       STP enabled interfaces
+    br0     8000.04d9f5888010   no          enp4s0
+                                            vnet0
+
+
+#  --network bridge=br0的配置
+# 以network=default方式安装的虚拟机，需要修改虚拟机xml配置，否则虚拟机关闭后桥接失效
+    &lt;interface type='bridge'&gt;
+      &lt;mac address='52:54:00:a2:84:89'/&gt;
+      &lt;source bridge='br0'/&gt;
+      &lt;model type='rtl8139'/&gt;
+      &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/&gt;
+    &lt;/interface&gt;
+
+
+# 虚拟机，网卡配置
+/etc/sysconfig/network-scripts/ifcfg-eth0
+TYPE=Ethernet
+BOOTPROTO=static
+DEFROUTE=yes
+NAME=eth0
+DEVICE=eth0
+ONBOOT=yes
+IPADDR=10.0.0.101
+NETMASK=255.255.255.0    #  我一般用255.255.0.0
+GATEWAY=10.0.0.1
+DNS1=114.114.114.114
+ZONE=public
+
+
+# 虚拟机，重启服务
+# 【重要】调整网络配置前，请一定注意关闭所有虚拟机
+systemctl restart network
+or
+systemctl restart network.service
+
+# 查看指定虚拟机配置信息 mac address
+
+virsh dumpxml tmp_frontend | grep &quot;mac address&quot;
+      &lt;mac address='52:54:00:c5:ac:5a'/&gt;
+
+
+vnet2  就是我新创建的虚拟机
+
+输入命令nmcli con show 查看网卡连接信息
+
+通过 virsh dumpxml tmp_frontend  查看虚拟机开放端口，vnet2这台的vnc是10.0.0.X:5901
+
+然后用vnc连上vm，进行图形化安装centos，安装完成后，虚拟机会重启并关机，需要virsh start vm_name 重启虚拟机
+
+然后用vnc连上vm，继续进行虚拟机内部网络配置，安装的什么系统就怎么配置
+
+
+</code></pre>
+
+<pre><code>qemu虚拟机virsh指令
+
+# 查看所有虚拟机列表
+virsh list --all
+
+# 查看开启的虚拟机列表
+virsh list
+
+# 运行指定的虚拟机
+virsh start centos7
+virsh start dtd
+virsh start tmp_frontend
+
+# 强制关闭指定虚拟机
+virsh destroy centos7
+
+# 创建快照
+virsh snapshot-create-as centos7 centos7_snapshot
+
+# 恢复快照
+virsh snapshot-revert centos7 --current
+
+# 查看指定虚拟机的快照列表
+virsh snapshot-list sabe
+
+# 删除快照
+virsh snapshot-delete snort snort_snapshot
+
+# 查看快照详细信息
+virsh snapshot-info [domain] [snapshot-name]
+
+# sabe快照运维
+
+virsh snapshot-delete sabe sabe_snapshot
+virsh snapshot-create-as sabe sabe_snapshot
+
+virsh snapshot-delete snort snort_snapshot
+virsh snapshot-create-as snort snort_snapshot
+</code></pre>
               
             </div>
           </div>
@@ -378,10 +618,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../cve/" class="btn btn-neutral float-right" title="CVE">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../linux/" class="btn btn-neutral float-right" title="Linux">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../re/" class="btn btn-neutral" title="Reverse Engineering 逆向工程"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../docker/" class="btn btn-neutral" title="Docker"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -407,10 +647,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../re/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../docker/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../cve/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../linux/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

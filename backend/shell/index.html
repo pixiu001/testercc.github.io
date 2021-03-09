@@ -66,6 +66,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/sec_dev_lifecycle/">SDL 安全开发流程</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/scanner/">Scanner 扫描器</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/code_sec/">Code Security 代码安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/log_audit/">Log Audit 日志审计</a>
@@ -223,6 +225,16 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#cp">cp命令</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#zshbash">zsh和bash</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">新增普通用户</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">删除普通用户</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sudoers">sudoers文件相关</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">查看系统版本信息</a>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../vim/">Vim</a>
@@ -283,6 +295,10 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/learn_guide/">学习指南</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/docker/">Docker</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/vm/">VM 虚拟机</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/linux/">Linux</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
                     </li>
@@ -423,6 +439,75 @@ cd `dirname $0`   # 进入当前Shell程序的目录
 <pre><code class="shell">cp -a    # 保留原文件属性的前提下复制文件 
 
 cp -r dirname（源文件） destdi（目标文件）
+</code></pre>
+
+<h2 id="zshbash">zsh和bash</h2>
+<pre><code class="shell">chsh -s /bin/zsh
+
+chsh -s /bin/bash
+</code></pre>
+
+<h2 id="_5">新增普通用户</h2>
+<pre><code>useradd [option] username
+[option]:
+-d&lt; 登入目录&gt; 指定用户登入时的目录。
+-g&lt; 群组&gt; 初始群组。
+-G&lt; 群组&gt; 非初始群组。
+-m 自动创建用户的家目录。
+-M 不要创建用户的家目录。
+-N 不要创建以用户名称为名的群组。
+-s 指定用户登入后所使用的shell。
+</code></pre>
+
+<pre><code class="shell">adduser centos
+passwd centos
+
+cat /etc/passwd | grep centos
+
+Case 1: 创建一个带有家目录并且可以登录 bash 的用户
+$ sudo useradd -m -s /bin/bash tester1
+
+Case 2: 指定创建用户家目录的路径
+$ sudo useradd -m -d /home/xxx tester2
+/home/xxx目录会被创建。
+
+Case 3: 创建一个没有家目录且不能登录的用户
+$ sudo useradd -s /sbin/nologin tester3
+
+Case 4: 创建时把用户加入不同的用户组
+$ sudo useradd -m -G xxx,sudo tester4
+</code></pre>
+
+<h2 id="_6">删除普通用户</h2>
+<pre><code class="shell">userdel pentest
+</code></pre>
+
+<h2 id="sudoers">sudoers文件相关</h2>
+<pre><code class="shell">whereis sudoers   # 查找sudoers文件路径
+
+ls -l /etc/sudoers
+
+sudo -V           # 查看sudo版本
+sudo --version    # 查看sudo版本
+
+# kali切换root用户
+sudo - su
+</code></pre>
+
+<h2 id="_7">查看系统版本信息</h2>
+<pre><code class="shell">### 通用
+cat /proc/version
+
+Linux version 5.4.0-64-generic
+ubuntu 20.04
+sudo version 1.8.31
+
+root模式下新建普通用户即可
+
+
+### Ubuntu
+
+lsb_release -a
 </code></pre>
               
             </div>

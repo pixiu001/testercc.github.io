@@ -66,6 +66,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/sec_dev_lifecycle/">SDL 安全开发流程</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/scanner/">Scanner 扫描器</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/code_sec/">Code Security 代码安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/log_audit/">Log Audit 日志审计</a>
@@ -105,6 +107,38 @@
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">学习参考</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#_2">拓展学习推荐</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">应急响应模型</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#pdcerf">PDCERF模型</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#linux">Linux木马排查</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#etccrontabcrontab-l">/etc/crontab文件和crontab -l命令的区别</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#linuxlinux">Linux木马排查常用Linux命令</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#windows">Windows挖矿木马排查实战</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">常用工具</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#linux_1">Linux应急响应</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dns">刷新DNS缓存</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#windows_1">Windows应急响应</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#dns_1">刷新DNS缓存</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ip">查找域名对应的ip地址</a>
     </li>
     </ul>
                     </li>
@@ -268,6 +302,10 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/docker/">Docker</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/vm/">VM 虚拟机</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/linux/">Linux</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/sre/">SRE</a>
@@ -368,6 +406,96 @@
 <ul>
 <li><a href="https://bypass007.github.io/Emergency-Response-Notes/">应急响应实战笔记</a>  (强烈推荐)</li>
 </ul>
+<h2 id="_3">应急响应模型</h2>
+<h3 id="pdcerf">PDCERF模型</h3>
+<ul>
+<li>P(Preparation) 准备</li>
+<li>D(Detection) 检测</li>
+<li>C(Containment) 遏制</li>
+<li>E(Eradication) 根除</li>
+<li>R(Recovery) 恢复</li>
+<li>F(Follow-up) 跟踪</li>
+</ul>
+<h2 id="linux">Linux木马排查</h2>
+<pre><code>top检查可疑进程，杀进程
+
+查看进程和对外连接状态
+ps -ef | grep process_name/pid
+
+pstree查看
+
+如果查不到，则查看木马进程的所在位置
+cat /proc/{pid}  查看进程运行文件位置，删进程运行文件，kill进程
+
+检查定时任务:
+1. contab -e
+2. cat /etc/crontab
+
+查看定时任务执行的脚本，删除可疑的脚本和定时任务（一般包括木马源文件）
+可以用scp等下载木马样本文件，上传到微步云沙箱等类似平台检查，确认是否是可疑文件。
+
+chattr +i /etc/crontab   
+使非root用户无法修改文件。让一个文档不能被删除、改名、设定连结也无法写入或新增数据。
+删除脚本中执行的可疑文件。
+
+检查开机启动项：
+ls /etc/rc*/
+ls /etc/rc.d/init.d
+
+自查开机服务：
+chkconfig --list | grep on
+
+检查是否有可疑登陆账号：(被挖矿机器必检)
+cat /etc/passwd
+有问题的可以的删除
+
+继续检查
+cat /etc/shadow
+
+在客户现场的话，查看各个用户的最后登陆时间的日志
+lastlog 
+
+检查用户最近登陆的日志
+last
+
+在客户环境的话，最好能要重启后再检查一次。
+</code></pre>
+
+<h3 id="etccrontabcrontab-l"><code>/etc/crontab</code>文件和<code>crontab -l</code>命令的区别</h3>
+<ul>
+<li><code>/etc/crontab</code>是系统的周期计划任务</li>
+<li><code>crontab -l</code>是某用户的周期计划任务</li>
+</ul>
+<p>如果<code>cat /etc/crontab</code>和<code>crontab -l</code>都没有信息，
+那就检查计划任务的日志：<code>cat /var/log/cron</code></p>
+<h3 id="linuxlinux">Linux木马排查常用Linux命令</h3>
+<ul>
+<li><code>top</code>用于动态查看进程</li>
+<li><code>ps aux | grep pid</code> 分析进程</li>
+<li><code>kill -9 pid</code> 用于清楚指定pid进程</li>
+<li>Linux</li>
+</ul>
+<h2 id="windows">Windows挖矿木马排查实战</h2>
+<h3 id="_4">常用工具</h3>
+<p>Autoruns、TCPview、Process Explorer、PCHunter、D盾、火绒剑</p>
+<h2 id="linux_1">Linux应急响应</h2>
+<h2 id="dns">刷新DNS缓存</h2>
+<pre><code class="shell">sudo dscacheutil -flushcache
+</code></pre>
+
+<h2 id="windows_1">Windows应急响应</h2>
+<h3 id="dns_1">刷新DNS缓存</h3>
+<pre><code>1.使用组合键WIN + R ,启动windows的运行窗口
+2.在运行窗口中输入cmd,点击确定按钮
+3.启动命令行窗口,在命令行窗口中可以输入和运行cmd命令
+4.输入ipconfig /displaydns,可以查看windows上缓存的DNS信息
+5.输入命令ipconfig /flushdns用来清空和刷新DNS缓存
+</code></pre>
+
+<h2 id="ip">查找域名对应的ip地址</h2>
+<pre><code>nslookup github.global.ssl.fastly.net
+nslookup github.com 
+</code></pre>
               
             </div>
           </div>

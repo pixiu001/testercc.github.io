@@ -66,6 +66,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/sec_dev_lifecycle/">SDL 安全开发流程</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/scanner/">Scanner 扫描器</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/code_sec/">Code Security 代码安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/log_audit/">Log Audit 日志审计</a>
@@ -266,6 +268,10 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/docker/">Docker</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/vm/">VM 虚拟机</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/linux/">Linux</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/sre/">SRE</a>
@@ -361,11 +367,23 @@
             <div class="section">
               
                 <h2 id="_1">定义</h2>
-<p>Kafka是由Apache软件基金会开发的一个开源流处理平台，由Scala和Java编写。Apache Kafka是一种高吞吐量的分布式发布订阅消息系统，它可以处理消费者在网站中的所有动作流数据。</p>
+<p>Kafka是由Apache软件基金会开发的一个开源流处理平台，由Scala和Java编写。
+Apache Kafka是一种高吞吐量的分布式发布订阅消息系统，它可以处理消费者在网站中的所有动作流数据。
+Kafka是一个<code>分布式</code>的基于<code>发布/订阅模式</code>的<code>消息队列 (Message Queue)</code>，应用于大数据实时处理领域，主要应用场景是：<code>日志收集系统</code>和<code>消息系统</code>。</p>
+<h2 id="kafka">Kafka主要设计目标</h2>
+<ul>
+<li>以时间复杂度为O(1)的方式提供消息持久化能力，即使对TB级以上数据也能保证常数时间的访问性能。</li>
+<li>高吞吐率。即使在非常廉价的商用机器上也能做到单机支持每秒100K条消息的传输。</li>
+<li>支持Kafka Server间的消息分区，及分布式消费，同时保证每个partition内的消息顺序传输。</li>
+<li>同时支持离线数据处理和实时数据处理。</li>
+<li>Scale out:支持在线水平扩展</li>
+</ul>
 <h2 id="_2">推荐阅读</h2>
 <ul>
 <li><a href="http://kafka.apache.org/quickstart">Apache Kafka Quickstart</a></li>
 <li>Kafka权威指南</li>
+<li><a href="https://www.bilibili.com/video/BV1YK4y1J7Yp">大数据技术之Kafka</a></li>
+<li>https://www.cnblogs.com/qingyunzong/p/9004509.html</li>
 </ul>
 <h2 id="_3">官方下载</h2>
 <p><a href="http://kafka.apache.org/downloads">Kafka安装包官方下载地址</a></p>
