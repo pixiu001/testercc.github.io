@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="TesterCC">
-  <link rel="canonical" href="https://testercc.github.io/backend/shell/">
+  <link rel="canonical" href="https://testercc.github.io/devops/shell/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
   <title>Shell - Security Development Notes</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
@@ -19,8 +19,8 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Shell";
-    var mkdocs_page_input_path = "backend\\shell.md";
-    var mkdocs_page_url = "/backend/shell/";
+    var mkdocs_page_input_path = "devops\\shell.md";
+    var mkdocs_page_url = "/devops/shell/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -168,76 +168,44 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Back-end Development 后端开发</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../learn_guide/">学习指南</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/learn_guide/">学习指南</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../computer_networking/">计算机网络</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/computer_networking/">计算机网络</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../os/">OS 操作系统</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/os/">OS 操作系统</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database 数据库</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/database/">Database 数据库</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../performance_optimization/">性能优化</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/performance_optimization/">性能优化</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../rpc/">RPC</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/rpc/">RPC</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../search_engine/">搜索引擎</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/search_engine/">搜索引擎</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../high_concurrency/">高并发</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/high_concurrency/">高并发</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../python/">Python</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/python/">Python</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../go/">Golang</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/go/">Golang</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../java/">Java</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/java/">Java</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../rust/">Rust</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/rust/">Rust</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../proxy/">Proxy 代理</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/proxy/">Proxy 代理</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../rabbitmq/">RabbitMQ</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/rabbitmq/">RabbitMQ</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../kafka/">Kafka</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/kafka/">Kafka</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../big_data/">Big Data 大数据</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/big_data/">Big Data 大数据</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../git/">Git</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/git/">Git</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../git_flow/">Git Flow</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/git_flow/">Git Flow</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Shell</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#tcp">查看并发请求数和TCP状态</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_2">显示目录下所有一级目录和文件</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">批量查找某个目下文件的包含的内容</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#linux">Linux批量查找并替换文件夹下所有文件的（文字）内容</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_4">批量查找并替换任意文件夹下的文件内容</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#linuxnginx">Linux查看Nginx进程数</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#linuxhttpd">Linux查看httpd进程数</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#dirname-0">dirname $0 的用法</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#cp">cp命令</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#zshbash">zsh和bash</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_5">新增普通用户</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_6">删除普通用户</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#sudoers">sudoers文件相关</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_7">查看系统版本信息</a>
-    </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../vim/">Vim</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/vim/">Vim</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Machine Learning 机器学习</span></p>
@@ -291,18 +259,50 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">DevOps</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/learn_guide/">学习指南</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../learn_guide/">学习指南</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/docker/">Docker</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../docker/">Docker</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/vm/">VM 虚拟机</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../vm/">VM 虚拟机</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/linux/">Linux</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../linux/">Linux</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../k8s/">Kubernetes</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/sre/">SRE</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../sre/">SRE</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Shell</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#tcp">查看并发请求数和TCP状态</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">显示目录下所有一级目录和文件</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">批量查找某个目下文件的包含的内容</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#linux">Linux批量查找并替换文件夹下所有文件的（文字）内容</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">批量查找并替换任意文件夹下的文件内容</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#linuxnginx">Linux查看Nginx进程数</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#linuxhttpd">Linux查看httpd进程数</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dirname-0">dirname $0 的用法</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cp">cp命令</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#zshbash">zsh和bash</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">新增普通用户</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">删除普通用户</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sudoers">sudoers文件相关</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">查看系统版本信息</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">SEO 搜索引擎优化</span></p>
@@ -379,7 +379,7 @@
     
       
         
-          <li>Back-end Development 后端开发 &raquo;</li>
+          <li>DevOps &raquo;</li>
         
       
     
@@ -516,10 +516,10 @@ lsb_release -a
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../vim/" class="btn btn-neutral float-right" title="Vim">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../seo/knowledge/" class="btn btn-neutral float-right" title="基本知识">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../git_flow/" class="btn btn-neutral" title="Git Flow"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../sre/" class="btn btn-neutral" title="SRE"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -545,10 +545,10 @@ lsb_release -a
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../git_flow/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../sre/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../vim/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../seo/knowledge/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
