@@ -189,21 +189,27 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Golang</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_1">入门推荐</a>
+    <li class="toctree-l2"><a class="reference internal" href="#go">Go语言开发环境配置</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_1">安装</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_2">进阶推荐</a>
+        </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">论坛社区</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">入门推荐</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_4">代码规范</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">进阶推荐</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_5">实体书推荐</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">论坛社区</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">代码规范</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">实体书推荐</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#blog">Blog推荐</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#gvm">多版本管理工具GVM</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_6">常用命令</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">常用命令</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#gvm_1">gvm 目录结构</a>
         <ul>
@@ -211,11 +217,11 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_7">好用的插件</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_8">好用的插件</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_8">其它参考</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_9">其它参考</a>
     </li>
     </ul>
                     </li>
@@ -395,7 +401,12 @@
             <div class="section">
               
                 <h1 id="gogolang">Go(Golang)</h1>
-<h2 id="_1">入门推荐</h2>
+<h2 id="go">Go语言开发环境配置</h2>
+<h3 id="_1">安装</h3>
+<pre><code class="bash">wget 
+</code></pre>
+
+<h2 id="_2">入门推荐</h2>
 <ul>
 <li><a href="https://tour.golang.org/">A Tour of Go</a> -- 英文官网不能访问的，可以考虑本地搭建。 <a href="https://tour.go-zh.org/">中文版点击这里，翻译有些问题，建议看英文版</a></li>
 <li><a href="https://github.com/Unknwon/the-way-to-go_ZH_CN">the way to go</a></li>
@@ -406,25 +417,25 @@
 <li><a href="https://pegasuswang.github.io/LetsGo/">Let's Go!</a></li>
 <li><a href="https://books.studygolang.com/gopl-zh/ch1/ch1-02.html">Go语言圣经中文版</a></li>
 </ul>
-<h2 id="_2">进阶推荐</h2>
+<h2 id="_3">进阶推荐</h2>
 <ul>
 <li><a href="https://golang.org/doc/">Go官方文档--必读</a></li>
 <li><a href="https://space.bilibili.com/326749661">Go夜读视频</a></li>
 <li><a href="https://github.com/developer-learning/night-reading-go">Go夜读Github</a></li>
 <li><a href="https://draveness.me/golang/docs/part1-prerequisite/ch02-compile/golang-compile-intro/">Go语言设计与实现</a></li>
 </ul>
-<h2 id="_3">论坛社区</h2>
+<h2 id="_4">论坛社区</h2>
 <p>因为学习资料的时间都不太够，其实去逛论坛的时间真的不多，但是还是需要适当与大家交流学习的。</p>
 <ul>
 <li><a href="https://talkgo.org/">TalkGo</a></li>
 </ul>
-<h2 id="_4">代码规范</h2>
+<h2 id="_5">代码规范</h2>
 <ul>
 <li><a href="https://github.com/uber-go/guide">Uber Go Style Guide</a></li>
 <li><a href="https://github.com/xxjwxc/uber_go_guide_cn">Uber Go 语言编码规范中文版</a></li>
 <li><a href="https://github.com/golang-standards/project-layout">Go工程结构参考</a></li>
 </ul>
-<h2 id="_5">实体书推荐</h2>
+<h2 id="_6">实体书推荐</h2>
 <p>最简单的入门方法，找一本好教程，对着例子敲一遍练手。</p>
 <ul>
 <li><code>Go语言实战</code> -- Go in Action, 快速过一下基础。</li>
@@ -465,7 +476,7 @@ To completely remove gvm and all installed Go versions and packages:
 gvm implode
 </code></pre>
 
-<h3 id="_6">常用命令</h3>
+<h3 id="_7">常用命令</h3>
 <pre><code>gvm list                       查看本地系统已go版本
 gvm listall                    查看可安装的go版本
 gvm install go1.13.5           安装指定go版本，这里是1.13.5
@@ -484,13 +495,13 @@ pkgsets             # 每个独立环境 gopath 所在路径
 
 <h4 id="a-tour-of-gogopath">A tour of go的踩坑，和GOPATH设置相关</h4>
 <p><a href="https://learnku.com/golang/wikis/38166">本地安装 Go Tour（包含中文版本）</a></p>
-<h3 id="_7">好用的插件</h3>
+<h3 id="_8">好用的插件</h3>
 <p>pip install when-changed</p>
 <pre><code>when-changed -r -v -1 . go run hello.go
 </code></pre>
 
 <p>只要hello.go变动，就会重新编译执行</p>
-<h2 id="_8">其它参考</h2>
+<h2 id="_9">其它参考</h2>
 <ul>
 <li><a href="https://blog.csdn.net/e421083458/article/details/89762113">10分钟学会go module</a></li>
 </ul>

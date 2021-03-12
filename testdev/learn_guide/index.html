@@ -256,6 +256,12 @@
     <li class="toctree-l2"><a class="reference internal" href="#_7">测试必备技能</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_8">术语</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#hlt-high-level-test">HLT: HIGH LEVEL TEST</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#llt-low-level-test">LLT: LOW LEVEL TEST</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -422,6 +428,10 @@
 <li><code>回归测试</code>是指修改了旧代码后，重新进行测试以确认修改没有引入新的错误或导致其他代码产生错误。</li>
 </ul>
 <p>(自动化测试用于回归测试将大幅降低系统测试、维护升级等阶段的成本。但具体问题仍然要具体分析)</p>
+<h3 id="hlt-high-level-test">HLT: HIGH LEVEL TEST</h3>
+<p>站在系统的角度对整个版本进行的测试，它测试的对象是一个完整的产品而不是产品内部的模块，关注的是产品外部的可见属性，通常使用黑盒测试技术。常见的HLT包括系统测试和自动化验收测试。主要有两个工具：持续集成工具和自动化执行工具。持续集成工具主要完成代码的静态检查、自动编译、快速反馈、自动化发布等功能。自动化执行工具主要负责HLT测试用例管理、HLT测试环境配置以及自动化测试执行等。</p>
+<h3 id="llt-low-level-test">LLT: LOW LEVEL TEST</h3>
+<p>测试系统的部分，而不是测试一个完整的产品。需要掌握软件内部结构，主要使用白盒测试方法。通常由开发人员来实施。常见的LLT包括UT(Unit Test)和IT(Integration Test 集成测试)。LLT是在开发阶段对系统进行尽早、尽快的验证，发现的缺陷也更容易定位和解决。</p>
               
             </div>
           </div>

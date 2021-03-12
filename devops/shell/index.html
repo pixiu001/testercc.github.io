@@ -294,6 +294,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#zshbash">zsh和bash</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#shbash">sh和bash的区别</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#_5">新增普通用户</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_6">删除普通用户</a>
@@ -301,6 +303,8 @@
     <li class="toctree-l2"><a class="reference internal" href="#sudoers">sudoers文件相关</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_7">查看系统版本信息</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#shellmongodb">通过shell脚本对MongoDB进行自动化操作</a>
     </li>
     </ul>
                     </li>
@@ -447,6 +451,11 @@ cp -r dirname（源文件） destdi（目标文件）
 chsh -s /bin/bash
 </code></pre>
 
+<h2 id="shbash">sh和bash的区别</h2>
+<pre><code>因为bash是sh的增强版本，bash是一个超集sh更优雅的语法和更多的功能，在我们平常实地操作的时候如果sh这个命令不灵了我们应当使用bash。
+注：在某些环境中，sh 是 bash。sh --version。
+</code></pre>
+
 <h2 id="_5">新增普通用户</h2>
 <pre><code>useradd [option] username
 [option]:
@@ -509,6 +518,12 @@ root模式下新建普通用户即可
 
 lsb_release -a
 </code></pre>
+
+<h2 id="shellmongodb">通过shell脚本对MongoDB进行自动化操作</h2>
+<pre><code class="shell">mongo --eval &quot;rs.initiate({'_id':'crmset','members':[{'_id':0,'host':'localhost.localdomain:27017','priority':100},{'_id':1,'host':'localhost.localdomain:27018','priority':90},{'_id':2,'host':'localhost.localdomain:27019','priority':80}]});rs.isMaster()&quot;
+</code></pre>
+
+<p>虽然回显不够明确，但是只要不报错， 命令是能够正常执行的</p>
               
             </div>
           </div>
