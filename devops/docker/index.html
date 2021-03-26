@@ -137,6 +137,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/nmap/">Nmap</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/thinkphp5_rec/">ThinkPHP5 REC</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">CTF</span></p>
                 <ul>
@@ -280,7 +282,19 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#docker_1">使用Docker构建环境</a>
+    <li class="toctree-l2"><a class="reference internal" href="#docker_1">Docker高频命令</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#docker-container">查看docker container</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#docker-container_1">进入运行中的 docker container</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#docker_2">上传宿主机文件到 docker容器中</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#docker_3">下载docker容器中的文件到 宿主机</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#docker_4">使用Docker构建环境</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#docker-install-mysql">Docker install MySQL</a>
     </li>
@@ -472,7 +486,32 @@ services:
 <pre><code class="shell">docker-compose stop
 </code></pre>
 
-<h2 id="docker_1">使用Docker构建环境</h2>
+<h2 id="docker_1">Docker高频命令</h2>
+<h3 id="docker-container">查看docker container</h3>
+<p>查看正在运行中的 docker container</p>
+<pre><code>docker ps
+</code></pre>
+
+<p>查看docker中所有的container</p>
+<pre><code>docker ps -a
+</code></pre>
+
+<h3 id="docker-container_1">进入运行中的 docker container</h3>
+<p>进入运行中的docker容器（container_id: b6a105b4f51f），指定/bin/bash</p>
+<pre><code>docker exec -it b6a105b4f51f /bin/bash
+</code></pre>
+
+<h3 id="docker_2">上传宿主机文件到 docker容器中</h3>
+<p>上传本地 /tmp/tp/ 目录 到 docker容器 b6a105b4f51f 的 /var/www/ 目录中</p>
+<pre><code>docker cp /tmp/tp/ b6a105b4f51f:/var/www/
+</code></pre>
+
+<h3 id="docker_3">下载docker容器中的文件到 宿主机</h3>
+<p>下载 docker 容器中的 /var/www/ 目录 到 宿主机 /tmp/tp/ 目录下</p>
+<pre><code>docker cp b6a105b4f51f:/var/www/ /tmp/tp/
+</code></pre>
+
+<h2 id="docker_4">使用Docker构建环境</h2>
 <p><a href="https://www.runoob.com/docker/docker-dockerfile.html">Dockerfile -- runoob.com</a>
 <a href="https://blog.csdn.net/sunt2018/article/details/85263432">ref</a></p>
 <h3 id="docker-install-mysql">Docker install MySQL</h3>
