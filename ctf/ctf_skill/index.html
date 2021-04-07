@@ -156,6 +156,8 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#base64">base64日常编解码</a>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../pwn/">PWN</a>
@@ -393,6 +395,13 @@ Referer: www.google.com     # 改来源常用
 <img alt="firefox改包重发操作" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed/img/20200409005614.png" /></li>
 <li>修改完成后点击发送，查看这个请求响应的内容。</li>
 </ol>
+<h3 id="base64">base64日常编解码</h3>
+<pre><code class="shell">echo 0penBmc | base64
+LW4gMHBlbkJtYyANCg==
+
+echo MHBlbkJtYyANCg== | base64 -d
+0penBmc
+</code></pre>
               
             </div>
           </div>

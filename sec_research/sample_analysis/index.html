@@ -93,9 +93,19 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">样本分析</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_2">一般信息</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">主要分析思路</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">木马类</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#web">Web类</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">一般信息</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#1ip">1.常用查IP地址归属地</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2">2.各机构辅助查询</a>
     </li>
         </ul>
     </li>
@@ -378,13 +388,38 @@
               
                 <h1 id="_1">样本分析</h1>
 <p>记录下威胁情报和攻击数据的样本分析通用方法，以便自己随时复习。</p>
-<h2 id="_2">一般信息</h2>
+<h2 id="_2">主要分析思路</h2>
+<h3 id="_3">木马类</h3>
+<p>木马是一类很特别的软件，初步分析时没必要搞清楚它所有的细节。</p>
+<p>木马哪些地方特别有价值：</p>
+<ul>
+<li>木马的“三无”：<code>无进程，无文件，无网络连接</code></li>
+<li>对应技术：<code>木马的启动技术，存储方式，传输技术</code>，即是说<code>搞清楚木马的启动方式，花式存活方式，如何突破网络限制连接C2。</code></li>
+</ul>
+<h3 id="web">Web类</h3>
+<p>思考题：没有POC、没有EXP的时候如何挖掘漏洞？</p>
+<p>代码对比</p>
+<p>代码审计：</p>
+<p>1.语言基础</p>
+<p>2.常用的第三方审计工具
+- Java：Fortify、Checkmarx
+- PHP：Seay源代码审计系统</p>
+<p>3.污点追踪（深入漏洞挖掘避不开这个）</p>
+<h2 id="_4">一般信息</h2>
 <h3 id="1ip">1.常用查IP地址归属地</h3>
 <p>由于运营商原因，ip归属地应当对比。</p>
 <ul>
 <li><a href="https://ip138.com/">ip138.com</a></li>
 <li><a href="https://whatismyipaddress.com/">whatismyipaddress.com</a></li>
-<li><a href="http://ping.pe/ping.php">ping.pe/ping.php</a> - 瓦工专用IP检测，备用</li>
+<li><a href="http://ping.pe/ping.php">ping.pe/ping.php</a> - 瓦工推荐IP检测，备用</li>
+</ul>
+<h3 id="2">2.各机构辅助查询</h3>
+<ul>
+<li><a href="https://x.threatbook.cn/">微步在线</a></li>
+<li><a href="https://s.threatbook.cn/">微步云沙箱</a></li>
+<li><a href="https://ti.qianxin.com/">奇安信ALPHA威胁分析平台</a></li>
+<li><a href="https://www.virustotal.com/gui/">virustotal</a></li>
+<li><a href="https://a.virscan.org/">virscan</a></li>
 </ul>
               
             </div>

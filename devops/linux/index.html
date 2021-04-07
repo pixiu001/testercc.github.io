@@ -484,6 +484,14 @@ ls -l /tmp/whl
 <pre><code>pip install --no-index  -f /tmp/whl -r req.txt
 </code></pre>
 
+<p>修改sshd服务默认配置</p>
+<p>sshd服务默认开启端口为22，如果直接用22端口，网络上很多主机不停的扫描和尝试远程登录（可以查看#cat /var/log/secure）。</p>
+<pre><code class="bash">CentOS  /  Ubuntu
+
+修改ssh配置
+# vim /etc/ssh/sshd_config
+</code></pre>
+
 <h2 id="_2">常识问题</h2>
 <h3 id="linuxusr">Linux的/usr目录的全称</h3>
 <p>usr被称为是Unix System Resource，即Unix系统资源的缩写。/usr 是系统核心所在，包含了所有的共享文件。
