@@ -207,6 +207,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_2">两者区别</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">踩坑笔记</a>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../rabbitmq/">RabbitMQ</a>
@@ -381,13 +383,27 @@
                 <h1 id="proxy">代理 Proxy</h1>
 <p>一般提到代理，大多会想到科学上网用的梯子，不过这篇笔记不会专门说这个。这里主要记录'正向代理'和'反向代理'，辅之说明下'透明代理'。</p>
 <h2 id="forward-proxy">正向代理 Forward Proxy</h2>
+<p>正常情况下，现在应该很少用了吧。</p>
 <h2 id="reverse-proxy">反向代理 Reverse Proxy</h2>
-<p>做过后端开发的朋友应该不陌生。一般网站的Nginx配置大多都是使用的反向代理。</p>
+<p>做过后端开发的朋友应该不陌生。一般网站的Nginx配置大多站点都使用的反向代理。</p>
 <h2 id="_1">透明代理</h2>
+<p>todo</p>
 <h2 id="_2">两者区别</h2>
 <p>虽然网上有一堆资料做详细说明，但个人认为记住以下内容最重要：</p>
 <p>两者的区别在于代理的对象不同：<code>正向代理 代理的对象是客户端，反向代理 代理的对象是服务端</code></p>
 <p>换言之，<code>正向代理隐藏真实客户端，反向代理隐藏真实服务端</code></p>
+<h2 id="_3">踩坑笔记</h2>
+<pre><code>Tips:
+
+因为v2是和caddy一起部署的，所以，要注意，如果要用nginx配置站点，需要停掉caddy，不先停掉caddy，则nginx无法启动
+
+systemctl status caddy    # 查看caddy运行状态
+systemctl status caddy    # 停掉caddy
+
+然后，执行命令启动 nginx
+systemctl status nginx   # 启动nginx
+
+</code></pre>
               
             </div>
           </div>
