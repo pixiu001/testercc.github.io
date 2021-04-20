@@ -101,6 +101,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
                 <ul>
@@ -398,10 +400,10 @@
 因为v2是和caddy一起部署的，所以，要注意，如果要用nginx配置站点，需要停掉caddy，不先停掉caddy，则nginx无法启动
 
 systemctl status caddy    # 查看caddy运行状态
-systemctl status caddy    # 停掉caddy
+systemctl stop caddy    # 停掉caddy
 
 然后，执行命令启动 nginx
-systemctl status nginx   # 启动nginx
+systemctl start nginx   # 启动nginx
 
 </code></pre>
               
