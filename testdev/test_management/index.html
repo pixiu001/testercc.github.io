@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="TesterCC">
-  <link rel="canonical" href="https://testercc.github.io/others/law/">
+  <link rel="canonical" href="https://testercc.github.io/testdev/test_management/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Law 法律 - Security Development Notes</title>
+  <title>测试管理流程 - Security Development Notes</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Law \u6cd5\u5f8b";
-    var mkdocs_page_input_path = "others\\law.md";
-    var mkdocs_page_url = "/others/law/";
+    var mkdocs_page_name = "\u6d4b\u8bd5\u7ba1\u7406\u6d41\u7a0b";
+    var mkdocs_page_input_path = "testdev\\test_management.md";
+    var mkdocs_page_url = "/testdev/test_management/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -246,10 +246,20 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Test Development 测试开发</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../testdev/learn_guide/">学习指南</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../learn_guide/">学习指南</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../testdev/test_management/">测试管理流程</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">测试管理流程</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">软件质量保障流程</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">软件测试模型</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">金子塔模型（最经典）</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">软考</span></p>
@@ -316,26 +326,20 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Others</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../introduce/">简介</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../others/introduce/">简介</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../learning_view/">Learning View 学习观</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../others/learning_view/">Learning View 学习观</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../reading_radar/">Reading Radar 读书雷达</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../others/reading_radar/">Reading Radar 读书雷达</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../foreign_language/">Foreign Language 外语</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../others/foreign_language/">Foreign Language 外语</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Law 法律</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_2">国内相关法律</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#it">建议IT从业者了解</a>
-    </li>
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../others/law/">Law 法律</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../hexo/">Hexo</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../others/hexo/">Hexo</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../english_grammar/">英语语法框架</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../others/english_grammar/">英语语法框架</a>
                     </li>
                 </ul>
                 <ul>
@@ -363,11 +367,11 @@
     
       
         
-          <li>Others &raquo;</li>
+          <li>Test Development 测试开发 &raquo;</li>
         
       
     
-    <li>Law 法律</li>
+    <li>测试管理流程</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -378,23 +382,16 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_1">必要的法律知识</h1>
-<h2 id="_2">国内相关法律</h2>
-<ul>
-<li><a href="https://baike.baidu.com/item/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95">中华人民共和国网络安全法</a></li>
-<li><a href="https://duxiaofa.baidu.com/detail?searchType=statute&amp;from=aladdin_28231&amp;originquery=%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95&amp;count=79&amp;cid=f66f830e45c0490d589f1de2fe05e942_law">中华人民共和国劳动法(2018修正)</a></li>
-<li><a href="https://mp.weixin.qq.com/s/uu3fnM8OzC8JRcIiJkIX8w">国家互联网信息办公室关于《网络安全威胁信息发布管理办法（征求意见稿）》公开征求意见的通知</a></li>
-</ul>
-<h2 id="it">建议IT从业者了解</h2>
-<p>互联网寒冬引发了各种裁员事件，这里不讨论具体事件，只是希望大家能了解基本法律知识，知道如何保护自己的权益。同时也希望大家遵纪守法，不要以身犯险。</p>
-<ul>
-<li>
-<p><a href="https://mp.weixin.qq.com/s/t3Ob6AHlYeO-rZf5c6cknw">网易裁员事件引发的思考：5点建议，越早懂，越能保护自己</a></p>
-</li>
-<li>
-<p><a href="https://www.t00ls.net/Law-articles.html">T00Ls法律讲堂</a></p>
-</li>
-</ul>
+                <h1 id="qa">软件质量保障 QA</h1>
+<p>总有人有误区，认为测试是等开发完成后测测主要功能，没问题就上线（记忆中2021年了还是有很多公司是这样操作的）。
+实际上，要保证软件产品发布后的质量，需要在软件开发各个阶段引入相应的测试，即是说从需求分析阶段就要开始做好测试规划。</p>
+<h2 id="_1">软件质量保障流程</h2>
+<p>关于测试在开发周期中的介入时机，可以直接参考我随手画的这张图。</p>
+<p><img alt="自制软件质量保障流程图" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/YL_QA_work_process.png" /></p>
+<h2 id="_2">软件测试模型</h2>
+<p>其实随着软件测试技术的发展，各种模型应运而生。不过这里先只介绍最经典的金字塔模型。</p>
+<h3 id="_3">金子塔模型（最经典）</h3>
+<p><img alt="金子塔模型" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/3_test_level.jpeg" /></p>
               
             </div>
           </div>
@@ -402,10 +399,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../hexo/" class="btn btn-neutral float-right" title="Hexo">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../ruankao/ruankao/" class="btn btn-neutral float-right" title="考试相关信息">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../foreign_language/" class="btn btn-neutral" title="Foreign Language 外语"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../learn_guide/" class="btn btn-neutral" title="学习指南"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -431,10 +428,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../foreign_language/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../learn_guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../hexo/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../ruankao/ruankao/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
