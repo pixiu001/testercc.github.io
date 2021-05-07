@@ -86,6 +86,12 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/ai_sec/">AI Sec 人工智能安全</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_sqlmap/">源码学习之SqlMap</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_pocsuite/">源码学习之Pocsuite3</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_snort/">源码学习之Snort3</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Security Research 安全研究</span></p>
                 <ul>
@@ -251,6 +257,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../testdev/test_management/">测试管理流程</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../testdev/performance/">性能测试</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">软考</span></p>
                 <ul>
@@ -278,13 +286,21 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#_1">常见操作问题</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#grep">grep命令</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#grep_1">使用grep查找某目录下包含关键字内容的文件</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_2">排除某关键词的搜索结果</a>
+    </li>
+        </ul>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#tar">tar操作命令</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#pipwhl">pip下载相关whl包</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_2">常识问题</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">常识问题</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#linuxusr">Linux的/usr目录的全称</a>
     </li>
@@ -345,6 +361,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../others/law/">Law 法律</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../others/hugo/">Hugo</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../others/hexo/">Hexo</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../others/english_grammar/">英语语法框架</a>
@@ -392,6 +410,22 @@
               
                 <h1 id="linux">Linux</h1>
 <h2 id="_1">常见操作问题</h2>
+<h3 id="grep">grep命令</h3>
+<p>可以和ls、cat等命令配合管道符一起使用。</p>
+<h4 id="grep_1">使用grep查找某目录下包含关键字内容的文件</h4>
+<p>grep -r "keyword" dir_path</p>
+<p>e.g. 查找当前目录下包含关键字 "JBoss Bootstrap Script" 的文件</p>
+<pre><code class="bash">grep -r &quot;JBoss Bootstrap Script&quot; ./
+</code></pre>
+
+<p><img alt="grep_r" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210507103248.png" /></p>
+<h4 id="_2">排除某关键词的搜索结果</h4>
+<p>grep -v "keyword"</p>
+<p>e.g. 显示当前目录下除.sh文件外的所有文件</p>
+<pre><code class="bash">ls -al | grep -v &quot;.sh&quot;
+</code></pre>
+
+<p><img alt="grep组合使用" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210507103713.png" /></p>
 <h3 id="tar">tar操作命令</h3>
 <pre><code class="bash"># 压缩
 # z调用gzip，tar本身是打包，z才是压缩
@@ -496,7 +530,7 @@ ls -l /tmp/whl
 # vim /etc/ssh/sshd_config
 </code></pre>
 
-<h2 id="_2">常识问题</h2>
+<h2 id="_3">常识问题</h2>
 <h3 id="linuxusr">Linux的/usr目录的全称</h3>
 <p>usr被称为是Unix System Resource，即Unix系统资源的缩写。/usr 是系统核心所在，包含了所有的共享文件。
 它是 unix 系统中最重要的目录之一，涵盖了二进制文件，各种文档，各种头文件，还有各种库文件；还有诸多程序，例如 ftp，telnet 等等。</p>

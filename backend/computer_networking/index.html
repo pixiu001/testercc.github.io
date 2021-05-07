@@ -86,6 +86,12 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/ai_sec/">AI Sec 人工智能安全</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_sqlmap/">源码学习之SqlMap</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_pocsuite/">源码学习之Pocsuite3</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_snort/">源码学习之Snort3</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Security Research 安全研究</span></p>
                 <ul>
@@ -183,15 +189,23 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#nat">NAT</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ttltime-to-live">TTL(Time To Live)</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#ptr">PTR</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_1">阅读推荐</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_1">常识</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_2">其它补充</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">标准内网地址</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#windows-cmd-ping">windows cmd 批量ping</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">阅读推荐</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">其它补充</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_3">企业组网网络划分</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">企业组网网络划分</a>
     </li>
         </ul>
     </li>
@@ -269,6 +283,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../testdev/test_management/">测试管理流程</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../testdev/performance/">性能测试</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">软考</span></p>
                 <ul>
@@ -345,6 +361,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../others/law/">Law 法律</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../others/hugo/">Hugo</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../others/hexo/">Hexo</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../others/english_grammar/">英语语法框架</a>
@@ -395,18 +413,41 @@
 <h3 id="nat">NAT</h3>
 <p>NAT（Network Address Translation），也称网络地址转换。</p>
 <p>3种实现方式：<code>静态转换Static Nat</code>、<code>动态转换Dynamic Nat</code>和<code>端口多路复用OverLoad</code>。</p>
+<h3 id="ttltime-to-live">TTL(Time To Live)</h3>
+<p>TTL是 Time To Live的缩写，该字段指定IP包被路由器丢弃之前允许通过的最大网段数量。</p>
+<p>TTL是IPv4报头的一个8 bit字段。</p>
+<p><img alt="TTL" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210428170013.png" /></p>
+<p>TTL与DNS TTL有区别:
+二者都是生存时间，前者指ICMP包的转发次数（跳数），后者指域名解析信息在DNS中的存在时间。</p>
 <h3 id="ptr">PTR</h3>
 <p>PTR (Pointer Record)，指针记录，是电子邮件系统中的一种数据类型，被互联网标准文件RFC1035所定义。</p>
 <p><code>PTR记录解析IP地址到域名</code>，是反向记录。</p>
-<h2 id="_1">阅读推荐</h2>
+<h2 id="_1">常识</h2>
+<h2 id="_2">标准内网地址</h2>
+<pre><code>10.0.0.0-10.255.255.255
+172.16.0.0-172.31.255.255
+192.168.0.0-192.168.255.255
+</code></pre>
+
+<h2 id="windows-cmd-ping">windows cmd 批量ping</h2>
+<pre><code>for /L %i in (11,1,255) do @ping 172.%i.0.1 -n 1| find &quot;TTL=25&quot;
+</code></pre>
+
+<ul>
+<li>FOR表示循环</li>
+<li>/L表示循环1次加上N，N由IN (11,1,255)中的第二个数字决定，此处为加上1</li>
+<li>%i IN (0,1,255)表示从11开始，每次加1，直到255</li>
+</ul>
+<p>后面的应该能直接看懂了，不一一解释了。</p>
+<h2 id="_3">阅读推荐</h2>
 <ul>
 <li>计算机网络 （谢希仁，第7版，另有配套答案书一本，最近也出了一本配套实验书）—— 准备考研的必看这本</li>
 <li>计算机网络：自顶向下方法(第7版) —— 非考研向自学的推荐这本，能看英文原版的建议看原版</li>
 <li>《TCP/IP详解》第一卷 —— 要进阶和深入的看</li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP">Web开发技术-HTTP</a></li>
 </ul>
-<h2 id="_2">其它补充</h2>
-<h3 id="_3">企业组网网络划分</h3>
+<h2 id="_4">其它补充</h2>
+<h3 id="_5">企业组网网络划分</h3>
 <p>通常划分为：<code>业务网（或办公网）</code>、<code>生产网（一般包含核心开发环境）</code>、<code>运维网</code>。 （P.S.：小企业可能是三网打通的）</p>
 <p>系统安全类日志一般都是在运维网区域，所以一般不会对外提供和暴露，如果确实需要，一般需要通过堡垒机访问相关网络环境。</p>
               
