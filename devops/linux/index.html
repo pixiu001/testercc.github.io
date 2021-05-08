@@ -101,6 +101,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/binary_sec/">二进制安全</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
@@ -294,6 +296,8 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configure-prefix">"./configure --prefix"命令</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#tar">tar操作命令</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#pipwhl">pip下载相关whl包</a>
@@ -426,6 +430,27 @@
 </code></pre>
 
 <p><img alt="grep组合使用" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210507103713.png" /></p>
+<h3 id="configure-prefix">"./configure --prefix"命令</h3>
+<p>源码的安装一般由3个步骤组成：<code>配置(configure)、编译(make)、安装(make install)</code>。</p>
+<p>configure是一个可执行脚本，它有很多选项，在待安装的源码路径下使用命令./configure –help输出详细的选项列表。</p>
+<p>其中--prefix选项是<strong>配置安装的路径</strong>。如果不配置 --prefix 选项，安装后：</p>
+<pre><code>可执行文件默认放在/usr /local/bin，
+
+库文件默认放在/usr/local/lib，
+
+配置文件默认放在/usr/local/etc，
+
+其它的资源文件放在/usr /local/share，
+
+</code></pre>
+
+<p>比较凌乱。</p>
+<p>如果配置--prefix，如：</p>
+<p>./configure --prefix=/usr/local/test</p>
+<p>可以把所有资源文件放在/usr/local/test的路径中，不会杂乱。</p>
+<p>--prefix选项的另一个好处是卸载软件或移植软件。</p>
+<p>当某个安装的软件不再需要时，只须简单的删除该安装目录，就可以把软件卸载得干干净净；移植软件只需拷贝整个目录到另外一个机器即可（相同的操作系统）。</p>
+<p>当然要卸载程序，也可以在原来的make目录下用一次make uninstall，但前提是make文件指定过uninstall。</p>
 <h3 id="tar">tar操作命令</h3>
 <pre><code class="bash"># 压缩
 # z调用gzip，tar本身是打包，z才是压缩

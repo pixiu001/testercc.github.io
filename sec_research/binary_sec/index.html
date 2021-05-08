@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="TesterCC">
-  <link rel="canonical" href="https://testercc.github.io/frontend/vue/">
+  <link rel="canonical" href="https://testercc.github.io/sec_research/binary_sec/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Vue.js - Security Development Notes</title>
+  <title>二进制安全 - Security Development Notes</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Vue.js";
-    var mkdocs_page_input_path = "frontend\\vue.md";
-    var mkdocs_page_url = "/frontend/vue/";
+    var mkdocs_page_name = "\u4e8c\u8fdb\u5236\u5b89\u5168";
+    var mkdocs_page_input_path = "sec_research\\binary_sec.md";
+    var mkdocs_page_url = "/sec_research/binary_sec/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -94,22 +94,34 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Security Research 安全研究</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/research_list/">导航列表</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../research_list/">导航列表</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/sample_analysis/">样本分析</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../sample_analysis/">样本分析</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../black_market/">黑产研究</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/binary_sec/">二进制安全</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">二进制安全</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">近期的二进制阅读规划</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">基础部分</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">细分方向部分</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">二进制漏洞分析模板</a>
+    </li>
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../python_sec/">Python安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../block_chain_sec/">区块链安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../android_sec/">Android安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../code_audit/">代码审计</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -232,26 +244,18 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Front-end Development 前端开发</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../learn_guide/">学习指南</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../frontend/learn_guide/">学习指南</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../html5/">HTML5</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../frontend/html5/">HTML5</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../css/">CSS</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../frontend/css/">CSS</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../js/">JavaScript</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../frontend/js/">JavaScript</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Vue.js</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_1">版本问题</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_2">学习资源</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">开源组件库</a>
-    </li>
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../frontend/vue/">Vue.js</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../react/">React</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../frontend/react/">React</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">MOOC Notes 幕课笔记</span></p>
@@ -377,11 +381,11 @@
     
       
         
-          <li>Front-end Development 前端开发 &raquo;</li>
+          <li>Security Research 安全研究 &raquo;</li>
         
       
     
-    <li>Vue.js</li>
+    <li>二进制安全</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -392,19 +396,17 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="vuejs">Vue.js笔记</h1>
-<p>现在Vue.js的使用范围很广，很多后端岗位也对Vue.js和React技能有要求。</p>
-<h2 id="_1">版本问题</h2>
-<p>目前企业用Vue.js 2.5的比较多，但Vue.js 3已经正式发布并开始有企业运用起来了。</p>
-<h2 id="_2">学习资源</h2>
-<ul>
-<li><a href="https://cn.vuejs.org/v2/guide/">Vue官方文档</a> -- 官方中文文档详细且配视频，入门必看。</li>
-</ul>
-<h2 id="_3">开源组件库</h2>
-<ul>
-<li><a href="https://element.eleme.cn/#/zh-CN/component/installation">Element</a> -- Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库</li>
-<li><a href="https://pro.antdv.com/docs/getting-started">ANTD PRO VUE</a> -- 开箱即用的中台前端/设计解决方案。</li>
-</ul>
+                <h1 id="_1">二进制安全</h1>
+<p>之前和小伙伴讨论过，二进制安全下的研究方向还挺多，有按操作系统划分的，也有按其他方式划分的。
+（PS：之前认为逆向也算是单独小分类，经小伙伴科普思考后认为逆向工程还是分到二进制基础能力更为合适）</p>
+<h2 id="_2">近期的二进制阅读规划</h2>
+<h3 id="_3">基础部分</h3>
+<p>语言基础：<code>C语言入门经典书籍随便选一本，王爽 汇编语言 第4版</code> --&gt; 逆向基础：<code>逆向工程核心原理</code>，再看<code>加密与解密 第4版</code>。</p>
+<h3 id="_4">细分方向部分</h3>
+<p>恶意代码分析：恶意代码分析实战。</p>
+<p>漏洞挖掘：0day安全：软件漏洞分析技术 第2版（入门）、漏洞战争（进阶）。</p>
+<h2 id="_5">二进制漏洞分析模板</h2>
+<p>推荐看雪的这个模板 <a href="https://bbs.pediy.com/thread-266106.htm">二进制漏洞分析文章模板</a></p>
               
             </div>
           </div>
@@ -412,10 +414,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../react/" class="btn btn-neutral float-right" title="React">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../python_sec/" class="btn btn-neutral float-right" title="Python安全">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../js/" class="btn btn-neutral" title="JavaScript"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../black_market/" class="btn btn-neutral" title="黑产研究"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -441,10 +443,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../js/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../black_market/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../react/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../python_sec/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
