@@ -92,6 +92,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_snort/">源码学习之Snort3</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_viper/">源码学习之Viper</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Security Research 安全研究</span></p>
                 <ul>
@@ -301,6 +303,26 @@
     <li class="toctree-l2"><a class="reference internal" href="#_3">常用虚拟机操作指令</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#kvm-virsh">KVM virsh命令</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ubuntu1804">Ubuntu18.04虚拟机配置</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#zsh">安装zsh</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pyenv">安装pyenv</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pyenv-install">pyenv install太慢的解决方式</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pyenv-virtualenv">安装辅助插件 pyenv-virtualenv</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#go">安装go</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ssh">安装ssh服务</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ip">给网卡配置静态IP</a>
     </li>
         </ul>
     </li>
@@ -632,6 +654,183 @@ virsh snapshot-create-as sabe sabe_snapshot
 
 virsh snapshot-delete snort snort_snapshot
 virsh snapshot-create-as snort snort_snapshot
+</code></pre>
+
+<h2 id="ubuntu1804">Ubuntu18.04虚拟机配置</h2>
+<h3 id="zsh">安装zsh</h3>
+<pre><code class="shell">1.安装和切换zsh
+cat /etc/shells  # 查看所有shell
+echo $SHELL   # 查看当前shell
+
+如果没有zsh,则需要现安装zsh
+sudo apt install zsh
+
+切换默认shell为zsh
+chsh -s /bin/zsh
+reboot
+
+2.安装oh-my-zsh
+ref: https://ohmyz.sh/#install
+
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+
+3.配置~/.zshrc
+cd ~
+git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+vim ~/.zshrc
+修改这个配置
+plugins=(git autojump zsh-syntax-highlighting zsh-autosuggestions)
+
+在plugin = ()下面加这个：
+setopt no_nomatch 
+# 如果不加的话就不能使用*，比如：dpkg -l firefox*
+
+安装ESC和:,输入wq!保存退出
+用 source ~/.zshrc 命令更新配置文件，重启终端即可使用
+
+4.修改主题
+这里以更换主题为agnoster为例:
+如果要更换默认的rubyshell,比如换成 agnoster主题 , 需要先安装相应字体
+sudo apt install fonts-powerline
+vim ~/.zshrc
+修改 ZSH_THEME=&quot;robbyrussell&quot; 为 ZSH_THEME=&quot;agnoster&quot;
+
+安装ESC和:,输入wq!保存退出
+用 source ~/.zshrc 命令更新配置文件，重启终端即可
+
+其他:
+echo $HISTSIZE  # 检查历史记录数量 (可选)
+HIST_STAMPS=&quot;yyyy-mm-dd&quot;  # history信息增加时间戳展示
+</code></pre>
+
+<h3 id="pyenv">安装pyenv</h3>
+<p>ref: https://blog.csdn.net/wssywh/article/details/76143600</p>
+<pre><code>$ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+$ echo 'export PYENV_ROOT=&quot;$HOME/.pyenv&quot;' &gt;&gt; ~/.zshrc
+$ echo 'export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;' &gt;&gt; ~/.zshrc
+$ echo 'eval &quot;$(pyenv init --path)&quot;' &gt;&gt; ~/.zshrc
+$ echo 'eval &quot;$(pyenv init -)&quot;' &gt;&gt; ~/.zshrc
+</code></pre>
+
+<p>然后，<code>source ~/.zshrc</code>使命令生效。</p>
+<p>常用命令</p>
+<pre><code>pyenv versions # 查看所有安装的python版本
+
+pyenv install --list  # 查询可安装的python版本
+
+# ubuntu 18.04先安装一波依赖看看
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev
+
+pyenv install 3.7.10 -v  # 加 -v参数可以看到安装进度情况
+pyenv install 3.8.10
+pyenv install 3.9.5
+
+如果放在~/.pyenv/cache/目录下
+记得安装完成后删除
+rm -rf &quot;~/.pyenv/versions/X.Y.Z&quot;
+rm -rf &quot;~/.pyenv/versions/3.7.10&quot;
+</code></pre>
+
+<h4 id="pyenv-install">pyenv install太慢的解决方式</h4>
+<pre><code>pyenv搜狐镜像源加速：http://mirrors.sohu.com/python/
+下载需要的版本放到~/.pyenv/cache文件夹下面
+然后执行 pyenv install 版本号 安装对应的python版本
+
+简介脚本如下，其中v表示要下载的版本号
+
+但是sohu镜像已经不支持pyenv了
+v=3.7.10|wget http://mirrors.sohu.com/python/$v/Python-$v.tar.xz -P ~/.pyenv/cache/;pyenv install $v
+</code></pre>
+
+<h4 id="pyenv-virtualenv">安装辅助插件 pyenv-virtualenv</h4>
+<p>ref: https://github.com/pyenv/pyenv-virtualenv  （提及了各种python虚拟环境构建信息）</p>
+<p>需要先安装pyenv</p>
+<pre><code>$ git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+
+$ echo 'eval &quot;$(pyenv virtualenv-init -)&quot;' &gt;&gt; ~/.zshrc
+</code></pre>
+
+<p>使用方式</p>
+<pre><code># 创建虚拟环境
+pyenv virtualenv 2.7.10 my-virtual-env-2.7.10
+
+# 激活虚拟环境
+pyenv activate &lt;name&gt;
+pyenv deactivate
+
+# 删除已存在环境
+pyenv uninstall my-virtual-env
+pyenv virtualenv-delete my-virtual-env
+</code></pre>
+
+<h3 id="go">安装go</h3>
+<p>ref: https://golang.org/doc/install</p>
+<pre><code>先下载go的安装包
+cd /tmp
+wget https://golang.org/dl/go1.16.4.linux-amd64.tar.gz
+
+上面的连接可能因为网络问题无法访问,可以用下面的镜像
+wget https://studygolang.com/dl/golang/go1.16.4.linux-amd64.tar.gz
+
+已安装过go的:
+sudo rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.16.4.linux-amd64.tar.gz
+
+go1.16.4是当前最新版,以后会变化
+
+未安装过go的:
+sudo tar -C /usr/local -xzf go1.16.4.linux-amd64.tar.gz
+
+而配置环境变量
+vim ~/.zshrc
+export PATH=$PATH:/usr/local/go/bin
+export GO111MODULE=on   # 可选,默认不设置为auto
+保存退出并用 source ~/.zshrc 激活
+
+验证安装
+go version
+</code></pre>
+
+<h3 id="ssh">安装ssh服务</h3>
+<pre><code>desktop 18.04默认是没有装ssh service的,所以要先安装服务
+sudo apt-get install openssh-server
+
+启动ssh server服务
+sudo service ssh start
+
+检查是否启动成功
+ps -e | grep ssh
+返回结果包含 sshd表明启动成功
+
+开机自动启动ssh命令
+sudo systemctl enable ssh
+
+查看ssh是否启动，看到Active: active (running)即表示成功
+sudo systemctl status ssh
+</code></pre>
+
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210513151450.png" /></p>
+<h3 id="ip">给网卡配置静态IP</h3>
+<pre><code>vim /etc/netplan/01-network-manager-all.yaml
+
+network:
+  version: 2
+  renderer: networkd    # 不能写错
+  ethernets:
+    ens33:   #配置的网卡名称
+      dhcp4: no    #dhcp4关闭
+      dhcp6: no    #dhcp6关闭
+      addresses: [10.0.7.149/24]   #设置本机IP及掩码
+      gateway4: 10.0.7.1   #设置网关
+      nameservers:
+          addresses: [114.114.114.114, 8.8.8.8]   #设置DNS
+
+
+配置完成后:wq!保存退出
+然后在命令行输入如下命令，应用新的Netplan更改
+$ sudo netplan apply
 </code></pre>
               
             </div>

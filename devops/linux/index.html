@@ -92,6 +92,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_snort/">源码学习之Snort3</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_viper/">源码学习之Viper</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Security Research 安全研究</span></p>
                 <ul>
@@ -301,6 +303,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#configure-prefix">"./configure --prefix"命令</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#tar">tar操作命令</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tarzst">tar.zst文件格式解压</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#pipwhl">pip下载相关whl包</a>
     </li>
@@ -531,6 +535,28 @@ unzip all.zip     这条命令是将all.zip中的所有文件解压出来
 zip -r file1.zip file1 file2 dir1 将几个文件和目录同时压缩成一个zip格式的压缩包
 -r：递归处理，将指定目录下的所有文件和子目录一并处理；
 -v：显示指令执行过程或显示版本信息；
+</code></pre>
+
+<h3 id="tarzst">tar.zst文件格式解压</h3>
+<p>下载zsh折腾win10下的git bash的时候遇到这个格式的文件。</p>
+<pre><code>扩展名.zst表示存档由zstd压缩。
+tar命令有一个选项-I（ -  use-compress-program）来指定压缩/解压缩命令。
+可以按照如下命令进行解压：
+$ tar -I zstd -xvf xxxx.tar.zst
+
+但是在执行tar -I zstd -xvf xxxx.tar.zst过程中遇到了如下问题：
+tar (child): zstd: Cannot exec: No such file or directory
+tar (child): Error is not recoverable: exiting now
+tar: Child returned status 2
+tar: Error is not recoverable: exiting now
+
+出现了这个是因为没有安装zstd包，需要手动安装这个安装包来解压zst
+ubuntu 系统可以直接通过下面命令进行安装
+$ sudo apt install zstd
+
+然后重新执行
+$ tar -I zstd -xvf xxxx.tar.zst
+即可解压文件
 </code></pre>
 
 <h3 id="pipwhl">pip下载相关whl包</h3>
