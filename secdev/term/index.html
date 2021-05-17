@@ -94,6 +94,14 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#soar">SOAR</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ids">IDS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ips">IPS</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#idsips">IDS和IPS的区别</a>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     </ul>
@@ -320,11 +328,13 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/docker/">Docker</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/vm/">VM 虚拟机</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/linux/">Linux</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/windows/">Windows</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/sre/">SRE</a>
                     </li>
@@ -445,6 +455,17 @@
 <p>Data Leakage Prevention，数据泄露防护</p>
 <h3 id="soar">SOAR</h3>
 <p>Security Orchestration, Automation and Response，安全编排自动化响应</p>
+<h3 id="ids">IDS</h3>
+<p>IDS是英文“Intrusion Detection Systems”的缩写，中文意思是“入侵检测系统”。专业上讲就是依照一定的安全策略，通过软、硬件，对网络、系统的运行状况进行监视，尽可能发现各种攻击企图、攻击行为或者攻击结果，以保证网络系统资源的机密性、完整性和可用性。</p>
+<p>一个形象的比喻：假如防火墙是一幢大楼的门锁，那么IDS就是这幢大楼里的监视系统。一旦小偷爬窗进入大楼，或内部人员有越界行为，只有实时监视系统才能发现情况并发出警告。</p>
+<h3 id="ips">IPS</h3>
+<p>入侵防御系统(IPS: Intrusion Prevention System)是电脑网络安全设施，是对防病毒软件（Antivirus Programs）和防火墙(Packet Filter, Application Gateway)的解释。 </p>
+<p>入侵防御系统(Intrusion-prevention system)是一部能够监视网络或网络设备的网络资料传输行为的计算机网络安全设备，能够即时的中断、调整或隔离一些不正常或是具有伤害性的网络资料传输行为。</p>
+<h4 id="idsips">IDS和IPS的区别</h4>
+<pre><code>IPS是位于防火墙和网络的设备之间的设备。如果检测到攻击，IPS会在这种攻击扩散到网络的其它地方之前阻止这个恶意的通信。
+
+而IDS只是存在于网络之外起到报警的作用，而不在你的网络前面起到防御的作用
+</code></pre>
               
             </div>
           </div>
