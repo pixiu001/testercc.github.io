@@ -314,6 +314,10 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#pyenv">安装pyenv</a>
         <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#ubuntu-1804">Ubuntu 18.04</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#centos-76">CentOS 7.6</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#pyenv-install">pyenv install太慢的解决方式</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#pyenv-virtualenv">安装辅助插件 pyenv-virtualenv</a>
@@ -709,6 +713,7 @@ HIST_STAMPS=&quot;yyyy-mm-dd&quot;  # history信息增加时间戳展示
 
 <h3 id="pyenv">安装pyenv</h3>
 <p>ref: https://blog.csdn.net/wssywh/article/details/76143600</p>
+<h4 id="ubuntu-1804">Ubuntu 18.04</h4>
 <pre><code>$ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
 $ echo 'export PYENV_ROOT=&quot;$HOME/.pyenv&quot;' &gt;&gt; ~/.zshrc
@@ -718,7 +723,29 @@ $ echo 'eval &quot;$(pyenv init -)&quot;' &gt;&gt; ~/.zshrc
 </code></pre>
 
 <p>然后，<code>source ~/.zshrc</code>使命令生效。</p>
-<p>常用命令</p>
+<h4 id="centos-76">CentOS 7.6</h4>
+<pre><code>CentOS 7.6 默认不带zsh，需要的自行安装
+
+1. 安装依赖包:
+yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel -y
+
+2. 安装pyenv包:
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+如果http访问要超时，可以换成ssh
+git clone git@github.com:pyenv/pyenv.git ~/.pyenv
+
+3. 设置环境变量:
+vim ~/.bashrc 
+export PYENV_ROOT=&quot;$HOME/.pyenv&quot; 
+export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot; 
+eval &quot;$(pyenv init --path)&quot;
+
+4. 激活修改的配置文件
+source ~/.bashrc
+</code></pre>
+
+<p>不过pyenv国内源安装慢，需要使用本地安装方式。</p>
+<p>pyenv 常用命令</p>
 <pre><code>pyenv versions # 查看所有安装的python版本
 
 pyenv install --list  # 查询可安装的python版本
@@ -727,7 +754,7 @@ pyenv install --list  # 查询可安装的python版本
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev
 
 pyenv install 3.7.10 -v  # 加 -v参数可以看到安装进度情况
-pyenv install 3.8.10
+pyenv install 3.8.10 -v
 pyenv install 3.9.5
 
 如果放在~/.pyenv/cache/目录下
@@ -738,7 +765,12 @@ rm -rf &quot;~/.pyenv/versions/3.7.10&quot;
 
 <h4 id="pyenv-install">pyenv install太慢的解决方式</h4>
 <pre><code>pyenv搜狐镜像源加速：http://mirrors.sohu.com/python/
-下载需要的版本放到~/.pyenv/cache文件夹下面
+
+下载需要的版本放到~/.pyenv/cache文件夹下面，没有目录的话就自行创建
+mkdir ~/.pyenv/cache
+
+将从官网下载的python官方安装包 Python-*.tar.xz 文件传到这个目录下
+
 然后执行 pyenv install 版本号 安装对应的python版本
 
 简介脚本如下，其中v表示要下载的版本号
@@ -755,9 +787,10 @@ v=3.7.10|wget http://mirrors.sohu.com/python/$v/Python-$v.tar.xz -P ~/.pyenv/cac
 $ echo 'eval &quot;$(pyenv virtualenv-init -)&quot;' &gt;&gt; ~/.zshrc
 </code></pre>
 
-<p>使用方式</p>
+<p>pyenv-virtualenv使用方式</p>
 <pre><code># 创建虚拟环境
 pyenv virtualenv 2.7.10 my-virtual-env-2.7.10
+pyenv virtualenv 3.8.10 py38
 
 # 激活虚拟环境
 pyenv activate &lt;name&gt;
@@ -768,6 +801,37 @@ pyenv uninstall my-virtual-env
 pyenv virtualenv-delete my-virtual-env
 </code></pre>
 
+<p>virtualenv环境变量配置</p>
+<p>CentOS 7.6 </p>
+<pre><code># virtualenv custom config
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+export WORKON_HOME=$HOME/virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source /usr/local/bin/virtualenvwrapper.sh
+</code></pre>
+
+<p>virtualenv wrapper + pyenv 使用方式</p>
+<p>默认的python是python2，位于 <code>/usr/bin/python</code>
+pyenv 安装的python一般位于，<code>/root/.pyenv/versions</code> 的对应目录中</p>
+<pre><code>[root@localhost ~]# ls /root/.pyenv/versions
+3.7.10  3.8.10  3.9.5
+</code></pre>
+
+<p>virtualenv wrapper + pyenv 创建虚拟环境</p>
+<p>1.使用pyenv安装不同版本的python（参考前面的文档）</p>
+<p>mkvirtualenv 、 workon 等命令要先安装virtualenv和virtualenv-wrapper才可用</p>
+<p>2.使用virtualenv wrapper创建虚拟环境</p>
+<pre><code>mkvirtualenv py275 --python=/usr/bin/python
+
+mkvirtualenv py3710 --python=/root/.pyenv/versions/3.7.10/bin/python
+
+mkvirtualenv py3810 --python=/root/.pyenv/versions/3.8.10/bin/python
+
+mkvirtualenv py395 --python=/root/.pyenv/versions/3.9.5/bin/python
+</code></pre>
+
+<p>创建完成后，执行命令 <code>work on</code> 查看所有 virtualenv wrapper 管理的虚拟环境。</p>
+<p>执行<code>workon on 虚拟环境名称</code>，就会激活并进入相应的虚拟环境。</p>
 <h3 id="go">安装go</h3>
 <p>ref: https://golang.org/doc/install</p>
 <pre><code>先下载go的安装包

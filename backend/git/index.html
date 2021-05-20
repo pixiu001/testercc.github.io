@@ -309,6 +309,8 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#git-ssh">服务器上的 Git - 生成 SSH 公钥</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#_6">其他</a>
     </li>
     </ul>
@@ -717,6 +719,18 @@ git branch --set-upstream-to=origin/dev dev
 如果要同步原作者的仓库，可以在远端增加 upstream 分支，分支源设置为 源代码作者的仓库，然后定期操作pull 和 merge，或者提交PR。</p>
 <pre><code class="bash">git remote add origin https://github.com/TesterCC/sec-dev-in-action-src.git
 git remote add upstream https://github.com/netxfly/sec-dev-in-action-src.git
+</code></pre>
+
+<h2 id="git-ssh">服务器上的 Git - 生成 SSH 公钥</h2>
+<p>ref: https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E7%94%9F%E6%88%90-SSH-%E5%85%AC%E9%92%A5</p>
+<pre><code class="bash">$ ssh-keygen -o   # 没有特别需求的化，可以一路回车
+
+$ cd ~/.ssh
+$ ls
+authorized_keys2  id_rsa       known_hosts
+config            id_rsa.pub
+
+cat ~/.ssh/id_rsa.pub    # 里面的文本就是ssh key公钥
 </code></pre>
 
 <h2 id="_6">其他</h2>

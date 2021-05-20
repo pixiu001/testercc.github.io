@@ -265,6 +265,14 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">性能测试</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">常用命令解析</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#limit">修改limit值</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#limit_1">为什么limit值需要修改？</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -394,6 +402,20 @@
               
                 <h1 id="performance-testing">Performance Testing 性能测试</h1>
 <p>性能测试其实水相当深，至少个人认为没有一定开发经验的性能测试工程师很难深入理解性能问题。</p>
+<h2 id="_1">常用命令解析</h2>
+<h3 id="limit">修改limit值</h3>
+<p>即是：修改用户进程可打开文件数限制</p>
+<p>修改当前交互终端的limit值：</p>
+<p>查询当前终端的文件句柄数： <code>ulimit -n</code> 回车，一般的系统默认的1024。</p>
+<p>修改文件句柄数为65535，<code>ulimit -n 65535</code> 回车。此时系统的文件句柄数修改为65535。</p>
+<p>持久化配置参考：</p>
+<p>https://www.cnblogs.com/jack-Star/p/9915318.html</p>
+<h3 id="limit_1">为什么limit值需要修改？</h3>
+<p>在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制</p>
+<p>这是因为系统为每个TCP连接都要创建一个socket句柄，每个socket句柄同时也是一个文件句柄)</p>
+<p>系统默认一般是当前用户的每个进程最多允许同时打开1024个文件，这1024个文件中还得除去每个进程必然打开的标准输入，标准输出，标准错误，服务器监听 socket，进程间通讯的unix域socket等文件，那么剩下的可用于客户端socket连接的文件数就只有大概1024-10=1014个左右。也就是说缺省情况下，基于Linux的通讯程序最多允许同时1014个TCP并发连接。</p>
+<p>对于想支持更高数量的TCP并发连接的通讯处理程序，就必须修改Linux对当前用户的进程同时打开的文件数量的软限制(soft limit)和硬限制(hardlimit)。其中软限制是指Linux在当前系统能够承受的范围内进一步限制用户同时打开的文件数；硬限制则是根据系统硬件资源状况(主要是系统内存)计算出来的系统最多可同时打开的文件数量。通常软限制小于或等于硬限制。</p>
+<p>修改上述限制的最简单的办法就是使用 ulimit 命令。</p>
               
             </div>
           </div>
