@@ -105,13 +105,17 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/binary_sec/">二进制安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/ic_sec/">工控安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/iot_sec/">物联网安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -142,6 +146,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/re/">Reverse Engineering 逆向工程</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/attack_lifecycle/">网络攻击生命周期</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/log_clear/">日志清理</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/cve/">CVE</a>
                     </li>
@@ -395,6 +401,18 @@
                 <h1 id="hugo">Hugo建站笔记</h1>
 <p>苦于hexo的build时间感人，加之被人盗走生产力笔记本，导致blog原稿尽数丢失，鉴于之前体验过hugo构建blog，所以准备改成用hugo建站试试。（PS：其实用mkdocs也行，不过笔记已经用这个了，blog就换个工具试试吧！）</p>
 <p>留坑，边建站，边做笔记。</p>
+<pre><code class="bash">$ git clone git@github.com:dillonzq/LoveIt.git themes/LoveIt
+$ 把exmaple中的config.toml拷贝到hugo项目根目录
+$ 修改toml文件的路径为 themesDir = &quot;themes/&quot;
+$ hugo server
+$ hugo server -t=theme_name
+</code></pre>
+
+<p>生成静态文件到public目录</p>
+<pre><code>hugo
+</code></pre>
+
+<p>没错，直接执行这个命令，就会生成静态文件到public目录</p>
               
             </div>
           </div>

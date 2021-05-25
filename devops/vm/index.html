@@ -105,13 +105,17 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/binary_sec/">二进制安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/ic_sec/">工控安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/iot_sec/">物联网安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -142,6 +146,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/re/">Reverse Engineering 逆向工程</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/attack_lifecycle/">网络攻击生命周期</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/log_clear/">日志清理</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/cve/">CVE</a>
                     </li>
@@ -305,12 +311,28 @@
     <li class="toctree-l2"><a class="reference internal" href="#_3">常用虚拟机操作指令</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#kvm-virsh">KVM virsh命令</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">查看虚拟机硬盘信息</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">创建快照</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_6">恢复快照</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_7">查看指定虚拟机的快照列表</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">删除快照</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_9">查看快照详细信息</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sabe">sabe快照运维</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#ubuntu1804">Ubuntu18.04虚拟机配置</a>
+    <li class="toctree-l3"><a class="reference internal" href="#faq">FAQ</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#zsh">安装zsh</a>
+    <li class="toctree-l4"><a class="reference internal" href="#kvm_1">kvm网卡参数设置错误导致网卡不能承受过高流量问题排查</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#pyenv">安装pyenv</a>
         <ul>
@@ -624,47 +646,73 @@ vnet2  就是我新创建的虚拟机
 
 <pre><code>qemu虚拟机virsh指令
 
-# 查看所有虚拟机列表
+#### 查看所有虚拟机列表
 virsh list --all
 
-# 查看开启的虚拟机列表
+#### 查看开启的虚拟机列表
 virsh list
 
-# 运行指定的虚拟机
+#### 运行指定的虚拟机
 virsh start centos7
 virsh start dtd
 virsh start tmp_frontend
 
-# 强制关闭指定虚拟机
+#### 强制关闭指定虚拟机
 virsh destroy centos7
 
-# 创建快照
-virsh snapshot-create-as centos7 centos7_snapshot
+#### 查看指定虚拟机的信息 
+virsh dominfo 虚拟机名称
+virsh dominfo sabe
+virsh dominfo snort
 
-# 恢复快照
-virsh snapshot-revert centos7 --current
+#### 查看虚拟机网卡信息
+```bash
+[root@localhost ~]# virsh domiflist sabe
+Interface  Type       Source     Model       MAC
+-------------------------------------------------------
+vnet0      bridge     br0        virtio      52:54:00:74:5e:94
+vnet1      bridge     br1        virtio      52:54:00:89:8d:c5
 
-# 查看指定虚拟机的快照列表
-virsh snapshot-list sabe
-
-# 删除快照
-virsh snapshot-delete snort snort_snapshot
-
-# 查看快照详细信息
-virsh snapshot-info [domain] [snapshot-name]
-
-# sabe快照运维
-
-virsh snapshot-delete sabe sabe_snapshot
-virsh snapshot-create-as sabe sabe_snapshot
-
-virsh snapshot-delete snort snort_snapshot
-virsh snapshot-create-as snort snort_snapshot
+[root@localhost ~]# virsh domiflist snort
+Interface  Type       Source     Model       MAC
+-------------------------------------------------------
+vnet2      bridge     br0        virtio      52:54:00:e3:39:1b
+vnet3      bridge     br1        rtl8139     52:54:00:f3:e8:39
 </code></pre>
 
-<h2 id="ubuntu1804">Ubuntu18.04虚拟机配置</h2>
-<h3 id="zsh">安装zsh</h3>
-<pre><code class="shell">1.安装和切换zsh
+<h4 id="_4">查看虚拟机硬盘信息</h4>
+<p>virsh domblklist</p>
+<h4 id="_5">创建快照</h4>
+<p>virsh snapshot-create-as centos7 centos7_snapshot</p>
+<h4 id="_6">恢复快照</h4>
+<p>virsh snapshot-revert centos7 --current</p>
+<h4 id="_7">查看指定虚拟机的快照列表</h4>
+<p>virsh snapshot-list sabe</p>
+<h4 id="_8">删除快照</h4>
+<p>virsh snapshot-delete snort snort_snapshot</p>
+<h4 id="_9">查看快照详细信息</h4>
+<p><code>virsh snapshot-info [domain] [snapshot-name]</code></p>
+<h4 id="sabe">sabe快照运维</h4>
+<p>virsh snapshot-delete sabe sabe_snapshot
+virsh snapshot-create-as sabe sabe_snapshot</p>
+<p>virsh snapshot-delete snort snort_snapshot
+virsh snapshot-create-as snort snort_snapshot</p>
+<h3 id="faq">FAQ</h3>
+<h4 id="kvm_1">kvm网卡参数设置错误导致网卡不能承受过高流量问题排查</h4>
+<p>ovirt创建网卡的时候有3中选择，分别是：<code>e1000</code>，<code>rtl8139</code>，<code>virtio</code>。</p>
+<ul>
+<li>rtl8139 类型是 qemu-kvm 默认的模拟网卡类型， 10/100Mb/s</li>
+<li>e1000   类型提供Intel e1000系的网卡模拟，纯QEMU（非qemu-kvm）默认就是提供Intel e1000系, 1Gb/s</li>
+<li>virtio  类型是 qemu-kvm 对半虚拟化IO（virtio）驱动的支持，10Gb/s</li>
+</ul>
+<p><img alt="rtl8139 issue" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210525120207.png" /></p>
+<pre><code>
+## Ubuntu18.04虚拟机配置
+
+### 安装zsh
+
+```shell
+1.安装和切换zsh
 cat /etc/shells  # 查看所有shell
 echo $SHELL   # 查看当前shell
 

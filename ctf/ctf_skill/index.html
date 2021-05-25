@@ -105,13 +105,17 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/binary_sec/">二进制安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/ic_sec/">工控安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/iot_sec/">物联网安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -142,6 +146,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/re/">Reverse Engineering 逆向工程</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/attack_lifecycle/">网络攻击生命周期</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/log_clear/">日志清理</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/cve/">CVE</a>
                     </li>
@@ -418,11 +424,22 @@ Referer: www.google.com     # 改来源常用
 <li>修改完成后点击发送，查看这个请求响应的内容。</li>
 </ol>
 <h3 id="base64">base64日常编解码</h3>
+<p>Linux/Unix:</p>
 <pre><code class="shell">echo 0penBmc | base64
 LW4gMHBlbkJtYyANCg==
 
 echo MHBlbkJtYyANCg== | base64 -d
 0penBmc
+</code></pre>
+
+<p>JavaScript(浏览器Console可直接run):</p>
+<pre><code class="javascript">var str = 'javascript';
+
+window.btoa(str)    
+//base64 编码转码结果 &quot;amF2YXNjcmlwdA==&quot;
+
+window.atob(&quot;amF2YXNjcmlwdA==&quot;)
+//base64 解码结果 &quot;javascript&quot;
 </code></pre>
               
             </div>

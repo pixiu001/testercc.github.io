@@ -105,13 +105,17 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/binary_sec/">二进制安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/ic_sec/">工控安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/iot_sec/">物联网安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -142,6 +146,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/re/">Reverse Engineering 逆向工程</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/attack_lifecycle/">网络攻击生命周期</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/log_clear/">日志清理</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/cve/">CVE</a>
                     </li>
@@ -300,6 +306,12 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#cmdping">cmd命令循环ping远端服务并过滤结果</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">查看占用端口的进程</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pid-xxx">查看pid XXX进程是运行的什么服务</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pid">杀死指定pid进程</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -421,6 +433,29 @@ for /L %i in (91,1,255) do @ping 172.%i.0.1 -n 1| find &quot;回复&quot;
 
 example2:
 for /L %i in (91,1,255) do @ping 172.%i.0.1 -n 1| find &quot;TTL=25&quot;
+</code></pre>
+
+<h3 id="_2">查看占用端口的进程</h3>
+<pre><code class="bash">netstat -ano | findstr 1313     # 1313这里是要查询的关键词
+
+展示结果中最后一行就是进程的pid号，10272
+</code></pre>
+
+<h3 id="pid-xxx">查看pid XXX进程是运行的什么服务</h3>
+<pre><code class="bash">tasklist | findstr pid_num
+
+e.g.: 
+$ tasklist | findstr 10272
+hugo.exe                     20632 Console                    1     79,220 K
+</code></pre>
+
+<h3 id="pid">杀死指定pid进程</h3>
+<pre><code class="bash">taskkill pid_num   # 可能需要管理员权限
+taskkill /pid 20632 /T /F  
+
+/PID  processid        指定要终止的进程的 PID。
+/T                     终止指定的进程和由它启用的子进程。
+/F                     指定强制终止进程。
 </code></pre>
               
             </div>

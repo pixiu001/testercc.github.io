@@ -105,13 +105,17 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/binary_sec/">二进制安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/ic_sec/">工控安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/iot_sec/">物联网安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -142,6 +146,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/re/">Reverse Engineering 逆向工程</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/attack_lifecycle/">网络攻击生命周期</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/log_clear/">日志清理</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/cve/">CVE</a>
                     </li>
@@ -310,6 +316,8 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#git-ssh">服务器上的 Git - 生成 SSH 公钥</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#git-forkpr">Git Fork项目后，向开源项目提交PR流程</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_6">其他</a>
     </li>
@@ -731,6 +739,51 @@ authorized_keys2  id_rsa       known_hosts
 config            id_rsa.pub
 
 cat ~/.ssh/id_rsa.pub    # 里面的文本就是ssh key公钥
+</code></pre>
+
+<h2 id="git-forkpr">Git Fork项目后，向开源项目提交PR流程</h2>
+<pre><code class="bash">1. 在github页面上, 点击fork按钮, 将B的项目拷贝一份到A自己的代码仓库中。
+即：A为你自己的仓库， B为你fork的开源仓库。
+
+2. 克隆A自己的代码仓库到本地.
+$ git clone https://github.com/A/A.git
+
+3. 将B的项目作为最新代码的参考标准（upstream 是上游仓库的别名，别名随意命名）
+$ git remote add upstream https://github.com/B/B.git
+
+4. 在本地更改代码（增删查等操作）
+
+5. 暂存已经编辑的目录和文件.
+$ git add .
+$ git stash
+
+6. 拉取B仓库的新代码
+$ git fetch upstream
+
+7. 将B新的部分合并到A的代码仓库中, 使A的代码仓库变成最新的代码.
+$ git rebase upstream/master origin/master
+
+8. 查看分支，确保在自己的本地分支上
+$ git branch
+
+9. 如果不在本地分支，则执行 git checkout master ，如果在则忽略此步骤
+
+10. 将刚刚暂存的代码合并到现在最新的代码中.
+$ git stash apply stash@{0}
+
+11. 本地提交代码.
+$ git add .
+$ git commit -m 提交代码的注释信息&quot;
+
+12. 将代码推送到A的github仓库
+$ git push -u origin/master
+
+13.在A的github仓库页面上，点击pull request向B发起PR请求
+
+14.当B仓库管理者通过你的PR请求，你的PR将会被合并到B的主分支上
+
+以上是第一次进行fork、克隆代码、创建关联、修改代码提交等操作；
+当再次本地修改代码提交时，执行步骤6-11即可。
 </code></pre>
 
 <h2 id="_6">其他</h2>
