@@ -99,6 +99,8 @@
                 <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../research_list/">导航列表</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../exploit/">漏洞相关</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../sample_analysis/">样本分析</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../black_market/">黑产研究</a>
@@ -107,9 +109,15 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">工控安全</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_2">工控安全漏洞分析</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">一、专业术语</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">二、协议测试协议科普</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#ref">REF</a>
+    <li class="toctree-l3"><a class="reference internal" href="#1modbus">1.Modbus通讯协议</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2siemens-s7">2.Siemens S7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3">3.其他工控协议</a>
     </li>
         </ul>
     </li>
@@ -120,6 +128,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../android_sec/">Android安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../browser_sec/">浏览器安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../code_audit/">代码审计</a>
                     </li>
@@ -138,6 +148,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/term/">Term 术语</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/kali_linux/">Kali Linux</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/red_vs_blue/">红蓝对抗</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
@@ -405,8 +417,33 @@
             <div class="section">
               
                 <h1 id="_1">工控安全</h1>
-<h2 id="_2">工控安全漏洞分析</h2>
-<h3 id="ref">REF</h3>
+<h2 id="_2">一、专业术语</h2>
+<p>SCADA:数据采集与监视控制系统
+ICS:工业控制系统
+DCS:分布式控制系统/集散控制系统
+PCS:过程控制系统ESD:应急停车系统
+PLC:可编程序控制器(Programmable Logic Controller)
+RTU:远程终端控制系统
+IED:智能监测单元HMI:人机界面(Human Machine Interface)
+MIS:管理信息系统(Management Information System)
+SIS: 生产过程自动化监控和管理系统(Supervisory Information System)
+MES:制造执行管理系统</p>
+<h2 id="_3">二、协议测试协议科普</h2>
+<h3 id="1modbus">1.Modbus通讯协议</h3>
+<p>Modbus是一种串行通信协议，是Modicon公司（现在的施耐德电气Schneider Electric）于1979年为使用可编程逻辑控制器（PLC）通信而发表。Modbus已经成为工业领域通信协议的业界标准（De facto），并且现在是工业电子设备之间常用的连接方式。</p>
+<p>Modbus比其他通信协议使用的更广泛的主要原因有：</p>
+<ul>
+<li>公开发表并且无版权要求</li>
+<li>易于部署和维护</li>
+<li>对供应商来说，修改移动本地的比特或字节没有很多限制</li>
+</ul>
+<p>Modbus允许多个 (大约240个) 设备连接在同一个网络上进行通信，举个例子，一个由测量温度和湿度的装置，并且将结果发送给计算机。在数据采集与监视控制系统（SCADA）中，Modbus通常用来连接监控计算机和远程终端控制系统（RTU）。</p>
+<h3 id="2siemens-s7">2.Siemens S7</h3>
+<p>属于第7层的协议,用于西门子设备之间进行交换数据,通过TSAP,可加载MPI,DP,以太网等不同物理结构总线或网络上,PLC一般可以通过封装好的通讯功能块实现。</p>
+<h3 id="3">3.其他工控协议</h3>
+<p>IEC 60870-5-104、EtherNet/IP、Tridium Niagara Fox、Crimson V3、OMRON FINS、PCWorx、ProConOs、MELSEC-Q。按需求自行查阅资料。</p>
+<h1 id="_4">工控安全漏洞分析</h1>
+<h2 id="ref">REF</h2>
 <ul>
 <li>工业控制网络安全技术与实践</li>
 <li>工业互联网安全百问百答（科普向）</li>
@@ -414,6 +451,7 @@
 <li><a href="https://www.yuque.com/tidesec/ics/readme">工控安全Wiki - Tide安全团队</a></li>
 <li><a href="https://www.anquanke.com/member/141205">工控安全入门系列 1-10</a></li>
 <li>公众号：湘雪尘奕（视频挺多的，入门友好，也有后续深入的内容）</li>
+<li><a href="https://www.zhihu.com/question/353268896">如何入门工控安全</a></li>
 </ul>
               
             </div>

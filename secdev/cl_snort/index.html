@@ -112,6 +112,12 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#ref">REF</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#other">Other</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#pf_ring">PF_RING</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../cl_viper/">源码学习之Viper</a>
@@ -120,6 +126,8 @@
                 <p class="caption"><span class="caption-text">Security Research 安全研究</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/research_list/">导航列表</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/exploit/">漏洞相关</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/sample_analysis/">样本分析</a>
                     </li>
@@ -134,6 +142,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/browser_sec/">浏览器安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
                     </li>
@@ -152,6 +162,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/term/">Term 术语</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/kali_linux/">Kali Linux</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/red_vs_blue/">红蓝对抗</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
@@ -510,6 +522,29 @@ rev: 版本
 <li><a href="https://blog.csdn.net/guoguangwu/category_9287182.html">Snort2.9.7的解析</a></li>
 <li><a href="http://drops.leesec.com/#!/drops/811.SNORT%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F">SNORT入侵检测系统</a></li>
 </ol>
+<h2 id="other">Other</h2>
+<h3 id="pf_ring">PF_RING</h3>
+<p>ref: https://www.cnblogs.com/lxgeek/p/3893790.html</p>
+<p>1) 未使用PF_RING时，收包存在的问题：
+第一：inpterrupt livelock, 当收到包的时候，网卡驱动程序就会产生一次中断。在大流量的情况下，操作系统将花费大量时间用于处理中断，而只有
+少量的时间用于其他任务。
+第二：将包从网卡移动到用户层花费的时间太久。</p>
+<p>2) PF_RING的目标
+1. 充分利用 device polling 机制 
+2. 减少内核开销，开辟一条新的通道将收包从网卡传输到用户态</p>
+<p>PF_RING架构图如下：
+<img alt="PF_RING架构图" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210526164619.png" /></p>
+<p>3）PF_RING实现功能</p>
+<pre><code>1. 创建一种新的套接字类型 PF_RING, 用于将收包拷贝到一个环形缓冲区
+2. 环形缓冲区和PF_RING套接字一同创建和销毁，各个缓冲区为套接字私有
+3.如果一个网卡适配器被PF_RING套接字利用系统调用bind()绑定，这个网卡只能用于只读直到套接字销毁
+4.对于PF_RING套接字，收包将会被拷贝到套接字缓冲区或被丢包
+5.套接字缓冲区将会利用mmap功能
+6.用户态程序通过mmap()系统调用访问套接字缓冲区
+7.内核拷贝包到环形队列并移动写指针，用户态程序读包并移动读指针
+8.新来的包将会覆盖原有包，因此不需要进行内存的分配和释放
+9.套接字的缓冲区的长度和桶大小可被用户配置
+</code></pre>
               
             </div>
           </div>
