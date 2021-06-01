@@ -106,26 +106,34 @@
     <li class="toctree-l2"><a class="reference internal" href="#_2">主要分析思路</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#_3">木马类</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">木马哪些地方特别有价值</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">病毒木马的初始化操作步骤</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#web">Web类</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#_4">代码对比(对比官方的源码改动)</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_6">代码对比(对比官方的源码改动)</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_5">代码审计</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_7">代码审计</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_6">污点追踪（深入漏洞挖掘避不开这个）</a>
-    </li>
-        </ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">污点追踪（深入漏洞挖掘避不开这个）</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_7">一般信息</a>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_9">一般信息</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#1ip">1.常用查IP地址归属地</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#2">2.各机构辅助查询</a>
     </li>
         </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_10">推荐书目</a>
     </li>
     </ul>
                     </li>
@@ -433,22 +441,25 @@
 <h2 id="_2">主要分析思路</h2>
 <h3 id="_3">木马类</h3>
 <p>木马是一类很特别的软件，初步分析时没必要搞清楚它所有的细节。</p>
-<p>木马哪些地方特别有价值：</p>
+<h4 id="_4">木马哪些地方特别有价值</h4>
 <ul>
 <li>木马的“三无”：<code>无进程，无文件，无网络连接</code></li>
 <li>对应技术：<code>木马的启动技术，存储方式，传输技术</code>，即是说<code>搞清楚木马的启动方式，花式存活方式，如何突破网络限制连接C2。</code></li>
 </ul>
+<h4 id="_5">病毒木马的初始化操作步骤</h4>
+<p>大多数病毒木马在成功植入用户计算机之后，在执行恶意代码之前，会进行初始化操作。</p>
+<p>主要为3个技术点：<code>运行单一实例</code>、<code>DLL延迟加载</code>、<code>资源释放</code>。</p>
 <h3 id="web">Web类</h3>
 <p>思考题：没有POC、没有EXP的时候如何挖掘漏洞？</p>
-<h4 id="_4">代码对比(对比官方的源码改动)</h4>
-<h4 id="_5">代码审计</h4>
+<h4 id="_6">代码对比(对比官方的源码改动)</h4>
+<h4 id="_7">代码审计</h4>
 <p>1.语言基础</p>
 <p>2.常用的第三方审计工具
 - Java：Fortify、Checkmarx
 - PHP：Seay源代码审计系统</p>
-<h4 id="_6">污点追踪（深入漏洞挖掘避不开这个）</h4>
+<h4 id="_8">污点追踪（深入漏洞挖掘避不开这个）</h4>
 <p>todo</p>
-<h2 id="_7">一般信息</h2>
+<h2 id="_9">一般信息</h2>
 <h3 id="1ip">1.常用查IP地址归属地</h3>
 <p>由于运营商原因，ip归属地应当对比。</p>
 <ul>
@@ -463,6 +474,10 @@
 <li><a href="https://ti.qianxin.com/">奇安信ALPHA威胁分析平台</a></li>
 <li><a href="https://www.virustotal.com/gui/">virustotal</a></li>
 <li><a href="https://a.virscan.org/">virscan</a></li>
+</ul>
+<h2 id="_10">推荐书目</h2>
+<ul>
+<li>Windows黑客编程技术详解 - 有讲解病毒和木马的各类实现技术</li>
 </ul>
               
             </div>
