@@ -298,6 +298,8 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Docker</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#docker_1">Docker在渗透测试中的应用</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#_1">相关概念</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#dockerfile">Dockerfile</a>
@@ -312,19 +314,19 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#docker_1">Docker高频命令</a>
+    <li class="toctree-l2"><a class="reference internal" href="#docker_2">Docker高频命令</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#docker-container">查看docker container</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#docker-container_1">进入运行中的 docker container</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#docker_2">上传宿主机文件到 docker容器中</a>
+    <li class="toctree-l3"><a class="reference internal" href="#docker_3">上传宿主机文件到 docker容器中</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#docker_3">下载docker容器中的文件到 宿主机</a>
+    <li class="toctree-l3"><a class="reference internal" href="#docker_4">下载docker容器中的文件到 宿主机</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#docker_4">使用Docker构建环境</a>
+    <li class="toctree-l2"><a class="reference internal" href="#docker_5">使用Docker构建环境</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#docker-install-mysql">Docker install MySQL</a>
     </li>
@@ -441,6 +443,11 @@
             <div class="section">
               
                 <h1 id="docker">Docker相关知识</h1>
+<h2 id="docker_1">Docker在渗透测试中的应用</h2>
+<p>对于渗透测试人员而言，在docker未普及前可谓是苦环境搭建久矣。</p>
+<p>而随着docker普及，各种漏洞复现已经变的容易许多，不过自己掌握<code>构建 Docker image</code>和<code>编写Dockerfile</code>的能力还是必要的。</p>
+<p>如果是复杂环境构建，说不定有人还会用上K8s。</p>
+<p>之间无意中看到的一个用docker搭建渗透测试可以看看：https://www.hackingarticles.in/docker-for-pentester-pentesting-framework/</p>
 <h2 id="_1">相关概念</h2>
 <h3 id="dockerfile">Dockerfile</h3>
 <p>Dockerfile 是一个用来构建镜像的文本文件，文本内容包含了一条条构建镜像所需的指令和说明。</p>
@@ -520,7 +527,7 @@ services:
 <pre><code class="shell">docker-compose stop
 </code></pre>
 
-<h2 id="docker_1">Docker高频命令</h2>
+<h2 id="docker_2">Docker高频命令</h2>
 <h3 id="docker-container">查看docker container</h3>
 <p>查看正在运行中的 docker container</p>
 <pre><code>docker ps
@@ -535,17 +542,17 @@ services:
 <pre><code>docker exec -it b6a105b4f51f /bin/bash
 </code></pre>
 
-<h3 id="docker_2">上传宿主机文件到 docker容器中</h3>
+<h3 id="docker_3">上传宿主机文件到 docker容器中</h3>
 <p>上传本地 /tmp/tp/ 目录 到 docker容器 b6a105b4f51f 的 /var/www/ 目录中</p>
 <pre><code>docker cp /tmp/tp/ b6a105b4f51f:/var/www/
 </code></pre>
 
-<h3 id="docker_3">下载docker容器中的文件到 宿主机</h3>
+<h3 id="docker_4">下载docker容器中的文件到 宿主机</h3>
 <p>下载 docker 容器中的 /var/www/ 目录 到 宿主机 /tmp/tp/ 目录下</p>
 <pre><code>docker cp b6a105b4f51f:/var/www/ /tmp/tp/
 </code></pre>
 
-<h2 id="docker_4">使用Docker构建环境</h2>
+<h2 id="docker_5">使用Docker构建环境</h2>
 <p><a href="https://www.runoob.com/docker/docker-dockerfile.html">Dockerfile -- runoob.com</a>
 <a href="https://blog.csdn.net/sunt2018/article/details/85263432">ref</a></p>
 <h3 id="docker-install-mysql">Docker install MySQL</h3>

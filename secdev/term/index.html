@@ -104,6 +104,14 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#_5">安全域</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dmz">DMZ</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#dmz_1">DMZ区的特点</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">网络空间测绘</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -483,6 +491,17 @@
 
 <h3 id="_5">安全域</h3>
 <p>安全域存在的原因和目的是将一组安全等级相同的划入同一个安全域，最小权限开放对其他安全域的NACL（网络访问控制策略），使得安全域内这组暴露的风险最小化，在发生攻击或蠕虫等侵害时能将威胁最大化地隔离，减小域外事件对域内系统的影响，也是纵深防御架构最重要的单位体</p>
+<h3 id="dmz">DMZ</h3>
+<p>全称Demilitarized Zone，中文为“非军事区”，或称Perimeter network，即“边界网络”、周边网络或“对外网络”，为一种网络架构的布置方案。</p>
+<p>常用的架设方案是在<code>不信任的外部网络</code>和<code>可信任的内部网络</code>外，创建一个<code>面向外部网络的物理或逻辑子网</code>，该子网能设置用于对外部网络的服务器主机。</p>
+<h4 id="dmz_1">DMZ区的特点</h4>
+<ol>
+<li>提供服务给外界访问</li>
+<li>路由器不包含任何机密资料</li>
+</ol>
+<h3 id="_6">网络空间测绘</h3>
+<p>网络空间测绘是2016年出现的一个概念，主要指用一些技术方法，来探测全球互联网空间上的节点分布情况和网络关系索引，构建全球互联网图谱的一种方法。</p>
+<p>拓展阅读：https://www.anquanke.com/post/id/231011</p>
               
             </div>
           </div>
