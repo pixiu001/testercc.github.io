@@ -261,9 +261,39 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#_1">版本问题</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_2">学习资源</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">常用命令</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#npmvue2vue-cli2">npm全局安装vue2和vue-cli2</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">开源组件库</a>
+    <li class="toctree-l3"><a class="reference internal" href="#npmvue3vue-cli3">npm局部安装vue3和vue-cli3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#npm">使用npm镜像源</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">单次使用</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">永久使用</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">手动修改</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_6">检测是否修改成功</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vue-cli">查看vue-cli版本号</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vue">全局查看vue版本号</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vue_1">局部（当前项目）查vue版本号</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vue-cli_1">用vue-cli创建项目</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vue2vue3">Vue2和Vue3共存</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">学习资源</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_8">开源组件库</a>
     </li>
     </ul>
                     </li>
@@ -415,14 +445,81 @@
                 <h1 id="vuejs">Vue.js笔记</h1>
 <p>现在Vue.js的使用范围很广，很多后端岗位也对Vue.js和React技能有要求。</p>
 <h2 id="_1">版本问题</h2>
-<p>企业的旧项目用Vue.js 2.5的比较多，现在用Vue.js 3的已经越来越多。</p>
-<h2 id="_2">学习资源</h2>
+<p>企业的旧项目用Vue.js 2.X的比较多，但现在新用Vue.js 3的已经越来越多。</p>
+<p>部署开发环境的话，目前一般需要Vue2和Vue3共存，所以建议一个版本全局部署，一个版本局部部署，以便需要时使用。</p>
+<h2 id="_2">常用命令</h2>
+<h3 id="npmvue2vue-cli2">npm全局安装vue2和vue-cli2</h3>
+<pre><code>npm install vue -g --registry=https://registry.npm.taobao.org 
+
+npm install vue-cli -g --registry=https://registry.npm.taobao.org
+
+-g 全局安装
+
+-registry 指定安装用的npm源，因为官方源在国内容易超时，其实国内也可以考虑用cnpm
+</code></pre>
+
+<h3 id="npmvue3vue-cli3">npm局部安装vue3和vue-cli3</h3>
+<p>局部安装注意文件夹，且不要加 -g 参数</p>
+<pre><code>npm install vue@next --registry=https://registry.npm.taobao.org
+
+npm install @vue/cli --registry=https://registry.npm.taobao.org
+</code></pre>
+
+<h3 id="npm">使用npm镜像源</h3>
+<p>众所周知的原因，国内使用npm一般需要镜像源</p>
+<h4 id="_3">单次使用</h4>
+<pre><code>npm install --registry=https://registry.npm.taobao.org
+</code></pre>
+
+<h4 id="_4">永久使用</h4>
+<pre><code>npm config set registry https://registry.npm.taobao.org
+</code></pre>
+
+<h4 id="_5">手动修改</h4>
+<pre><code>1.打开.npmrc文件（C:\Program Files\nodejs\node_modules\npm\npmrc，没有的话可以使用git命令行建一个( touch .npmrc)，用cmd命令建会报错）
+2.增加 registry =https://registry.npm.taobao.org  即可。
+</code></pre>
+
+<h4 id="_6">检测是否修改成功</h4>
+<pre><code>npm config get registry
+</code></pre>
+
+<h3 id="vue-cli">查看vue-cli版本号</h3>
+<p><code>vue -V</code></p>
+<h3 id="vue">全局查看vue版本号</h3>
+<p><code>npm info vue</code></p>
+<p><img alt="全局查看vue版本号" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210610110354.png" /></p>
+<h3 id="vue_1">局部（当前项目）查vue版本号</h3>
+<p><code>npm list vue version</code></p>
+<h3 id="vue-cli_1">用vue-cli创建项目</h3>
+<pre><code>vue ui(可视化安装) 
+或者 
+vue create project_name
+
+npm  run  serve 启动vue项目
+</code></pre>
+
+<h3 id="vue2vue3">Vue2和Vue3共存</h3>
+<p>ref: https://zhuanlan.zhihu.com/p/138155274</p>
+<pre><code>0.全局安装Vue2（局部安装Vue3）
+
+1.新建文件夹，如：workspace_vue3/，局部安装vue3
+
+2.打开 ...\workspace_vue3\node_modules\.bin ，将目录下的vue与vue.cmd重命名为vue3与vue3.cmd
+
+3.在Win10中右键此电脑=&gt;高级系统设置=&gt;环境变量=&gt;系统变量=&gt;选PATH，然后新建将 ...\workspace_vue3\node_modules\.bin 的绝对路径添加到Path变量中，并点击“确定/应用”
+
+4.重启终端命令行
+</code></pre>
+
+<h2 id="_7">学习资源</h2>
 <ul>
 <li><a href="https://cn.vuejs.org/v2/guide/">Vue官方文档</a> -- 官方中文文档详细且配视频，入门必看。</li>
+<li><a href="https://space.bilibili.com/386301970/channel/detail?cid=92975">小破站Vue2入门</a></li>
 </ul>
-<h2 id="_3">开源组件库</h2>
+<h2 id="_8">开源组件库</h2>
 <ul>
-<li><a href="https://element.eleme.cn/#/zh-CN/component/installation">Element</a> -- Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库</li>
+<li><a href="https://element.eleme.cn/#/zh-CN/component/installation">Element UI</a> -- Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库</li>
 <li><a href="https://pro.antdv.com/docs/getting-started">ANTD PRO VUE</a> -- 开箱即用的中台前端/设计解决方案。</li>
 </ul>
               
