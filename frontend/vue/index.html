@@ -231,6 +231,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/big_data/">Big Data 大数据</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/regex/">Regex 正则表达式</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/git/">Git</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/git_flow/">Git Flow</a>
@@ -263,11 +265,15 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_2">常用命令</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#npmvue2vue-cli2">npm全局安装vue2和vue-cli2</a>
+    <li class="toctree-l3"><a class="reference internal" href="#npmvue2">npm全局安装vue2</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#npmvue3vue-cli3">npm局部安装vue3和vue-cli3</a>
+    <li class="toctree-l3"><a class="reference internal" href="#npmvue3">npm局部安装vue3</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#npm">使用npm镜像源</a>
+    <li class="toctree-l3"><a class="reference internal" href="#npmvue-cli">npm全局安装vue-cli最新版本</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#npm">npm卸载已安装模块</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#npm_1">使用npm镜像源</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#_3">单次使用</a>
     </li>
@@ -287,13 +293,19 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#vue-cli_1">用vue-cli创建项目</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#vue2vue3">Vue2和Vue3共存</a>
+    <li class="toctree-l3"><a class="reference internal" href="#vue2vue3">Vue2和Vue3共存(仅供参考)</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_7">学习资源</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">其它问题</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#npm-s-d">npm安装包时-S和-D的区别</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_8">开源组件库</a>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_8">学习资源</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_9">开源组件库</a>
     </li>
     </ul>
                     </li>
@@ -446,26 +458,37 @@
 <p>现在Vue.js的使用范围很广，很多后端岗位也对Vue.js和React技能有要求。</p>
 <h2 id="_1">版本问题</h2>
 <p>企业的旧项目用Vue.js 2.X的比较多，但现在新用Vue.js 3的已经越来越多。</p>
+<p>vue-cli安装最新的版本即可，不用安装以前的，因为新版本才支持<code>vue ui</code></p>
 <p>部署开发环境的话，目前一般需要Vue2和Vue3共存，所以建议一个版本全局部署，一个版本局部部署，以便需要时使用。</p>
+<p>但是vue-cli安装一个应该就可以了。</p>
+<p>如果要管理多版本node.js，非windows用nvm，Windows用nvm-windows</p>
 <h2 id="_2">常用命令</h2>
-<h3 id="npmvue2vue-cli2">npm全局安装vue2和vue-cli2</h3>
+<h3 id="npmvue2">npm全局安装vue2</h3>
 <pre><code>npm install vue -g --registry=https://registry.npm.taobao.org 
 
-npm install vue-cli -g --registry=https://registry.npm.taobao.org
-
--g 全局安装
+-g 表示全局
 
 -registry 指定安装用的npm源，因为官方源在国内容易超时，其实国内也可以考虑用cnpm
 </code></pre>
 
-<h3 id="npmvue3vue-cli3">npm局部安装vue3和vue-cli3</h3>
-<p>局部安装注意文件夹，且不要加 -g 参数</p>
+<h3 id="npmvue3">npm局部安装vue3</h3>
+<p>局部安装注意文件夹，且不要加 -g 参数，不加则表示<strong>安装到当前命令行所在目录</strong>，且不写入package.json</p>
 <pre><code>npm install vue@next --registry=https://registry.npm.taobao.org
-
-npm install @vue/cli --registry=https://registry.npm.taobao.org
 </code></pre>
 
-<h3 id="npm">使用npm镜像源</h3>
+<h3 id="npmvue-cli">npm全局安装vue-cli最新版本</h3>
+<pre><code>npm install @vue/cli -g --registry=https://registry.npm.taobao.org
+</code></pre>
+
+<h3 id="npm">npm卸载已安装模块</h3>
+<pre><code>npm uninstall xxx
+
+npm uninstall -g xxx
+
+-g 表示全局
+</code></pre>
+
+<h3 id="npm_1">使用npm镜像源</h3>
 <p>众所周知的原因，国内使用npm一般需要镜像源</p>
 <h4 id="_3">单次使用</h4>
 <pre><code>npm install --registry=https://registry.npm.taobao.org
@@ -492,14 +515,17 @@ npm install @vue/cli --registry=https://registry.npm.taobao.org
 <h3 id="vue_1">局部（当前项目）查vue版本号</h3>
 <p><code>npm list vue version</code></p>
 <h3 id="vue-cli_1">用vue-cli创建项目</h3>
-<pre><code>vue ui(可视化安装) 
-或者 
+<pre><code># 1.基于交互式命令行，创建vue项目
 vue create project_name
 
-npm  run  serve 启动vue项目
+# 2.基于图形化界面，创建Vue项目
+vue ui(可视化安装) 
+
+# 启动vue项目
+npm run serve 
 </code></pre>
 
-<h3 id="vue2vue3">Vue2和Vue3共存</h3>
+<h3 id="vue2vue3">Vue2和Vue3共存(仅供参考)</h3>
 <p>ref: https://zhuanlan.zhihu.com/p/138155274</p>
 <pre><code>0.全局安装Vue2（局部安装Vue3）
 
@@ -512,12 +538,28 @@ npm  run  serve 启动vue项目
 4.重启终端命令行
 </code></pre>
 
-<h2 id="_7">学习资源</h2>
+<h2 id="_7">其它问题</h2>
+<h3 id="npm-s-d">npm安装包时-S和-D的区别</h3>
+<pre><code>1、npm install name --save 简写（npm install name -S） 自动把模块和版本号添加到package.json的dependencies。
+
+-S后，安装包会在package中的 dependencies 对象中。简称dep。dep是在生产环境中要用到的。
+</code></pre>
+
+<pre><code>2、npm install name --save-dev 简写（npm install name -D） 自动把模块和版本号添加到package.json的devDependencies。
+
+-D后，安装包会在package中的 devDependencies对象中。简称dev。dev是在开发环境中要用到的。
+</code></pre>
+
+<p>举个例子：</p>
+<p>构建工具：webpack是用来压缩代码，打包等需要的工具，程序实际运行的时候并不需要，就要放在dev中所以要用 -D。</p>
+<p>项目插件：例如bootstrap、mint-ui这种插件要在运行中使用的，就要放在dep中所以就用 -S。</p>
+<p><img alt="npm安装包时-S和-D的区别" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210610150743.png" /></p>
+<h2 id="_8">学习资源</h2>
 <ul>
 <li><a href="https://cn.vuejs.org/v2/guide/">Vue官方文档</a> -- 官方中文文档详细且配视频，入门必看。</li>
 <li><a href="https://space.bilibili.com/386301970/channel/detail?cid=92975">小破站Vue2入门</a></li>
 </ul>
-<h2 id="_8">开源组件库</h2>
+<h2 id="_9">开源组件库</h2>
 <ul>
 <li><a href="https://element.eleme.cn/#/zh-CN/component/installation">Element UI</a> -- Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库</li>
 <li><a href="https://pro.antdv.com/docs/getting-started">ANTD PRO VUE</a> -- 开箱即用的中台前端/设计解决方案。</li>

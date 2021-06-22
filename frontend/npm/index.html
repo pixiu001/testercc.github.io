@@ -231,6 +231,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/big_data/">Big Data 大数据</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/regex/">Regex 正则表达式</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/git/">Git</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/git_flow/">Git Flow</a>
@@ -263,6 +265,26 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">NPM</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">国内源</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#npm_1">npm使用淘宝镜像源安装</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#npm_2">npm常用命令</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#npm_3">npm其它使用场景</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#npm_4">npm导入项目局部安装依赖包</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#npmumiviper">npm启动umi项目（viper）</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#npm_5">npm局部安装报错处理</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#npm_6">npm本地安装两种方式的区别</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#npmyarn">通过npm安装yarn</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -408,14 +430,52 @@
               
                 <h1 id="npm">NPM</h1>
 <p>npm 是 JavaScript 世界的包管理工具,并且是 Node.js 平台的默认包管理工具。通过 npm 可以安装、共享、分发代码,管理项目依赖关系。</p>
-<h1 id="_1">国内源</h1>
+<h2 id="_1">国内源</h2>
 <p>鉴于npm默认源国内访问速度一般比较慢，默认一般都用淘宝镜像源 <code>https://registry.npm.taobao.org</code></p>
-<h1 id="npmyarn">通过npm安装yarn</h1>
+<h2 id="npm_1">npm使用淘宝镜像源安装</h2>
+<pre><code class="shell">npm install --registry https://registry.npm.taobao.org
+</code></pre>
+
+<h2 id="npm_2">npm常用命令</h2>
+<pre><code class="shell">which node   // 查看node的安装目录
+which npm   // 查看npm的安装目录
+npm root -g // 查看全局包的安装目录
+npm list -g --depth 0 //查看全局安装过的包
+
+npm install -g xxx   // 全局安装某包
+npm uninstall -g xxx // 删除全局安装库，可以指定
+</code></pre>
+
+<h2 id="npm_3">npm其它使用场景</h2>
+<h3 id="npm_4">npm导入项目局部安装依赖包</h3>
+<p><code>npm install --registry https://registry.npm.taobao.org</code></p>
+<h3 id="npmumiviper">npm启动umi项目（viper）</h3>
+<p><code>npm run start:no-mock</code></p>
+<h3 id="npm_5">npm局部安装报错处理</h3>
+<p>一般先看错误提示</p>
+<p><code>npm install --registry https://registry.npm.taobao.org --legacy-peer-deps</code></p>
+<h3 id="npm_6">npm本地安装两种方式的区别</h3>
+<p>本地安装有两种主要的安装方式：</p>
+<pre><code class="shell">- 保存到开发依赖(devDependencies): npm install &lt;pageName&gt; --save-dev
+- 保存到生产依赖(dependencies): npm install &lt;pageName&gt; --save
+</code></pre>
+
+<pre><code class="shell">- 开发依赖：顾名思义在开发环境中用到的依赖；
+- 生产依赖：在生产环境中用到的依赖。
+</code></pre>
+
+<pre><code class="shell">- 开发环境：指的是你的项目尚且在编码阶段时的环境。你在代码可能还有各种console.log()、注释、格式化等。
+- 生产环境：指的是你的项目已经完成编码，并发布上线可供用户浏览的阶段时的环境。代码可能经过了压缩、优化等处理。
+</code></pre>
+
+<h3 id="npmyarn">通过npm安装yarn</h3>
 <pre><code class="shell">npm 安装yarn：
 
 npm install -g yarn --registry=https://registry.npm.taobao.org
 yarn config set registry https://registry.npm.taobao.org -g
 yarn config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g
+
+-g 全局安装，一般不推荐，还是建议局部安装。
 </code></pre>
               
             </div>

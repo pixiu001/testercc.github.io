@@ -231,9 +231,13 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../big_data/">Big Data 大数据</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../regex/">Regex 正则表达式</a>
+                    </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Git</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#_1">在线练习</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#git_1">git多账号配置</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#0git-clone">0.git clone</a>
     </li>
@@ -328,6 +332,12 @@
     <li class="toctree-l2"><a class="reference internal" href="#git-forkpr">Git Fork项目后，向开源项目提交PR流程</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_6">其他</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">常见错误处理</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#git-basherror-could-not-fork-child-process-there-are-no-available-terminals-1">git bash报错Error: Could not fork child process: There are no available terminals (-1).</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -507,6 +517,113 @@
 <h2 id="_1">在线练习</h2>
 <p><a href="https://learngitbranching.js.org">在线练习使用Git</a>
 <a href="http://www.ruanyifeng.com/blog/2019/12/git-undo.html">如何撤销Git操作</a></p>
+<h2 id="git_1">git多账号配置</h2>
+<p>场景：在同一台机器上配置多个Git帐号（比如：Github，Gitlab，Gitee等）</p>
+<ol>
+<li>移除全局配置(可选，没有设置的可以不用移除)</li>
+</ol>
+<pre><code class="shell"># 移除全局配置账户
+
+git config --global --unset user.name
+
+#查看全局用户名
+
+git config --global user.name
+
+# 移除全局配置邮箱
+
+git config --global --unset user.email
+
+# 查看全局邮箱
+
+git config --global user.email
+
+
+# 移除全局密码
+
+git config --global --unset user.password
+
+# 查看全局密码
+
+git config --global user.password
+
+备注：如下，笔者实践中，没有设置全局密码，所以只进行以下操作。
+</code></pre>
+
+<ol>
+<li>生成公私钥文件</li>
+</ol>
+<pre><code class="shell">ssh-keygen -t rsa -C username@xxx.com
+
+参数说明：
+-t 要生成的秘钥的类型
+-c 用于识别这个秘钥的注释
+</code></pre>
+
+<p>执行命令后，会提示输入要保存key的文件路径，密码(Enter passphrase)。如果是初次设置，都可以直接回车，不输入。</p>
+<p>但配置多个的时候，文件路径需要变化（比如我设置的test，实际上公私钥文件都是test命名开头的）。</p>
+<p>如果还是默认回车，会提示你是否要覆盖。</p>
+<p><img alt="gen-ssh-key" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210622133453.png" /></p>
+<p>如图，新生成了 <code>gitlabyx.pub</code> 文件，执行 <code>cat gitlabyx.pub</code>，将公钥内容通过对应git平台的“SSH Keys”添加。</p>
+<p><img alt="add-ssh-key" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210622134156.png" /></p>
+<ol>
+<li>添加config文件</li>
+</ol>
+<p>在上述<code>~/.ssh/</code>目录下，手动新增一个 config 文本文件,为每个账号配置一个Host节点。</p>
+<p>主要配置项说明：</p>
+<p>```shell
+填写说明：</p>
+<p>Host    　　    主机别名
+HostName　      服务器真实地址
+IdentityFile　　私钥文件路径
+PreferredAuthentications　认证方式
+User　用户名(例如：Github/Gitlab/Gitee帐号)</p>
+<pre><code>
+config文件的内容
+```shell
+Host fspt    # 可以自定义，但是使用时要注意，也可以不写
+HostName github.com
+IdentityFile ~/.ssh/test
+User git     # 这个默认会用全局设置
+
+# gitlab
+Host gitlab.eelantech.com
+HostName 10.0.0.8
+IdentityFile ~/.ssh/gitlabyx
+PreferredAuthentications publickey  # 用ssh建议设置上
+User liyanxi@eelantech.com
+</code></pre>
+
+<ol>
+<li>测试多端配置</li>
+</ol>
+<pre><code class="sheel">github的账号
+$ ssh -T fspt
+Hi GitHub Username! You've successfully authenticated, but GitHub does not provide shell access.
+
+gitlab的账号测试：
+
+cd ~/test_project/
+git init .
+git remote add origin git@gitlab.xxxx.com:xxx/xxx.git
+git add -A
+git commit -m &quot;1st commit&quot;
+git push -u origin dev
+</code></pre>
+
+<p>能顺利完成配置说明操作成功，如果配置了全局username，email，这是的提交者依然是全局的。</p>
+<ol>
+<li>为不同项目设置不同的用户名和邮箱</li>
+</ol>
+<p>找到项目所在目录下的<code>.git/</code> 文件夹，进入.git/文件夹，然后执行如下命令分别设置用户名和邮箱。</p>
+<pre><code>git config user.name &quot;yanxi&quot;
+git config user.email &quot;liyanxi@eelantech.com&quot;
+</code></pre>
+
+<p>然后在<code>.git/</code>目录下执行命令查看config文件：<code>cat config</code></p>
+<p><img alt="local_variables" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210622141240.png" /></p>
+<p>发现里面多了刚才配置的用户名和邮箱信息，即成功为该项目单独设置了用户名和邮箱。</p>
+<p>ref: <a href="https://www.cnblogs.com/shouke/p/11480215.html">在同一台机器上配置多个Git帐号</a></p>
 <h2 id="0git-clone">0.git clone</h2>
 <p>最基础的命令，把仓库拉取到本地。常用下面几个语句</p>
 <pre><code class="shell">git clone git@xxx.com:xxx/abc.git
@@ -802,6 +919,19 @@ $ git push -u origin/master
 
 P.S.: WIP（work in progress）
 </code></pre>
+
+<h2 id="_7">常见错误处理</h2>
+<h3 id="git-basherror-could-not-fork-child-process-there-are-no-available-terminals-1">git bash报错<code>Error: Could not fork child process: There are no available terminals (-1).</code></h3>
+<p>打开win的cmd或者powershell，执行如下命令：</p>
+<pre><code class="bash">(base) PS C:\Users\xx&gt; tasklist | findstr &quot;git-bash&quot;
+git-bash.exe                 18476 Console                    1      5,796 K
+(base) PS C:\Users\xx&gt; taskkill /pid 18476 -t -f
+成功: 已终止 PID 22436 (属于 PID 18476 子进程)的进程。
+成功: 已终止 PID 18476 (属于 PID 16332 子进程)的进程。
+(base) PS C:\Users\xx&gt;
+</code></pre>
+
+<p>如果这样kill后还是不能正常启动git bash，那么建议重启。</p>
               
             </div>
           </div>
@@ -812,7 +942,7 @@ P.S.: WIP（work in progress）
         <a href="../git_flow/" class="btn btn-neutral float-right" title="Git Flow">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../big_data/" class="btn btn-neutral" title="Big Data 大数据"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../regex/" class="btn btn-neutral" title="Regex 正则表达式"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -838,7 +968,7 @@ P.S.: WIP（work in progress）
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../big_data/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../regex/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../git_flow/" style="color: #fcfcfc">Next &raquo;</a></span>

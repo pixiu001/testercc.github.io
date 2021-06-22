@@ -231,6 +231,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/big_data/">Big Data 大数据</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/regex/">Regex 正则表达式</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/git/">Git</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/git_flow/">Git Flow</a>
@@ -359,6 +361,36 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Hugo</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">常用命令</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">基本信息</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">查看版本</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">版本和环境详细信息</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">创建站点</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">创建</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_7">创建文章</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_8">调试和部署</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#hugo_1">本地调试hugo站点常用命令</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#public">编译生成静态文件到public目录</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#web">本地编译生成静态文件并启动web服务，可查看静态文件站点效果</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../hexo/">Hexo</a>
@@ -409,18 +441,42 @@
                 <h1 id="hugo">Hugo建站笔记</h1>
 <p>苦于hexo的build时间感人，加之被人盗走生产力笔记本，导致blog原稿尽数丢失，鉴于之前体验过hugo构建blog，所以准备改成用hugo建站试试。（PS：其实用mkdocs也行，不过笔记已经用这个了，blog就换个工具试试吧！）</p>
 <p>留坑，边建站，边做笔记。</p>
-<pre><code class="bash">$ git clone git@github.com:dillonzq/LoveIt.git themes/LoveIt
+<h2 id="_1">常用命令</h2>
+<h3 id="_2">基本信息</h3>
+<h4 id="_3">查看版本</h4>
+<p><code>hugo version</code></p>
+<h4 id="_4">版本和环境详细信息</h4>
+<p><code>hugo env</code></p>
+<h3 id="_5">创建站点</h3>
+<pre><code class="shell">$ hugo new site hugo_blog_v2    # hugo_blog_v2是文件夹名，可自定义
+</code></pre>
+
+<p><img alt="create_new_site" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210617153939.png" /></p>
+<p>如果准备自定义动手修改主题内容，最好先fork <code>https://github.com/dillonzq/LoveIt</code> 到自己的repo再操作</p>
+<pre><code class="bash">$ cd hugo_blog_v2
+$ git clone git@github.com:TesterCC/LoveIt.git themes/LoveIt
 $ 把exmaple中的config.toml拷贝到hugo项目根目录
 $ 修改toml文件的路径为 themesDir = &quot;themes/&quot;
 $ hugo server
-$ hugo server -t=theme_name
+$ hugo server -t=LoveIt   # LoveIt 是 theme name
 </code></pre>
 
-<p>生成静态文件到public目录</p>
-<pre><code>hugo
+<h3 id="_6">创建</h3>
+<h4 id="_7">创建文章</h4>
+<p><code>hugo new index.md</code>   # index未md文件名，可自定义</p>
+<h3 id="_8">调试和部署</h3>
+<h4 id="hugo_1">本地调试hugo站点常用命令</h4>
+<pre><code class="shell">hugo server --theme=LoveIt --buildDrafts --watch
 </code></pre>
 
+<h4 id="public">编译生成静态文件到public目录</h4>
+<p><code>hugo</code></p>
 <p>没错，直接执行这个命令，就会生成静态文件到public目录</p>
+<h4 id="web">本地编译生成静态文件并启动web服务，可查看静态文件站点效果</h4>
+<pre><code>hugo server
+</code></pre>
+
+<p>执行成功后，如果没有修改默认端口，一般是访问 <code>http://localhost:1313/</code> 进行预览</p>
               
             </div>
           </div>
