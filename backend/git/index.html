@@ -178,6 +178,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/pwn/">PWN</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ctf/hackthebox/">Hack The Box</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Algorithm 算法</span></p>
                 <ul>
@@ -515,8 +517,8 @@
                 <h1 id="git">Git常用高频命令实例</h1>
 <p>(branch_name统一指代分支名称，个人根据自己的分支名称需要做替换，不能直接写"branch_name"这个字符串)</p>
 <h2 id="_1">在线练习</h2>
-<p><a href="https://learngitbranching.js.org">在线练习使用Git</a>
-<a href="http://www.ruanyifeng.com/blog/2019/12/git-undo.html">如何撤销Git操作</a></p>
+<p><a href="https://learngitbranching.js.org">在线练习使用Git</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2019/12/git-undo.html">如何撤销Git操作</a></p>
 <h2 id="git_1">git多账号配置</h2>
 <p>场景：在同一台机器上配置多个Git帐号（比如：Github，Gitlab，Gitee等）</p>
 <ol>
@@ -548,8 +550,14 @@ git config --global --unset user.password
 git config --global user.password
 
 备注：如下，笔者实践中，没有设置全局密码，所以只进行以下操作。
+
+# 设置全局用户和邮件
+
+git config --global user.name &quot;tester&quot;
+git config --global user.email &quot;tester@test.com&quot;
 </code></pre>
 
+<p>检查时可使用<code>git config -l</code>命令查看全局配置。</p>
 <ol>
 <li>生成公私钥文件</li>
 </ol>

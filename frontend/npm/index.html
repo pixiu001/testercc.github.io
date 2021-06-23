@@ -178,6 +178,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/pwn/">PWN</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ctf/hackthebox/">Hack The Box</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Algorithm 算法</span></p>
                 <ul>
@@ -282,6 +284,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#npm_6">npm本地安装两种方式的区别</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#npmyarn">通过npm安装yarn</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ubuntu-1804nodejs">Ubuntu 18.04安装node.js最新稳定版</a>
     </li>
         </ul>
     </li>
@@ -477,6 +481,14 @@ yarn config set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass -g
 
 -g 全局安装，一般不推荐，还是建议局部安装。
 </code></pre>
+
+<h3 id="ubuntu-1804nodejs">Ubuntu 18.04安装node.js最新稳定版</h3>
+<p><code>shell script
+sudo apt install npm
+sudo apt-get install node.js  
+sudo npm install n -g
+sudo n stable</code>
+完成后重新打开shell，执行 <code>node -v</code>和<code>npm -v</code>检验安装版本</p>
               
             </div>
           </div>
