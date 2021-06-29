@@ -579,17 +579,17 @@ git config --global user.email &quot;tester@test.com&quot;
 </ol>
 <p>在上述<code>~/.ssh/</code>目录下，手动新增一个 config 文本文件,为每个账号配置一个Host节点。</p>
 <p>主要配置项说明：</p>
-<p>```shell
-填写说明：</p>
-<p>Host    　　    主机别名
+<pre><code class="shell">填写说明：
+
+Host    　　    主机别名
 HostName　      服务器真实地址
 IdentityFile　　私钥文件路径
 PreferredAuthentications　认证方式
-User　用户名(例如：Github/Gitlab/Gitee帐号)</p>
-<pre><code>
-config文件的内容
-```shell
-Host fspt    # 可以自定义，但是使用时要注意，也可以不写
+User　用户名(例如：Github/Gitlab/Gitee帐号)
+</code></pre>
+
+<p>config文件的内容</p>
+<pre><code class="shell">Host fspt    # 可以自定义，但是使用时要注意，也可以不写
 HostName github.com
 IdentityFile ~/.ssh/test
 User git     # 这个默认会用全局设置

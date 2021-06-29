@@ -326,11 +326,13 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#usrlocalbinusrlocalsbin">/usr/local/bin与/usr/local/sbin的区别</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">网卡相关设置</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#grep">grep命令</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#grep_1">使用grep查找某目录下包含关键字内容的文件</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_2">排除某关键词的搜索结果</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">排除某关键词的搜索结果</a>
     </li>
         </ul>
     </li>
@@ -344,7 +346,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">常识问题</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">常识问题</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#linuxusr">Linux的/usr目录的全称</a>
     </li>
@@ -352,13 +354,13 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#centos-8-dnf">CentOS 8 dnf包管理</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#_4">查看最小化安装软件包（但是记得要是初始安装后的镜像）</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">查看最小化安装软件包（但是记得要是初始安装后的镜像）</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_5">导出已安装的列表</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_6">导出已安装的列表</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_6">已安装包列表</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_7">已安装包列表</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_7">查找与安装软件包</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">查找与安装软件包</a>
     </li>
         </ul>
     </li>
@@ -512,6 +514,12 @@
 <li>/usr/local/bin：    存放所有用户都可用的第三方软件程序,如mysql</li>
 <li>/usr/local/sbin：   存放超级用户才能使用的第三方软件,如nginx</li>
 </ul>
+<h3 id="_2">网卡相关设置</h3>
+<p>在Linux或CentOS中，可以通过如下命令获取新的网卡uuid信息：</p>
+<pre><code class="shell">[root@ligle2 ~]# uuidgen ensXXX    # ensXXX 可通过 ip a 获取
+07d07031-eb0f-4691-8606-befb46645222
+</code></pre>
+
 <h3 id="grep">grep命令</h3>
 <p>可以和ls、cat等命令配合管道符一起使用。</p>
 <h4 id="grep_1">使用grep查找某目录下包含关键字内容的文件</h4>
@@ -521,7 +529,7 @@
 </code></pre>
 
 <p><img alt="grep_r" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210507103248.png" /></p>
-<h4 id="_2">排除某关键词的搜索结果</h4>
+<h4 id="_3">排除某关键词的搜索结果</h4>
 <p>grep -v "keyword"</p>
 <p>e.g. 显示当前目录下除.sh文件外的所有文件</p>
 <pre><code class="bash">ls -al | grep -v &quot;.sh&quot;
@@ -675,7 +683,7 @@ ls -l /tmp/whl
 # vim /etc/ssh/sshd_config
 </code></pre>
 
-<h2 id="_3">常识问题</h2>
+<h2 id="_4">常识问题</h2>
 <h3 id="linuxusr">Linux的/usr目录的全称</h3>
 <p>usr被称为是Unix System Resource，即Unix系统资源的缩写。/usr 是系统核心所在，包含了所有的共享文件。
 它是 unix 系统中最重要的目录之一，涵盖了二进制文件，各种文档，各种头文件，还有各种库文件；还有诸多程序，例如 ftp，telnet 等等。</p>
@@ -700,9 +708,9 @@ ls -l /tmp/whl
 </code></pre>
 
 <h3 id="centos-8-dnf">CentOS 8 dnf包管理</h3>
-<h4 id="_4">查看最小化安装软件包（但是记得要是初始安装后的镜像）</h4>
+<h4 id="_5">查看最小化安装软件包（但是记得要是初始安装后的镜像）</h4>
 <p><code>dnf list --all &gt; list.txt</code></p>
-<h4 id="_5">导出已安装的列表</h4>
+<h4 id="_6">导出已安装的列表</h4>
 <p><code>dnf list installed --all &gt; dnf_install_list.txt</code></p>
 <p>e.g.:</p>
 <pre><code>cd /tmp
@@ -710,11 +718,11 @@ dnf list installed --all &gt; dnf_install_list.txt
 
 </code></pre>
 
-<h4 id="_6">已安装包列表</h4>
+<h4 id="_7">已安装包列表</h4>
 <p><code>dnf list installed</code></p>
 <p>or</p>
 <p><code>dnf list available</code></p>
-<h4 id="_7">查找与安装软件包</h4>
+<h4 id="_8">查找与安装软件包</h4>
 <pre><code class="bash">dnf search httpd
 安装httpd包命令：
 
