@@ -338,7 +338,9 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#configure-prefix">"./configure --prefix"命令</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#tar">tar操作命令</a>
+    <li class="toctree-l3"><a class="reference internal" href="#scp">scp命令</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tar">tar命令</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#tarzst">tar.zst文件格式解压</a>
     </li>
@@ -546,7 +548,7 @@
 
 配置文件默认放在/usr/local/etc，
 
-其它的资源文件放在/usr /local/share，
+其它的资源文件放在/usr/local/share，
 
 </code></pre>
 
@@ -557,7 +559,25 @@
 <p>--prefix选项的另一个好处是卸载软件或移植软件。</p>
 <p>当某个安装的软件不再需要时，只须简单的删除该安装目录，就可以把软件卸载得干干净净；移植软件只需拷贝整个目录到另外一个机器即可（相同的操作系统）。</p>
 <p>当然要卸载程序，也可以在原来的make目录下用一次make uninstall，但前提是make文件指定过uninstall。</p>
-<h3 id="tar">tar操作命令</h3>
+<h3 id="scp">scp命令</h3>
+<p>有时图形化工具不好使用时，用scp来传输文件其实相当方便</p>
+<pre><code class="shell">1.把 本地文件 上传到 远端服务器目录下
+
+scp local_file remote_username@remote_ip:remote_folder 
+
+e.g.
+scp test.txt root@10.0.0.1:/tmp/test/
+
+2.把 远端服务文件 下载到 本地目录
+
+scp -r remote_username@remote_ip:remote_folder  /local_folder_tmp/
+
+e.g.
+scp -r mfc@10.0.4.149:/tmp/test/ /tmp/
+完成后本地的机器的 /tmp/目录下会有下载的 /test/ 目录
+</code></pre>
+
+<h3 id="tar">tar命令</h3>
 <pre><code class="bash"># 压缩
 # z调用gzip，tar本身是打包，z才是压缩
 # c创建新文件，v显示过程，f输出文件
