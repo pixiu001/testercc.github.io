@@ -86,6 +86,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/ai_sec/">AI Sec 人工智能安全</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/pentest_automation/">渗透测试自动化</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_sqlmap/">源码学习之SqlMap</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_pocsuite/">源码学习之Pocsuite3</a>
@@ -161,6 +163,8 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#ip">查找域名对应的ip地址</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">攻击跳板排查</a>
     </li>
     </ul>
                     </li>
@@ -549,6 +553,12 @@ last
 <pre><code>nslookup github.global.ssl.fastly.net
 nslookup github.com 
 </code></pre>
+
+<h2 id="_6">攻击跳板排查</h2>
+<p>验证跳板注意点：进程、文件（启动、隐藏方式、网络流量通信）、网络连接、CPU内存占用。</p>
+<p>1.脚本检查：常见的启动下取下来，手动和人工分析。分析异常启动项。（注册表，启动目录、计划任务、屏保）</p>
+<p>2.网络检查：哪些进程在访问网络。python打包成exe  打包使用from import方式。（用python psutil模块）</p>
+<p>3.简单方式：看下主机防火墙日志。</p>
               
             </div>
           </div>
