@@ -63,6 +63,10 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#github">发布到Github</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">更新频率</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">其它</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#about-me">About Me</a>
@@ -111,19 +115,27 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="sec_research/research_list/">导航列表</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="sec_research/exploit/">漏洞相关</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="sec_research/sample_analysis/">样本分析</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="sec_research/black_market/">黑产研究</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="sec_research/binary_sec/">二进制安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="sec_research/python_sec/">Python安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="sec_research/ic_sec/">工控安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="sec_research/iot_sec/">物联网安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="sec_research/android_sec/">Android安全</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="sec_research/browser_sec/">浏览器安全</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="sec_research/code_audit/">代码审计</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="sec_research/python_sec/">Python安全</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -139,6 +151,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="pentest/kali_linux/">Kali Linux</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="pentest/red_vs_blue/">红蓝对抗</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="pentest/sql_injection/">SQL Injection SQL注入</a>
@@ -153,7 +167,11 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="pentest/re/">Reverse Engineering 逆向工程</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="pentest/crack/">破解</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="pentest/attack_lifecycle/">网络攻击生命周期</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="pentest/log_clear/">日志清理</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="pentest/cve/">CVE</a>
                     </li>
@@ -175,6 +193,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="ctf/ctf_skill/">CTF竞赛常用基本解题技巧</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="ctf/pwn/">PWN</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="ctf/hackthebox/">Hack The Box</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Algorithm 算法</span></p>
@@ -228,6 +248,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="backend/kafka/">Kafka</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="backend/big_data/">Big Data 大数据</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="backend/regex/">Regex 正则表达式</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="backend/git/">Git</a>
                     </li>
@@ -298,11 +320,13 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="devops/docker/">Docker</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="devops/k8s/">Kubernetes</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="devops/vm/">VM 虚拟机</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="devops/linux/">Linux</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="devops/k8s/">Kubernetes</a>
+                    <li class="toctree-l1"><a class="reference internal" href="devops/windows/">Windows</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="devops/sre/">SRE</a>
                     </li>
@@ -414,7 +438,7 @@
 <h4 id="_2">本地调试</h4>
 <p><code>mkdocs serve</code></p>
 <h4 id="github">发布到Github</h4>
-<p>默认就放在master分支上。</p>
+<p>默认就放在master分支上。虽然最近因为一些原因Github在推广改成main，但是暂时先按照git的习惯继续用master吧。</p>
 <pre><code>mkdocs build --clean
 cd site
 git add .
@@ -423,12 +447,15 @@ git push origin master
 cd ..
 </code></pre>
 
+<h4 id="_3">更新频率</h4>
+<p>笔记可以有多次<code>git commit</code>，但 <code>/public</code> 更新控制在每日1次（虽然有写自动化脚本也挺省事儿，但还是要养成好喜欢，毕竟每次提交也会花费一点时间的）</p>
+<h4 id="_4">其它</h4>
 <p>更多自定义设置请见<a href="https://www.mkdocs.org/user-guide/configuration">官方文档</a> (友情提示：若有英文阅读恐惧症，请合理使用google translate插件)</p>
 <h2 id="about-me">About Me</h2>
-<p>跨界IT从业人员，入行N年，已体验过运营、测试、<del> 管理</del>、开发、运维、<del>架构</del>等岗位，目前正在梳理知识和技能，向安全研发的目标进发。</p>
+<p>跨界IT从业人员，入行N年，<del>非自愿斜杠中年</del>，曾从事过运营、测试、<del> 管理</del>、开发、运维、<del>架构</del>、安全等岗位，目前正在梳理知识和技能，向安全研发的目标进发。</p>
 <p>持续学习者，且不断在学习力上向学霸们看齐。</p>
 <pre><code>    日常爱好：阅读（应该坚持一生的习惯）、搏击操（强身健体）。
-    最近兴趣：CTF、安全开发。
+    最近兴趣：安全开发、CTF。
 </code></pre>
 <p><code>不会测试的开发不是一个好架构，不会开发的测试不是一个好渗透</code>   ^_^</p>
               
@@ -484,5 +511,5 @@ cd ..
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2021-05-15 13:42:39.676986+00:00
+Build Date UTC : 2021-07-27 14:10:29.703779+00:00
 -->

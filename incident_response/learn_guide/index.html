@@ -99,19 +99,27 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/research_list/">导航列表</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/exploit/">漏洞相关</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/sample_analysis/">样本分析</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/binary_sec/">二进制安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/ic_sec/">工控安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/iot_sec/">物联网安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/browser_sec/">浏览器安全</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -128,16 +136,6 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_4">主机排查</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#snort-2916">Snort 2.9.16规则解析</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_5">规则头分析</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_6">规则选项分析</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#urilen">关于urilen</a>
-    </li>
-        </ul>
-    </li>
     <li class="toctree-l2"><a class="reference internal" href="#linux">Linux木马排查</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#etccrontabcrontab-l">/etc/crontab文件和crontab -l命令的区别</a>
@@ -148,7 +146,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#windows">Windows挖矿木马排查实战</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_7">常用工具</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">常用工具</a>
     </li>
         </ul>
     </li>
@@ -175,6 +173,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/kali_linux/">Kali Linux</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/red_vs_blue/">红蓝对抗</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/sql_injection/">SQL Injection SQL注入</a>
@@ -189,7 +189,11 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/re/">Reverse Engineering 逆向工程</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/crack/">破解</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/attack_lifecycle/">网络攻击生命周期</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/log_clear/">日志清理</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/cve/">CVE</a>
                     </li>
@@ -211,6 +215,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/ctf_skill/">CTF竞赛常用基本解题技巧</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/pwn/">PWN</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ctf/hackthebox/">Hack The Box</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Algorithm 算法</span></p>
@@ -264,6 +270,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/kafka/">Kafka</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/big_data/">Big Data 大数据</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/regex/">Regex 正则表达式</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/git/">Git</a>
                     </li>
@@ -334,11 +342,13 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/docker/">Docker</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/vm/">VM 虚拟机</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/linux/">Linux</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/windows/">Windows</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/sre/">SRE</a>
                     </li>
@@ -459,72 +469,6 @@
 <p>1、找到通信的进程
 2、找到进程的程序
 3、分析程序（可能需要抓包）</p>
-<h2 id="snort-2916">Snort 2.9.16规则解析</h2>
-<p>在Snort中，检测规则在内存中被组织成二维链表的形式。
-在二维链表中，一维被称为链表头或者规则头，另外一维被称为链表选项或者规则选项。</p>
-<p>以一下规则为例，误报迅雷启动项为木马控制的排查。</p>
-<pre><code>第一行是规则头，()中的是规则项：
-
-alert tcp $HOME_NET any -&gt; $EXTERNAL_NET $HTTP_PORTS 
-(
-msg:&quot;MALWARE-CNC Win.Trojan.Donvibs variant outbound connection&quot;; 
-flow:to_server,established; 
-content:&quot;WinHttp.WinHttpRequest.5&quot;; 
-fast_pattern:only; 
-http_header; 
-urilen:6&lt;&gt;10; 
-content:&quot;GET&quot;; http_method; 
-content:&quot;Accept: */*|0D 0A|User-Agent:&quot;; http_header; 
-content:!&quot;Referer|3A|&quot;; http_header; content:!&quot;Via|3A|&quot;; http_header; 
-content:!&quot;Content-Type|3A|&quot;; http_header; 
-metadata:impact_flag red, policy balanced-ips drop, policy security-ips drop, service http; reference:url,virustotal.com/en/file/0A6D9E6BBBDAA4536DA8B1D83CEC607ED5EC4CBD4E95F8B9BCFA2A1FF24A929D/analysis/; 
-classtype:trojan-activity; sid:43523; rev:4;
-)
-</code></pre>
-
-<h3 id="_5">规则头分析</h3>
-<pre><code>alert  snort的动作
-tcp    TCP协议
-$HOME_NET    源IP地址 （支持网段）
-any    源端口，这里是任意端口
--&gt;     通信方向，即数据包的方向
-$EXTERNAL_NET    目的IP地址（支持网段）       
-$HTTP_PORTS      目的端口（http协议端口， 支持范围，单个端口 或 任意组合）
-</code></pre>
-
-<h3 id="_6">规则选项分析</h3>
-<pre><code>msg        将指定的文本消息写入日志或者警报信息，相对应的选项参数是希望显示的文本信息。
-flow       数据流的配置。to_server: 客户端从A to B的请求; established: 仅建立TCP连接。
-content    
-
-源端口任意
-方向：出去
-目的端口：http协议端口
-http协议端口包含：
-[36,80,81,82,83,84,85,86,87,88,89,90,311,383,555,591,593,631,801,808,818,901,972,1158,1220,1414,1533,1741,1830,1942,2231,2301,2381,2578,2809,2980,3029,3037,3057,3128,3443,3702,4000,4343,4848,5000,5117,5250,5600,6080,6173,6988,7000,7001,7071,7144,7145,7510,7770,7777,7778,7779,8000,8008,8014,8028,8080,8081,8082,8085,8088,8090,8118,8123,8180,8181,8222,8243,8280,8300,8333,8344,8500,8509,8800,8888,8899,8983,9000,9060,9080,9090,9091,9111,9290,9443,9999,10000,11371,12601,13014,15489,29991,33300,34412,34443,34444,41080,44449,50000,50002,51423,53331,55252,55555,56712] 
-
-to_server：表示数据包的方向，来自客户端
-
-http_method：GET请求
-http_header：
-包含WinHttp.WinHttpRequest.5
-包含Accept: */*|0D 0A|User-Agent:
-uri长度大于或等于6以及小于等于10（迅雷 /?appid=77 等于10)
-不包含Referer|3A|（Referer:)
-不包含Via|3A|（Via:)
-不包含Content-Type|3A|（Content-Type:)
-</code></pre>
-
-<p>ref:</p>
-<p><a href="https://blog.csdn.net/guoguangwu/article/details/88381965">snort 源码分析之规则结构分析（一）</a></p>
-<p><a href="https://stackoverflow.com/questions/9561080/snort-rule-doesnt-generate-alerts-when-hosts-responding-simultaneously">snort-rule-doesnt-generate-alerts-when-hosts-responding-simultaneously</a></p>
-<p><a href="http://manual-snort-org.s3-website-us-east-1.amazonaws.com/node1.html">snort 2.9.16官方文档</a></p>
-<h3 id="urilen">关于urilen</h3>
-<p><code>$request_uri</code>里也会有个/的,所以关于uri从url的哪部分算起</p>
-<p>例子： urilen:2&lt;&gt;10</p>
-<p>注意：
-- Snort解释为：URI长度必须是 大于或等于 2，和 小于或等于 10英寸。
-- Suricata将此解释：URI长度必须为 大于 2 和 小于 10英寸。</p>
 <h2 id="linux">Linux木马排查</h2>
 <pre><code>top检查可疑进程，杀进程
 
@@ -585,7 +529,7 @@ last
 <li>Linux</li>
 </ul>
 <h2 id="windows">Windows挖矿木马排查实战</h2>
-<h3 id="_7">常用工具</h3>
+<h3 id="_5">常用工具</h3>
 <p>Autoruns、TCPview、Process Explorer、PCHunter、D盾、火绒剑</p>
 <h2 id="linux_1">Linux应急响应</h2>
 <h2 id="dns">刷新DNS缓存</h2>
@@ -615,7 +559,7 @@ nslookup github.com
         <a href="../../pentest/learn_guide/" class="btn btn-neutral float-right" title="学习参考">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../sec_research/code_audit/" class="btn btn-neutral" title="代码审计"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../sec_research/python_sec/" class="btn btn-neutral" title="Python安全"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -641,7 +585,7 @@ nslookup github.com
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../sec_research/code_audit/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../sec_research/python_sec/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../../pentest/learn_guide/" style="color: #fcfcfc">Next &raquo;</a></span>

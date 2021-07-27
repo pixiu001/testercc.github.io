@@ -99,19 +99,27 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/research_list/">导航列表</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/exploit/">漏洞相关</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/sample_analysis/">样本分析</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/binary_sec/">二进制安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/ic_sec/">工控安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/iot_sec/">物联网安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/browser_sec/">浏览器安全</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -127,6 +135,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/kali_linux/">Kali Linux</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/red_vs_blue/">红蓝对抗</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/sql_injection/">SQL Injection SQL注入</a>
@@ -141,7 +151,11 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/re/">Reverse Engineering 逆向工程</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/crack/">破解</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/attack_lifecycle/">网络攻击生命周期</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/log_clear/">日志清理</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/cve/">CVE</a>
                     </li>
@@ -163,6 +177,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/ctf_skill/">CTF竞赛常用基本解题技巧</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/pwn/">PWN</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ctf/hackthebox/">Hack The Box</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Algorithm 算法</span></p>
@@ -239,6 +255,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_4">社区</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">计划的学习路线</a>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../proxy/">Proxy 代理</a>
@@ -248,6 +266,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../kafka/">Kafka</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../big_data/">Big Data 大数据</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../regex/">Regex 正则表达式</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../git/">Git</a>
                     </li>
@@ -318,11 +338,13 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/docker/">Docker</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/vm/">VM 虚拟机</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/linux/">Linux</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/windows/">Windows</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/sre/">SRE</a>
                     </li>
@@ -422,10 +444,29 @@
               
                 <h1 id="rust">Rust</h1>
 <p>Rust是一门系统编程语言，专注于安全，尤其是并发安全，支持函数式和命令式以及泛型等编程范式的多范式语言。</p>
-<p>(P.S:虽然Rust的好大家都知道，但是在国内大概还需要另外学一门语言来谋生orz)</p>
+<p>(P.S:虽然Rust的好大家都知道，但是目前2021年在国内大概还是需要另外学一门语言来谋生orz，但目前的岗位需求已经比2020年好一些了)</p>
 <h2 id="install">Install</h2>
-<p>其实除了windows系统外,其他系统在联网环境下都可以通过脚本进行安装.</p>
-<pre><code class="bash">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+<p>其实除了windows系统外，其他系统在联网环境下都可以通过脚本进行安装。</p>
+<p>参考官网，一句条命令可完成。</p>
+<pre><code class="bash">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -v  
+</code></pre>
+
+<p>环境变量配置参考安装后的提示。</p>
+<pre><code class="bash">To get started you may need to restart your current shell.
+This would reload your PATH environment variable to include
+Cargo's bin directory ($HOME/.cargo/bin).    # zsh用这个
+
+To configure your current shell, run:
+source $HOME/.cargo/env           # 默认bash用这个
+</code></pre>
+
+<p>验证安装是否成功</p>
+<pre><code>[root@localhost ~]# rustc -V
+rustc 1.52.1 (9bc8c42bb 2021-05-09)
+[root@localhost ~]# rustup -V
+rustup 1.24.2 (755e2b07e 2021-05-12)
+info: This is the version for the rustup toolchain manager, not the rustc compiler.
+info: The currently active `rustc` version is `rustc 1.52.1 (9bc8c42bb 2021-05-09)`
 </code></pre>
 
 <h2 id="quickstart">QuickStart</h2>
@@ -482,6 +523,30 @@
 <li><a href="https://rustcc.cn/">Rust语言中文社区</a> -- 虽然设计十分简约，还是挺活跃的</li>
 <li><a href="https://rustcc.cn/section?id=fed6b7de-0a74-48eb-8988-1978858c9b35">Rust 招聘</a> -- 大概，目前（2020年）全国能找的大部分Rust岗位需求都在这里了吧～～～</li>
 </ul>
+<h2 id="_5">计划的学习路线</h2>
+<ol>
+<li>入门</li>
+</ol>
+<p>《The Rust Programming Language》，中文出版物是《Rust权威指南》。
+强烈推荐配合 <a href="https://www.bilibili.com/video/BV1xJ411B79h">B站 令狐一冲</a> 的讲解视频。（从入门到进阶到网络编程到异步， 而且也参考Rust死灵书做了视频）</p>
+<ol>
+<li>进阶</li>
+</ol>
+<p>国内已出版：张老师的《Rust编程之道》和范老师的《深入浅出Rust》。（个人觉得时间有限的2选1，前者极客时间也有配套学习视频）</p>
+<p>必读资料：</p>
+<ul>
+<li>
+<p>《Rust By Example》，这本书可以当精简手册来查询，提供了很多的Example。</p>
+</li>
+<li>
+<p>std - Rust 、《The Reference》、《Rust Compiler Error Index 》：标准库、语法手册、编译错误示例，这三大件几乎是日常必备的资料需要时常翻阅和查询，</p>
+</li>
+<li>
+<p>提高</p>
+</li>
+</ul>
+<p>《The Rustonomicon》又翻译为《Rust死灵书》，但是一直没写有写完。但要能建立起对Rust的深入理解，这本书必不可少。 <a href="https://www.bilibili.com/video/BV1xp4y1a78D">B站 令狐一冲的视频</a></p>
+<p><a href="https://os.phil-opp.com/">Writing an OS in Rust</a> 这一系列博客是你最好的学习材料。</p>
               
             </div>
           </div>

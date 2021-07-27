@@ -99,19 +99,27 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/research_list/">导航列表</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/exploit/">漏洞相关</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/sample_analysis/">样本分析</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/binary_sec/">二进制安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/ic_sec/">工控安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/iot_sec/">物联网安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/browser_sec/">浏览器安全</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -127,6 +135,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/kali_linux/">Kali Linux</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/red_vs_blue/">红蓝对抗</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/sql_injection/">SQL Injection SQL注入</a>
@@ -141,7 +151,11 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/re/">Reverse Engineering 逆向工程</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/crack/">破解</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/attack_lifecycle/">网络攻击生命周期</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/log_clear/">日志清理</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/cve/">CVE</a>
                     </li>
@@ -163,6 +177,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/ctf_skill/">CTF竞赛常用基本解题技巧</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/pwn/">PWN</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ctf/hackthebox/">Hack The Box</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Algorithm 算法</span></p>
@@ -199,17 +215,29 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_1">常识</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_1">网络部署相关笔记</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">判断电脑能否上网的方法</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_2">标准内网地址</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">路由器与交换机的关系</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tap">TAP和集线器</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#idsips">IDS和IPS的区别</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">常识</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">标准内网地址</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#windows-cmd-ping">windows cmd 批量ping</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">阅读推荐</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">阅读推荐</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_4">其它补充</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">其它补充</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_5">企业组网网络划分</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_8">企业组网网络划分</a>
     </li>
         </ul>
     </li>
@@ -242,6 +270,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../kafka/">Kafka</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../big_data/">Big Data 大数据</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../regex/">Regex 正则表达式</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../git/">Git</a>
                     </li>
@@ -312,11 +342,13 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/docker/">Docker</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/vm/">VM 虚拟机</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/linux/">Linux</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/windows/">Windows</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/sre/">SRE</a>
                     </li>
@@ -428,8 +460,35 @@
 <h3 id="ptr">PTR</h3>
 <p>PTR (Pointer Record)，指针记录，是电子邮件系统中的一种数据类型，被互联网标准文件RFC1035所定义。</p>
 <p><code>PTR记录解析IP地址到域名</code>，是反向记录。</p>
-<h2 id="_1">常识</h2>
-<h2 id="_2">标准内网地址</h2>
+<h2 id="_1">网络部署相关笔记</h2>
+<h3 id="_2">判断电脑能否上网的方法</h3>
+<ul>
+<li>1.路由器WAN口与其连接的光猫互通，确保能够顺利拨号；</li>
+<li>2.确保电脑与路由器的LAN口互通;</li>
+</ul>
+<h3 id="_3">路由器与交换机的关系</h3>
+<pre><code>路由器是拥有路由、NAT、DHCP服务等多种功能的交换机。
+当路由器处于路由模式时，所有的lan口相当于一台交换机。
+
+当路由器处于路由模式时，所有功能都是开启的。
+但除了路由模式外，比如处于mesh子路由或者中继模式（AP模式）时，路由模式中的功能都会失效，此时，路由器的作用等同于一台交换机，wan口也就变为lan口了。
+
+保险起见，对于交换机同时连接wan口和lan口的情况，建议使用支持vlan的交换机。使用VLAN交换机，在交换机上将WAN和LAN进行隔离。
+</code></pre>
+
+<p>ref: https://www.bilibili.com/video/BV1QU4y1n7D3</p>
+<h3 id="tap">TAP和集线器</h3>
+<pre><code>TAP和集线器都是充当流量复制器的作用，但TAP能处理的流量更大
+</code></pre>
+
+<h3 id="idsips">IDS和IPS的区别</h3>
+<pre><code>IDS（入侵检测系统）旁路部署
+IPS（入侵防御系统）串行部署
+</code></pre>
+
+<p>ref: https://zhuanlan.zhihu.com/p/96942352</p>
+<h2 id="_4">常识</h2>
+<h2 id="_5">标准内网地址</h2>
 <pre><code>10.0.0.0-10.255.255.255
 172.16.0.0-172.31.255.255
 192.168.0.0-192.168.255.255
@@ -445,15 +504,15 @@
 <li>%i IN (0,1,255)表示从11开始，每次加1，直到255</li>
 </ul>
 <p>后面的应该能直接看懂了，不一一解释了。</p>
-<h2 id="_3">阅读推荐</h2>
+<h2 id="_6">阅读推荐</h2>
 <ul>
 <li>计算机网络 （谢希仁，第7版，另有配套答案书一本，最近也出了一本配套实验书）—— 准备考研的必看这本</li>
 <li>计算机网络：自顶向下方法(第7版) —— 非考研向自学的推荐这本，能看英文原版的建议看原版</li>
 <li>《TCP/IP详解》第一卷 —— 要进阶和深入的看</li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP">Web开发技术-HTTP</a></li>
 </ul>
-<h2 id="_4">其它补充</h2>
-<h3 id="_5">企业组网网络划分</h3>
+<h2 id="_7">其它补充</h2>
+<h3 id="_8">企业组网网络划分</h3>
 <p>通常划分为：<code>业务网（或办公网）</code>、<code>生产网（一般包含核心开发环境）</code>、<code>运维网</code>。 （P.S.：小企业可能是三网打通的）</p>
 <p>系统安全类日志一般都是在运维网区域，所以一般不会对外提供和暴露，如果确实需要，一般需要通过堡垒机访问相关网络环境。</p>
               

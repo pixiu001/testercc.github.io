@@ -99,19 +99,27 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/research_list/">导航列表</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/exploit/">漏洞相关</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/sample_analysis/">样本分析</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/binary_sec/">二进制安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/ic_sec/">工控安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/iot_sec/">物联网安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/browser_sec/">浏览器安全</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -127,6 +135,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/kali_linux/">Kali Linux</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/red_vs_blue/">红蓝对抗</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/sql_injection/">SQL Injection SQL注入</a>
@@ -141,7 +151,11 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/re/">Reverse Engineering 逆向工程</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/crack/">破解</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/attack_lifecycle/">网络攻击生命周期</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/log_clear/">日志清理</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/cve/">CVE</a>
                     </li>
@@ -163,6 +177,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/ctf_skill/">CTF竞赛常用基本解题技巧</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/pwn/">PWN</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ctf/hackthebox/">Hack The Box</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Algorithm 算法</span></p>
@@ -217,6 +233,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/big_data/">Big Data 大数据</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/regex/">Regex 正则表达式</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/git/">Git</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/git_flow/">Git Flow</a>
@@ -265,6 +283,14 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">性能测试</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">常用命令解析</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#limit">修改limit值</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#limit_1">为什么limit值需要修改？</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -288,11 +314,13 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/docker/">Docker</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/vm/">VM 虚拟机</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/linux/">Linux</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/windows/">Windows</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/sre/">SRE</a>
                     </li>
@@ -392,6 +420,20 @@
               
                 <h1 id="performance-testing">Performance Testing 性能测试</h1>
 <p>性能测试其实水相当深，至少个人认为没有一定开发经验的性能测试工程师很难深入理解性能问题。</p>
+<h2 id="_1">常用命令解析</h2>
+<h3 id="limit">修改limit值</h3>
+<p>即是：修改用户进程可打开文件数限制</p>
+<p>修改当前交互终端的limit值：</p>
+<p>查询当前终端的文件句柄数： <code>ulimit -n</code> 回车，一般的系统默认的1024。</p>
+<p>修改文件句柄数为65535，<code>ulimit -n 65535</code> 回车。此时系统的文件句柄数修改为65535。</p>
+<p>持久化配置参考：</p>
+<p>https://www.cnblogs.com/jack-Star/p/9915318.html</p>
+<h3 id="limit_1">为什么limit值需要修改？</h3>
+<p>在Linux平台上，无论编写客户端程序还是服务端程序，在进行高并发TCP连接处理时，最高的并发数量都要受到系统对用户单一进程同时可打开文件数量的限制</p>
+<p>这是因为系统为每个TCP连接都要创建一个socket句柄，每个socket句柄同时也是一个文件句柄)</p>
+<p>系统默认一般是当前用户的每个进程最多允许同时打开1024个文件，这1024个文件中还得除去每个进程必然打开的标准输入，标准输出，标准错误，服务器监听 socket，进程间通讯的unix域socket等文件，那么剩下的可用于客户端socket连接的文件数就只有大概1024-10=1014个左右。也就是说缺省情况下，基于Linux的通讯程序最多允许同时1014个TCP并发连接。</p>
+<p>对于想支持更高数量的TCP并发连接的通讯处理程序，就必须修改Linux对当前用户的进程同时打开的文件数量的软限制(soft limit)和硬限制(hardlimit)。其中软限制是指Linux在当前系统能够承受的范围内进一步限制用户同时打开的文件数；硬限制则是根据系统硬件资源状况(主要是系统内存)计算出来的系统最多可同时打开的文件数量。通常软限制小于或等于硬限制。</p>
+<p>修改上述限制的最简单的办法就是使用 ulimit 命令。</p>
               
             </div>
           </div>

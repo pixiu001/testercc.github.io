@@ -99,19 +99,27 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/research_list/">导航列表</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/exploit/">漏洞相关</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/sample_analysis/">样本分析</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/binary_sec/">二进制安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/ic_sec/">工控安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/iot_sec/">物联网安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/browser_sec/">浏览器安全</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -127,6 +135,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/kali_linux/">Kali Linux</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/red_vs_blue/">红蓝对抗</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/sql_injection/">SQL Injection SQL注入</a>
@@ -141,7 +151,11 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/re/">Reverse Engineering 逆向工程</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/crack/">破解</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/attack_lifecycle/">网络攻击生命周期</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/log_clear/">日志清理</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/cve/">CVE</a>
                     </li>
@@ -163,6 +177,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/ctf_skill/">CTF竞赛常用基本解题技巧</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/pwn/">PWN</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ctf/hackthebox/">Hack The Box</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Algorithm 算法</span></p>
@@ -217,6 +233,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/big_data/">Big Data 大数据</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/regex/">Regex 正则表达式</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/git/">Git</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/git_flow/">Git Flow</a>
@@ -247,9 +265,49 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#_1">版本问题</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_2">学习资源</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">常用命令</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#npmvue2">npm全局安装vue2</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">开源组件库</a>
+    <li class="toctree-l3"><a class="reference internal" href="#npmvue3">npm局部安装vue3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#npmvue-cli">npm全局安装vue-cli最新版本</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#npm">npm卸载已安装模块</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#npm_1">使用npm镜像源</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">单次使用</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">永久使用</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">手动修改</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_6">检测是否修改成功</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vue-cli">查看vue-cli版本号</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vue">全局查看vue版本号</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vue_1">局部（当前项目）查vue版本号</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vue-cli_1">用vue-cli创建项目</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vue2vue3">Vue2和Vue3共存(仅供参考)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">其它问题</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#npm-s-d">npm安装包时-S和-D的区别</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_8">学习资源</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_9">开源组件库</a>
     </li>
     </ul>
                     </li>
@@ -294,11 +352,13 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/docker/">Docker</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/vm/">VM 虚拟机</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/linux/">Linux</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/windows/">Windows</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/sre/">SRE</a>
                     </li>
@@ -399,14 +459,111 @@
                 <h1 id="vuejs">Vue.js笔记</h1>
 <p>现在Vue.js的使用范围很广，很多后端岗位也对Vue.js和React技能有要求。</p>
 <h2 id="_1">版本问题</h2>
-<p>企业的旧项目用Vue.js 2.5的比较多，现在用Vue.js 3的已经越来越多。</p>
-<h2 id="_2">学习资源</h2>
+<p>企业的旧项目用Vue.js 2.X的比较多，但现在新用Vue.js 3的已经越来越多。</p>
+<p>vue-cli安装最新的版本即可，不用安装以前的，因为新版本才支持<code>vue ui</code></p>
+<p>部署开发环境的话，目前一般需要Vue2和Vue3共存，所以建议一个版本全局部署，一个版本局部部署，以便需要时使用。</p>
+<p>但是vue-cli安装一个应该就可以了。</p>
+<p>如果要管理多版本node.js，非windows用nvm，Windows用nvm-windows</p>
+<h2 id="_2">常用命令</h2>
+<h3 id="npmvue2">npm全局安装vue2</h3>
+<pre><code>npm install vue -g --registry=https://registry.npm.taobao.org 
+
+-g 表示全局
+
+-registry 指定安装用的npm源，因为官方源在国内容易超时，其实国内也可以考虑用cnpm
+</code></pre>
+
+<h3 id="npmvue3">npm局部安装vue3</h3>
+<p>局部安装注意文件夹，且不要加 -g 参数，不加则表示<strong>安装到当前命令行所在目录</strong>，且不写入package.json</p>
+<pre><code>npm install vue@next --registry=https://registry.npm.taobao.org
+</code></pre>
+
+<h3 id="npmvue-cli">npm全局安装vue-cli最新版本</h3>
+<pre><code>npm install @vue/cli -g --registry=https://registry.npm.taobao.org
+</code></pre>
+
+<h3 id="npm">npm卸载已安装模块</h3>
+<pre><code>npm uninstall xxx
+
+npm uninstall -g xxx
+
+-g 表示全局
+</code></pre>
+
+<h3 id="npm_1">使用npm镜像源</h3>
+<p>众所周知的原因，国内使用npm一般需要镜像源</p>
+<h4 id="_3">单次使用</h4>
+<pre><code>npm install --registry=https://registry.npm.taobao.org
+</code></pre>
+
+<h4 id="_4">永久使用</h4>
+<pre><code>npm config set registry https://registry.npm.taobao.org
+</code></pre>
+
+<h4 id="_5">手动修改</h4>
+<pre><code>1.打开.npmrc文件（C:\Program Files\nodejs\node_modules\npm\npmrc，没有的话可以使用git命令行建一个( touch .npmrc)，用cmd命令建会报错）
+2.增加 registry =https://registry.npm.taobao.org  即可。
+</code></pre>
+
+<h4 id="_6">检测是否修改成功</h4>
+<pre><code>npm config get registry
+</code></pre>
+
+<h3 id="vue-cli">查看vue-cli版本号</h3>
+<p><code>vue -V</code></p>
+<h3 id="vue">全局查看vue版本号</h3>
+<p><code>npm info vue</code></p>
+<p><img alt="全局查看vue版本号" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210610110354.png" /></p>
+<h3 id="vue_1">局部（当前项目）查vue版本号</h3>
+<p><code>npm list vue version</code></p>
+<h3 id="vue-cli_1">用vue-cli创建项目</h3>
+<pre><code># 1.基于交互式命令行，创建vue项目
+vue create project_name
+
+# 2.基于图形化界面，创建Vue项目
+vue ui(可视化安装) 
+
+# 启动vue项目
+npm run serve 
+</code></pre>
+
+<h3 id="vue2vue3">Vue2和Vue3共存(仅供参考)</h3>
+<p>ref: https://zhuanlan.zhihu.com/p/138155274</p>
+<pre><code>0.全局安装Vue2（局部安装Vue3）
+
+1.新建文件夹，如：workspace_vue3/，局部安装vue3
+
+2.打开 ...\workspace_vue3\node_modules\.bin ，将目录下的vue与vue.cmd重命名为vue3与vue3.cmd
+
+3.在Win10中右键此电脑=&gt;高级系统设置=&gt;环境变量=&gt;系统变量=&gt;选PATH，然后新建将 ...\workspace_vue3\node_modules\.bin 的绝对路径添加到Path变量中，并点击“确定/应用”
+
+4.重启终端命令行
+</code></pre>
+
+<h2 id="_7">其它问题</h2>
+<h3 id="npm-s-d">npm安装包时-S和-D的区别</h3>
+<pre><code>1、npm install name --save 简写（npm install name -S） 自动把模块和版本号添加到package.json的dependencies。
+
+-S后，安装包会在package中的 dependencies 对象中。简称dep。dep是在生产环境中要用到的。
+</code></pre>
+
+<pre><code>2、npm install name --save-dev 简写（npm install name -D） 自动把模块和版本号添加到package.json的devDependencies。
+
+-D后，安装包会在package中的 devDependencies对象中。简称dev。dev是在开发环境中要用到的。
+</code></pre>
+
+<p>举个例子：</p>
+<p>构建工具：webpack是用来压缩代码，打包等需要的工具，程序实际运行的时候并不需要，就要放在dev中所以要用 -D。</p>
+<p>项目插件：例如bootstrap、mint-ui这种插件要在运行中使用的，就要放在dep中所以就用 -S。</p>
+<p><img alt="npm安装包时-S和-D的区别" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210610150743.png" /></p>
+<h2 id="_8">学习资源</h2>
 <ul>
 <li><a href="https://cn.vuejs.org/v2/guide/">Vue官方文档</a> -- 官方中文文档详细且配视频，入门必看。</li>
+<li><a href="https://space.bilibili.com/386301970/channel/detail?cid=92975">小破站Vue2入门</a></li>
 </ul>
-<h2 id="_3">开源组件库</h2>
+<h2 id="_9">开源组件库</h2>
 <ul>
-<li><a href="https://element.eleme.cn/#/zh-CN/component/installation">Element</a> -- Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库</li>
+<li><a href="https://element.eleme.cn/#/zh-CN/component/installation">Element UI</a> -- Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库</li>
 <li><a href="https://pro.antdv.com/docs/getting-started">ANTD PRO VUE</a> -- 开箱即用的中台前端/设计解决方案。</li>
 </ul>
               

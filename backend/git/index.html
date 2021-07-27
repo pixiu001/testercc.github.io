@@ -99,19 +99,27 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/research_list/">导航列表</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/exploit/">漏洞相关</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/sample_analysis/">样本分析</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/binary_sec/">二进制安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/ic_sec/">工控安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/iot_sec/">物联网安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/browser_sec/">浏览器安全</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -127,6 +135,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/kali_linux/">Kali Linux</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/red_vs_blue/">红蓝对抗</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/sql_injection/">SQL Injection SQL注入</a>
@@ -141,7 +151,11 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/re/">Reverse Engineering 逆向工程</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/crack/">破解</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/attack_lifecycle/">网络攻击生命周期</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/log_clear/">日志清理</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/cve/">CVE</a>
                     </li>
@@ -163,6 +177,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/ctf_skill/">CTF竞赛常用基本解题技巧</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/pwn/">PWN</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ctf/hackthebox/">Hack The Box</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Algorithm 算法</span></p>
@@ -217,9 +233,13 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../big_data/">Big Data 大数据</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../regex/">Regex 正则表达式</a>
+                    </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Git</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#_1">在线练习</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#git_1">git多账号配置</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#0git-clone">0.git clone</a>
     </li>
@@ -309,7 +329,17 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#git-ssh">服务器上的 Git - 生成 SSH 公钥</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#git-forkpr">Git Fork项目后，向开源项目提交PR流程</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#_6">其他</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">常见错误处理</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#git-basherror-could-not-fork-child-process-there-are-no-available-terminals-1">git bash报错Error: Could not fork child process: There are no available terminals (-1).</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -380,11 +410,13 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/docker/">Docker</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/vm/">VM 虚拟机</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/linux/">Linux</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/windows/">Windows</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/sre/">SRE</a>
                     </li>
@@ -485,8 +517,121 @@
                 <h1 id="git">Git常用高频命令实例</h1>
 <p>(branch_name统一指代分支名称，个人根据自己的分支名称需要做替换，不能直接写"branch_name"这个字符串)</p>
 <h2 id="_1">在线练习</h2>
-<p><a href="https://learngitbranching.js.org">在线练习使用Git</a>
-<a href="http://www.ruanyifeng.com/blog/2019/12/git-undo.html">如何撤销Git操作</a></p>
+<p><a href="https://learngitbranching.js.org">在线练习使用Git</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2019/12/git-undo.html">如何撤销Git操作</a></p>
+<h2 id="git_1">git多账号配置</h2>
+<p>场景：在同一台机器上配置多个Git帐号（比如：Github，Gitlab，Gitee等）</p>
+<ol>
+<li>移除全局配置(可选，没有设置的可以不用移除)</li>
+</ol>
+<pre><code class="shell"># 移除全局配置账户
+
+git config --global --unset user.name
+
+#查看全局用户名
+
+git config --global user.name
+
+# 移除全局配置邮箱
+
+git config --global --unset user.email
+
+# 查看全局邮箱
+
+git config --global user.email
+
+
+# 移除全局密码
+
+git config --global --unset user.password
+
+# 查看全局密码
+
+git config --global user.password
+
+备注：如下，笔者实践中，没有设置全局密码，所以只进行以下操作。
+
+# 设置全局用户和邮件
+
+git config --global user.name &quot;tester&quot;
+git config --global user.email &quot;tester@test.com&quot;
+</code></pre>
+
+<p>检查时可使用<code>git config -l</code>命令查看全局配置。</p>
+<ol>
+<li>生成公私钥文件</li>
+</ol>
+<pre><code class="shell">ssh-keygen -t rsa -C username@xxx.com
+
+参数说明：
+-t 要生成的秘钥的类型
+-c 用于识别这个秘钥的注释
+</code></pre>
+
+<p>执行命令后，会提示输入要保存key的文件路径，密码(Enter passphrase)。如果是初次设置，都可以直接回车，不输入。</p>
+<p>但配置多个的时候，文件路径需要变化（比如我设置的test，实际上公私钥文件都是test命名开头的）。</p>
+<p>如果还是默认回车，会提示你是否要覆盖。</p>
+<p><img alt="gen-ssh-key" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210622133453.png" /></p>
+<p>如图，新生成了 <code>gitlabyx.pub</code> 文件，执行 <code>cat gitlabyx.pub</code>，将公钥内容通过对应git平台的“SSH Keys”添加。</p>
+<p><img alt="add-ssh-key" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210622134156.png" /></p>
+<ol>
+<li>添加config文件</li>
+</ol>
+<p>在上述<code>~/.ssh/</code>目录下，手动新增一个 config 文本文件,为每个账号配置一个Host节点。</p>
+<p>主要配置项说明：</p>
+<pre><code class="shell">填写说明：
+
+Host    　　    主机别名
+HostName　      服务器真实地址
+IdentityFile　　私钥文件路径
+PreferredAuthentications　认证方式
+User　用户名(例如：Github/Gitlab/Gitee帐号)
+</code></pre>
+
+<p>config文件的内容</p>
+<pre><code class="shell">Host fspt    # 可以自定义，但是使用时要注意，也可以不写
+HostName github.com
+IdentityFile ~/.ssh/test
+User git     # 这个默认会用全局设置
+
+# gitlab
+Host gitlab.eelantech.com
+HostName 10.0.0.8
+IdentityFile ~/.ssh/gitlabyx
+PreferredAuthentications publickey  # 用ssh建议设置上
+User liyanxi@eelantech.com
+</code></pre>
+
+<ol>
+<li>测试多端配置</li>
+</ol>
+<pre><code class="sheel">github的账号
+$ ssh -T fspt
+Hi GitHub Username! You've successfully authenticated, but GitHub does not provide shell access.
+
+gitlab的账号测试：
+
+cd ~/test_project/
+git init .
+git remote add origin git@gitlab.xxxx.com:xxx/xxx.git
+git add -A
+git commit -m &quot;1st commit&quot;
+git push -u origin dev
+</code></pre>
+
+<p>能顺利完成配置说明操作成功，如果配置了全局username，email，这是的提交者依然是全局的。</p>
+<ol>
+<li>为不同项目设置不同的用户名和邮箱</li>
+</ol>
+<p>找到项目所在目录下的<code>.git/</code> 文件夹，进入.git/文件夹，然后执行如下命令分别设置用户名和邮箱。</p>
+<pre><code>git config user.name &quot;yanxi&quot;
+git config user.email &quot;liyanxi@eelantech.com&quot;
+</code></pre>
+
+<p>然后在<code>.git/</code>目录下执行命令查看config文件：<code>cat config</code></p>
+<p><img alt="local_variables" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210622141240.png" /></p>
+<p>发现里面多了刚才配置的用户名和邮箱信息，即成功为该项目单独设置了用户名和邮箱。</p>
+<p>ref: <a href="https://www.cnblogs.com/shouke/p/11480215.html">在同一台机器上配置多个Git帐号</a></p>
 <h2 id="0git-clone">0.git clone</h2>
 <p>最基础的命令，把仓库拉取到本地。常用下面几个语句</p>
 <pre><code class="shell">git clone git@xxx.com:xxx/abc.git
@@ -717,6 +862,63 @@ git branch --set-upstream-to=origin/dev dev
 git remote add upstream https://github.com/netxfly/sec-dev-in-action-src.git
 </code></pre>
 
+<h2 id="git-ssh">服务器上的 Git - 生成 SSH 公钥</h2>
+<p>ref: https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E7%94%9F%E6%88%90-SSH-%E5%85%AC%E9%92%A5</p>
+<pre><code class="bash">$ ssh-keygen -o   # 没有特别需求的化，可以一路回车
+
+$ cd ~/.ssh
+$ ls
+authorized_keys2  id_rsa       known_hosts
+config            id_rsa.pub
+
+cat ~/.ssh/id_rsa.pub    # 里面的文本就是ssh key公钥
+</code></pre>
+
+<h2 id="git-forkpr">Git Fork项目后，向开源项目提交PR流程</h2>
+<pre><code class="bash">1. 在github页面上, 点击fork按钮, 将B的项目拷贝一份到A自己的代码仓库中。
+即：A为你自己的仓库， B为你fork的开源仓库。
+
+2. 克隆A自己的代码仓库到本地.
+$ git clone https://github.com/A/A.git
+
+3. 将B的项目作为最新代码的参考标准（upstream 是上游仓库的别名，别名随意命名）
+$ git remote add upstream https://github.com/B/B.git
+
+4. 在本地更改代码（增删查等操作）
+
+5. 暂存已经编辑的目录和文件.
+$ git add .
+$ git stash
+
+6. 拉取B仓库的新代码
+$ git fetch upstream
+
+7. 将B新的部分合并到A的代码仓库中, 使A的代码仓库变成最新的代码.
+$ git rebase upstream/master origin/master
+
+8. 查看分支，确保在自己的本地分支上
+$ git branch
+
+9. 如果不在本地分支，则执行 git checkout master ，如果在则忽略此步骤
+
+10. 将刚刚暂存的代码合并到现在最新的代码中.
+$ git stash apply stash@{0}
+
+11. 本地提交代码.
+$ git add .
+$ git commit -m 提交代码的注释信息&quot;
+
+12. 将代码推送到A的github仓库
+$ git push -u origin/master
+
+13.在A的github仓库页面上，点击pull request向B发起PR请求
+
+14.当B仓库管理者通过你的PR请求，你的PR将会被合并到B的主分支上
+
+以上是第一次进行fork、克隆代码、创建关联、修改代码提交等操作；
+当再次本地修改代码提交时，执行步骤6-11即可。
+</code></pre>
+
 <h2 id="_6">其他</h2>
 <pre><code>之前大佬教我用-i来做squash。 
 中间态的若干次提交均写上 WIP: *****
@@ -725,6 +927,19 @@ git remote add upstream https://github.com/netxfly/sec-dev-in-action-src.git
 
 P.S.: WIP（work in progress）
 </code></pre>
+
+<h2 id="_7">常见错误处理</h2>
+<h3 id="git-basherror-could-not-fork-child-process-there-are-no-available-terminals-1">git bash报错<code>Error: Could not fork child process: There are no available terminals (-1).</code></h3>
+<p>打开win的cmd或者powershell，执行如下命令：</p>
+<pre><code class="bash">(base) PS C:\Users\xx&gt; tasklist | findstr &quot;git-bash&quot;
+git-bash.exe                 18476 Console                    1      5,796 K
+(base) PS C:\Users\xx&gt; taskkill /pid 18476 -t -f
+成功: 已终止 PID 22436 (属于 PID 18476 子进程)的进程。
+成功: 已终止 PID 18476 (属于 PID 16332 子进程)的进程。
+(base) PS C:\Users\xx&gt;
+</code></pre>
+
+<p>如果这样kill后还是不能正常启动git bash，那么建议重启。</p>
               
             </div>
           </div>
@@ -735,7 +950,7 @@ P.S.: WIP（work in progress）
         <a href="../git_flow/" class="btn btn-neutral float-right" title="Git Flow">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../big_data/" class="btn btn-neutral" title="Big Data 大数据"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../regex/" class="btn btn-neutral" title="Regex 正则表达式"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -761,7 +976,7 @@ P.S.: WIP（work in progress）
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../big_data/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../regex/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../git_flow/" style="color: #fcfcfc">Next &raquo;</a></span>

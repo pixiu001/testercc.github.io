@@ -94,6 +94,24 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#soar">SOAR</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ids">IDS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ips">IPS</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#idsips">IDS和IPS的区别</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">安全域</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dmz">DMZ</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#dmz_1">DMZ区的特点</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">网络空间测绘</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -133,19 +151,27 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/research_list/">导航列表</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/exploit/">漏洞相关</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/sample_analysis/">样本分析</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/binary_sec/">二进制安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/ic_sec/">工控安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/iot_sec/">物联网安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/browser_sec/">浏览器安全</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -161,6 +187,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/kali_linux/">Kali Linux</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/red_vs_blue/">红蓝对抗</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/sql_injection/">SQL Injection SQL注入</a>
@@ -175,7 +203,11 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/re/">Reverse Engineering 逆向工程</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/crack/">破解</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/attack_lifecycle/">网络攻击生命周期</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/log_clear/">日志清理</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/cve/">CVE</a>
                     </li>
@@ -197,6 +229,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/ctf_skill/">CTF竞赛常用基本解题技巧</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/pwn/">PWN</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ctf/hackthebox/">Hack The Box</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Algorithm 算法</span></p>
@@ -250,6 +284,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/kafka/">Kafka</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/big_data/">Big Data 大数据</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/regex/">Regex 正则表达式</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/git/">Git</a>
                     </li>
@@ -320,11 +356,13 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/docker/">Docker</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/vm/">VM 虚拟机</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/linux/">Linux</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../devops/k8s/">Kubernetes</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/windows/">Windows</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/sre/">SRE</a>
                     </li>
@@ -445,6 +483,31 @@
 <p>Data Leakage Prevention，数据泄露防护</p>
 <h3 id="soar">SOAR</h3>
 <p>Security Orchestration, Automation and Response，安全编排自动化响应</p>
+<h3 id="ids">IDS</h3>
+<p>IDS是英文“Intrusion Detection Systems”的缩写，中文意思是“入侵检测系统”。专业上讲就是依照一定的安全策略，通过软、硬件，对网络、系统的运行状况进行监视，尽可能发现各种攻击企图、攻击行为或者攻击结果，以保证网络系统资源的机密性、完整性和可用性。</p>
+<p>一个形象的比喻：假如防火墙是一幢大楼的门锁，那么IDS就是这幢大楼里的监视系统。一旦小偷爬窗进入大楼，或内部人员有越界行为，只有实时监视系统才能发现情况并发出警告。</p>
+<h3 id="ips">IPS</h3>
+<p>入侵防御系统(IPS: Intrusion Prevention System)是电脑网络安全设施，是对防病毒软件（Antivirus Programs）和防火墙(Packet Filter, Application Gateway)的解释。 </p>
+<p>入侵防御系统(Intrusion-prevention system)是一部能够监视网络或网络设备的网络资料传输行为的计算机网络安全设备，能够即时的中断、调整或隔离一些不正常或是具有伤害性的网络资料传输行为。</p>
+<h4 id="idsips">IDS和IPS的区别</h4>
+<pre><code>IPS是位于防火墙和网络的设备之间的设备。如果检测到攻击，IPS会在这种攻击扩散到网络的其它地方之前阻止这个恶意的通信。
+
+而IDS只是存在于网络之外起到报警的作用，而不在你的网络前面起到防御的作用
+</code></pre>
+
+<h3 id="_5">安全域</h3>
+<p>安全域存在的原因和目的是将一组安全等级相同的划入同一个安全域，最小权限开放对其他安全域的NACL（网络访问控制策略），使得安全域内这组暴露的风险最小化，在发生攻击或蠕虫等侵害时能将威胁最大化地隔离，减小域外事件对域内系统的影响，也是纵深防御架构最重要的单位体</p>
+<h3 id="dmz">DMZ</h3>
+<p>全称Demilitarized Zone，中文为“非军事区”，或称Perimeter network，即“边界网络”、周边网络或“对外网络”，为一种网络架构的布置方案。</p>
+<p>常用的架设方案是在<code>不信任的外部网络</code>和<code>可信任的内部网络</code>外，创建一个<code>面向外部网络的物理或逻辑子网</code>，该子网能设置用于对外部网络的服务器主机。</p>
+<h4 id="dmz_1">DMZ区的特点</h4>
+<ol>
+<li>提供服务给外界访问</li>
+<li>路由器不包含任何机密资料</li>
+</ol>
+<h3 id="_6">网络空间测绘</h3>
+<p>网络空间测绘是2016年出现的一个概念，主要指用一些技术方法，来探测全球互联网空间上的节点分布情况和网络关系索引，构建全球互联网图谱的一种方法。</p>
+<p>拓展阅读：https://www.anquanke.com/post/id/231011</p>
               
             </div>
           </div>

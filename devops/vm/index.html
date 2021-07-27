@@ -99,19 +99,27 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/research_list/">导航列表</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/exploit/">漏洞相关</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/sample_analysis/">样本分析</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/binary_sec/">二进制安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/ic_sec/">工控安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/iot_sec/">物联网安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/browser_sec/">浏览器安全</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -127,6 +135,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/kali_linux/">Kali Linux</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/red_vs_blue/">红蓝对抗</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/sql_injection/">SQL Injection SQL注入</a>
@@ -141,7 +151,11 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/re/">Reverse Engineering 逆向工程</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/crack/">破解</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/attack_lifecycle/">网络攻击生命周期</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/log_clear/">日志清理</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/cve/">CVE</a>
                     </li>
@@ -163,6 +177,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/ctf_skill/">CTF竞赛常用基本解题技巧</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/pwn/">PWN</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ctf/hackthebox/">Hack The Box</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Algorithm 算法</span></p>
@@ -216,6 +232,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/kafka/">Kafka</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/big_data/">Big Data 大数据</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/regex/">Regex 正则表达式</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/git/">Git</a>
                     </li>
@@ -286,6 +304,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../docker/">Docker</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../k8s/">Kubernetes</a>
+                    </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">VM 虚拟机</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#_2">常见问题？</a>
@@ -303,15 +323,35 @@
     <li class="toctree-l2"><a class="reference internal" href="#_3">常用虚拟机操作指令</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#kvm-virsh">KVM virsh命令</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">查看虚拟机硬盘信息</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">创建快照</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_6">恢复快照</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_7">查看指定虚拟机的快照列表</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">删除快照</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_9">查看快照详细信息</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sabe">sabe快照运维</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#ubuntu1804">Ubuntu18.04虚拟机配置</a>
+    <li class="toctree-l3"><a class="reference internal" href="#faq">FAQ</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#zsh">安装zsh</a>
+    <li class="toctree-l4"><a class="reference internal" href="#kvm_1">kvm网卡参数设置错误导致网卡不能承受过高流量问题排查</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#pyenv">安装pyenv</a>
         <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#ubuntu-1804">Ubuntu 18.04</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#centos-76">CentOS 7.6</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#pyenv-install">pyenv install太慢的解决方式</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#pyenv-virtualenv">安装辅助插件 pyenv-virtualenv</a>
@@ -330,7 +370,7 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../linux/">Linux</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../k8s/">Kubernetes</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../windows/">Windows</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../sre/">SRE</a>
                     </li>
@@ -618,47 +658,73 @@ vnet2  就是我新创建的虚拟机
 
 <pre><code>qemu虚拟机virsh指令
 
-# 查看所有虚拟机列表
+#### 查看所有虚拟机列表
 virsh list --all
 
-# 查看开启的虚拟机列表
+#### 查看开启的虚拟机列表
 virsh list
 
-# 运行指定的虚拟机
+#### 运行指定的虚拟机
 virsh start centos7
 virsh start dtd
 virsh start tmp_frontend
 
-# 强制关闭指定虚拟机
+#### 强制关闭指定虚拟机
 virsh destroy centos7
 
-# 创建快照
-virsh snapshot-create-as centos7 centos7_snapshot
+#### 查看指定虚拟机的信息 
+virsh dominfo 虚拟机名称
+virsh dominfo sabe
+virsh dominfo snort
 
-# 恢复快照
-virsh snapshot-revert centos7 --current
+#### 查看虚拟机网卡信息
+```bash
+[root@localhost ~]# virsh domiflist sabe
+Interface  Type       Source     Model       MAC
+-------------------------------------------------------
+vnet0      bridge     br0        virtio      52:54:00:74:5e:94
+vnet1      bridge     br1        virtio      52:54:00:89:8d:c5
 
-# 查看指定虚拟机的快照列表
-virsh snapshot-list sabe
-
-# 删除快照
-virsh snapshot-delete snort snort_snapshot
-
-# 查看快照详细信息
-virsh snapshot-info [domain] [snapshot-name]
-
-# sabe快照运维
-
-virsh snapshot-delete sabe sabe_snapshot
-virsh snapshot-create-as sabe sabe_snapshot
-
-virsh snapshot-delete snort snort_snapshot
-virsh snapshot-create-as snort snort_snapshot
+[root@localhost ~]# virsh domiflist snort
+Interface  Type       Source     Model       MAC
+-------------------------------------------------------
+vnet2      bridge     br0        virtio      52:54:00:e3:39:1b
+vnet3      bridge     br1        rtl8139     52:54:00:f3:e8:39
 </code></pre>
 
-<h2 id="ubuntu1804">Ubuntu18.04虚拟机配置</h2>
-<h3 id="zsh">安装zsh</h3>
-<pre><code class="shell">1.安装和切换zsh
+<h4 id="_4">查看虚拟机硬盘信息</h4>
+<p>virsh domblklist</p>
+<h4 id="_5">创建快照</h4>
+<p>virsh snapshot-create-as centos7 centos7_snapshot</p>
+<h4 id="_6">恢复快照</h4>
+<p>virsh snapshot-revert centos7 --current</p>
+<h4 id="_7">查看指定虚拟机的快照列表</h4>
+<p>virsh snapshot-list sabe</p>
+<h4 id="_8">删除快照</h4>
+<p>virsh snapshot-delete snort snort_snapshot</p>
+<h4 id="_9">查看快照详细信息</h4>
+<p><code>virsh snapshot-info [domain] [snapshot-name]</code></p>
+<h4 id="sabe">sabe快照运维</h4>
+<p>virsh snapshot-delete sabe sabe_snapshot
+virsh snapshot-create-as sabe sabe_snapshot</p>
+<p>virsh snapshot-delete snort snort_snapshot
+virsh snapshot-create-as snort snort_snapshot</p>
+<h3 id="faq">FAQ</h3>
+<h4 id="kvm_1">kvm网卡参数设置错误导致网卡不能承受过高流量问题排查</h4>
+<p>ovirt创建网卡的时候有3中选择，分别是：<code>e1000</code>，<code>rtl8139</code>，<code>virtio</code>。</p>
+<ul>
+<li>rtl8139 类型是 qemu-kvm 默认的模拟网卡类型， 10/100Mb/s</li>
+<li>e1000   类型提供Intel e1000系的网卡模拟，纯QEMU（非qemu-kvm）默认就是提供Intel e1000系, 1Gb/s</li>
+<li>virtio  类型是 qemu-kvm 对半虚拟化IO（virtio）驱动的支持，10Gb/s</li>
+</ul>
+<p><img alt="rtl8139 issue" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210525120207.png" /></p>
+<pre><code>
+## Ubuntu18.04虚拟机配置
+
+### 安装zsh
+
+```shell
+1.安装和切换zsh
 cat /etc/shells  # 查看所有shell
 echo $SHELL   # 查看当前shell
 
@@ -707,6 +773,7 @@ HIST_STAMPS=&quot;yyyy-mm-dd&quot;  # history信息增加时间戳展示
 
 <h3 id="pyenv">安装pyenv</h3>
 <p>ref: https://blog.csdn.net/wssywh/article/details/76143600</p>
+<h4 id="ubuntu-1804">Ubuntu 18.04</h4>
 <pre><code>$ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
 $ echo 'export PYENV_ROOT=&quot;$HOME/.pyenv&quot;' &gt;&gt; ~/.zshrc
@@ -716,7 +783,29 @@ $ echo 'eval &quot;$(pyenv init -)&quot;' &gt;&gt; ~/.zshrc
 </code></pre>
 
 <p>然后，<code>source ~/.zshrc</code>使命令生效。</p>
-<p>常用命令</p>
+<h4 id="centos-76">CentOS 7.6</h4>
+<pre><code>CentOS 7.6 默认不带zsh，需要的自行安装
+
+1. 安装依赖包:
+yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel -y
+
+2. 安装pyenv包:
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+如果http访问要超时，可以换成ssh
+git clone git@github.com:pyenv/pyenv.git ~/.pyenv
+
+3. 设置环境变量:
+vim ~/.bashrc 
+export PYENV_ROOT=&quot;$HOME/.pyenv&quot; 
+export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot; 
+eval &quot;$(pyenv init --path)&quot;
+
+4. 激活修改的配置文件
+source ~/.bashrc
+</code></pre>
+
+<p>不过pyenv国内源安装慢，需要使用本地安装方式。</p>
+<p>pyenv 常用命令</p>
 <pre><code>pyenv versions # 查看所有安装的python版本
 
 pyenv install --list  # 查询可安装的python版本
@@ -725,7 +814,7 @@ pyenv install --list  # 查询可安装的python版本
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev
 
 pyenv install 3.7.10 -v  # 加 -v参数可以看到安装进度情况
-pyenv install 3.8.10
+pyenv install 3.8.10 -v
 pyenv install 3.9.5
 
 如果放在~/.pyenv/cache/目录下
@@ -736,7 +825,12 @@ rm -rf &quot;~/.pyenv/versions/3.7.10&quot;
 
 <h4 id="pyenv-install">pyenv install太慢的解决方式</h4>
 <pre><code>pyenv搜狐镜像源加速：http://mirrors.sohu.com/python/
-下载需要的版本放到~/.pyenv/cache文件夹下面
+
+下载需要的版本放到~/.pyenv/cache文件夹下面，没有目录的话就自行创建
+mkdir ~/.pyenv/cache
+
+将从官网下载的python官方安装包 Python-*.tar.xz 文件传到这个目录下
+
 然后执行 pyenv install 版本号 安装对应的python版本
 
 简介脚本如下，其中v表示要下载的版本号
@@ -753,9 +847,10 @@ v=3.7.10|wget http://mirrors.sohu.com/python/$v/Python-$v.tar.xz -P ~/.pyenv/cac
 $ echo 'eval &quot;$(pyenv virtualenv-init -)&quot;' &gt;&gt; ~/.zshrc
 </code></pre>
 
-<p>使用方式</p>
+<p>pyenv-virtualenv使用方式</p>
 <pre><code># 创建虚拟环境
 pyenv virtualenv 2.7.10 my-virtual-env-2.7.10
+pyenv virtualenv 3.8.10 py38
 
 # 激活虚拟环境
 pyenv activate &lt;name&gt;
@@ -766,6 +861,37 @@ pyenv uninstall my-virtual-env
 pyenv virtualenv-delete my-virtual-env
 </code></pre>
 
+<p>virtualenv环境变量配置</p>
+<p>CentOS 7.6 </p>
+<pre><code># virtualenv custom config
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+export WORKON_HOME=$HOME/virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source /usr/local/bin/virtualenvwrapper.sh
+</code></pre>
+
+<p>virtualenv wrapper + pyenv 使用方式</p>
+<p>默认的python是python2，位于 <code>/usr/bin/python</code>
+pyenv 安装的python一般位于，<code>/root/.pyenv/versions</code> 的对应目录中</p>
+<pre><code>[root@localhost ~]# ls /root/.pyenv/versions
+3.7.10  3.8.10  3.9.5
+</code></pre>
+
+<p>virtualenv wrapper + pyenv 创建虚拟环境</p>
+<p>1.使用pyenv安装不同版本的python（参考前面的文档）</p>
+<p>mkvirtualenv 、 workon 等命令要先安装virtualenv和virtualenv-wrapper才可用</p>
+<p>2.使用virtualenv wrapper创建虚拟环境</p>
+<pre><code>mkvirtualenv py275 --python=/usr/bin/python
+
+mkvirtualenv py3710 --python=/root/.pyenv/versions/3.7.10/bin/python
+
+mkvirtualenv py3810 --python=/root/.pyenv/versions/3.8.10/bin/python
+
+mkvirtualenv py395 --python=/root/.pyenv/versions/3.9.5/bin/python
+</code></pre>
+
+<p>创建完成后，执行命令 <code>work on</code> 查看所有 virtualenv wrapper 管理的虚拟环境。</p>
+<p>执行<code>workon on 虚拟环境名称</code>，就会激活并进入相应的虚拟环境。</p>
 <h3 id="go">安装go</h3>
 <p>ref: https://golang.org/doc/install</p>
 <pre><code>先下载go的安装包
@@ -842,7 +968,7 @@ $ sudo netplan apply
         <a href="../linux/" class="btn btn-neutral float-right" title="Linux">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../docker/" class="btn btn-neutral" title="Docker"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../k8s/" class="btn btn-neutral" title="Kubernetes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -868,7 +994,7 @@ $ sudo netplan apply
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../docker/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../k8s/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../linux/" style="color: #fcfcfc">Next &raquo;</a></span>
