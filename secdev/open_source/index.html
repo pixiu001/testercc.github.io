@@ -86,9 +86,13 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_5">安全工具(排名不分先后)</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_6">其它工具</a>
+    <li class="toctree-l2"><a class="reference internal" href="#exppoc">EXP&amp;POC集合</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#git-repo-wiki">Git Repo Wiki</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">自建靶场</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">其它工具</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#git-git-repo-wiki">Git知识库系列 Git Repo Wiki</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#blog">Blog推荐</a>
     </li>
@@ -125,9 +129,13 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/sample_analysis/">样本分析</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/binary_sec/">二进制安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/data_sec/">数据安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/ic_sec/">工控安全</a>
                     </li>
@@ -139,7 +147,7 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/browser_sec/">浏览器安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/api_sec/">API安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
                     </li>
@@ -485,11 +493,6 @@
 <td>Go</td>
 </tr>
 <tr>
-<td><a href="https://github.com/fofapro/vulfocus">vulfocus</a></td>
-<td>Vulfocus 是一个漏洞集成平台，将漏洞环境 docker 镜像，放入即可使用，开箱即用。</td>
-<td>Python Django</td>
-</tr>
-<tr>
 <td><a href="https://github.com/rtcatc/Packer-Fuzzer">Packer-Fuzzer</a></td>
 <td>一款针对Webpack等前端打包工具所构造的网站进行快速、高效安全检测的扫描工具</td>
 <td>Python</td>
@@ -622,7 +625,62 @@
 </tbody>
 </table>
 <p>备注：推荐安全研发小伙伴们按需认真阅读代码学习。</p>
-<h2 id="_6">其它工具</h2>
+<h2 id="exppoc">EXP&amp;POC集合</h2>
+<p>估计2021年9月之后可能就鲜有开源持续更新的exp了吧，且收且珍惜</p>
+<table>
+<thead>
+<tr>
+<th>开源地址</th>
+<th>备注</th>
+<th>开发语言</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/zhzyker/exphub">exphub</a></td>
+<td>Exphub漏洞利用脚本库</td>
+<td>Python</td>
+</tr>
+<tr>
+<td><a href="https://github.com/r0eXpeR/redteam_vul">redteam_vul</a></td>
+<td>红队中易被攻击的一些重点系统漏洞整理</td>
+<td>只收集的url，没有直接放代码</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ybdt/exp-hub">exp-hub</a></td>
+<td>专注于漏洞复现，不含漏洞分析</td>
+<td>wiki集合，poc为主</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_6">自建靶场</h2>
+<table>
+<thead>
+<tr>
+<th>开源地址</th>
+<th>备注</th>
+<th>开发语言</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/cfalta/adsec">Active Directory Security - 101</a></td>
+<td>一个AD安全靶场，学习域渗透环境</td>
+<td>PowerShell</td>
+</tr>
+<tr>
+<td><a href="https://github.com/vulhub/vulhub">Vulhub</a></td>
+<td>通过 docker-compose 来构建，更新稳定</td>
+<td>Dockerfile and so on</td>
+</tr>
+<tr>
+<td><a href="https://github.com/fofapro/vulfocus">vulfocus</a></td>
+<td>Vulfocus 是一个漏洞集成平台，将漏洞环境 docker 镜像，放入即可使用，开箱即用。</td>
+<td>Python Django</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_7">其它工具</h2>
 <p>非安全向但有意思的开源项目记录于此。</p>
 <table>
 <thead>
@@ -640,8 +698,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="git-repo-wiki">Git Repo Wiki</h2>
-<p>Git知识库系列</p>
+<h2 id="git-git-repo-wiki">Git知识库系列 Git Repo Wiki</h2>
 <table>
 <thead>
 <tr>
@@ -653,6 +710,10 @@
 <tr>
 <td><a href="https://github.com/NewBee119/threat-intelligence">threat-intelligence</a></td>
 <td>专注于收集会释放威胁情报的网站</td>
+</tr>
+<tr>
+<td><a href="https://github.com/kbandla/APTnotes">APTnotes</a></td>
+<td>公开的APT报告，涵盖08到19年，近年来未更新</td>
 </tr>
 <tr>
 <td><a href="https://github.com/AV1080p/Hacking-With-Golang">Hacking-With-Golang</a></td>

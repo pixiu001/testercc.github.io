@@ -78,9 +78,11 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">其它术语</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">网络流量采集</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">其它术语</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_4">溯源</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">溯源</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#utm">UTM</a>
     </li>
@@ -102,7 +104,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_5">安全域</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">安全域</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#dmz">DMZ</a>
         <ul>
@@ -110,7 +112,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_6">网络空间测绘</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">网络空间测绘</a>
     </li>
         </ul>
     </li>
@@ -157,9 +159,13 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/sample_analysis/">样本分析</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/binary_sec/">二进制安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/data_sec/">数据安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/ic_sec/">工控安全</a>
                     </li>
@@ -171,7 +177,7 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/browser_sec/">浏览器安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/api_sec/">API安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
                     </li>
@@ -470,8 +476,14 @@
 <h3 id="3">3.防护技术类</h3>
 <h3 id="4">4.检测技术类</h3>
 <h3 id="5">5.响应/恢复技术类</h3>
-<h2 id="_3">其它术语</h2>
-<h3 id="_4">溯源</h3>
+<h2 id="_3">网络流量采集</h2>
+<ul>
+<li>对于<code>光纤链路</code>，可以使用<code>分光器</code>来获得一份数据的拷贝；</li>
+<li>对于<code>电缆线路</code>，则需要一个叫<code>TAP流量复制器</code>的设备来完成数据的复制。</li>
+</ul>
+<p>ref: https://blog.csdn.net/badseeds2000/article/details/105257993/</p>
+<h2 id="_4">其它术语</h2>
+<h3 id="_5">溯源</h3>
 <p>指在法律允许的范围内精准采集攻击者的设备指纹、社交信息、位置信息，分析并形成攻击者的画像，在攻击者使用浏览器访问仿真溯源蜜罐时，对攻击者进行追踪溯源，打击网络犯罪，保护资产安全</p>
 <h3 id="utm">UTM</h3>
 <p>Unified Threat Management, 统一威胁管理</p>
@@ -492,12 +504,15 @@
 <p>入侵防御系统(IPS: Intrusion Prevention System)是电脑网络安全设施，是对防病毒软件（Antivirus Programs）和防火墙(Packet Filter, Application Gateway)的解释。 </p>
 <p>入侵防御系统(Intrusion-prevention system)是一部能够监视网络或网络设备的网络资料传输行为的计算机网络安全设备，能够即时的中断、调整或隔离一些不正常或是具有伤害性的网络资料传输行为。</p>
 <h4 id="idsips">IDS和IPS的区别</h4>
-<pre><code>IPS是位于防火墙和网络的设备之间的设备。如果检测到攻击，IPS会在这种攻击扩散到网络的其它地方之前阻止这个恶意的通信。
+<pre><code>IDS（入侵检测系统）旁路部署
+IPS（入侵防御系统）串行部署
 
-而IDS只是存在于网络之外起到报警的作用，而不在你的网络前面起到防御的作用
+IDS只是存在于网络之外起到报警的作用，而不在你的网络前面起到防御的作用。
+IPS是位于防火墙和网络的设备之间的设备。如果检测到攻击，IPS会在这种攻击扩散到网络的其它地方之前阻止这个恶意的通信。
 </code></pre>
 
-<h3 id="_5">安全域</h3>
+<p>ref: https://zhuanlan.zhihu.com/p/96942352</p>
+<h3 id="_6">安全域</h3>
 <p>安全域存在的原因和目的是将一组安全等级相同的划入同一个安全域，最小权限开放对其他安全域的NACL（网络访问控制策略），使得安全域内这组暴露的风险最小化，在发生攻击或蠕虫等侵害时能将威胁最大化地隔离，减小域外事件对域内系统的影响，也是纵深防御架构最重要的单位体</p>
 <h3 id="dmz">DMZ</h3>
 <p>全称Demilitarized Zone，中文为“非军事区”，或称Perimeter network，即“边界网络”、周边网络或“对外网络”，为一种网络架构的布置方案。</p>
@@ -507,7 +522,7 @@
 <li>提供服务给外界访问</li>
 <li>路由器不包含任何机密资料</li>
 </ol>
-<h3 id="_6">网络空间测绘</h3>
+<h3 id="_7">网络空间测绘</h3>
 <p>网络空间测绘是2016年出现的一个概念，主要指用一些技术方法，来探测全球互联网空间上的节点分布情况和网络关系索引，构建全球互联网图谱的一种方法。</p>
 <p>拓展阅读：https://www.anquanke.com/post/id/231011</p>
               
