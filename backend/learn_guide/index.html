@@ -119,6 +119,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/iot_sec/">物联网安全</a>
                     </li>
+                    <li class="toctree-l1"><a class="" href="../../ssec_research/iov_sec.md">车联网安全</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
@@ -144,6 +146,8 @@
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../incident_response/learn_guide/">学习参考</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../incident_response/traceback/">溯源反制</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Pentest 渗透测试</span></p>
@@ -268,15 +272,17 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#_14">新语言十步法</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_15">定位后端开发的书籍推荐</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#debugging">Debugging</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_15">常用实践型学习方式</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_16">常用实践型学习方式</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_16">关于发布的版本</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_17">关于发布的版本</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_17">其他推荐</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_18">其他推荐</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_18">你的编程能力从什么时候开始突飞猛进？</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_19">你的编程能力从什么时候开始突飞猛进？</a>
     </li>
         </ul>
     </li>
@@ -566,6 +572,36 @@
 <li>9.第三方库快速编写 demo。</li>
 <li>10.最佳实践：遇到的坑；代码分层；单元测试；静态检查。</li>
 </ul>
+<h3 id="_15">定位后端开发的书籍推荐</h3>
+<p>ref: <a href="https://mp.weixin.qq.com/s/v3z04HWmtF6ny7ve9b8Yyw">定位后端开发的书籍推荐</a></p>
+<p>1.算法和数据结构。基础，无论校招还是社招。</p>
+<pre><code>大厂社招又不太一样，因为除了要准备算法和数据结构以外，还得准备有项目经验、了解操作系统原理、熟悉网络通信、了解数据库、熟悉要求的各种开源框架和技术等等，实在太多了，即使再怎么准备也不一定能一举拿下。
+</code></pre>
+
+<p>2.操作系统</p>
+<p>Tanenbaum.A.S 《现代操作系统》，当然，我的建议是这种书毕竟流于理论知识，也不一定要看完，但一定将一些基础概念，如进程线程内存模式等基础概念看懂理解。</p>
+<p>如果还有时间强烈推荐看看俞甲子的 《程序员的自我修养:链接、装载与库》，这本书同时涉及到了 Windows 和 Linux 两个操作系统平台，用各种辅助工具剖析了程序从源码到二进制文件再到装载到进程地址空间里面的各个细节，甚至连进程地址空间中的堆结构、栈结构也分析得清清楚楚，同时也分析了 C Runtime（CRT）、glibc 这样的操作系统接口库的原理和执行逻辑，是一本实实在在难得的帮你实战操作系统原理的一本好书。</p>
+<pre><code>“CPU体系结构、汇编、C语言（包括C++）和操作系统，永远都是编程大师们的护身法宝，就如同少林寺的《易筋经》，是最为上乘的武功；学会了《易筋经》，你将无所不能，任你创造武功；学会了编程“易筋经”，大师们可以任意开发操作系统、编译器，甚至是开发一种新的程序设计语言！“
+</code></pre>
+
+<p>3.一门编程语言</p>
+<p>你只有熟练使用一门编程语言，你才能将你的想法变成现实。</p>
+<p>首推 C/C++
+- 《C 语言程序设计:现代方法》。
+- 如果你想掌握好 C++，《深度探索 C++ 对象模型》是一定要看的</p>
+<p>4.计算机网络</p>
+<ul>
+<li>《计算机网络：自顶向下方法》 你一定要看懂而不是看完。比如三次握手和四次挥手的细节，你一定要很清楚。</li>
+<li>韩国人尹圣雨写的这本《TCP/IP 网络编程》，初级水平，强烈建议看看这本书。</li>
+</ul>
+<p>5.Linux系统编程
+-  Robert Love 的《Linux 系统编程》、《Linux 内核设计与实现》</p>
+<p>强调一下，如果你是快毕业的学生，面临着找工作的压力，应该以算法和数据结构为主。如果你是大一大二或研一这个阶段的学生，我上面推荐的书，你还是可以考虑好好咀嚼一下,标准是看懂而不是看完。</p>
+<p>6.汇编</p>
+<ul>
+<li>王爽老师的《汇编语言(第 3 版)》（有第4版了）</li>
+<li>《老码识途：从机器码到框架的系统观逆向修炼之路》</li>
+</ul>
 <h3 id="debugging">Debugging</h3>
 <p>Debugging推荐书籍：
 1.软件调试修炼之道
@@ -581,12 +617,12 @@
 <li>IDE调试</li>
 <li>小黄鸭调试（审查：请别人帮忙审查代码或自己详细地向小黄鸭解释每行代码）</li>
 </ul>
-<h3 id="_15">常用实践型学习方式</h3>
+<h3 id="_16">常用实践型学习方式</h3>
 <pre><code>学习基本知识点 -&gt; 明确需求 -&gt; 动手写代码 -&gt; 遇到难题 -&gt; 通过百度/Google寻找解决方案 -&gt; 不断的测试实践发现Bug 
 -&gt; 验证解决思路 -&gt; 寻找更好的实现方案（有精力最好代码实现并验证） -&gt; 思考更深入的问题（很多人做不到这步）
 </code></pre>
 
-<h3 id="_16">关于发布的版本</h3>
+<h3 id="_17">关于发布的版本</h3>
 <ul>
 <li><code>RC=Release Candidate, 发布候选版</code>，是<code>最终版(RTM=Release To Manufacture)</code>之前的最后一个版本。</li>
 </ul>
@@ -598,13 +634,13 @@ beta 是指公测，即针对所有用户公开的测试版本。
 gamma (这个不常听见)，beta测试后做过一些修改，成为正式发布的候选版本时叫做RC（Release Candidate）。
 </code></pre>
 
-<h3 id="_17">其他推荐</h3>
+<h3 id="_18">其他推荐</h3>
 <ul>
 <li><a href="https://xargin.com/how-to-learn/">工程师应该怎么学习</a>  -- 若对自我提升不得其法，推荐仔细阅读</li>
 <li><a href="http://product.dangdang.com/28513974.html">程序员的7堂职场课</a> -- 本人是利用租约优惠免费看的，没想到内容真的还不错，内容偏向软技能，建议对自己职业生涯规划不足和陷入迷茫的程序员阅读</li>
 <li><a href="https://www.bilibili.com/video/BV1p74111732">技术人如何快速且深入地学习一门新技术？</a></li>
 </ul>
-<h3 id="_18">你的编程能力从什么时候开始突飞猛进？</h3>
+<h3 id="_19">你的编程能力从什么时候开始突飞猛进？</h3>
 <p>转自知乎：口天师兄  的回答</p>
 <pre><code>百度多了
 
