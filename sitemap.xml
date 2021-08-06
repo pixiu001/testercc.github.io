@@ -116,6 +116,10 @@
      <lastmod>2021-08-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>https://testercc.github.io/sec_research/iov_sec/</loc>
+     <lastmod>2021-08-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://testercc.github.io/sec_research/block_chain_sec/</loc>
      <lastmod>2021-08-06</lastmod>
      <changefreq>daily</changefreq>
@@ -197,6 +201,10 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://testercc.github.io/pentest/privilge_escalation/</loc>
+     <lastmod>2021-08-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://testercc.github.io/pentest/reverse_shell/</loc>
      <lastmod>2021-08-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
