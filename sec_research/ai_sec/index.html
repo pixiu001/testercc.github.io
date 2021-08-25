@@ -70,6 +70,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/code_sec/">Code Security 代码安全</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/netflow_analysis/">Netflow Analysis 流量分析</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/log_audit/">Log Audit 日志审计</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/open_source/">Opensource 开源项目推荐</a>
@@ -85,6 +87,10 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/intelligent_risk_control/">Intelligent Risk Control 智能风控</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/pentest_automation/">渗透测试自动化</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/fingerprints/">指纹识别</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/anti_bot/">反爬虫/Bot</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_sqlmap/">源码学习之SqlMap</a>
                     </li>
@@ -161,6 +167,10 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/kali_linux/">Kali Linux</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/red_vs_blue/">红蓝对抗</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/red_team/">RedTeam 红队</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/blue_team/">BlueTeam 蓝队</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
@@ -258,6 +268,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/kafka/">Kafka</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../backend/jwt/">JWT认证</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/big_data/">Big Data 大数据</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../backend/regex/">Regex 正则表达式</a>
@@ -342,6 +354,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/sre/">SRE</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../devops/shell/">Shell</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../devops/syslog/">syslog</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">SEO 搜索引擎优化</span></p>
@@ -458,9 +472,36 @@
 <p>典型的机器学习系统及其子流程：</p>
 <p><img alt="典型的机器学习系统及其子流程" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210728205324.png" /></p>
 <h4 id="_6">模型引擎</h4>
-<p>机器学习模型引擎负责管理机器学习框架运行所涉及的端到端过程，包括：<code>数据准备</code>、<code>特征生成</code>、<code>模型训练</code>、<code>模型测试</code>。</p>
+<p>机器学习模型引擎负责管理机器学习框架运行所涉及的端到端过程，包括：<code>数据准备</code>、<code>特征生成</code>、<code>模型训练</code>、<code>模型测试</code>。 （PS：参考检测模型的构建方法）</p>
 <h4 id="_7">性能调整</h4>
 <p>概率近似正确(PAC)理论：如果算法的广义函数以高概率给出低泛化误差，则认为机器学习系统具有最佳性能。</p>
+<h2 id="_8">人工智能安全领域</h2>
+<p><img alt="人工智能背后的技术" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210812140516.png" /></p>
+<h3 id="_9">攻击检测</h3>
+<ol>
+<li>熟悉攻击的过程</li>
+<li>研究每个过程中的技术</li>
+<li>思考如何自动化处理</li>
+<li>手工验证是否可行</li>
+</ol>
+<h3 id="_10">检测模型的构建方法</h3>
+<p><img alt="检测模型的构建方法导图" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210812140718.png" /></p>
+<h3 id="1webshell">实例1：WebShell检测</h3>
+<h3 id="2sql">实例2：SQL注入检测</h3>
+<h3 id="_11">检测模型的构建方法</h3>
+<h2 id="ref">REF</h2>
+<ul>
+<li><a href="https://huazhu.butian.net/School/content?id=294">人工智能在安全领域中的研究分享</a></li>
+<li><a href="https://ccs.scu.edu.cn/wlkjen/info/1004/1105.htm">Data Mining for Cybersecurity（网络空间安全数据挖掘技术）课表</a></li>
+<li><a href="https://github.com/TesterCC/Data-Mining-for-Cybersecurity">Data-Mining-for-Cybersecurity相关资料</a></li>
+<li><a href="https://ccs.scu.edu.cn/wlkjen/UNDERGRADUATE_COURSES.htm">某校网安专业课程介绍</a></li>
+<li><a href="https://github.com/404notf0und/AI-for-Security-Learning">AI-for-Security-Learning</a></li>
+<li><a href="https://github.com/404notf0und/My-Security-Algorithm-Architecture">My-Security-Algorithm-Architecture</a></li>
+<li><a href="https://github.com/404notf0und/AI-for-Security-Landing-Guide">AI-for-Security-Landing-Guide</a></li>
+<li><a href="https://www.anquanke.com/post/id/232394">如何攻击深度学习系统——可解释性及鲁棒性研究</a></li>
+<li><a href="https://www.anquanke.com/post/id/232414">如何攻击深度学习系统——后门攻防</a></li>
+<li><a href="https://www.zhihu.com/question/67147459/answer/1826677126">深度学习在信息安全的应用有哪些可以关注的人或论文</a></li>
+</ul>
               
             </div>
           </div>
