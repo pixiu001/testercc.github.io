@@ -361,6 +361,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#pid">杀死指定pid进程</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#hash">检查文件Hash</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -508,6 +510,13 @@ taskkill /pid 20632 /T /F
 /T                     终止指定的进程和由它启用的子进程。
 /F                     指定强制终止进程。
 </code></pre>
+
+<h3 id="hash">检查文件Hash</h3>
+<p>打开powershell，执行命令：</p>
+<pre><code class="shell">Get-FileHash 文件名.文件后缀 -Algorithm MD5| Format-List
+</code></pre>
+
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210906191610.png" /></p>
               
             </div>
           </div>

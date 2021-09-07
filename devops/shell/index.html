@@ -385,6 +385,16 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#shellmongodb">通过shell脚本对MongoDB进行自动化操作</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cpu">查看CPU型号</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cpu_1">查看物理CPU个数</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cpucore">查看每个物理CPU中core的个数(即核数)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cpucpu">查看逻辑CPU个数（最常用，即通常的CPU核心数）</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cpu_2">直接查看格式化的cpu信息（自己不想算的话）</a>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../syslog/">syslog</a>
@@ -607,6 +617,66 @@ lsb_release -a
 </code></pre>
 
 <p>虽然回显不够明确，但是只要不报错， 命令是能够正常执行的</p>
+<h2 id="cpu">查看CPU型号</h2>
+<pre><code class="shell"># cat /proc/cpuinfo | grep name | sort | uniq
+
+model name  : Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
+</code></pre>
+
+<h2 id="cpu_1">查看物理CPU个数</h2>
+<pre><code class="shell"># cat /proc/cpuinfo | grep &quot;physical id&quot; | sort | uniq | wc -l
+2
+</code></pre>
+
+<h2 id="cpucore">查看每个物理CPU中core的个数(即核数)</h2>
+<pre><code class="shell"># cat /proc/cpuinfo | grep &quot;core id&quot; | sort | uniq | wc -l
+2
+
+# cat /proc/cpuinfo| grep &quot;cpu cores&quot;| uniq
+cpu cores   : 2
+</code></pre>
+
+<h2 id="cpucpu">查看逻辑CPU个数（最常用，即通常的CPU核心数）</h2>
+<pre><code class="shell"># cat /proc/cpuinfo | grep &quot;processor&quot; | sort | uniq | wc -l
+4
+</code></pre>
+
+<p>计算CPU个数的公式：</p>
+<pre><code class="shell">总核数 = 物理CPU个数 X 每颗物理CPU的核数 
+总逻辑CPU数 = 物理CPU个数 X 每颗物理CPU的核数 X 超线程数
+</code></pre>
+
+<h2 id="cpu_2">直接查看格式化的cpu信息（自己不想算的话）</h2>
+<pre><code class="shell">lscpu
+
+lscpu | grep &quot;CPU(s):&quot;
+</code></pre>
+
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210906152205.png" /></p>
+<p>其它参考</p>
+<pre><code>processor　：系统中逻辑处理核的编号。对于单核处理器，则课认为是其CPU编号，对于多核处理器则可以是物理核、或者使用超线程技术虚拟的逻辑核
+vendor_id　：CPU制造商
+cpu family　：CPU产品系列代号
+model　　　：CPU属于其系列中的哪一代的代号
+model name：CPU属于的名字及其编号、标称主频
+stepping　 ：CPU属于制作更新版本
+cpu MHz　 ：CPU的实际使用主频
+cache size ：CPU二级缓存大小
+physical id ：单个CPU的标号
+siblings ：单个CPU逻辑物理核数
+core id ：当前物理核在其所处CPU中的编号，这个编号不一定连续
+cpu cores ：该逻辑核所处CPU的物理核数
+apicid ：用来区分不同逻辑核的编号，系统中每个逻辑核的此编号必然不同，此编号不一定连续
+fpu ：是否具有浮点运算单元（Floating Point Unit）
+fpu_exception ：是否支持浮点计算异常
+cpuid level ：执行cpuid指令前，eax寄存器中的值，根据不同的值cpuid指令会返回不同的内容
+wp ：表明当前CPU是否在内核态支持对用户空间的写保护（Write Protection）
+flags ：当前CPU支持的功能
+bogomips ：在系统内核启动时粗略测算的CPU速度（Million Instructions Per Second）
+clflush size ：每次刷新缓存的大小单位
+cache_alignment ：缓存地址对齐单位
+address sizes ：可访问地址空间位数
+</code></pre>
               
             </div>
           </div>
