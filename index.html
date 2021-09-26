@@ -19,7 +19,7 @@
   <script>
     // Current page data
     var mkdocs_page_name = "About the Notes \u5173\u4e8e\u7b14\u8bb0";
-    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_input_path = "README.md";
     var mkdocs_page_url = "/";
   </script>
   
@@ -59,13 +59,13 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#mkdocs">Mkdocs常用命令</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_2">本地调试</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_1">本地调试</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#github">发布到Github</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_3">更新频率</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">更新频率</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_4">其它</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">其它</a>
     </li>
         </ul>
     </li>
@@ -148,6 +148,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="sec_research/android_sec/">Android安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="sec_research/browser_sec/">浏览器安全</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="sec_research/protocol_sec/">协议安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="sec_research/api_sec/">API安全</a>
                     </li>
@@ -461,12 +463,25 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_1">前言</h1>
+                <h1 id="about-the-notes">About the Notes 关于笔记</h1>
 <p>一个持续探索学习者的学习笔记，因为不想用rst写，所以直接用mkdocs，readthedoc主题。
 虽然计划写不少东西（看现在的目录大纲就明白了），但是内容整理还是得step by step。</p>
+<p>但最近已经确定好大纲：
+笔记用于知识的输入，博客用于知识的输出。（knowledge input: notes, knowledge output: blog）</p>
+<p>但是个人还是有点喜欢折腾，所以不想再想以前那样用别人的开源项目写blog，准备抽时间自己写一个blog（治疗自学Go+Vue拖延症末期的终极方案），当然blog正式上线的日期还得再缓缓。</p>
 <p>毕竟，笔记属于零碎知识整合，不同于写blog需要完整成文，可以增量更新。</p>
+<ul>
+<li>Online Reading: <a href="https://testercc.github.io/">https://testercc.github.io/</a></li>
+</ul>
 <p>For full information please visit <a href="https://github.com/TesterCC">TesterCC on Github</a>.</p>
 <p>If you are interested in my blog, please visit <a href="https://blog.fullstackpentest.com/">TesterCC's Blog</a></p>
+<pre><code>A Learning Notes Collection
+
+Content: Include security, penetration testing, CTF, development and so on.
+
+Environment: `Python 3.6.x + mkdocs`
+</code></pre>
+
 <h2 id="mkdocs">Mkdocs常用命令</h2>
 <p>使用mkdocs写笔记或者文档还是很方便的，下面是常用命令</p>
 <ul>
@@ -476,7 +491,7 @@
 <li><code>mkdocs help</code> - Print this help message.</li>
 </ul>
 <p>mkdocs build后，静态文件都会生产于site/目录下, 若想发布到github上，只需把此目录下的文件都push到github page要求的对应仓库。</p>
-<h4 id="_2">本地调试</h4>
+<h4 id="_1">本地调试</h4>
 <p><code>mkdocs serve</code></p>
 <h4 id="github">发布到Github</h4>
 <p>默认就放在master分支上。虽然最近因为一些原因Github在推广改成main，但是暂时先按照git的习惯继续用master吧。</p>
@@ -488,15 +503,15 @@ git push origin master
 cd ..
 </code></pre>
 
-<h4 id="_3">更新频率</h4>
+<h4 id="_2">更新频率</h4>
 <p>笔记可以有多次<code>git commit</code>，但 <code>/public</code> 更新控制在每日1次（虽然有写自动化脚本也挺省事儿，但还是要养成好喜欢，毕竟每次提交也会花费一点时间的）</p>
-<h4 id="_4">其它</h4>
+<h4 id="_3">其它</h4>
 <p>更多自定义设置请见<a href="https://www.mkdocs.org/user-guide/configuration">官方文档</a> (友情提示：若有英文阅读恐惧症，请合理使用google translate插件)</p>
 <h2 id="about-me">About Me</h2>
 <p>跨界IT从业人员，入行N年，<del>非自愿斜杠中年</del>，曾从事过运营、测试、<del> 管理</del>、开发、运维、<del>架构</del>、安全等岗位，目前正在梳理知识和技能，向安全研发的目标进发。</p>
 <p>持续学习者，且不断在学习力上向学霸们看齐。</p>
-<pre><code>    日常爱好：阅读（应该坚持一生的习惯）、搏击操（强身健体）。
-    最近兴趣：安全开发、CTF。
+<pre><code>    日常爱好：阅读（应该坚持一生的习惯）、搏击（强身健体）。
+    最近兴趣：安全开发、CTF、漏洞分析。
 </code></pre>
 <p><code>不会测试的开发不是一个好架构，不会开发的测试不是一个好渗透</code>   ^_^</p>
               
@@ -552,5 +567,5 @@ cd ..
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2021-09-24 06:27:32.571134+00:00
+Build Date UTC : 2021-09-26 06:28:09.637075+00:00
 -->
