@@ -399,6 +399,18 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">其它问题</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#u">终端实用命令行找回U盘隐藏空间</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#mac-os">Mac OS</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#windows">Windows</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../docker/">Docker</a>
@@ -710,6 +722,67 @@ openssl x509 -req -days 3650 -sha1 -extensions v3_req -CA root.crt -CAkey root.k
 <pre><code>1.操作 more不可以回去,就是不可以向前,只能向后,况且只能使用Enter和Space向后翻动。 less使用vim中的j,k键盘可以上下翻动,还可以使用上下箭头。
 2.速度 less不必读整个文件,加载速度会比more更快。
 3.内容 less退出后shell不会留下刚显示的内容,而more退出后会在shell上留下刚显示的内容
+</code></pre>
+
+<h2 id="_5">其它问题</h2>
+<h3 id="u">终端实用命令行找回U盘隐藏空间</h3>
+<p>一般U盘制作系统盘后，总有很多空闲分区无法识别。</p>
+<p>而且U盘系统安装盘用完后，如果不需长期留用，自然是想恢复为普通U盘以便日常使用的。</p>
+<p>下面就记录下windows和mac os下通过终端恢复U盘隐藏空间的操作。</p>
+<h4 id="mac-os">Mac OS</h4>
+<pre><code>diskutil list    # 查看盘符列表，根据显示内容找到你要格式化的U盘
+
+# 这里假设：disk4是我们的U盘
+
+# 卸载该 U 盘挂载的所有分区/卷组
+diskutil unmountDisk /dev/disk4    # 卸载分区disk4
+提示：Unmount of all volumes on disk4 was successful
+
+# 对U盘进行擦除并格式化为 ExFAT 格式
+
+diskutil eraseDisk ExFAT udisk disk4
+
+# ExFAT 为 macOS 的扩展日志格式，你也可以格式为JHFS+等格式。
+
+# udisk为你格式化后的U盘名称，disk4 为目标物理磁盘。
+
+当执行完后有如下提示，说明操作成功。
+
+Mounting disk
+Finished erase on disk4
+</code></pre>
+
+<p>实测MacOS下处理其实还更方便一些，ExFAT格式在Windows和Mac下通用，推荐这个。</p>
+<h4 id="windows">Windows</h4>
+<p>流程大致上和Mac类似，区别是使用的命令和软件不同。</p>
+<pre><code>Win键+R调出运行，输入cmd，打开cmd窗口。
+
+diskpart
+
+diskpart&gt; list disk
+记住你要选择的U盘的编号，这里假定为disk 4
+
+diskpart&gt; select disk 4
+选择U盘编号，不放心的话选择后可以再执行一次list disk，会看到物理磁盘4前面有*，表示其已被选中
+
+diskpart&gt; clean
+执行后，U盘已清空为未格式化状态。但是这样还没有结束，需要重新为U盘分区，否则U盘无法使用。
+
+重新分区有两种方式，一种是命令行分区，一种是通过计算机管理给U盘分区。这里选择方便的命令行方式。
+
+在保持选中disk 4的基础上，创建卷
+diskpart&gt; create partition primary  
+
+diskpart&gt; list partition
+查看创建的卷
+
+diskpart&gt; select partition 1
+选中新建分区，不放心的可以执行 list partition 检查，分区前面有*，表示其已被选中
+
+diskpart&gt; format quick
+完成快速格式化
+
+如果这样格式化的U盘格式不是你想要的，可以在电脑上重新执行格式格式化一下。
 </code></pre>
               
             </div>
