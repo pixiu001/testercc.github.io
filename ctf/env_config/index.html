@@ -137,6 +137,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/iov_sec/">车联网安全</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/cloud_sec/">云原生安全</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
@@ -159,6 +161,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_operation/">安全运营</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/classified_protection/">等级保护</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_jd/">安全招聘</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -507,6 +511,25 @@ docker run -it --privileged -v /Users/TesterCC/Desktop:/tmp/ jthorpe6/pwndbg /tm
 
 docker run -it container_id /bin/bash
 </code></pre>
+
+<h2 id="vulhub">vulhub</h2>
+<h3 id="_1">构建环境</h3>
+<pre><code>git clone git@github.com:vulhub/vulhub.git
+
+# Enter the directory of vulnerability/environment
+cd flask/ssti
+
+# Compile environment
+docker-compose build
+
+# Run environment
+docker-compose up -d
+</code></pre>
+
+<h3 id="_2">删除容器</h3>
+<p>进入对应目录
+<code>docker-compose down -v</code></p>
+<p>注意这样只是删除docker容器，如果要删除镜像，还是用通过<code>docker images</code>和<code>docker rmi xxx</code>来删除docker镜像。</p>
               
             </div>
           </div>

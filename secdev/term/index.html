@@ -104,7 +104,13 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#dlp">DLP</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ueba">UEBA</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#soar">SOAR</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ast">AST</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ir">IR</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#ids">IDS</a>
     </li>
@@ -191,6 +197,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/iov_sec/">车联网安全</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/cloud_sec/">云原生安全</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
@@ -213,6 +221,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_operation/">安全运营</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/classified_protection/">等级保护</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_jd/">安全招聘</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -530,6 +540,7 @@
 </ul>
 <p>ref: https://blog.csdn.net/badseeds2000/article/details/105257993/</p>
 <h2 id="_4">其它术语</h2>
+<p>常见于售前、产品中的一些概念和术语。</p>
 <h3 id="_5">溯源</h3>
 <p>指在法律允许的范围内精准采集攻击者的设备指纹、社交信息、位置信息，分析并形成攻击者的画像，在攻击者使用浏览器访问仿真溯源蜜罐时，对攻击者进行追踪溯源，打击网络犯罪，保护资产安全</p>
 <h3 id="utm">UTM</h3>
@@ -542,8 +553,25 @@
 <p>Security Development Lifecycle，安全开发生命周期</p>
 <h3 id="dlp">DLP</h3>
 <p>Data Leakage Prevention，数据泄露防护</p>
+<pre><code>数据防泄漏（DLP）产品做为APT攻击的最后一道防线可以有效防止用户数据资产的泄漏，但是纯粹的DLP解决方案存在敏感信息不易定义的问题，引起较高的误报率和较低的检出率，只能够被动的对数据进行监控和保护，无法做到主动防御。而且DLP对一般人员效果显著，但是对于别有用心的人员防护能力略显不足。
+</code></pre>
+
+<h3 id="ueba">UEBA</h3>
+<p>User And Entity Behavior Analytics，用户实体行为分析</p>
+<pre><code>UEBA更多的是关注人异常行为，行为主体通常是企业内部的员工。
+
+UEBA技术基于海量数据对内部用户的异常行为或内部威胁进行预测，直接以“人”的视角给出判定，抓住“坏人”、主动出击，在数据泄漏之前进行阻止，并为安全分析人员提供可靠的依据。
+</code></pre>
+
+<p>UEBA和DLP联动，可以提高检测的效率和精确度，减少误报。</p>
+<p>UEBA的强项是主动防御，如：对别有人用心的人进行防御。</p>
+<p>如果UEBA能与DLP技术相结合，则能实现更精准的异常行为定位。</p>
 <h3 id="soar">SOAR</h3>
 <p>Security Orchestration, Automation and Response，安全编排自动化响应</p>
+<h3 id="ast">AST</h3>
+<p>在计算机科学中，抽象语法树（Abstract Syntax Tree，AST），或简称语法树（Syntax tree），是源代码语法结构的一种抽象表示。它以树状的形式表现编程语言的语法结构，树上的每个节点都表示源代码中的一种结构。</p>
+<h3 id="ir">IR</h3>
+<p>IR在编译领域，是Intermediate Representation （中间表示） 的缩写。</p>
 <h3 id="ids">IDS</h3>
 <p>IDS是英文“Intrusion Detection Systems”的缩写，中文意思是“入侵检测系统”。专业上讲就是依照一定的安全策略，通过软、硬件，对网络、系统的运行状况进行监视，尽可能发现各种攻击企图、攻击行为或者攻击结果，以保证网络系统资源的机密性、完整性和可用性。</p>
 <p>一个形象的比喻：假如防火墙是一幢大楼的门锁，那么IDS就是这幢大楼里的监视系统。一旦小偷爬窗进入大楼，或内部人员有越界行为，只有实时监视系统才能发现情况并发出警告。</p>
