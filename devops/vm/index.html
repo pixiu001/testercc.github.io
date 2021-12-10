@@ -158,11 +158,16 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/enterprise_sec/">企业安全建设</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_operation/">安全运营</a>
-                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/classified_protection/">等级保护</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_jd/">安全招聘</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Security Product Marketing 安全产品营销</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_product/sec_operation/">安全运营</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_product/sec_requirement/">安全需求</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -379,6 +384,8 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#kvm-virsh">KVM virsh命令</a>
         <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#linuxshell">Linux结合shell批量操作</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#_4">查看虚拟机硬盘信息</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#_5">创建快照</a>
@@ -543,6 +550,20 @@ KVM的开发者选择了比较成熟的开源虚拟化软件QEMU来作为这个�
 <p>ref: <a href="https://www.cnblogs.com/echo1937/p/7138294.html">QEMU,KVM及QEMU-KVM介绍</a></p>
 <h2 id="_3">常用虚拟机操作指令</h2>
 <h3 id="kvm-virsh">KVM virsh命令</h3>
+<h4 id="linuxshell">Linux结合shell批量操作</h4>
+<pre><code class="shell"># 批量 软关机
+for i in $(virsh list --name --autostart); do virsh shutdown $i; done
+
+# 批量 硬关机
+for i in $(virsh list --name --autostart); do virsh destroy $i; done
+
+# 批量 开启
+for i in $(virsh list --name --autostart); do virsh start $i; done
+
+# 批量开启关闭状态的虚拟机
+for i in $(virsh list --name --inactive); do virsh start $i; done
+</code></pre>
+
 <pre><code># 用这条命令来判断qemu的依赖是否完全，如果缺失会报错
 /usr/libexec/qemu-kvm --version 
 

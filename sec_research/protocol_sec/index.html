@@ -153,6 +153,18 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#dns">DNS</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#passive-dns">Passive DNS</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#dns_1">被动DNS是什么？</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dns_2">被动DNS的应用场景有哪些？</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dns_3">被动DNS如何工作？</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ftp">FTP</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -168,11 +180,16 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/enterprise_sec/">企业安全建设</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_operation/">安全运营</a>
-                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/classified_protection/">等级保护</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_jd/">安全招聘</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Security Product Marketing 安全产品营销</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_product/sec_operation/">安全运营</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_product/sec_requirement/">安全需求</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -484,6 +501,8 @@
 </ul>
 <h2 id="_2">学习笔记</h2>
 <h3 id="dns">DNS</h3>
+<p>DNS协议缺陷：在网络中明文传输
+可以加密传输解决明文传输问题，但缺点是速度慢。</p>
 <p><a href="https://www.bilibili.com/video/BV1Bq4y1p7DB">DNS流量分析</a></p>
 <ul>
 <li>
@@ -494,6 +513,41 @@
 </li>
 <li>
 <p>域名服务主要是基于UDP实现，服务器的端口号为 53 。</p>
+</li>
+</ul>
+<h3 id="passive-dns">Passive DNS</h3>
+<h4 id="dns_1">被动DNS是什么？</h4>
+<p>被动DNS是Florian Weimer在2004年提出并发明的一项技术，与DNS查询的方式相反，被动DNS属于反向获取或查询DNS数据信息。</p>
+<p>被动DNS，将全球域名系统中可用的DNS数据信息（包括）重建到中央数据库中，以便研究人员对其进行检索和查询。这些数据信息是从生产网络中获取到的，不仅包含了当前的DNS数据，也包括了历史记录中的一些DNS数据映射。</p>
+<h4 id="dns_2">被动DNS的应用场景有哪些？</h4>
+<p>发明被动DNS技术的初衷，是为了防止网络攻击，事实上，它的确在这方面起到了突出的作用。除此之外，它还被用在其他的应用场景中，例如：</p>
+<ul>
+<li>检测网站钓鱼域名</li>
+<li>阻断垃圾邮件干扰</li>
+<li>识别恶意域名</li>
+<li>提供威胁情报</li>
+<li>检测域名劫持</li>
+<li>品牌保护</li>
+<li>域名DNS历史记录查询</li>
+<li>查询主域名下的所有子域名</li>
+</ul>
+<h4 id="dns_3">被动DNS如何工作？</h4>
+<p>被动DNS基于被动观察的DNS查询和响应。例如，一个互联网用户可能会查询到www.popeyes.com，这是美国一家颇受欢迎的炸鸡餐厅的网站。根据查询发生的位置，被动DNS传感器可以收集到该DNS查询的相关信息，并收集到主机名解析的IP地址，例如13.52.38.70。</p>
+<p>将该信息添加到DNSDB后，DNSDB用户可以在DNSDB中搜索该名称，从而了解该名称解析为哪个IP地址；用户还可以查询IP地址并收集指向该IP的域名。</p>
+<p><img alt="被动DNS工作原理图" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed3/20211210131421.png" /></p>
+<ul>
+<li><a href="https://developer.aliyun.com/article/764940">ref1</a></li>
+<li><a href="https://www.cnblogs.com/nightnine/p/5483607.html">ref2 passivedns 安装指南</a></li>
+</ul>
+<h3 id="ftp">FTP</h3>
+<p>FTP是明文协议，可以用过Wireshark抓包来捕获登录用户名和密码。</p>
+<p><img alt="FTP抓包" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed3/20211119101313.png" /></p>
+<ul>
+<li>
+<p>如果配置的是匿名访问，在windows上访问其实不需要填写用户名和密码；</p>
+</li>
+<li>
+<p>如果通过命令行工具登陆时要求填写，则用户填写anonymous，密码可以随便填或者不填。</p>
 </li>
 </ul>
               

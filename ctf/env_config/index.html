@@ -158,11 +158,16 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/enterprise_sec/">企业安全建设</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_operation/">安全运营</a>
-                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/classified_protection/">等级保护</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_jd/">安全招聘</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Security Product Marketing 安全产品营销</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_product/sec_operation/">安全运营</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_product/sec_requirement/">安全需求</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -227,9 +232,35 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">测试环境搭建</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#linux">Linux安装</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_1">在线工具收集</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#mac">Mac安装</a>
+    <li class="toctree-l2"><a class="reference internal" href="#python">离线方式安装python第三方包</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#crypto">Crypto工具</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#python3crypto">python3安装Crypto模块</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gmpy2">gmpy2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pwntools">pwntools</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pwndbg">pwndbg</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#linux">Linux安装</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mac">Mac安装</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#vulhub">vulhub</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">构建环境</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">删除容器</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -471,7 +502,65 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="pwndbg">pwndbg</h2>
+                <h1 id="ctf">CTF工具安装</h1>
+<h2 id="_1">在线工具收集</h2>
+<ul>
+<li><a href="https://www.bejson.com/convert/ox2str/">16进制到文本字符串</a></li>
+</ul>
+<h2 id="python">离线方式安装python第三方包</h2>
+<ol>
+<li>安装setuptools
+离线安装：安装包上传至Linux系统
+在线安装：wget --no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools-19.6.tar.gz#md5=c607dd118eae682c44ed146367a17e26</li>
+</ol>
+<pre><code class="shell">tar -zxvf setuptools-19.6.tar.gz
+cd setuptools-19.6
+python setup.py build
+python setup.py install
+</code></pre>
+
+<ol>
+<li>安装pip3
+离线安装：安装包上传至Linux系统</li>
+</ol>
+<pre><code class="shell">tar -xf 文件名
+cd 进入解压文件
+
+sudo python3 setup.py install
+</code></pre>
+
+<ol>
+<li>安装其它第三方包</li>
+</ol>
+<pre><code>上传离线安装wheel包
+pip3 install xxx.whl
+</code></pre>
+
+<h2 id="crypto">Crypto工具</h2>
+<h3 id="python3crypto">python3安装Crypto模块</h3>
+<p>建议用python3.7及以上的Python版本
+pip install pycryptodome</p>
+<h3 id="gmpy2">gmpy2</h3>
+<p>Mac OS 直接安装 pip3 install gmpy2 会报错，解决方式如下：</p>
+<p>brew install libmpc
+pip3 install gmpy2</p>
+<p>采用brew进行安装的时候会自动安装mpfr和gmpy</p>
+<p>安装好了后，查了下libmpc mpfr是什么：</p>
+<p>libmpc是一个C库，用于复数的算术，具有任意高的精度和正确的舍入结果。 它将固定精度实数浮点数的IEEE-754标准的原则扩展为复数，为每个操作提供明确的语义。 同时，高精度的操作速度是主要的设计目标。</p>
+<p>MPFR库是一个C库，用于具有正确舍入的多精度浮点计算。</p>
+<h3 id="pwntools">pwntools</h3>
+<p>pip install pwntools -i https://pypi.tuna.tsinghua.edu.cn/simple</p>
+<p>比如这个报错：</p>
+<pre><code>pwnlib.exception.PwnlibException: Could not find 'objcopy' installed for ContextType()
+Try installing binutils for this architecture:
+https://docs.pwntools.com/en/stable/install/binutils.html
+</code></pre>
+
+<p>Mac OS 只这样安装完有问题，还要安装 binutils</p>
+<ul>
+<li><a href="https://www.cnblogs.com/MalwareA/p/13743687.html">其他问题踩坑记录</a></li>
+</ul>
+<h2 id="pwndbg">pwndbg</h2>
 <h3 id="linux">Linux安装</h3>
 <p>参考这里：
 <a href="https://github.com/pwndbg/pwndbg">https://github.com/pwndbg/pwndbg</a></p>
@@ -513,7 +602,7 @@ docker run -it container_id /bin/bash
 </code></pre>
 
 <h2 id="vulhub">vulhub</h2>
-<h3 id="_1">构建环境</h3>
+<h3 id="_2">构建环境</h3>
 <pre><code>git clone git@github.com:vulhub/vulhub.git
 
 # Enter the directory of vulnerability/environment
@@ -526,7 +615,7 @@ docker-compose build
 docker-compose up -d
 </code></pre>
 
-<h3 id="_2">删除容器</h3>
+<h3 id="_3">删除容器</h3>
 <p>进入对应目录
 <code>docker-compose down -v</code></p>
 <p>注意这样只是删除docker容器，如果要删除镜像，还是用通过<code>docker images</code>和<code>docker rmi xxx</code>来删除docker镜像。</p>

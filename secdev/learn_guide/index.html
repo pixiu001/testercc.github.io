@@ -92,6 +92,10 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#openresty">安装OpenResty</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#lua">安装Lua</a>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../term/">相关术语</a>
@@ -180,11 +184,16 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/enterprise_sec/">企业安全建设</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_operation/">安全运营</a>
-                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/classified_protection/">等级保护</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_jd/">安全招聘</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Security Product Marketing 安全产品营销</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_product/sec_operation/">安全运营</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_product/sec_requirement/">安全需求</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -526,6 +535,53 @@ net.ipv4.icmp_echo_ignore_all = 1
 2.使用这个命令使配置修改立刻生效（不用重启）
 sysctl -p
 </code></pre>
+
+<h2 id="openresty">安装OpenResty</h2>
+<p>参考官方文档：http://openresty.org/en/installation.html
+民间参考文件：https://segmentfault.com/a/1190000022730322?utm_source=tag-newest</p>
+<p>Linux推荐编译安装</p>
+<p>MacOS官方推荐brew安装</p>
+<pre><code class="shell">brew install openresty/brew/openresty -v
+</code></pre>
+
+<p>如果提示关于无法下载 raw.githubusercontent.com/xxx，则需要手动增加解析（有全局代理也行）</p>
+<p>原因：域名被DNS污染了，需要重新设置一下本地hosts，域名解析的读取顺序是：浏览器缓存-&gt;本地hosts文件-&gt;外部DNS</p>
+<p>解决：在本地hosts文件加上：199.232.4.133 raw.githubusercontent.com</p>
+<p>MacOS安装好 OpenResty 的提示：</p>
+<pre><code class="shell">==&gt; openresty
+You can find the configuration files for openresty under /usr/local/etc/openresty/.
+
+To have launchd start openresty/brew/openresty now and restart at login:
+  brew services start openresty/brew/openresty
+Or, if you don't want/need a background service you can just run:
+  openresty
+</code></pre>
+
+<h2 id="lua">安装Lua</h2>
+<p>研发需要用到，这里记录下。其实很简单，建议参考官方文档。</p>
+<pre><code class="shell">curl -R -O http://www.lua.org/ftp/lua-5.4.3.tar.gz
+tar zxf lua-5.4.3.tar.gz
+cd lua-5.4.3
+make all test
+</code></pre>
+
+<p>目前支持的平台有：<code>guess aix bsd c89 freebsd generic linux linux-readline macosx mingw posix solaris</code>
+对应平台安装(Mac OS举例)：</p>
+<pre><code class="shell">sudo make macosx
+# 如果不行就执行下面这个
+sudo make macosx install
+</code></pre>
+
+<p>检验安装</p>
+<pre><code class="shell">lua -v
+
+lua xxx.lua
+</code></pre>
+
+<p><img alt="check lua" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed3/20211209133916.png" /></p>
+<p>ref:
+- http://www.lua.org/download.html
+- http://www.lua.org/manual/5.4/readme.html</p>
               
             </div>
           </div>

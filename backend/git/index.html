@@ -158,11 +158,16 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/enterprise_sec/">企业安全建设</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_operation/">安全运营</a>
-                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/classified_protection/">等级保护</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_jd/">安全招聘</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Security Product Marketing 安全产品营销</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_product/sec_operation/">安全运营</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_product/sec_requirement/">安全需求</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -294,6 +299,8 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#_1">在线练习</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">参考阅读</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#git_1">git多账号配置</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#0git-clone">0.git clone</a>
@@ -346,11 +353,11 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#tag_1">推送标签tag到远程仓库</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_2">删除本地和远程标签</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">删除本地和远程标签</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#_3">删除本地标签</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">删除本地标签</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_4">删除远程仓库标签</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">删除远程仓库标签</a>
     </li>
         </ul>
     </li>
@@ -378,7 +385,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#git-repogit-repo">从旧git repo迁移到新git repo</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_5">如果是本地某分支要和远端某分支挂钩，可以这样设置</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">如果是本地某分支要和远端某分支挂钩，可以这样设置</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#github">github同步源仓库代码</a>
     </li>
@@ -388,9 +395,9 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#git-forkpr">Git Fork项目后，向开源项目提交PR流程</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_6">其他</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">其他</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_7">常见错误处理</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_8">常见错误处理</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#git-basherror-could-not-fork-child-process-there-are-no-available-terminals-1">git bash报错Error: Could not fork child process: There are no available terminals (-1).</a>
     </li>
@@ -576,6 +583,10 @@
 <h2 id="_1">在线练习</h2>
 <p><a href="https://learngitbranching.js.org">在线练习使用Git</a></p>
 <p><a href="http://www.ruanyifeng.com/blog/2019/12/git-undo.html">如何撤销Git操作</a></p>
+<h2 id="_2">参考阅读</h2>
+<ul>
+<li><a href="https://github.com/k88hudson/git-flight-rules/blob/master/README_zh-CN.md">Git飞行规则(Flight Rules)</a></li>
+</ul>
 <h2 id="git_1">git多账号配置</h2>
 <p>场景：在同一台机器上配置多个Git帐号（比如：Github，Gitlab，Gitee等）</p>
 <ol>
@@ -804,10 +815,10 @@ git checkout --track origin/abranch       # 将只创建本地'abranch'，而非
 <h3 id="tag_1">推送标签tag到远程仓库</h3>
 <p>git push origin 标签名</p>
 <p>例：git push origin v1.0</p>
-<h3 id="_2">删除本地和远程标签</h3>
-<h4 id="_3">删除本地标签</h4>
+<h3 id="_3">删除本地和远程标签</h3>
+<h4 id="_4">删除本地标签</h4>
 <p>git tag -d 标签名</p>
-<h4 id="_4">删除远程仓库标签</h4>
+<h4 id="_5">删除远程仓库标签</h4>
 <p>git push origin --delete tag 标签名</p>
 <h2 id="9git-revert">9.git revert</h2>
 <p>提交代码以后，你突然意识到这个提交有问题，应该撤销掉，执行如下命令：</p>
@@ -903,7 +914,7 @@ git push -u origin --all
 git push -u origin --tags
 </code></pre>
 
-<h4 id="_5">如果是本地某分支要和远端某分支挂钩，可以这样设置</h4>
+<h4 id="_6">如果是本地某分支要和远端某分支挂钩，可以这样设置</h4>
 <pre><code class="bash"># If you wish to set tracking information for this branch you can do so with:
 
 git branch --set-upstream-to=&lt;remote&gt;/&lt;branch&gt; dev
@@ -976,7 +987,7 @@ $ git push -u origin/master
 当再次本地修改代码提交时，执行步骤6-11即可。
 </code></pre>
 
-<h2 id="_6">其他</h2>
+<h2 id="_7">其他</h2>
 <pre><code>之前大佬教我用-i来做squash。 
 中间态的若干次提交均写上 WIP: *****
 然后做完一个功能， 把 WIP: *** squash掉。  
@@ -985,10 +996,10 @@ $ git push -u origin/master
 P.S.: WIP（work in progress）
 </code></pre>
 
-<h2 id="_7">常见错误处理</h2>
+<h2 id="_8">常见错误处理</h2>
 <h3 id="git-basherror-could-not-fork-child-process-there-are-no-available-terminals-1">git bash报错<code>Error: Could not fork child process: There are no available terminals (-1).</code></h3>
 <p>打开win的cmd或者powershell，执行如下命令：</p>
-<pre><code class="bash">(base) PS C:\Users\xx&gt; tasklist | findstr &quot;git-bash&quot;
+<pre><code>(base) PS C:\Users\xx&gt; tasklist | findstr &quot;git-bash&quot;
 git-bash.exe                 18476 Console                    1      5,796 K
 (base) PS C:\Users\xx&gt; taskkill /pid 18476 -t -f
 成功: 已终止 PID 22436 (属于 PID 18476 子进程)的进程。

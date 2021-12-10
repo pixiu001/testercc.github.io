@@ -158,11 +158,16 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/enterprise_sec/">企业安全建设</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_operation/">安全运营</a>
-                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/classified_protection/">等级保护</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_jd/">安全招聘</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Security Product Marketing 安全产品营销</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_product/sec_operation/">安全运营</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_product/sec_requirement/">安全需求</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -412,6 +417,12 @@
     <li class="toctree-l2"><a class="reference internal" href="#cpucpu">查看逻辑CPU个数（最常用，即通常的CPU核心数）</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#cpu_2">直接查看格式化的cpu信息（自己不想算的话）</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_8">其它参考</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ip">查询IP</a>
     </li>
     </ul>
                     </li>
@@ -671,7 +682,7 @@ lscpu | grep &quot;CPU(s):&quot;
 </code></pre>
 
 <p><img alt="" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210906152205.png" /></p>
-<p>其它参考</p>
+<h3 id="_8">其它参考</h3>
 <pre><code>processor　：系统中逻辑处理核的编号。对于单核处理器，则课认为是其CPU编号，对于多核处理器则可以是物理核、或者使用超线程技术虚拟的逻辑核
 vendor_id　：CPU制造商
 cpu family　：CPU产品系列代号
@@ -694,6 +705,18 @@ bogomips ：在系统内核启动时粗略测算的CPU速度（Million Instructi
 clflush size ：每次刷新缓存的大小单位
 cache_alignment ：缓存地址对齐单位
 address sizes ：可访问地址空间位数
+</code></pre>
+
+<h2 id="ip">查询IP</h2>
+<pre><code>ifconfig -a|grep inet|grep -v 127.0.0.1|grep -v inet6|awk '{print $2}'|tr -d &quot;addr:&quot;
+
+命令解释
+ ifconfig -a  　　　　 和window下执行此命令一样道理，返回本机所有ip信息
+ grep inet               　   截取包含ip的行
+ grep -v 127.0.0.1      去掉本地指向的那行
+ grep -v inet6             去掉包含inet6的行
+ awk { print $2}         $2 表示默认以空格分割的第二组 同理 $1表示第一组​
+ tr -d &quot;addr:               删除&quot;addr:&quot;这个字符串
 </code></pre>
               
             </div>

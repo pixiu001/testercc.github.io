@@ -158,11 +158,16 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/enterprise_sec/">企业安全建设</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_operation/">安全运营</a>
-                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/classified_protection/">等级保护</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_jd/">安全招聘</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Security Product Marketing 安全产品营销</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_product/sec_operation/">安全运营</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_product/sec_requirement/">安全需求</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -206,6 +211,16 @@
     <li class="toctree-l2"><a class="reference internal" href="#ip">查找域名对应的ip地址</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_6">攻击跳板排查</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#webshell">WebShell的获取与检测及清除</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-webshell">第1部分 WebShell的背景和技术</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-webshell">第2部分 WebShell的检测和清除</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-webshell">第3部分 WebShell的防御和加固</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -542,6 +557,7 @@ cat /proc/{pid}  查看进程运行文件位置，删进程运行文件，kill�
 检查定时任务:
 1. contab -e
 2. cat /etc/crontab
+3. contab -l
 
 查看定时任务执行的脚本，删除可疑的脚本和定时任务（一般包括木马源文件）
 可以用scp等下载木马样本文件，上传到微步云沙箱等类似平台检查，确认是否是可疑文件。
@@ -614,6 +630,11 @@ nslookup github.com
 <p>1.脚本检查：常见的启动下取下来，手动和人工分析。分析异常启动项。（注册表，启动目录、计划任务、屏保）</p>
 <p>2.网络检查：哪些进程在访问网络。python打包成exe  打包使用from import方式。（用python psutil模块）</p>
 <p>3.简单方式：看下主机防火墙日志。</p>
+<h2 id="webshell">WebShell的获取与检测及清除</h2>
+<p>ref: https://www.bilibili.com/video/BV1fS4y1R7Da</p>
+<h3 id="1-webshell">第1部分 WebShell的背景和技术</h3>
+<h3 id="2-webshell">第2部分 WebShell的检测和清除</h3>
+<h3 id="3-webshell">第3部分 WebShell的防御和加固</h3>
               
             </div>
           </div>
@@ -624,7 +645,7 @@ nslookup github.com
         <a href="../traceback/" class="btn btn-neutral float-right" title="溯源反制">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../sec_management/sec_jd/" class="btn btn-neutral" title="安全招聘"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../sec_product/sec_requirement/" class="btn btn-neutral" title="安全需求"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -652,7 +673,7 @@ nslookup github.com
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../sec_management/sec_jd/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../sec_product/sec_requirement/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../traceback/" style="color: #fcfcfc">Next &raquo;</a></span>

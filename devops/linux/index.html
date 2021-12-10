@@ -158,11 +158,16 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/enterprise_sec/">企业安全建设</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_operation/">安全运营</a>
-                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/classified_protection/">等级保护</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_jd/">安全招聘</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Security Product Marketing 安全产品营销</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_product/sec_operation/">安全运营</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_product/sec_requirement/">安全需求</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -365,7 +370,29 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Linux</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_1">常见操作问题</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_1">查系统版本号</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#centos">CentOS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ubuntu">Ubuntu</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#kali">Kali</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#win10md5">Win10文件md5校验</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">服务部署</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#centos-76ftp">CentOS 7.6安装FTP服务器</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#web">给部署web服务增加证书</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#crontab">crontab执行设置参考</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">常见操作问题</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#-bash-setupsh-permission-denied">-bash: ./setup.sh: Permission denied</a>
     </li>
@@ -381,13 +408,13 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#usrlocalbinusrlocalsbin">/usr/local/bin与/usr/local/sbin的区别</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_2">网卡相关设置</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">网卡相关设置</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#grep">grep命令</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#grep_1">使用grep查找某目录下包含关键字内容的文件</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_3">排除某关键词的搜索结果</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">排除某关键词的搜索结果</a>
     </li>
         </ul>
     </li>
@@ -403,7 +430,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_4">常识问题</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">常识问题</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#linuxusr">Linux的/usr目录的全称</a>
     </li>
@@ -411,13 +438,13 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#centos-8-dnf">CentOS 8 dnf包管理</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#_5">查看最小化安装软件包（但是记得要是初始安装后的镜像）</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_7">查看最小化安装软件包（但是记得要是初始安装后的镜像）</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_6">导出已安装的列表</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">导出已安装的列表</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_7">已安装包列表</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_9">已安装包列表</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_8">查找与安装软件包</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_10">查找与安装软件包</a>
     </li>
         </ul>
     </li>
@@ -526,7 +553,149 @@
             <div class="section">
               
                 <h1 id="linux">Linux</h1>
-<h2 id="_1">常见操作问题</h2>
+<h2 id="_1">查系统版本号</h2>
+<p>查内核版本: <code>uname -a</code></p>
+<h3 id="centos">CentOS</h3>
+<p>RedHat系</p>
+<pre><code class="shell"># cat /etc/redhat-release 
+CentOS Linux release 7.6.1810 (Core)
+</code></pre>
+
+<h3 id="ubuntu">Ubuntu</h3>
+<p>Debian系</p>
+<pre><code class="shell">~$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 16.04.7 LTS
+Release:    16.04
+Codename:   xenial
+
+</code></pre>
+
+<h3 id="kali">Kali</h3>
+<p>Debian系</p>
+<pre><code class="shell">└─# lsb_release -a
+No LSB modules are available.
+Distributor ID: Kali
+Description:    Kali GNU/Linux Rolling
+Release:    2021.2
+Codename:   kali-rolling
+</code></pre>
+
+<h2 id="win10md5">Win10文件md5校验</h2>
+<pre><code class="shell">certutil -hashfile .\CentOS-7-x86_64-Minimal-1810.iso MD5
+
+MD5 的 .\CentOS-7-x86_64-Minimal-1810.iso 哈希:
+bd43d41e01c2a46b3cb23eb9139dce4b
+CertUtil: -hashfile 命令成功完成。
+</code></pre>
+
+<h2 id="_2">服务部署</h2>
+<h3 id="centos-76ftp">CentOS 7.6安装FTP服务器</h3>
+<ol>
+<li>
+<p>安装包</p>
+</li>
+<li>
+<p>setup.sh的内容如下(为匿名用户登录FTP的配置脚本)：</p>
+</li>
+</ol>
+<pre><code class="shell"># vsftpd
+rpm -ih vsftpd-3.0.2-29.el7_9.x86_64.rpm
+vsftpd -v
+
+install -d /opt/ftp/pub
+chmod -R 777 /opt/ftp/pub
+
+sed -i '1i\anon_root=/opt/ftp' /etc/vsftpd/vsftpd.conf
+sed -i '2i\anon_upload_enable=YES' /etc/vsftpd/vsftpd.conf
+sed -i '3i\anon_mkdir_write_enable=YES' /etc/vsftpd/vsftpd.conf
+sed -i '4i\anon_other_write_enable=YES' /etc/vsftpd/vsftpd.conf
+sed -i '5i\anon_umask=022' /etc/vsftpd/vsftpd.conf
+
+systemctl enable vsftpd
+systemctl start vsftpd
+systemctl status vsftpd
+ss -ntl
+
+# firewall
+firewall-cmd --permanent --zone=public --add-service=ftp
+firewall-cmd --reload
+firewall-cmd --list-all
+
+# selinux
+sed -i 's/SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
+setenforce 0
+getenforce
+</code></pre>
+
+<ol>
+<li>执行安装方式</li>
+</ol>
+<pre><code>tar -zxvf vsftpd.tgz
+cd vsftpd
+sh setup.sh
+</code></pre>
+
+<p><a href="https://www.cnblogs.com/renshengdezheli/p/14169899.html?ivk_sa=1024320u#%E4%B8%89%E9%A1%B9%E7%9B%AE%E4%B8%80%E6%90%AD%E5%BB%BA%E4%B8%80%E5%8F%B0%E6%89%80%E6%9C%89%E4%BA%BA%E9%83%BD%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE%E7%9A%84%E9%80%9A%E7%94%A8ftp%E6%9C%8D%E5%8A%A1%E5%99%A8">更多配置参考</a></p>
+<h3 id="web">给部署web服务增加证书</h3>
+<pre><code class="shell"># 生成根密钥，访问密码123456 （写abcdef也行，随意）
+openssl genrsa -des3 -out root.key 2048
+
+# 创建根证书申请文件root.csr
+openssl req -new -key root.key -out root.csr
+
+# 创建根证书root.crt
+openssl x509 -req -days 3650 -sha1 -extensions v3_ca -signkey root.key -in root.csr -out root.crt
+
+-----------------------------------------------------------------
+# 创建服务器证书密钥dtd.key
+openssl genrsa -out dtd.key 2048
+
+# 创建服务器证书的申请文件dtd.csr
+openssl req -new -key dtd.key -out dtd.csr
+
+# 创建服务器证书dtd.crt
+openssl x509 -req -days 3650 -sha1 -extensions v3_req -CA root.crt -CAkey root.key -CAserial root.srl -CAcreateserial -in dtd.csr -out dtd.crt
+
+
+=========================
+self use
+# 创建服务器证书密钥 tmp.key
+openssl genrsa -out tmp.key 2048
+
+# 创建服务器证书的申请文件tmp.csr
+openssl req -new -key tmp.key -out tmp.csr
+
+# 创建服务器证书tmp.crt
+openssl x509 -req -days 3650 -sha1 -extensions v3_req -CA root.crt -CAkey root.key -CAserial root.srl -CAcreateserial -in tmp.csr -out tmp.crt
+</code></pre>
+
+<h3 id="crontab">crontab执行设置参考</h3>
+<p>常规使用：</p>
+<pre><code class="shell">编辑当前用户的crontab
+crontab -e
+
+写入（举例 从0开始每3小时执行一次）：
+0 */3 * * * nohup /usr/bin/python3 /opt/kbdtd_log_proxy/ext_clear_ftp_log.py &gt;&gt; /opt/kbdtd_log_proxy/nohup_clear_ftp_log.out 2&gt;&amp;1 &amp;
+保存后退出
+
+检查配置：
+crontab -l
+
+等待脚本按照定时开始执行
+</code></pre>
+
+<p>每隔多少分钟，每隔多少小时，每天/每周/每月/每年的crontab设置总结</p>
+<pre><code class="shell">每五分钟执行      */5 * * * *
+每五小时执行      0 */5 * * *
+每天执行          0 0 * * *
+每周执行          0 0 * * 0
+每月执行          0 0 1 * *
+每年执行          0 0 1 1 *
+</code></pre>
+
+<h2 id="_3">常见操作问题</h2>
 <h3 id="-bash-setupsh-permission-denied"><code>-bash: ./setup.sh: Permission denied</code></h3>
 <p>在linux下用<code>./</code>执行sh文件时提示下面信息：
 <code>-bash: ./xx.sh: Permission denied</code></p>
@@ -573,7 +742,7 @@
 <li>/usr/local/bin：    存放所有用户都可用的第三方软件程序,如mysql</li>
 <li>/usr/local/sbin：   存放超级用户才能使用的第三方软件,如nginx</li>
 </ul>
-<h3 id="_2">网卡相关设置</h3>
+<h3 id="_4">网卡相关设置</h3>
 <p>在Linux或CentOS中，可以通过如下命令获取新的网卡uuid信息：</p>
 <pre><code class="shell">[root@ligle2 ~]# uuidgen ensXXX    # ensXXX 可通过 ip a 获取
 07d07031-eb0f-4691-8606-befb46645222
@@ -588,7 +757,7 @@
 </code></pre>
 
 <p><img alt="grep_r" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210507103248.png" /></p>
-<h4 id="_3">排除某关键词的搜索结果</h4>
+<h4 id="_5">排除某关键词的搜索结果</h4>
 <p>grep -v "keyword"</p>
 <p>e.g. 显示当前目录下除.sh文件外的所有文件</p>
 <pre><code class="bash">ls -al | grep -v &quot;.sh&quot;
@@ -635,16 +804,24 @@ scp -r mfc@10.0.4.149:/tmp/test/ /tmp/
 </code></pre>
 
 <h3 id="tar">tar命令</h3>
-<pre><code class="bash"># 压缩
+<pre><code class="shell"># 压缩
+
+tar打包压缩目录:
+
+tar -zcf xxx.tar.gz dir_name
+
+e.g.:
+
+tar -zcf ic_web1_setup.tar.gz ic_web1_setup
+
+
 # z调用gzip，tar本身是打包，z才是压缩
 # c创建新文件，v显示过程，f输出文件
 # C切换工作目录，相当于cd
 # p保持权限，--remove-files删除源文件
 # f指定包的文件名
 # m 不用时间戳检查，而是使用新的系统时间进行解包，解包后的文件时间戳将是新的系统时间而不是原文件的时间戳了
--m, –touch, –modification-time【don’t extract file modified time】
-(针对问题： 在A机器上用tar压缩的文件，在B机器上进行解包的时候，如果两个机器的时间不一致，如B机器的时间落后A机器的时间，这时就会出现time stamp XXX in the future的问题)
-
+# -m, –touch, –modification-time【don’t extract file modified time】(针对问题： 在A机器上用tar压缩的文件，在B机器上进行解包的时候，如果两个机器的时间不一致，如B机器的时间落后A机器的时间，这时就会出现time stamp XXX in the future的问题)
 
 # 解压.tar文件
 
@@ -685,11 +862,13 @@ tar -zcvf backup.tgz log_backup
 tar -zxvf kafka_2.11-1.1.1.tgz
 tar -zxvf mnu.tgz
 
+# 解压文件
 tar -zxvf mimic_h3c_2019.tgz
-
+tar -zxvf kbdtd_log_proxy.tgz
 
 # 查看压缩包内容
 tar -tf xxx.tgz
+
 
 
 # 口令压缩
@@ -760,7 +939,7 @@ ls -l /tmp/whl
 # vim /etc/ssh/sshd_config
 </code></pre>
 
-<h2 id="_4">常识问题</h2>
+<h2 id="_6">常识问题</h2>
 <h3 id="linuxusr">Linux的/usr目录的全称</h3>
 <p>usr被称为是Unix System Resource，即Unix系统资源的缩写。/usr 是系统核心所在，包含了所有的共享文件。
 它是 unix 系统中最重要的目录之一，涵盖了二进制文件，各种文档，各种头文件，还有各种库文件；还有诸多程序，例如 ftp，telnet 等等。</p>
@@ -781,13 +960,13 @@ ls -l /tmp/whl
 
 1）把要启动的程序配置成自定义的系统服务
 
-2）在/etc/rc.local脚本文件中编写启动程序的脚本
+2）在/etc/rc.local脚本文件中编写启动程序的脚本(注：这是一个软链接)
 </code></pre>
 
 <h3 id="centos-8-dnf">CentOS 8 dnf包管理</h3>
-<h4 id="_5">查看最小化安装软件包（但是记得要是初始安装后的镜像）</h4>
+<h4 id="_7">查看最小化安装软件包（但是记得要是初始安装后的镜像）</h4>
 <p><code>dnf list --all &gt; list.txt</code></p>
-<h4 id="_6">导出已安装的列表</h4>
+<h4 id="_8">导出已安装的列表</h4>
 <p><code>dnf list installed --all &gt; dnf_install_list.txt</code></p>
 <p>e.g.:</p>
 <pre><code>cd /tmp
@@ -795,11 +974,11 @@ dnf list installed --all &gt; dnf_install_list.txt
 
 </code></pre>
 
-<h4 id="_7">已安装包列表</h4>
+<h4 id="_9">已安装包列表</h4>
 <p><code>dnf list installed</code></p>
 <p>or</p>
 <p><code>dnf list available</code></p>
-<h4 id="_8">查找与安装软件包</h4>
+<h4 id="_10">查找与安装软件包</h4>
 <pre><code class="bash">dnf search httpd
 安装httpd包命令：
 

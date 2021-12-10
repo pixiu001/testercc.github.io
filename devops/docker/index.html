@@ -158,11 +158,16 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/enterprise_sec/">企业安全建设</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_operation/">安全运营</a>
-                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/classified_protection/">等级保护</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_management/sec_jd/">安全招聘</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Security Product Marketing 安全产品营销</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_product/sec_operation/">安全运营</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_product/sec_requirement/">安全需求</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Incident Response 应急响应</span></p>
@@ -386,6 +391,14 @@
     <li class="toctree-l3"><a class="reference internal" href="#docker_4">上传宿主机文件到 docker容器中</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#docker_5">下载docker容器中的文件到 宿主机</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">设置容器自启动</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">容器未启动时</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">容器启动时</a>
+    </li>
+        </ul>
     </li>
         </ul>
     </li>
@@ -625,9 +638,42 @@ services:
 <pre><code>docker cp b6a105b4f51f:/var/www/ /tmp/tp/
 </code></pre>
 
+<h3 id="_2">设置容器自启动</h3>
+<h4 id="_3">容器未启动时</h4>
+<pre><code class="shell">docker run --restart=always
+</code></pre>
+
+<h4 id="_4">容器启动时</h4>
+<p>--restart参数介绍</p>
+<pre><code>--restart参数=
+    no
+        默认策略，在容器退出时不重启容器
+    on-failure
+        在容器非正常退出时（退出状态非0），才会重启容器
+    on-failure:3
+        在容器非正常退出时重启容器，最多重启3次
+    always
+        在容器退出时总是重启容器
+
+#开机自启
+    unless-stopped
+        在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器
+
+# 一般推荐使用always参数
+    --restart=always
+</code></pre>
+
+<pre><code class="shell">docker update --restart=always &lt;CONTAINER ID&gt;
+
+# 取消容器自启动
+docker update --restart=no &lt;CONTAINER ID&gt;
+</code></pre>
+
 <h2 id="docker_6">使用Docker构建环境</h2>
-<p><a href="https://www.runoob.com/docker/docker-dockerfile.html">Dockerfile -- runoob.com</a>
-<a href="https://blog.csdn.net/sunt2018/article/details/85263432">ref</a></p>
+<ul>
+<li><a href="https://www.runoob.com/docker/docker-dockerfile.html">Dockerfile -- runoob.com</a></li>
+<li><a href="https://blog.csdn.net/sunt2018/article/details/85263432">ref</a></li>
+</ul>
 <h3 id="docker-install-mysql">Docker install MySQL</h3>
 <h3 id="docker-install-redis">Docker install Redis</h3>
 <h3 id="docker-install-postgre">Docker install Postgre</h3>
