@@ -92,6 +92,14 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_4">其它术语</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#mdz">MDZ</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1_1">1.定义</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2_1">2.作用</a>
+    </li>
+        </ul>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#_5">溯源</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#cyber-range">Cyber Range</a>
@@ -128,6 +136,10 @@
     </li>
         </ul>
     </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#idps">IDPS</a>
+        <ul>
     <li class="toctree-l3"><a class="reference internal" href="#_6">安全域</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#dmz">DMZ</a>
@@ -188,6 +200,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/ai_sec/">人工智能安全(AISec)</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/sample_analysis/">样本分析</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/threat_intelligence/">威胁情报</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/apt/">APT</a>
                     </li>
@@ -554,6 +568,14 @@
 <p>ref: https://blog.csdn.net/badseeds2000/article/details/105257993/</p>
 <h2 id="_4">其它术语</h2>
 <p>常见于售前、产品中的一些概念和术语。</p>
+<h3 id="mdz">MDZ</h3>
+<h4 id="1_1">1.定义</h4>
+<p>英文全名“Demilitarized Zone”，中文含义是“隔离区”，也称为“非军事区”。在安全领域的具体含义是“内外网防火墙之间的区域”。</p>
+<h4 id="2_1">2.作用</h4>
+<p>DMZ区是一个缓冲区，在DMZ区存放着一些公共服务器，比如Web、E-mail等放DMZ区等。</p>
+<p>用户要从外网访问到的服务，理论上都可以放到DMZ区。</p>
+<p>内网可以单向访问DMZ区、外网也可以单向访问DMZ区。</p>
+<p>ref: https://www.jianshu.com/p/8580587c3201</p>
 <h3 id="_5">溯源</h3>
 <p>指在法律允许的范围内精准采集攻击者的设备指纹、社交信息、位置信息，分析并形成攻击者的画像，在攻击者使用浏览器访问仿真溯源蜜罐时，对攻击者进行追踪溯源，打击网络犯罪，保护资产安全</p>
 <h3 id="cyber-range">Cyber Range</h3>
@@ -608,6 +630,8 @@ IPS是位于防火墙和网络的设备之间的设备。如果检测到攻击�
 </code></pre>
 
 <p>ref: https://zhuanlan.zhihu.com/p/96942352</p>
+<h2 id="idps">IDPS</h2>
+<p>Intrusion Detection and Prevention Systems，入侵检测与防御系统</p>
 <h3 id="_6">安全域</h3>
 <p>安全域存在的原因和目的是将一组安全等级相同的划入同一个安全域，最小权限开放对其他安全域的NACL（网络访问控制策略），使得安全域内这组暴露的风险最小化，在发生攻击或蠕虫等侵害时能将威胁最大化地隔离，减小域外事件对域内系统的影响，也是纵深防御架构最重要的单位体</p>
 <h3 id="dmz">DMZ</h3>

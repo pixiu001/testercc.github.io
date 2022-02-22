@@ -121,6 +121,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../sample_analysis/">样本分析</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../threat_intelligence/">威胁情报</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../apt/">APT</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../code_audit/">代码审计</a>
@@ -144,6 +146,42 @@
     <li class="toctree-l3"><a class="reference internal" href="#3">3.其他工控协议</a>
     </li>
         </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">三、威胁建模</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">安全故障分析模型（物理侧）</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#fat">故障树分析法（FAT）</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eta">事件树分析法（ETA）</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#stamp">STAMP</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">网络安全威胁模型（信息侧）</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1kill-chain">1.Kill Chain工控模型</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2attck">2.ATT&amp;CK工控模型</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">四、威胁模式分析</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_8">五、安全防御</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_9">六、风险评估</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_10">七、工控安全漏洞案例分析</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_11">八、调查取证</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_12">机构工控安全事件分析报告</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ref">REF</a>
     </li>
     </ul>
                     </li>
@@ -510,21 +548,44 @@ MES:制造执行管理系统</p>
 <p>属于第7层的协议,用于西门子设备之间进行交换数据,通过TSAP,可加载MPI,DP,以太网等不同物理结构总线或网络上,PLC一般可以通过封装好的通讯功能块实现。</p>
 <h3 id="3">3.其他工控协议</h3>
 <p>IEC 60870-5-104、EtherNet/IP、Tridium Niagara Fox、Crimson V3、OMRON FINS、PCWorx、ProConOs、MELSEC-Q。按需求自行查阅资料。</p>
-<h1 id="_4">工控安全漏洞分析</h1>
+<h2 id="_4">三、威胁建模</h2>
+<h3 id="_5">安全故障分析模型（物理侧）</h3>
+<p>现有的分析评价方法主要包括：故障树分析法、事件树分析法、可靠性框图法、马尔可夫分析法、GO-FLOW法、多层流模型、贝叶斯网络等。</p>
+<h4 id="fat">故障树分析法（FAT）</h4>
+<p>Fault Tree Analysis</p>
+<h4 id="eta">事件树分析法（ETA）</h4>
+<p>Event Tree Analysis</p>
+<h4 id="stamp">STAMP</h4>
+<p>System-Theoretic Accident Model and Process，系统理论模型和流程分析法</p>
+<h3 id="_6">网络安全威胁模型（信息侧）</h3>
+<p>常见的威胁建模方法：</p>
+<p>工控领域主流威胁模型：Kill Chain工控模型、ATT&amp;CK工控模型。</p>
+<h4 id="1kill-chain">1.Kill Chain工控模型</h4>
+<h4 id="2attck">2.ATT&amp;CK工控模型</h4>
+<h2 id="_7">四、威胁模式分析</h2>
+<p>主要分析要素：威胁目标对象、威胁向量、威胁影响。</p>
+<h2 id="_8">五、安全防御</h2>
+<p><img alt="工业互联网安全实施框架" src="![](https://cdn.jsdelivr.net/gh/TesterCC/pic_bed3/20220222142647.png)" /></p>
+<h2 id="_9">六、风险评估</h2>
+<h2 id="_10">七、工控安全漏洞案例分析</h2>
+<ul>
+<li>震网攻击：通过改变PLC控制器运行命令，控制离心机异常运行，同时伪造离心机的运行数据，导致SCADA系统的故障诊断功能无法正常运行，最终损坏离心机。</li>
+<li>BlackEnergy3：在通过控制断路器切断输电线路的同时，使用DoS攻击电力服务系统。</li>
+</ul>
+<h2 id="_11">八、调查取证</h2>
+<h2 id="_12">机构工控安全事件分析报告</h2>
 <h2 id="ref">REF</h2>
 <ul>
+<li>工业互联网安全：架构与防御</li>
 <li>工业控制网络安全技术与实践</li>
 <li>工业互联网安全百问百答（科普向）</li>
 <li><a href="https://plcscan.org/">灯塔实验室</a></li>
 <li><a href="https://www.yuque.com/tidesec/ics/readme">工控安全Wiki - Tide安全团队</a></li>
 <li><a href="https://www.anquanke.com/member/141205">工控安全入门系列 1-10</a></li>
 <li>公众号：湘雪尘奕（视频挺多的，入门友好，也有后续深入的内容）</li>
-<li>
-<p><a href="https://www.zhihu.com/question/353268896">如何入门工控安全</a></p>
-</li>
-<li>
-<p><a href="http://blog.nsfocus.net/ics-safety-monitoring-system/">基于智能学习与业务感知的工控安全监测体系建设</a></p>
-</li>
+<li><a href="https://www.zhihu.com/question/353268896">如何入门工控安全</a></li>
+<li><a href="http://blog.nsfocus.net/ics-safety-monitoring-system/">基于智能学习与业务感知的工控安全监测体系建设</a></li>
+<li><a href="https://blog.csdn.net/qq_40229814/article/details/119762675">一种针对工控系统攻击的远程检测方案（工控系统安全）</a></li>
 </ul>
               
             </div>

@@ -121,6 +121,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/sample_analysis/">样本分析</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/threat_intelligence/">威胁情报</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/apt/">APT</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
@@ -406,9 +408,11 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#docker-install-mysql">Docker install MySQL</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#docker-install-mongo">Docker install Mongo</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#docker-install-redis">Docker install Redis</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#docker-install-postgre">Docker install Postgre</a>
+    <li class="toctree-l3"><a class="reference internal" href="#docker-install-php">Docker install PHP</a>
     </li>
         </ul>
     </li>
@@ -675,8 +679,63 @@ docker update --restart=no &lt;CONTAINER ID&gt;
 <li><a href="https://blog.csdn.net/sunt2018/article/details/85263432">ref</a></li>
 </ul>
 <h3 id="docker-install-mysql">Docker install MySQL</h3>
+<pre><code class="shell"># get docker image
+docker pull mysql:5.7.36
+
+# launch docker container
+docker run -itd --name mysql-5.7.36 -p 3307:3306 -e MYSQL_ROOT_PASSWORD=abc123 mysql:5.7.36
+# 参数说明：
+# -p 3307:3306 ：映射宿主机的 3307 端口到容器服务的 3306 端口，外部主机可以直接通过 宿主机ip:3306 访问到 MySQL 的服务。
+# MYSQL_ROOT_PASSWORD=abc123：设置 MySQL 服务 root 用户的密码。
+
+# test database connection
+mysql -h 127.0.0.1 -P 3307 -uroot -p
+# 参数说明
+# -h 指定主机
+# -P 指定端口
+# -u 指定登录用户
+# -p 连接时使用密码
+</code></pre>
+
+<p>ref: https://www.runoob.com/docker/docker-install-mysql.html</p>
+<h3 id="docker-install-mongo">Docker install Mongo</h3>
+<pre><code class="shell"># get docker image
+docker pull mongo
+# or
+docker pull mongo:4.4.11-rc0
+
+# launch docker container
+docker run -itd --name mongo -p 27017:27017 mongo
+
+# enter container
+docker exec -it mongo
+</code></pre>
+
+<p>ref: https://www.runoob.com/docker/docker-install-mongodb.html</p>
 <h3 id="docker-install-redis">Docker install Redis</h3>
-<h3 id="docker-install-postgre">Docker install Postgre</h3>
+<pre><code class="shell"># get docker image
+docker pull redis
+# or
+docker pull redis:5.0
+
+# launch docker container
+docker run -itd --name redis -p 6379:6379 redis
+# 参数说明：
+# -p hostPort:containerPort
+# -p 6379:6379：宿主机的 6379 端口到容器服务的 6379 端口到。外部可以直接通过宿主机ip:6379 访问到 Redis 的服务。
+
+# enter container  通过 redis-cli 连接测试使用 redis 服务。
+docker exec -it redis /bin/bash
+# or
+docker exec -it 5ecd60 /bin/bash
+</code></pre>
+
+<h3 id="docker-install-php">Docker install PHP</h3>
+<p>Build on MacOS</p>
+<pre><code class="shell">todo
+</code></pre>
+
+<p>ref: https://www.runoob.com/docker/docker-install-php.html</p>
               
             </div>
           </div>

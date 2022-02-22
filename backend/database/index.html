@@ -121,6 +121,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/sample_analysis/">样本分析</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/threat_intelligence/">威胁情报</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/apt/">APT</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
@@ -581,6 +583,19 @@ SELECT * FROM mysql.`innodb_index_stats` a WHERE a.`database_name` = '数据库�
 
 </code></pre>
 
+<ul>
+<li>导出指定数据库和其中的表信息</li>
+</ul>
+<pre><code class="shell">mysqldump -u root -p blog_service &gt; blog_service.sql
+</code></pre>
+
+<ul>
+<li>导入 xxx.sql 到数据库中</li>
+</ul>
+<pre><code class="shell">mysql -u blog_service &lt; blog_service.sql
+</code></pre>
+
+<p>当然，也可以用Navicat等图形化工具导入xxx.sql文件。但要注意Navicat导入数据库前要先创建一个同名空数据库，然后再运行sql文件。</p>
 <h2 id="redis">Redis</h2>
 <p>默认端口：<code>6379</code></p>
 <p>能系统安装就不要自己手动装了。</p>

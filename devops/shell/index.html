@@ -121,6 +121,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/sample_analysis/">样本分析</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/threat_intelligence/">威胁情报</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/apt/">APT</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
@@ -378,6 +380,8 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#tcp">查看并发请求数和TCP状态</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#kill">批量kill掉包含某个关键字的进程</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#_2">显示目录下所有一级目录和文件</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_3">批量查找某个目下文件的包含的内容</a>
@@ -523,6 +527,30 @@
                 <h1 id="_1">常用命令</h1>
 <h2 id="tcp">查看并发请求数和TCP状态</h2>
 <pre><code class="bash">netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
+</code></pre>
+
+<h2 id="kill">批量kill掉包含某个关键字的进程</h2>
+<pre><code class="bash">搜索关键词为 sign_v 
+
+ps -ef | grep sign_v | grep -v grep | cut -c 9-15 | xargs kill -9
+
+下面将这条命令作一下简单说明：
+
+管道符&quot;|&quot;用来隔开两个命令，管道符左边命令的输出会作为管道符右边命令的输入。
+
+&quot;ps -ef&quot; 是linux里查看所有进程的命令。这时检索出的进程将作为下一条命令&quot;grep sign_v&quot;的输入。
+
+&quot;grep sign_v&quot; 的输出结果是，所有含有关键字&quot;sign_v&quot;的进程。
+
+&quot;grep -v grep&quot; 是在列出的进程中去除含有关键字&quot;grep&quot;的进程。
+
+&quot;cut -c 9-15&quot; 是截取输入行的第9个字符到第15个字符，而这正好是进程号PID。
+
+&quot;xargs kill -9&quot; 中的 xargs 命令是用来把前面命令的输出结果（PID）作为&quot;kill -9&quot;命令的参数，并执行该命令。&quot;kill -9&quot;会强行杀掉指定进程。
+</code></pre>
+
+<pre><code class="bash">搜索关键词为 sign_v 
+ps x | grep sign_v | grep -v grep | awk '{print $1}' | xargs kill -9
 </code></pre>
 
 <h2 id="_2">显示目录下所有一级目录和文件</h2>

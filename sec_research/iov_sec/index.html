@@ -121,6 +121,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../sample_analysis/">样本分析</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../threat_intelligence/">威胁情报</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../apt/">APT</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../code_audit/">代码审计</a>
@@ -151,9 +153,15 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">案例</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">自动驾驶</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#adas">ADAS</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_4">报告</a>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">案例</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">报告</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#ref">REF</a>
     </li>
@@ -493,6 +501,8 @@
             <div class="section">
               
                 <h1 id="iovinternet-of-vehicles">车联网 IoV(Internet of Vehicles)</h1>
+<p>有时候会表述为automotive cybersecurity，即汽车网络安全。</p>
+<p>除此之外，自动驾驶安全目前备受关注。</p>
 <h2 id="_1">术语</h2>
 <h3 id="t-box">T-BOX</h3>
 <p>汽车tbox是由电源转换电路、OBD、MCU、GPRS、GPS以及传感器构成的车辆信息和定位传输系统。</p>
@@ -505,18 +515,24 @@
 <p>JTT808协议全称为《道路运输车辆卫星定位系统终端通讯协议及数据格式》（交通部先后发布过JT/T 808-2019、JT/T 808-2019版本），广泛应用在公路运输、水路运输、综合运输、交通工程和信息工程等方面的车辆终端和车辆监管平台之间。该协议规定了道路运输车辆卫星定位系统车载终端与车联网监管/监控平台之间的通信协议与数据格式，包括协议基础、通信连接、消息处理、协议分类与说明及数据格式。</p>
 <p>对JTT808协议的详细分析可以参照：《国内在线车联网平台安全威胁分析报告》</p>
 <p>JTT808协议通过TCP或UDP协议封装传输</p>
-<h2 id="_3">案例</h2>
+<h2 id="_3">自动驾驶</h2>
+<h3 id="adas">ADAS</h3>
+<p>Advanced Driving Assistance System，即高级驾驶辅助系统. 包括了紧急制动系统、车道保持系统、驾驶员监测系统等功能。ADAS通过安装在车上的各式各样传感器收集数据，并结合地图数据进行系统计算，从而预先为驾驶者判断可能发生的危险，保证行车的安全性。</p>
+<h2 id="_4">案例</h2>
 <ul>
 <li><a href="https://mp.weixin.qq.com/s/JNQIySegvXJ7QMFTe7cmJg">一次针对车联网平台恶意攻击行为的溯源分析</a></li>
 </ul>
-<h2 id="_4">报告</h2>
+<h2 id="_5">报告</h2>
 <ul>
 <li><a href="https://blog.zhifeng.io/china-internet-of-vehicles-security-threat-analysis-report/">国内在线车联网平台（道路运输车辆卫星定位系统）安全威胁分析报告</a></li>
+<li><a href="https://paper.seebug.org/1736/">自动驾驶欺骗之幻影攻击</a></li>
 </ul>
 <h2 id="ref">REF</h2>
 <ul>
 <li><a href="https://iotsec.io/#/dashboard">灯塔实验室</a></li>
 <li><a href="https://blog.zhifeng.io/">知风</a></li>
+<li>Hacking.Connected.Cars.Tactics.Techniques.and.Procedures 2020年出版的，有翻译版《车联网渗透测试》</li>
+<li>The Car Hacker's Handbook 汽车黑客大曝光 2016年</li>
 </ul>
               
             </div>
