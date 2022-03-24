@@ -127,6 +127,8 @@
     <ul class="current">
     </ul>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../att%26ck/">ATT&CK</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../code_audit/">代码审计</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../black_market/">黑产研究</a>
@@ -475,10 +477,28 @@
             <div class="section">
               
                 <h2 id="aptadvanced-persistent-threat">APT(Advanced Persistent Threat)</h2>
-<p>高级可持续威胁攻击，简称APT攻击，也称为定向威胁攻击，利用先进的攻击手段对特定对象展开持续有效的攻击活动。这种攻击活动具有极强的隐蔽性和针对性,通常会运用受感染的各种介质、供应链和社会工程学等多种手段实施先进的、持久的且有效的威胁和攻击。</p>
-<h2 id="_1">学习方式</h2>
-<p>暂定未阅读国内外安全机构的APT分析报告</p>
-<h2 id="_2">术语</h2>
+<p>高级可持续威胁攻击，简称APT攻击，利用先进的攻击手段对特定对象展开持续有效的攻击活动。这种攻击活动具有极强的隐蔽性和针对性,通常会运用受感染的各种介质、供应链和社会工程学等多种手段实施先进的、持久的且有效的威胁和攻击。</p>
+<h2 id="apt-report">APT Report</h2>
+<p>一般来说，学习APT最常见方式是认真研读国内外安全机构的针对各类APT组织和攻击的分析报告。</p>
+<table>
+<thead>
+<tr>
+<th>报告地址</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://decoded.avast.io/luigicamastra/operation-dragon-castling-apt-group-targeting-betting-companies/">Operation Dragon Castling</a></td>
+<td>利用CVE-2022-24934，针对东南亚菠菜公司</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_1">术语</h2>
 <h3 id="cno">CNO</h3>
 <p>Computer network operations，是指计算机和网络行动（具有军事和民用双重用途的广义术语）。</p>
 <h3 id="cnd">CND</h3>
@@ -488,12 +508,16 @@
 <h3 id="cne">CNE</h3>
 <p>computer network exploitation</p>
 <h2 id="apt">常用APT分析模型</h2>
-<h3 id="1pets">1.PETS</h3>
+<h3 id="1ptes">1.PTES</h3>
+<p>Penetartion Testing Execution Standard，中文名称为<code>渗透测试执行标准</code>，目标是为企业组织和安全服务商设计并制定渗透测试工作的通用描述准则，一般包括<strong>7个标准动作</strong>，即<code>前期交互、情报搜集、威胁建模、漏洞分析、渗透利用、后渗透、报告输出</code>。
+早年流行过，目前已相对过时。</p>
 <h3 id="2kill-chain">2.Kill Chain模型</h3>
-<p>Kill Chain将攻击划分为7个阶段：侦查跟踪，武器构建，载荷投递，漏洞利用，安装植入，命令控制，目标达成。</p>
+<p>Kill Chain将攻击划分为7个阶段：侦查跟踪，武器构建，载荷投递，漏洞利用，安装植入，命令控制（C2），目标达成。</p>
 <h3 id="3attck">3.ATT&amp;CK模型</h3>
+<p>Adversarial Tactics, Techniques, and Common Knowledge，由MITRE公司<code>对抗战术、技术、常识</code>框架。</p>
+<p>详细笔记见<a href="../att%26ck/">ATT&amp;CK笔记</a></p>
 <p>更多内容见<a href="https://en.wikipedia.org/wiki/Computer_network_operations">词条</a></p>
-<h2 id="_3">推荐阅读</h2>
+<h2 id="_2">推荐阅读</h2>
 <table>
 <thead>
 <tr>
@@ -514,8 +538,16 @@
 <td>移动APT 威胁情报分析与数据防护</td>
 <td>针对移动智能终端的 APT 事件，并深入讲解了此类事件的分析方法、溯源手段和建模方法</td>
 </tr>
+<tr>
+<td><a href="https://my.oschina.net/u/4326389/blog/4275676">[网络安全自学篇] 七十四.APT攻击检测溯源与常见APT组织的攻击案例</a></td>
+<td>原作者那里已需付费订阅</td>
+</tr>
 </tbody>
 </table>
+<h2 id="ref">REF</h2>
+<ul>
+<li><a href="https://bbs.360.cn/thread-14894334-1-1.html">APT组织的奇幻名字是怎么来的？</a></li>
+</ul>
               
             </div>
           </div>
@@ -523,7 +555,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../code_audit/" class="btn btn-neutral float-right" title="代码审计">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../att%26ck/" class="btn btn-neutral float-right" title="ATT&CK">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../threat_intelligence/" class="btn btn-neutral" title="威胁情报"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -557,7 +589,7 @@
         <span><a href="../threat_intelligence/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../code_audit/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../att%26ck/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

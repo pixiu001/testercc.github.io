@@ -125,6 +125,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../apt/">APT</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../att%26ck/">ATT&CK</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../code_audit/">代码审计</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../black_market/">黑产研究</a>
@@ -144,24 +146,32 @@
     <li class="toctree-l3"><a class="reference internal" href="#t-box">T-BOX</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#can">CAN</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_2">定义</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">攻击面分析</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_2">协议</a>
+    <li class="toctree-l3"><a class="reference internal" href="#ecu">ECU</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">协议</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#jtt808">JTT808协议(北斗定位系统)</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">自动驾驶</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">自动驾驶</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#adas">ADAS</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_4">案例</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">案例</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_5">报告</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">报告</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#ref">REF</a>
     </li>
@@ -508,24 +518,35 @@
 <p>汽车tbox是由电源转换电路、OBD、MCU、GPRS、GPS以及传感器构成的车辆信息和定位传输系统。</p>
 <p>汽车T-BOX与主机通过canbus总线通信，实现指令与信息的传递，从而获取到包括车辆状态、按键状态等信息以及传递控制指令等；通过音频连接，实现双方共用麦克与喇叭输出。与手机APP是通过后台系统以数据链路的形式进行间接通信（双向）。T-BOX与后台系统通信还包括语音和短信两种形式，使用短信形式主要实现一键导航及远程控制功能。</p>
 <h3 id="can">CAN</h3>
+<h4 id="_2">定义</h4>
 <p>Controller Area Network 的缩写（以下称为CAN），是ISO国际标准化的串行通信协议。</p>
-<p>在汽车产业中，出于对安全性、舒适性、方便性、低功耗、低成本的要求，各种各样的电子控制系统被开发了出来。</p>
-<h2 id="_2">协议</h2>
+<p>CAN（Controller Area Network）总线协议是由 BOSCH 发明的一种基于消息广播模式的串行通信总线，它起初用于实现汽车内ECU之间可靠的通信，后因其简单实用可靠等特点，而广泛应用于工业自动化、船舶、医疗等其它领域。</p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed3/20220315153944.png" /></p>
+<p>简言之：CAN总线是用于各个ECU之间互相通信的网络以及协议。</p>
+<h4 id="_3">攻击面分析</h4>
+<p>ref:
+- <a href="https://blog.csdn.net/m0_46640144/article/details/119006095">汽车CAN总线协议详解及攻击面分析</a></p>
+<h3 id="ecu">ECU</h3>
+<p>Electronic Control Unit，电子控制单元，又称“行车电脑”、“车载电脑”等, 它们的用途就是控制汽车的行驶状态以及实现其各种功能。主要是利用各种传感器、总线的数据采集与交换，来判断车辆状态以及司机的意图并通过执行器来操控汽车。</p>
+<p>它和普通的电脑一样,由微控制器（MCU）、存储器（ROM、RAM）、输入/输出接口（I/O）、模数转换器（A/D）以及整形、驱动等大规模集成电路组成。</p>
+<h2 id="_4">协议</h2>
 <h3 id="jtt808">JTT808协议(北斗定位系统)</h3>
 <p>JTT808协议全称为《道路运输车辆卫星定位系统终端通讯协议及数据格式》（交通部先后发布过JT/T 808-2019、JT/T 808-2019版本），广泛应用在公路运输、水路运输、综合运输、交通工程和信息工程等方面的车辆终端和车辆监管平台之间。该协议规定了道路运输车辆卫星定位系统车载终端与车联网监管/监控平台之间的通信协议与数据格式，包括协议基础、通信连接、消息处理、协议分类与说明及数据格式。</p>
 <p>对JTT808协议的详细分析可以参照：《国内在线车联网平台安全威胁分析报告》</p>
 <p>JTT808协议通过TCP或UDP协议封装传输</p>
-<h2 id="_3">自动驾驶</h2>
+<h2 id="_5">自动驾驶</h2>
 <h3 id="adas">ADAS</h3>
 <p>Advanced Driving Assistance System，即高级驾驶辅助系统. 包括了紧急制动系统、车道保持系统、驾驶员监测系统等功能。ADAS通过安装在车上的各式各样传感器收集数据，并结合地图数据进行系统计算，从而预先为驾驶者判断可能发生的危险，保证行车的安全性。</p>
-<h2 id="_4">案例</h2>
+<h2 id="_6">案例</h2>
 <ul>
 <li><a href="https://mp.weixin.qq.com/s/JNQIySegvXJ7QMFTe7cmJg">一次针对车联网平台恶意攻击行为的溯源分析</a></li>
 </ul>
-<h2 id="_5">报告</h2>
+<h2 id="_7">报告</h2>
 <ul>
 <li><a href="https://blog.zhifeng.io/china-internet-of-vehicles-security-threat-analysis-report/">国内在线车联网平台（道路运输车辆卫星定位系统）安全威胁分析报告</a></li>
 <li><a href="https://paper.seebug.org/1736/">自动驾驶欺骗之幻影攻击</a></li>
+<li><a href="https://tttang.com/archive/1427/">汽车安全测试终极指南，第一篇（译文）</a></li>
+<li><a href="https://tttang.com/archive/1435/">汽车安全测试终极指南，第二篇（译文）</a></li>
 </ul>
 <h2 id="ref">REF</h2>
 <ul>

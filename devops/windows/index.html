@@ -125,6 +125,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/apt/">APT</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/att%26ck/">ATT&CK</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
@@ -507,10 +509,13 @@ for /L %i in (91,1,255) do @ping 172.%i.0.1 -n 1
 
 example1:
 
-for /L %i in (91,1,255) do @ping 172.%i.0.1 -n 1| find &quot;回复&quot;
+for /L %i in (91,1,255) do @ping 172.%i.0.1 -n 1 | find &quot;回复&quot;
 
 example2:
-for /L %i in (91,1,255) do @ping 172.%i.0.1 -n 1| find &quot;TTL=25&quot;
+for /L %i in (91,1,255) do @ping 172.%i.0.1 -n 1 | find &quot;TTL=25&quot;
+
+example3: 循环遍历最后一段IP  （start,step,end）  172.16.12.1 to 172.16.12.254
+for /L %i in (1,1,255) do @ping 172.16.12.%i -n 1 |  find &quot;TTL=&quot;
 </code></pre>
 
 <h3 id="_2">查看占用端口的进程</h3>

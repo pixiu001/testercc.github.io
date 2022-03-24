@@ -125,6 +125,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/apt/">APT</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/att%26ck/">ATT&CK</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
@@ -434,6 +436,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_6">常识问题</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#curlhttps">使用curl访问https</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#linuxusr">Linux的/usr目录的全称</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#rclocal">rc.local的作用</a>
@@ -944,6 +948,10 @@ ls -l /tmp/whl
 </code></pre>
 
 <h2 id="_6">常识问题</h2>
+<h3 id="curlhttps">使用curl访问https</h3>
+<pre><code class="shell">curl -k --tlsv1 &quot;https://aaa.test.com/abc/
+</code></pre>
+
 <h3 id="linuxusr">Linux的/usr目录的全称</h3>
 <p>usr被称为是Unix System Resource，即Unix系统资源的缩写。/usr 是系统核心所在，包含了所有的共享文件。
 它是 unix 系统中最重要的目录之一，涵盖了二进制文件，各种文档，各种头文件，还有各种库文件；还有诸多程序，例如 ftp，telnet 等等。</p>

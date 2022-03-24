@@ -125,6 +125,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/apt/">APT</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/att%26ck/">ATT&CK</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
@@ -397,9 +399,13 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#git-forkpr">Git Fork项目后，向开源项目提交PR流程</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_7">其他</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">同步开源项目最新源码到自己的开发分支</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_8">常见错误处理</a>
+    <li class="toctree-l2"><a class="reference internal" href="#git-fetch-git-pull">git fetch 和 git pull 的区别</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_8">其他</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_9">常见错误处理</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#git-basherror-could-not-fork-child-process-there-are-no-available-terminals-1">git bash报错Error: Could not fork child process: There are no available terminals (-1).</a>
     </li>
@@ -989,7 +995,24 @@ $ git push -u origin/master
 当再次本地修改代码提交时，执行步骤6-11即可。
 </code></pre>
 
-<h2 id="_7">其他</h2>
+<h2 id="_7">同步开源项目最新源码到自己的开发分支</h2>
+<pre><code class="shell">git remote -v  # 一般设置开源项目源码在upstream分支
+git fetch upstream  # 从upstream仓库垃取最新的更新 # 把upstream仓库的更新拉取到本地了，但不强制合并代码
+git checkout mater  # 切换到本地master分支，也可以是其他非master分支
+git merge upstream/master  # 将upstream/master分支合并到本地master分支上
+git push origin master     # 将合并后的本地master推送到远端仓库master分支，这时 upstream/master 的最新代码就同步到 origin/master了
+</code></pre>
+
+<h2 id="git-fetch-git-pull">git fetch 和 git pull 的区别</h2>
+<ul>
+<li>
+<p>git fetch 是将远程主机的最新内容拉到本地，用户在检查了以后决定是否合并到工作本机分支中。</p>
+</li>
+<li>
+<p>git pull 是将远程主机的最新内容拉下来后直接合并，即：git pull = git fetch + git merge，这样可能会产生冲突，需要手动解决。</p>
+</li>
+</ul>
+<h2 id="_8">其他</h2>
 <pre><code>之前大佬教我用-i来做squash。 
 中间态的若干次提交均写上 WIP: *****
 然后做完一个功能， 把 WIP: *** squash掉。  
@@ -998,7 +1021,7 @@ $ git push -u origin/master
 P.S.: WIP（work in progress）
 </code></pre>
 
-<h2 id="_8">常见错误处理</h2>
+<h2 id="_9">常见错误处理</h2>
 <h3 id="git-basherror-could-not-fork-child-process-there-are-no-available-terminals-1">git bash报错<code>Error: Could not fork child process: There are no available terminals (-1).</code></h3>
 <p>打开win的cmd或者powershell，执行如下命令：</p>
 <pre><code>(base) PS C:\Users\xx&gt; tasklist | findstr &quot;git-bash&quot;

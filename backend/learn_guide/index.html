@@ -125,6 +125,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/apt/">APT</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sec_research/att%26ck/">ATT&CK</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/code_audit/">代码审计</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../sec_research/black_market/">黑产研究</a>
@@ -320,6 +322,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#_17">关于发布的版本</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#_18">其他推荐</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#jetbrains">Jetbrains系列产品重置试用</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#_19">你的编程能力从什么时候开始突飞猛进？</a>
     </li>
@@ -687,6 +691,38 @@ gamma (这个不常听见)，beta测试后做过一些修改，成为正式发�
 <li><a href="https://xargin.com/how-to-learn/">工程师应该怎么学习</a>  -- 若对自我提升不得其法，推荐仔细阅读</li>
 <li><a href="http://product.dangdang.com/28513974.html">程序员的7堂职场课</a> -- 本人是利用租约优惠免费看的，没想到内容真的还不错，内容偏向软技能，建议对自己职业生涯规划不足和陷入迷茫的程序员阅读</li>
 <li><a href="https://www.bilibili.com/video/BV1p74111732">技术人如何快速且深入地学习一门新技术？</a></li>
+</ul>
+<h3 id="jetbrains">Jetbrains系列产品重置试用</h3>
+<p>2021.2.3之后的版本已失效</p>
+<pre><code>0x1. 如何安装
+
+1). 插件市场安装：
+在Settings/Preferences... -&gt; Plugins 内手动添加第三方插件仓库地址：https://plugins.zhile.io
+搜索：IDE Eval Reset插件进行安装。如果搜索不到请注意是否做好了上一步？网络是否通畅？
+插件会提示安装成功。
+
+2). 下载安装：
+点击这个链接(v2.3.5)下载插件的zip包（macOS可能会自动解压，然后把zip包丢进回收站）
+通常可以直接把zip包拖进IDE的窗口来进行插件的安装。如果无法拖动安装，你可以在Settings/Preferences... -&gt; Plugins 里手动安装插件（Install Plugin From Disk...）
+插件会提示安装成功。
+
+0x2. 如何使用
+
+一般来说，在IDE窗口切出去或切回来时（窗口失去/得到焦点）会触发事件，检测是否长时间（25天）没有重置，给通知让你选择。（初次安装因为无法获取上次重置时间，会直接给予提示）
+也可以手动唤出插件的主界面：
+如果IDE没有打开项目，在Welcome界面点击菜单：Get Help -&gt; Eval Reset
+如果IDE打开了项目，点击菜单：Help -&gt; Eval Reset
+唤出的插件主界面中包含了一些显示信息，2个按钮，1个勾选项：
+按钮：Reload 用来刷新界面上的显示信息。
+按钮：Reset 点击会询问是否重置试用信息并重启IDE。选择Yes则执行重置操作并重启IDE生效，选择No则什么也不做。（此为手动重置方式）
+勾选项：Auto reset before per restart 如果勾选了，则自勾选后每次重启/退出IDE时会自动重置试用信息，你无需做额外的事情。（此为自动重置方式）
+如果你的IDE已经过了试用打不开，可以运行这个临时重置脚本（注意选择对应系统版本），它可以让你暂时进入IDE进行上述操作。（登录试用版本不适用，见下文）
+</code></pre>
+
+<ul>
+<li><a href="https://zhile.io/2020/11/18/jetbrains-eval-reset-deprecated.html">Jetbrains系列产品重置试用方法(仅限2021.2.3之前的版本)</a></li>
+<li><a href="https://plugins.zhile.io/files/ide-eval-resetter-2.3.5-c80a1d.zip">ide-eval-resetter-2.3.5</a></li>
+<li><a href="https://gitee.com/pengzhile/ide-eval-resetter/tree/master/scripts">tmp reset</a></li>
 </ul>
 <h3 id="_19">你的编程能力从什么时候开始突飞猛进？</h3>
 <p>转自知乎：口天师兄  的回答</p>
