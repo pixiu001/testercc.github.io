@@ -141,7 +141,17 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_3">二、协议和术语科普</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">工业控制网络的协议分类</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#1modbus">1.Modbus通讯协议</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#modbus-tcp">Modbus TCP</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#modbus-0x5a">Modbus 0x5a</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ref">REF</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#2siemens-s7">2.Siemens S7协议</a>
     </li>
@@ -151,13 +161,13 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#4cotp">4.COTP</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_4">其他工控协议</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">其他工控协议</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_5">三、威胁建模</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">三、威胁建模</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_6">安全故障分析模型（物理侧）</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">安全故障分析模型（物理侧）</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#fat">故障树分析法（FAT）</a>
     </li>
@@ -167,7 +177,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_7">网络安全威胁模型（信息侧）</a>
+    <li class="toctree-l3"><a class="reference internal" href="#_8">网络安全威胁模型（信息侧）</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#1kill-chain">1.Kill Chain工控模型</a>
     </li>
@@ -177,21 +187,21 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_8">四、威胁模式分析</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_9">四、威胁模式分析</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_9">五、安全防御</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_10">五、安全防御</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_10">六、风险评估</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_11">六、风险评估</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_11">七、工控安全漏洞案例分析</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_12">七、工控安全漏洞案例分析</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_12">八、调查取证</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_13">八、调查取证</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_13">九、攻击分析</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_14">九、攻击分析</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_14">机构工控安全事件分析报告</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_15">机构工控安全事件分析报告</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#ref">REF</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ref_1">REF</a>
     </li>
     </ul>
                     </li>
@@ -545,8 +555,18 @@ MIS:管理信息系统(Management Information System)
 SIS: 生产过程自动化监控和管理系统(Supervisory Information System)
 MES:制造执行管理系统</p>
 <h2 id="_3">二、协议和术语科普</h2>
+<h3 id="_4">工业控制网络的协议分类</h3>
+<ul>
+<li>传统控制网络：CCS（Coordinated Control System ，协调控制系统）、DCS（Distributed Control System，分布式控制系统）等。</li>
+<li>现场总线：CAN、DeviceNet、CCL-Link、Profibus-DP等。</li>
+<li>工业以太网：EtherNet/IP、EtherCAT、HSE、Pfofinet、EPA、PowerLink、Modbus、Tenet、Wnet等。</li>
+<li>工业无线网：IEEE 802.11(a/b/g/n)、Rfieldbus、ZigBee等。</li>
+</ul>
+<p>基于控制精度划分为：实时网络协议、非实时网络协议。</p>
 <h3 id="1modbus">1.Modbus通讯协议</h3>
-<p>Modbus是一种串行通信协议，是Modicon公司（现在的施耐德电气Schneider Electric）于1979年为使用可编程逻辑控制器（PLC）通信而发表。Modbus已经成为工业领域通信协议的业界标准（De facto），并且现在是工业电子设备之间常用的连接方式。</p>
+<p>Modbus(Modicon's BUS的简称)是一种串行通信协议，是Modicon公司（现在的施耐德电气Schneider Electric）于1979年为使用可编程逻辑控制器（PLC）通信而发表。是全球第一个真正用于工业现场的总线协议。Modbus已经成为工业领域通信协议的业界标准（De facto），并且现在是工业电子设备之间常用的连接方式。
+Modbus是一种应用层消息传输协议，位于OSI模型的第7层。通过此协议，控制器之间、控制器经由网络（如以太网）和其他设备之间可以通信。</p>
+<p>使用系统保留端口502访问Modbus，这也是TCP/IP协议唯一为工控系统协议保留的端口。</p>
 <p>Modbus比其他通信协议使用的更广泛的主要原因有：</p>
 <ul>
 <li>公开发表并且无版权要求</li>
@@ -554,6 +574,34 @@ MES:制造执行管理系统</p>
 <li>对供应商来说，修改移动本地的比特或字节没有很多限制</li>
 </ul>
 <p>Modbus允许多个 (大约240个) 设备连接在同一个网络上进行通信，举个例子，一个由测量温度和湿度的装置，并且将结果发送给计算机。在数据采集与监视控制系统（SCADA）中，Modbus通常用来连接监控计算机和远程终端控制系统（RTU）。</p>
+<h4 id="modbus-tcp">Modbus TCP</h4>
+<p>1997年施耐德推出了基于TCP/IP的Modbus TCP。</p>
+<p>可以通过wireshark对Modbus的流量包进行抓取进而观察Modbus TCP的数据格式</p>
+<pre><code>Transaction identifier ： 事务标识符
+Protocol identifier ： 默认为0
+Length : 数据的长度
+Unit identifier ： 从机地址，因为使用了TCP/IP所以用ip地址来标识从机，所以该位可忽视，或者做进一步分发
+Function code ： modbus的功能码
+Data ：具体的数据
+</code></pre>
+
+<h4 id="modbus-0x5a">Modbus 0x5a</h4>
+<p>DEF CON 25 - Ics Village - Arnaud Soullié - Fun With Modbus 0x5a Nothing New Still Relevant? 
+展示过的fun with 0x5a，这个0x5a的功能码是由施耐德自己实现的非标准的功能码，该功能码实现了Modbus标准未允许的功能。在defcon中大佬为我们展示了以下几项：
+- 获取项目和PLC信息
+- 开启、停止PLC
+- 下载程序
+- 更改程序</p>
+<p><a href="https://github.com/wavestone-cdt/fun-with-modbus-0x5a">fun-with-modbus-0x5a</a>
+<a href="https://www.youtube.com/watch?v=A_B69Rifu1g">video</a>
+<a href="https://www.riskinsight-wavestone.com/2018/02/fun-with-modbus-0x5a/">Fun with Modbus 0x5A</a></p>
+<h4 id="ref">REF</h4>
+<ul>
+<li><a href="https://www.anquanke.com/post/id/185513">工控安全入门（一）—— Modbus协议</a></li>
+<li><a href="https://www.cnblogs.com/Db2k/p/12373388.html">ModbusTCP协议解析 —— 利用Wireshark对报文逐字节进行解析详细解析Modbus所含功能码以及模拟器</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg3ODY4Nzg3OQ==&amp;mid=2247483711&amp;idx=1&amp;sn=eef542bb5fd00a659161858f2e38849e&amp;chksm=cf0ea2d7f8792bc1c92a606266a17875f08de4cdaca11508ae690c3cbd0919a9e7c70d7cc63f&amp;scene=178&amp;cur_album_id=2112949864471855104#rd">Modbus协议及其攻防</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg3ODY4Nzg3OQ==&amp;mid=2247483817&amp;idx=1&amp;sn=3e36a7409b965669510ea260216da6a6&amp;chksm=cf0ea241f8792b5740c4401ed658f5f6af94f9fb04e55389342be533c3d3493ad949688bddc7&amp;scene=178&amp;cur_album_id=2175115088809033733#rd">使用Python攻击Modbus协议</a></li>
+</ul>
 <h3 id="2siemens-s7">2.Siemens S7协议</h3>
 <p>属于第7层（应用层）的协议,用于西门子设备之间进行交换数据,通过TSAP,可加载MPI,DP,以太网等不同物理结构总线或网络上,PLC一般可以通过封装好的通讯功能块实现。</p>
 <p>S7以太网协议本身也是TCP/IP协议簇的一员，S7协议在OSI中的位置相当于将物理层和数据链路层之上的协议进行了定义，S7comm的协议栈修改程度更高，在应用层组织的数据经过COTP协议、TPKT协议的进一步处理后，最终通过TCP进行传输</p>
@@ -570,10 +618,10 @@ MES:制造执行管理系统</p>
 <p>Transport Service ontop of the TCP，简写：TPKT，通过TCP的传输服务。介于TCP和COTP之间。属于传输服务类的协议，它为上层的COTP和下层TCP进行了过渡。功能为在COTP和TCP之间建立桥梁，其内容包含了上层协议数据包的长度。一般与COTP一起发送，当作Header段。我们常用的RDP协议（remote desktop protocol，windows的远程桌面协议）也是基于TPKT的，TPKT的默认TCP端口为102（RDP为3389）</p>
 <h3 id="4cotp">4.COTP</h3>
 <p>Connection-Oriented Transport Protocol，即面向连接的传输协议，它的传输必然是依赖于连接的，所以在传输数据前必然有类似TCP握手建立链接的操作。</p>
-<h3 id="_4">其他工控协议</h3>
+<h3 id="_5">其他工控协议</h3>
 <p>IEC 60870-5-104、EtherNet/IP、Tridium Niagara Fox、Crimson V3、OMRON FINS、PCWorx、ProConOs、MELSEC-Q。按需求自行查阅资料。</p>
-<h2 id="_5">三、威胁建模</h2>
-<h3 id="_6">安全故障分析模型（物理侧）</h3>
+<h2 id="_6">三、威胁建模</h2>
+<h3 id="_7">安全故障分析模型（物理侧）</h3>
 <p>现有的分析评价方法主要包括：故障树分析法、事件树分析法、可靠性框图法、马尔可夫分析法、GO-FLOW法、多层流模型、贝叶斯网络等。</p>
 <h4 id="fat">故障树分析法（FAT）</h4>
 <p>Fault Tree Analysis</p>
@@ -581,23 +629,23 @@ MES:制造执行管理系统</p>
 <p>Event Tree Analysis</p>
 <h4 id="stamp">STAMP</h4>
 <p>System-Theoretic Accident Model and Process，系统理论模型和流程分析法</p>
-<h3 id="_7">网络安全威胁模型（信息侧）</h3>
+<h3 id="_8">网络安全威胁模型（信息侧）</h3>
 <p>常见的威胁建模方法：</p>
 <p>工控领域主流威胁模型：Kill Chain工控模型、ATT&amp;CK工控模型。</p>
 <h4 id="1kill-chain">1.Kill Chain工控模型</h4>
 <h4 id="2attck">2.ATT&amp;CK工控模型</h4>
-<h2 id="_8">四、威胁模式分析</h2>
+<h2 id="_9">四、威胁模式分析</h2>
 <p>主要分析要素：威胁目标对象、威胁向量、威胁影响。</p>
-<h2 id="_9">五、安全防御</h2>
+<h2 id="_10">五、安全防御</h2>
 <p><img alt="工业互联网安全实施框架" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed3/20220222142647.png" /></p>
-<h2 id="_10">六、风险评估</h2>
-<h2 id="_11">七、工控安全漏洞案例分析</h2>
+<h2 id="_11">六、风险评估</h2>
+<h2 id="_12">七、工控安全漏洞案例分析</h2>
 <ul>
 <li>震网攻击：通过改变PLC控制器运行命令，控制离心机异常运行，同时伪造离心机的运行数据，导致SCADA系统的故障诊断功能无法正常运行，最终损坏离心机。</li>
 <li>BlackEnergy3：在通过控制断路器切断输电线路的同时，使用DoS攻击电力服务系统。</li>
 </ul>
-<h2 id="_12">八、调查取证</h2>
-<h2 id="_13">九、攻击分析</h2>
+<h2 id="_13">八、调查取证</h2>
+<h2 id="_14">九、攻击分析</h2>
 <p>因为工控圈信息相对封闭，所以目前公开信息最全的就是西门子（SIEMENS）公司的 PLC s7 - 300/400 启动攻击漏洞，自己实践学习这个工控协议漏洞算是相对容易的。</p>
 <p>参考复现资料：
 - <a href="https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/ICS/%E5%AE%9E%E9%AA%8C/S7-300%E5%90%AF%E5%81%9C%E5%AE%9E%E9%AA%8C.md">S7-300 启停实验</a>
@@ -607,8 +655,8 @@ MES:制造执行管理系统</p>
 - <a href="https://www.cnblogs.com/Db2k/p/12391974.html">西门子S7comm协议解析 —— 利用Wireshark对报文逐字节进行解析详细解析S7comm所含功能码以及UserData功能（path3）</a>
 - <a href="https://blog.csdn.net/weixin_43158056/article/details/104298156">工控协议——S7通讯协议</a>
 - <a href="https://github.com/dark-lbp/isf.git">Industrial Exploitation Framework</a></p>
-<h2 id="_14">机构工控安全事件分析报告</h2>
-<h2 id="ref">REF</h2>
+<h2 id="_15">机构工控安全事件分析报告</h2>
+<h2 id="ref_1">REF</h2>
 <ul>
 <li>工业互联网安全：架构与防御</li>
 <li>工业控制网络安全技术与实践</li>
@@ -617,9 +665,11 @@ MES:制造执行管理系统</p>
 <li><a href="https://www.yuque.com/tidesec/ics/readme">工控安全Wiki - Tide安全团队</a></li>
 <li><a href="https://www.anquanke.com/member/141205">工控安全入门系列 1-10</a></li>
 <li>公众号：湘雪尘奕（视频挺多的，入门友好，也有后续深入的内容）</li>
+<li>公众号SupCERT，工控协议标签</li>
 <li><a href="https://www.zhihu.com/question/353268896">如何入门工控安全</a></li>
 <li><a href="http://blog.nsfocus.net/ics-safety-monitoring-system/">基于智能学习与业务感知的工控安全监测体系建设</a></li>
 <li><a href="https://blog.csdn.net/qq_40229814/article/details/119762675">一种针对工控系统攻击的远程检测方案（工控系统安全）</a></li>
+<li><a href="https://blog.csdn.net/liweiminlining/article/details/86624692">工控蜜罐Conpot部署和入门指南</a></li>
 </ul>
               
             </div>

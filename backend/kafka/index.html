@@ -513,15 +513,39 @@ kafka_2.11-1.1.1-javadoc.jar.asc
 <h3 id="consumer-position">消费者位置(consumer position)</h3>
 <p>消费者在消费的过程中需要记录自己消费了多少数据，即消费位置信息。在Kafka中这个位置信息有个专门的术语：位移(offset)。</p>
 <p>Kafka保存位移的机制：每个consumer group保存自己的位移信息，那么只需要简单的一个整数表示位置就够了；同时可以引入checkpoint机制定期持久化，简化了应答机制的实现。</p>
+<h3 id="kafka_3">kafka是如何保证消息不被重复消费的</h3>
+<h4 id="1kafka">1.kafka自带的消费机制</h4>
+<pre><code>kafka有个offset的概念，当每个消息被写进去后，都有一个offset，代表他的序号，然后consumer消费该数据之后，隔一段时间，会把自己消费过的消息的offset提交一下，代表我已经消费过了。下次我要是重启，就会继续从上次消费到的offset来继续消费。
+但是当我们直接kill进程了，再重启。这会导致consumer有些消息处理了，但是没来得及提交offset。等重启之后，少数消息就会再次消费一次。
+其他MQ也会有这种重复消费的问题，那么针对这种问题，我们需要从业务角度，考虑它的幂等性。
+</code></pre>
+
+<h4 id="2">2.通过保证消息队列消费的幂等性来保证</h4>
+<p>举个例子，当消费一条消息时就往数据库插入一条数据。如何保证重复消费也插入一条数据呢？</p>
+<p>那么我们就需要从幂等性角度考虑了。幂等性，我通俗点说，就一个数据，或者一个请求，无论来多次，对应的数据都不会改变的，不能出错。</p>
+<h4 id="3">3.怎么保证消息队列消费的幂等性？</h4>
+<p>我们需要结合业务来思考，比如下面的例子：</p>
+<pre><code>1.比如某个数据要写库，你先根据主键查一下，如果数据有了，就别插入了，update一下好吧
+
+2.比如是写redis，那没问题了，反正每次都是set，天然幂等性
+
+3.对于消息，我们可以建个表（专门存储消息消费记录）
+- 生产者，发送消息前判断库中是否有记录（有记录说明已发送），没有记录，先入库，状态为待消费，然后发送消息并把主键id带上。
+- 消费者，接收消息，通过主键ID查询记录表，判断消息状态是否已消费。若没消费过，则处理消息，处理完后，更新消息记录的状态为已消费。
+</code></pre>
+
 <h2 id="_2">推荐阅读</h2>
 <ul>
 <li><a href="http://kafka.apache.org/quickstart">Apache Kafka Quickstart</a></li>
 <li>Kafka权威指南</li>
 <li><a href="https://www.bilibili.com/video/BV1YK4y1J7Yp">大数据技术之Kafka</a></li>
-<li>https://www.cnblogs.com/qingyunzong/p/9004509.html</li>
+<li><a href="https://www.cnblogs.com/qingyunzong/category/1212387.html">Kafka学习之路</a>  </li>
+<li><a href="https://blog.csdn.net/naixuejiaoyu/article/details/106189197">如何搞定Kafka重复消费？</a></li>
 </ul>
 <h2 id="_3">官方下载</h2>
-<p><a href="http://kafka.apache.org/downloads">Kafka安装包官方下载地址</a></p>
+<ul>
+<li><a href="http://kafka.apache.org/downloads">Kafka安装包官方下载地址</a></li>
+</ul>
               
             </div>
           </div>
