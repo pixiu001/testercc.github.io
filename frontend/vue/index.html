@@ -240,12 +240,14 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/pwn/">PWN</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../ctf/hackthebox/">Hack The Box</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ctf/hackthebox/">HackTheBox</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Algorithm 算法</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../algorithm/learn_guide/">学习指南</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../algorithm/leetcode/">Leetcode</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Architecture 架构</span></p>
@@ -360,6 +362,14 @@
     <li class="toctree-l3"><a class="reference internal" href="#vue-cli_1">用vue-cli创建项目</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#vue2vue3">Vue2和Vue3共存(仅供参考)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#element-ui">Element-UI的基本使用</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1">1.基于命令行方式手动安装</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2">2.基于图形化界面自动安装</a>
+    </li>
+        </ul>
     </li>
         </ul>
     </li>
@@ -606,6 +616,25 @@ npm run serve
 4.重启终端命令行
 </code></pre>
 
+<h3 id="element-ui"><a href="https://www.bilibili.com/video/BV1uE411B7wQ?p=7">Element-UI的基本使用</a></h3>
+<p>样式编写没有太大的工作难度，主要是工作量大。</p>
+<p>Element-UI：一套为开发者、设计师和产品经理准备的基于Vue 2.x的桌面端组件库。</p>
+<p>官网：https://element.eleme.cn/#/zh-CN/component/installation</p>
+<h4 id="1">1.基于命令行方式手动安装</h4>
+<p>（1）安装依赖包 <code>npm i element-ui -S</code></p>
+<p>（2）导入 Element-UI 相关资源</p>
+<p>在 main.js 中写入以下内容：</p>
+<pre><code>import ElementUI from 'element-ui';    // 导入组件库      
+import 'element-ui/lib/theme-chalk/index.css';    // 导入组件相关样式
+
+// 配置Vue插件
+Vue.use(ElementUI);
+</code></pre>
+
+<p>以上代码便完成了 Element 的引入。需要注意的是，样式文件需要单独引入。</p>
+<h4 id="2">2.基于图形化界面自动安装</h4>
+<p>看视频4分钟开始吧：https://www.bilibili.com/video/BV1uE411B7wQ?p=8</p>
+<p>vue ui启动图形化界面 -&gt; 选择项目 -&gt; 插件 -&gt; 搜 <code>vue-cli-plugin-element</code>并安装 -&gt; 配置插件，实现按需导入</p>
 <h2 id="_7">其它问题</h2>
 <h3 id="npm-s-d">npm安装包时-S和-D的区别</h3>
 <pre><code>1、npm install name --save 简写（npm install name -S） 自动把模块和版本号添加到package.json的dependencies。

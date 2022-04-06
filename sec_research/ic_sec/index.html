@@ -145,6 +145,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#1modbus">1.Modbus通讯协议</a>
         <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#modbus">Modbus协议</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#modbus-tcp">Modbus TCP</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#modbus-0x5a">Modbus 0x5a</a>
@@ -200,6 +202,8 @@
     <li class="toctree-l2"><a class="reference internal" href="#_14">九、攻击分析</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_15">机构工控安全事件分析报告</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_16">工控攻防演示设计</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#ref_1">REF</a>
     </li>
@@ -308,12 +312,14 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../ctf/pwn/">PWN</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../ctf/hackthebox/">Hack The Box</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ctf/hackthebox/">HackTheBox</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Algorithm 算法</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../algorithm/learn_guide/">学习指南</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../algorithm/leetcode/">Leetcode</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Architecture 架构</span></p>
@@ -553,7 +559,9 @@ RTU:远程终端控制系统
 IED:智能监测单元HMI:人机界面(Human Machine Interface)
 MIS:管理信息系统(Management Information System)
 SIS: 生产过程自动化监控和管理系统(Supervisory Information System)
-MES:制造执行管理系统</p>
+MES:制造执行管理系统
+上位机：可以直接发出操控命令的计算机，一般是PC/host computer/master computer/upper computer,屏幕上显示各种信号变化（液压，水位，温度等）。
+下位机：可以直接控制设备获取设备状况的计算机，一般是PLC/单片机single chip microcomputer/slave computer/lower computer之类的。</p>
 <h2 id="_3">二、协议和术语科普</h2>
 <h3 id="_4">工业控制网络的协议分类</h3>
 <ul>
@@ -574,6 +582,16 @@ Modbus是一种应用层消息传输协议，位于OSI模型的第7层。通过�
 <li>对供应商来说，修改移动本地的比特或字节没有很多限制</li>
 </ul>
 <p>Modbus允许多个 (大约240个) 设备连接在同一个网络上进行通信，举个例子，一个由测量温度和湿度的装置，并且将结果发送给计算机。在数据采集与监视控制系统（SCADA）中，Modbus通常用来连接监控计算机和远程终端控制系统（RTU）。</p>
+<h4 id="modbus">Modbus协议</h4>
+<p>Modbus的协议栈仅仅是在传统ISO/OSI模型的基础上对<code>数据链路层</code>和<code>应用层</code>做了定义。</p>
+<p>modbus是一种主从协议，主设备的一方向从设备的一方下达指令，从设备的一方根据指令做出反应并回复主设备，主设备可以有多个从设备。</p>
+<p>具体来说，工作人员的计算机可认为是master，而PLC之类的具体设备就是slave了。</p>
+<p>每个设备有自己的“代号”，主设备通过“代号”来找到某一个对应的设备，当然也可以使用广播的方式，代号0即为广播。</p>
+<p>modbus定义了自己的数据单元，功能码与具体的数据组成了PDU（协议数据单元 Protocol Data Unit），所谓的功能码也就是代表了主向从下达的指令是什么，这是很重要的一个知识，后面我们会具体讲功能码代指的功能，数据也就是这次指令要用到的“参数”。</p>
+<p>只有PDU并不够，我们还需要知道从设备的“代号”才能知道数据往哪发，还要想办法保证数据的完整性、一致性和可靠性。所以在PDU的基础上我们还需要添加一个地址，和一个差错校验，这就构成了ADU（Application Data Unit）。</p>
+<p>但要注意，由于三种Modbus在传输中存在差异，所以ADU，特别是校验部分会有不同。</p>
+<p><img alt="ADU和PDU" src="https://cdn.jsdelivr.net/gh/TesterCC/pic_bed3/20220406115415.png" /></p>
+<p>功能码有效范围在1~255之间。其中大部分都是保留的，如128-255为异常响应保留。</p>
 <h4 id="modbus-tcp">Modbus TCP</h4>
 <p>1997年施耐德推出了基于TCP/IP的Modbus TCP。</p>
 <p>可以通过wireshark对Modbus的流量包进行抓取进而观察Modbus TCP的数据格式</p>
@@ -656,6 +674,12 @@ Data ：具体的数据
 - <a href="https://blog.csdn.net/weixin_43158056/article/details/104298156">工控协议——S7通讯协议</a>
 - <a href="https://github.com/dark-lbp/isf.git">Industrial Exploitation Framework</a></p>
 <h2 id="_15">机构工控安全事件分析报告</h2>
+<h2 id="_16">工控攻防演示设计</h2>
+<p>实际上目前公开的西门子PLC漏洞，最好用的还是s7-300的启停攻击。</p>
+<p>Modbus的启动攻击/拒绝服务器也比较好复现。</p>
+<ul>
+<li><a href="https://www.anquanke.com/post/id/248647">工控攻防演示——从外网到内网控制系统设备的入侵</a></li>
+</ul>
 <h2 id="ref_1">REF</h2>
 <ul>
 <li>工业互联网安全：架构与防御</li>
