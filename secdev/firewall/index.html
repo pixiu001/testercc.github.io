@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="TesterCC">
-  <link rel="canonical" href="https://testercc.github.io/math/learn_guide/">
+  <link rel="canonical" href="https://testercc.github.io/secdev/firewall/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>学习参考 - Security Development Notes</title>
+  <title>Firewall 防火墙 - Security Development Notes</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "\u5b66\u4e60\u53c2\u8003";
-    var mkdocs_page_input_path = "math\\learn_guide.md";
-    var mkdocs_page_url = "/math/learn_guide/";
+    var mkdocs_page_name = "Firewall \u9632\u706b\u5899";
+    var mkdocs_page_input_path = "secdev\\firewall.md";
+    var mkdocs_page_url = "/secdev/firewall/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -69,48 +69,62 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Security Development 安全研发</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/learn_guide/">学习指南</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../learn_guide/">学习指南</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/term/">相关术语</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../term/">相关术语</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/sec_dev_lifecycle/">SDL 安全开发流程</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../sec_dev_lifecycle/">SDL 安全开发流程</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/scanner/">Scanner 扫描器</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../scanner/">Scanner 扫描器</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/firewall/">Firewall 防火墙</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Firewall 防火墙</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">定义</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">信任程度不同的网络</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">访问控制</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">现代防火墙</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#iptablesfirewalldnftables">iptables、firewalld、nftables的版本关系</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ref">REF</a>
+    </li>
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/code_sec/">Code Security 代码安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../code_sec/">Code Security 代码安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/netflow_analysis/">Netflow Analysis 流量分析</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../netflow_analysis/">Netflow Analysis 流量分析</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/log_audit/">Log Audit 日志审计</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../log_audit/">Log Audit 日志审计</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/open_source/">Opensource 开源项目推荐</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../open_source/">Opensource 开源项目推荐</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/skill_tree/">Skill Tree 技能树</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../skill_tree/">Skill Tree 技能树</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/zero_trust/">Zero Trust 零信任网络</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../zero_trust/">Zero Trust 零信任网络</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/dev_sec_ops/">DevSecOps</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../dev_sec_ops/">DevSecOps</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/enterprise_security/">Enterprise Security 企业安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../enterprise_security/">Enterprise Security 企业安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/intelligent_risk_control/">Intelligent Risk Control 智能风控</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../intelligent_risk_control/">Intelligent Risk Control 智能风控</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/pentest_automation/">渗透测试自动化</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../pentest_automation/">渗透测试自动化</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/fingerprints/">指纹识别</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../fingerprints/">指纹识别</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/anti_bot/">反爬虫/Bot</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../anti_bot/">反爬虫/Bot</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_sqlmap/">源码学习之SqlMap</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../cl_sqlmap/">源码学习之SqlMap</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_pocsuite/">源码学习之Pocsuite3</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../cl_pocsuite/">源码学习之Pocsuite3</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_snort/">源码学习之Snort3</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../cl_snort/">源码学习之Snort3</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_viper/">源码学习之Viper</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../cl_viper/">源码学习之Viper</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Security Research 安全研究</span></p>
@@ -415,10 +429,8 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Math 数学</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">学习参考</a>
-    <ul class="current">
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../math/learn_guide/">学习参考</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Others</span></p>
@@ -465,11 +477,11 @@
     
       
         
-          <li>Math 数学 &raquo;</li>
+          <li>Security Development 安全研发 &raquo;</li>
         
       
     
-    <li>学习参考</li>
+    <li>Firewall 防火墙</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -480,45 +492,35 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="_1">程序员的数学</h2>
-<p>若你只想当一个普通的程序员，数学对你来说并不是很重要。但是如果你想做一个顶级程序员，深入CS本源，那么数学对你来说就很重要了。</p>
-<p>虽然数学作为一个基础学科，没有操作系统、数据结构、计算机网络等课程看起来“实用”，但如果想要深入学习机器学习的相关知识，数学功底是越扎实越好。</p>
-<p>所以，从头开始学数学的本人，单独分类做数学笔记。^ _ ^</p>
-<h2 id="_2">阅读推荐</h2>
-<p>首先，最基本的大学教材得学。</p>
-<p>*<code>高等数学第七版上下册</code> 高教社
-* <code>线性代数</code> 高教社
-* <code>概率论与数理统计</code>  浙大版
-* <code>离散数学</code>  左孝凌 著，内容简明扼要，自学最好把配套解析也一起买了。（目前正在看这本）
-* <code>离散数学及其应用（原书第7版）</code> Rosen 罗森 著，某乎推荐最高，不过书有点厚，但内容很细，要深入学习离散数学推荐。</p>
-<h2 id="_3">什么是数学</h2>
-<p>数学（mathematics或maths，其英文来自希腊语，“máthēma”；经常被缩写为“math”），是研究数量、结构、变化、空间以及信息等概念的一门学科，从某种角度看属于形式科学的一种。</p>
-<p>数学是一种思维模式，考验的是一个人归纳、总结和抽象的能力。</p>
-<h2 id="_4">什么是离散数学</h2>
-<p>离散数学（Discrete mathematics）是研究离散量的结构及其相互关系的数学学科，是现代数学的一个重要分支。离散的含义是指不同的连接在一起的元素，主要是研究基于离散量的结构和相互间的关系，其对象一般是有限个或可数个元素。离散数学在各学科领域，特别在计算机科学与技术领域有着广泛的应用，同时离散数学也是计算机专业的许多专业课程，如程序设计语言、数据结构、操作系统、编译技术、人工智能、数据库、算法设计与分析、理论计算机科学基础等必不可少的先行课程。通过离散数学的学习，不但可以掌握处理离散结构的描述工具和方法，为后续课程的学习创造条件，而且可以提高抽象思维和严格的逻辑推理能力，为将来参与创新性的研究和开发工作打下坚实的基础。</p>
-<p>看介绍应该也能知道离散数学对学CS的人来说有多重要。</p>
-<h2 id="_5">数学建模</h2>
-<p>数学建模是<code>一种数学的思考方法，是运用数学的语言和方法，通过抽象和简化，建立能近似刻画并解决实际问题的模型的一种强有力的数学手段。</code></p>
-<h4 id="7">数学建模流程(7步)</h4>
-<pre><code>1.模型准备   （了解背景，用数学语言描述问题）
-2.模型假设    (根据实际对象的特征和建模的目的，问题简化，用精确语言提出恰当假设)
-3.模型建立    (在假设基础上，利用适当数学工具来刻画变量之间的数学关系，建立相应数学结构。注意尽量使用简单的数学工具)
-4.模型求解    (利用获取的数据资料，对模型所有参数做出计算/估算)
-5.模型分析    (对所得结果进行数学分析)
-6.模型检验    (将模型分析结果与实际情形进行比较)
-7.模型应用    
-</code></pre>
-
-<h4 id="_6">数学建模方法</h4>
-<pre><code>1.直接分析法：认识原理，直接构造出模型。
-2.类比法：根据类似问题模型构造新模型。
-3.数据分析法：大量数据统计分析之后建模。
-4.构想法：对将来可能发生的情况给出设想从而建模。
-</code></pre>
-
-<h4 id="_7">入门视频</h4>
-<p><a href="https://www.icourse163.org/course/cumcm-1001674011">走近数学——数学建模篇</a><br />
-<a href="https://www.icourse163.org/course/HZAU-1001658002">数学建模</a></p>
+                <h1 id="_1">防火墙学习笔记</h1>
+<h2 id="_2">定义</h2>
+<p>在两个<code>信任程度不同</code>的网络之间设置的、用于加强<code>访问控制</code>的<code>软硬件</code>保护措施。</p>
+<h2 id="_3">信任程度不同的网络</h2>
+<ul>
+<li>外网：</li>
+<li>内网：</li>
+<li>边界：</li>
+</ul>
+<h2 id="_4">访问控制</h2>
+<ul>
+<li>Inbound 入站：外网 -&gt; 内网</li>
+<li>Outbound 出站：内网 -&gt; 外网</li>
+<li>防外不防内</li>
+</ul>
+<h2 id="_5">现代防火墙</h2>
+<p>一体化安全网关UTM，如：OPNsense、pFsense</p>
+<h2 id="iptablesfirewalldnftables">iptables、firewalld、nftables的版本关系</h2>
+<ul>
+<li>Before CentOS 7：iptables</li>
+<li>CentOS 7: firewalld</li>
+<li>CentOS 8: nftables</li>
+</ul>
+<h2 id="ref">REF</h2>
+<ul>
+<li><a href="https://www.cnblogs.com/laop520/p/12054956.html">firewalld基本概念</a></li>
+<li><a href="https://www.cnblogs.com/wdp-home/p/11651855.html">iptables和firewalld防火墙总结（史上最全）</a></li>
+<li><a href="https://c4pr1c3.github.io/cuc-ns-ppt/chap0x08.md.v4.html?print-pdf#/title-slide">中传信安-防火墙</a></li>
+</ul>
               
             </div>
           </div>
@@ -526,10 +528,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../others/introduce/" class="btn btn-neutral float-right" title="简介">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../code_sec/" class="btn btn-neutral float-right" title="Code Security 代码安全">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../academic/academic/" class="btn btn-neutral" title="Information 相关信息"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../scanner/" class="btn btn-neutral" title="Scanner 扫描器"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -557,10 +559,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../academic/academic/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../scanner/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../others/introduce/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../code_sec/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

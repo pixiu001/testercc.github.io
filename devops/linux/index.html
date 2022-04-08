@@ -78,6 +78,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/scanner/">Scanner 扫描器</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/firewall/">Firewall 防火墙</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/code_sec/">Code Security 代码安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/netflow_analysis/">Netflow Analysis 流量分析</a>
@@ -386,6 +388,8 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cpu">查询系统CPU核心数</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#win10md5">Win10文件md5校验</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_2">服务部署</a>
@@ -588,6 +592,11 @@ Distributor ID: Kali
 Description:    Kali GNU/Linux Rolling
 Release:    2021.2
 Codename:   kali-rolling
+</code></pre>
+
+<h2 id="cpu">查询系统CPU核心数</h2>
+<pre><code>[root@localhost vm]# LC_ALL=C lscpu| grep Virtualization
+Virtualization:        VT-x
 </code></pre>
 
 <h2 id="win10md5">Win10文件md5校验</h2>

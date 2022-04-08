@@ -78,6 +78,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/scanner/">Scanner 扫描器</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/firewall/">Firewall 防火墙</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/code_sec/">Code Security 代码安全</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../secdev/netflow_analysis/">Netflow Analysis 流量分析</a>
@@ -390,19 +392,27 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#kvm-virsh">KVM virsh命令</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#linuxshell">Linux结合shell批量操作</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_4">高频使用命令</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_4">查看虚拟机硬盘信息</a>
+    <li class="toctree-l4"><a class="reference internal" href="#5vmkvm">5.VM虚拟机转KVM虚拟机</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_5">创建快照</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_5">查询系统是否开启虚拟化</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_6">恢复快照</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_6">查询虚拟服务是否启动</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_7">查看指定虚拟机的快照列表</a>
+    <li class="toctree-l4"><a class="reference internal" href="#virshshell">virsh结合shell批量操作虚拟机</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_8">删除快照</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_7">查看虚拟机硬盘信息</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_9">查看快照详细信息</a>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">创建快照</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_9">恢复快照</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_10">查看指定虚拟机的快照列表</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_11">删除快照</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_12">查看快照详细信息</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#sabe">sabe快照运维</a>
     </li>
@@ -556,7 +566,106 @@ KVM的开发者选择了比较成熟的开源虚拟化软件QEMU来作为这个�
 <p>ref: <a href="https://www.cnblogs.com/echo1937/p/7138294.html">QEMU,KVM及QEMU-KVM介绍</a></p>
 <h2 id="_3">常用虚拟机操作指令</h2>
 <h3 id="kvm-virsh">KVM virsh命令</h3>
-<h4 id="linuxshell">Linux结合shell批量操作</h4>
+<h4 id="_4">高频使用命令</h4>
+<pre><code class="bash">1.使用centos-7.6.1810-20181204-x86_64.iso创建kvm虚拟机，图形化界面开vnc端口访问
+size的单位是G，值为60表示：60G = 60*1024M
+
+virt-install \
+    --cdrom=/opt/iso/centos-7.6.1810-20181204-x86_64.iso \
+    --virt-type kvm \
+    --name saee \
+    --ram 32768 \
+    --vcpus=12 \
+    --disk path=/opt/vm/saee.disk,size=60 \
+    --network bridge=br0 \
+    --graphics vnc,listen=0.0.0.0 \
+    --noautoconsole
+
+2.查看当前服务器有哪些虚拟机
+virsh list --all
+
+3.查看虚拟机的vnc端口：
+virsh vncdisplay [vm_name]
+
+:0 就用vnc访问宿主机ip:5900
+:1 就用vnc访问宿主机ip:5901
+
+3.创建快照
+virsh snapshot-create-as [domain] [snapshot-name]
+e.g.
+virsh snapshot-create-as centos7 centos7_snapshot
+
+4.查看指定虚拟机的快照列表
+virsh snapshot-list [domain]
+e.g.
+virsh snapshot-list sabe
+</code></pre>
+
+<p>更多参考:
+- <a href="https://www.cnblogs.com/liwei0526vip/p/6201582.html">kvm 使用入门详解</a>
+- <a href="https://blog.csdn.net/m0_59041021/article/details/123680397">Centos7 kvm环境制作qcow2 格式镜像</a></p>
+<p>virt-manager在图形化下操作kvm虚拟机，没有就只能通过命令来操作。</p>
+<h4 id="5vmkvm">5.VM虚拟机转KVM虚拟机</h4>
+<p>（个人操作发现可能有兼容性问题，不推荐）</p>
+<pre><code class="shell">打开终端，进入VMware安装不目录 cd D:\Program Files (x86)\VMware\VMware Workstation\
+vmware-vdiskmanager.exe -r &quot;D:\VMs\kali-linux-2022.1-vmware-amd64.vmwarevm\&quot;
+（1）vmware-vdiskmanager.exe -r &quot;F:\共享\VM\test\xxx.vmdk&quot; -t 0 &quot;F:\共享\VM\xxx.vmdk&quot;
+（2）qemu-img convert xxx.vmdk -O qcow2 xxx.img
+（3）挂载qcow镜像创建虚拟机：
+ virt-install \
+    --virt-type kvm \
+    --name viper \
+    --ram 2048 \
+    --vcpus=2 \
+    --disk path=/opt/img/xxx.img,format=qcow2 \
+    --network network=default \
+    --graphics vnc,listen=0.0.0.0 \
+    --force \
+    --import \
+    --autostart \
+    --os-variant ubuntu18.04 \
+    --noautoconsole
+</code></pre>
+
+<p>补充，经测试，KVM在2核2G配置下通过iso安装Kali速度很慢，建议酌情增加配置。</p>
+<pre><code>virt-install \
+    --cdrom=/opt/iso/kali-linux-2022.1-installer-amd64.iso \
+    --virt-type kvm \
+    --name kali2022.1 \
+    --ram 4096 \
+    --vcpus=4 \
+    --disk path=/opt/vm/kali2022.1,size=200 \
+    --network bridge=br0 \
+    --graphics vnc,listen=0.0.0.0 \
+    --noautoconsole
+</code></pre>
+
+<p>ref: 
+- <a href="https://blog.csdn.net/u010281503/article/details/78215322">迁移VMWare虚拟机到KVM</a>
+- <a href="https://www.cnblogs.com/kex1n/p/5201039.html">ubuntu-kvm上面deploy qcow2格式虚拟机</a></p>
+<h4 id="_5">查询系统是否开启虚拟化</h4>
+<pre><code>[root@localhost vm]# LC_ALL=C lscpu| grep Virtualization
+Virtualization:        VT-x
+</code></pre>
+
+<h4 id="_6">查询虚拟服务是否启动</h4>
+<pre><code>[root@localhost vm]# systemctl status libvirtd
+● libvirtd.service - Virtualization daemon
+   Loaded: loaded (/usr/lib/systemd/system/libvirtd.service; enabled; vendor preset: enabled)
+   Active: active (running) since Thu 2022-04-07 23:59:30 CST; 18h ago
+     Docs: man:libvirtd(8)
+           https://libvirt.org
+ Main PID: 5418 (libvirtd)
+    Tasks: 20 (limit: 32768)
+   Memory: 8.1M
+   CGroup: /system.slice/libvirtd.service
+           ├─5418 /usr/sbin/libvirtd
+           ├─8334 /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/default.conf --leasefile-ro --dhcp-script=/usr/libexec/libvirt_leaseshelper
+           └─8335 /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/default.conf --leasefile-ro --dhcp-script=/usr/libexec/libvirt_leaseshelper
+
+</code></pre>
+
+<h4 id="virshshell">virsh结合shell批量操作虚拟机</h4>
 <pre><code class="shell"># 批量 软关机
 for i in $(virsh list --name --autostart); do virsh shutdown $i; done
 
@@ -776,17 +885,17 @@ vnet2      bridge     br0        virtio      52:54:00:e3:39:1b
 vnet3      bridge     br1        rtl8139     52:54:00:f3:e8:39
 </code></pre>
 
-<h4 id="_4">查看虚拟机硬盘信息</h4>
+<h4 id="_7">查看虚拟机硬盘信息</h4>
 <p>virsh domblklist</p>
-<h4 id="_5">创建快照</h4>
+<h4 id="_8">创建快照</h4>
 <p>virsh snapshot-create-as centos7 centos7_snapshot</p>
-<h4 id="_6">恢复快照</h4>
+<h4 id="_9">恢复快照</h4>
 <p>virsh snapshot-revert centos7 --current</p>
-<h4 id="_7">查看指定虚拟机的快照列表</h4>
+<h4 id="_10">查看指定虚拟机的快照列表</h4>
 <p>virsh snapshot-list sabe</p>
-<h4 id="_8">删除快照</h4>
+<h4 id="_11">删除快照</h4>
 <p>virsh snapshot-delete snort snort_snapshot</p>
-<h4 id="_9">查看快照详细信息</h4>
+<h4 id="_12">查看快照详细信息</h4>
 <p><code>virsh snapshot-info [domain] [snapshot-name]</code></p>
 <h4 id="sabe">sabe快照运维</h4>
 <p>virsh snapshot-delete sabe sabe_snapshot
