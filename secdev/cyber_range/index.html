@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="TesterCC">
-  <link rel="canonical" href="https://testercc.github.io/interview/qa/">
+  <link rel="canonical" href="https://testercc.github.io/secdev/cyber_range/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>QA Interview - Security Development Notes</title>
+  <title>Cyber Range 网络靶场 - Security Development Notes</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "QA Interview";
-    var mkdocs_page_input_path = "interview\\qa.md";
-    var mkdocs_page_url = "/interview/qa/";
+    var mkdocs_page_name = "Cyber Range \u7f51\u7edc\u9776\u573a";
+    var mkdocs_page_input_path = "secdev\\cyber_range.md";
+    var mkdocs_page_url = "/secdev/cyber_range/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -69,50 +69,64 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Security Development 安全研发</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/learn_guide/">学习指南</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../learn_guide/">学习指南</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/term/">相关术语</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../term/">相关术语</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/sec_dev_lifecycle/">SDL 安全开发流程</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../sec_dev_lifecycle/">SDL 安全开发流程</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/scanner/">Scanner 扫描器</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../scanner/">Scanner 扫描器</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/firewall/">Firewall 防火墙</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../firewall/">Firewall 防火墙</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/code_sec/">Code Security 代码安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../code_sec/">Code Security 代码安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/netflow_analysis/">Netflow Analysis 流量分析</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../netflow_analysis/">Netflow Analysis 流量分析</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/log_audit/">Log Audit 日志审计</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../log_audit/">Log Audit 日志审计</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/cyber_range/">Cyber Range 网络靶场</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Cyber Range 网络靶场</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">各国靶场介绍</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">美国网络靶场</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">英国网络靶场</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#crate">瑞典网络靶场（CRATE）</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ref">REF</a>
+    </li>
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/zero_trust/">Zero Trust 零信任</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../zero_trust/">Zero Trust 零信任</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/open_source/">Opensource 开源项目推荐</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../open_source/">Opensource 开源项目推荐</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/skill_tree/">Skill Tree 技能树</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../skill_tree/">Skill Tree 技能树</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/dev_sec_ops/">DevSecOps</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../dev_sec_ops/">DevSecOps</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/enterprise_security/">Enterprise Security 企业安全</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../enterprise_security/">Enterprise Security 企业安全</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/intelligent_risk_control/">Intelligent Risk Control 智能风控</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../intelligent_risk_control/">Intelligent Risk Control 智能风控</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/pentest_automation/">渗透测试自动化</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../pentest_automation/">渗透测试自动化</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/fingerprints/">指纹识别</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../fingerprints/">指纹识别</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/anti_bot/">反爬虫/Bot</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../anti_bot/">反爬虫/Bot</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_sqlmap/">源码学习之SqlMap</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../cl_sqlmap/">源码学习之SqlMap</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_pocsuite/">源码学习之Pocsuite3</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../cl_pocsuite/">源码学习之Pocsuite3</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_snort/">源码学习之Snort3</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../cl_snort/">源码学习之Snort3</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../secdev/cl_viper/">源码学习之Viper</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../cl_viper/">源码学习之Viper</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Security Research 安全研究</span></p>
@@ -399,18 +413,16 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Interview 面试</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../navigation/">Navigation</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../interview/navigation/">Navigation</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../security/">Security Interview</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../interview/security/">Security Interview</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../backend/">Backend Interview</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../interview/backend/">Backend Interview</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../ai/">AI Interview</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../interview/ai/">AI Interview</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">QA Interview</a>
-    <ul class="current">
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../interview/qa/">QA Interview</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Academic 学术</span></p>
@@ -467,11 +479,11 @@
     
       
         
-          <li>Interview 面试 &raquo;</li>
+          <li>Security Development 安全研发 &raquo;</li>
         
       
     
-    <li>QA Interview</li>
+    <li>Cyber Range 网络靶场</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -482,13 +494,23 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="_1">软件测试面试题</h2>
-<p>其实QA（质量保障）和软件测试的岗位还是有一定区别的，但是国内不少公司招聘了QA也还是以做软件测试的工作为主，这里就不做太细致的区分了，仅以记录面试题为主。</p>
-<h2 id="_2">如何理解接口？</h2>
-<p>前端和后端传输数据的桥梁。</p>
-<h2 id="_3">接口测试和功能测试的区别？</h2>
-<p>接口测试、自动化测试都是模拟用户操作，也属于功能测试。</p>
-<h2 id="_4">接口如何传递参数？</h2>
+                <h1 id="cyber-range">网络靶场（Cyber Range）学习笔记</h1>
+<h2 id="_1">各国靶场介绍</h2>
+<h3 id="_2">美国网络靶场</h3>
+<p>国家网络空间靶场（NCR）</p>
+<p>美国为更好地实施网络作战任务，已于2009年建立美国网络司令部，计划通过模拟网络作战环境，进行各种仿真演习、训练，以填补美国军方在网络层面的各类作战能力缺失。</p>
+<h3 id="_3">英国网络靶场</h3>
+<p>英国联邦网络空间靶场（FCR）</p>
+<p>英国的网络靶场主要包括联邦网络实验靶场及Breaking point系统。</p>
+<p>英国联邦网络实验靶场是英国第一个商业的网络实验平台，被用来模拟大型复杂网络，并在安全可控的试验环境下进行基础设计生存能力和可靠性方面的网络试验及评估，以评价它们对网络攻击的承受能力。</p>
+<h3 id="crate">瑞典网络靶场（CRATE）</h3>
+<p>瑞典网络靶场和训练环境（Cyber Range And TrainingEnvironment，CRATE）</p>
+<h2 id="ref">REF</h2>
+<ul>
+<li><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MjM5NTczODkyOA==&amp;action=getalbum&amp;album_id=1336939508310441984&amp;scene=173&amp;from_msgid=2650950201&amp;from_itemidx=1&amp;count=3&amp;nolastread=1">网络空间靶场系列文章</a> - 强推，信息丰富，本身他们是做工控靶场的</li>
+<li><a href="https://www.heetian.com/info/732">合天网络靶场-大规模网络环境仿真服务平台</a></li>
+<li><a href="http://jcs.iie.ac.cn/ch/reader/create_pdf.aspx?file_no=20160301&amp;year_id=2016&amp;quarter_id=3&amp;falg=1">网络空间靶场技术研究</a></li>
+</ul>
               
             </div>
           </div>
@@ -496,10 +518,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../academic/academic/" class="btn btn-neutral float-right" title="Information 相关信息">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../zero_trust/" class="btn btn-neutral float-right" title="Zero Trust 零信任">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../ai/" class="btn btn-neutral" title="AI Interview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../log_audit/" class="btn btn-neutral" title="Log Audit 日志审计"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -527,10 +549,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../ai/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../log_audit/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../academic/academic/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../zero_trust/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
